@@ -3,7 +3,7 @@
     menu:
             "Битва покемонов (тест)":
                 jump test_pokemon_battle
-            "Личное дело ученика (тест)":
+            "Личное дело ученика2 (тест)":
                 jump test_student_profile
             "Личное дело другого ученика (тест)":
                 jump test_another_profile
