@@ -1,3 +1,33 @@
+init python:
+    import random
+
+    robot_char = Character("")
+    
+    def make_robot_bits(txt):
+        # symbols = "0123456789ABCDEF"
+        symbols = "01"
+        
+        # matrix_colors = ["#00ff00", "#00cc00", "#00ff41", "#00cc33"]
+        
+        robot_bits = ""
+        for char in txt:
+            if char != " ":
+                symbol = random.choice(symbols)
+                color = "#ffffff"
+                robot_bits += "{color=" + color + "}" + symbol + "{/color}"
+            else:
+                robot_bits += char
+        return robot_bits
+
+    def robot_say(what, **kwargs):
+        bits = make_robot_bits(str(what))
+        
+        robot_char("{font=gui/fonts/DejaVuSansMono.ttf}{cps=200}" + bits + "{/font}", interact=False)
+        
+        renpy.pause(0.3, hard=True)
+        
+        return robot_char("{font=gui/fonts/DejaVuSansMono.ttf}{cps=999}" + str(what) + "{/font}", interact=True)
+
 # Создаем анимацию для индикатора
 image ctc_rotate:
     "gui/bubble.png"
@@ -22,6 +52,10 @@ image ctc_mind:
     repeat
 
 define ctc_mind_indicator = Animation("ctc_mind")
+
+define robot_bin = robot_say
+define robot = Character("")
+
 
 # Определение персонажей
 define F = Character("Феликс", 
