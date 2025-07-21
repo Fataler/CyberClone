@@ -16,6 +16,7 @@ define config.name = _("Жизнь с огоньком")
 define config.image_cache_size_mb = 512
 
 define config.developer = True
+define config.menu_include_disabled = True
 
 ## Определяет, показывать ли заголовок, данный выше, на экране главного меню.
 ## Установите на False, чтобы спрятать заголовок.
