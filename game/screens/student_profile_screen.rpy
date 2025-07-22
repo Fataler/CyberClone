@@ -1,5 +1,6 @@
 define FONT_NAME = "gui/fonts/dehinted-DarumadropOne.ttf"
 
+#region: transforms
 transform diagonal_line_left:
     rotate -45
     pause 1
@@ -9,13 +10,14 @@ transform diagonal_line_left:
 
 transform diagonal_line_right:
     rotate -25
+    pause 1
     linear 8.0 rotate -5
     linear 8.0 rotate -25
     repeat
 
 transform shadow_move:
     xoffset 0
-    linear 2.0 xoffset -25
+    linear 2.0 xoffset -30
     linear 2.0 xoffset 0
     repeat
 
@@ -79,6 +81,29 @@ transform character_float:
     ease 2.0 yoffset -8
     ease 2.0 yoffset 0
     repeat
+#endregion
+
+#region: images
+init:
+    image bg = Solid("#FFFFFF")
+
+init python:
+    def diagonal_line_left_element(color):
+        return At(
+            Solid(color, xysize=(60, 3000)), 
+            Transform(anchor=(0.5, 0.5), xpos=200, ypos=650),
+            diagonal_line_left
+        )
+
+    def diagonal_line_right_element(color):
+        return At(
+            Solid(color, xysize=(60, 3000)), 
+            Transform(anchor=(0.5, 0.5), xpos=1500, ypos=650),
+            diagonal_line_right
+        )
+        
+#endregion
+
 
 screen student_profile(character_name="КАЦУМИ", character_sprite="images/test.png", character_stats=None):
     tag profile
@@ -90,21 +115,11 @@ screen student_profile(character_name="КАЦУМИ", character_sprite="images/t
         $ main_color = "#204DDB"
         $ secondary_color = "#97D4FF"
     
-    add Solid("#FFFFFF")
+    add "bg"
     
-    add Solid(secondary_color):
-        xysize (60, 3000)
-        anchor (0.5, 0.5)
-        xpos 200
-        ypos 650
-        at diagonal_line_left
+    add diagonal_line_left_element(secondary_color)
     
-    add Solid(secondary_color):
-        xysize (60, 3000)
-        anchor (0.5, 0.5)
-        xpos 1500
-        ypos 650
-        at diagonal_line_right
+    add diagonal_line_right_element(secondary_color)
     
     frame:
         xysize (1920, 1080)
