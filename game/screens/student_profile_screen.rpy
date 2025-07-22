@@ -86,6 +86,7 @@ transform character_float:
 #region: images
 init:
     image bg = Solid("#FFFFFF")
+    image video_cat = Movie(channel='video_ch', play="video/cat.ogv", loops=0, stop_music=True, loop=True)
 
 init python:
     def diagonal_line_left_element(color):
@@ -197,6 +198,23 @@ label show_student_profile(character_name="КАЦУМИ", character_sprite="imag
     
     show screen student_profile(character_name, character_sprite, character_stats) with Dissolve(0.8)
     
+    return
+
+screen test_video():
+    add "video_cat":
+        xalign 0.5
+        yalign 0.5
+        xsize 1920
+        ysize 1080
+
+label test_video:
+    window hide
+
+    show screen test_video
+    pause 1.0
+    
+    K "Хэй, Тайда! Ты чего такой кислый? Опять отчитали? Ожидаемо, для такого дурачка вроде тебя."
+    hide screen test_video with Dissolve(0.5)
     return
 
 label test_student_profile:

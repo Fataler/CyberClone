@@ -15,3 +15,5 @@
                 jump test_talking_system
             "Простые условия (тест)":
                 jump test_simple_conditions
+            "Видео приветствие":
+                jump test_video
