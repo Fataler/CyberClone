@@ -1,246 +1,206 @@
-transform profile_slide_in:
-    yoffset 100
-    alpha 0.0
-    ease 0.8 yoffset 0 alpha 1.0
+define FONT_NAME = "gui/fonts/dehinted-DarumadropOne.ttf"
 
-transform card_appear:
+transform diagonal_line_left:
+    rotate -45
+    pause 1
+    linear 8.0 rotate -30
+    linear 8.0 rotate -45
+    repeat
+
+transform diagonal_line_right:
+    rotate -25
+    linear 8.0 rotate -5
+    linear 8.0 rotate -25
+    repeat
+
+transform shadow_move:
+    xoffset 0
+    linear 2.0 xoffset -25
+    linear 2.0 xoffset 0
+    repeat
+
+transform profile_card_appear:
+    alpha 0.0
+    ease 1.0 alpha 1.0
+
+transform character_appear:
+    alpha 0.0
+    xoffset 100
+    zoom 1.1
+    pause 0.5
+    parallel:
+        ease 1.2 alpha 1.0
+    parallel:
+        easeout 1.2 xoffset 0
+    parallel:
+        easeout 1.2 zoom 1.0
+
+transform text_appear:
+    alpha 0.0
+    rotate -10
     zoom 0.8
+    parallel:
+        ease 1.0 alpha 1.0
+    parallel:
+        easeout 1.5 rotate 0
+    parallel:
+        easeout 1.0 zoom 1.0
+
+transform name_appear:
     alpha 0.0
-    ease 1.0 zoom 1.0 alpha 1.0
-
-transform avatar_spin:
-    rotate 0
-    ease 2.0 rotate 360
-
-transform stat_grow:
-    xzoom 0.0
-    ease 1.5 xzoom 1.0
-
-define ICONS = {
-    "Интересы": "🎯",
-    "Хобби": "⚡", 
-    "Не любит": "❌",
-    "Любимый предмет": "📚",
-    "Характер": "🎭",
-    "Навыки": "⭐"
-}
-
-screen student_profile(character_name="Ученик", character_description="Описание персонажа", character_sprite="#FF6B6B", character_stats=None):
-    tag profile
-    modal True
+    xoffset -500
+    yoffset -200
+    rotate 5
+    zoom 1.5
+    pause 1.0
     
-    add "#1a1a2e" at profile_slide_in
+    parallel:
+        ease 1.0 alpha 1.0
+    parallel:
+        easeout 1.2 xoffset 0
+    parallel:
+        easeout 1.0 yoffset 0
+    parallel:
+        easeout 1.0 zoom 1.0
+    
+    block:
+        linear 3.0 zoom 1.06
+        linear 3.0 zoom 1.0
+        repeat
+
+transform stats_appear:
+    rotate 6
+    alpha 0.0
+    pause 1.8
+    ease 0.5 alpha 1.0
+
+transform character_float:
+    yoffset 0
+    ease 2.0 yoffset -8
+    ease 2.0 yoffset 0
+    repeat
+
+screen student_profile(character_name="КАЦУМИ", character_sprite="images/test.png", character_stats=None):
+    tag profile
+
+    $ main_color = "#F58B7A"
+    $ secondary_color = "#EAC1BA"
+
+    if (character_name == "Хикару"):
+        $ main_color = "#204DDB"
+        $ secondary_color = "#97D4FF"
+    
+    add Solid("#FFFFFF")
+    
+    add Solid(secondary_color):
+        xysize (60, 3000)
+        anchor (0.5, 0.5)
+        xpos 200
+        ypos 650
+        at diagonal_line_left
+    
+    add Solid(secondary_color):
+        xysize (60, 3000)
+        anchor (0.5, 0.5)
+        xpos 1500
+        ypos 650
+        at diagonal_line_right
     
     frame:
         xysize (1920, 1080)
         background None
         
-        add Solid("#16213e") alpha 0.8
-    
-    frame:
-        pos (160, 80)
-        xysize (1600, 920)
-        background Frame("gui/frame.png", 20, 20)
-        at card_appear
-        
-        add Solid("#0f4c75") alpha 0.9
-        
-        hbox:
-            spacing 40
-            xpos 40
-            ypos 40
+        fixed:
+            xysize (800, 600)
+            at text_appear
             
-            vbox:
-                spacing 20
-                xysize (450, 840)
+            text character_name:
+                xpos 150
+                ypos -400
+                size 180
+                color main_color
+                font FONT_NAME
+                #outlines [(4, secondary_color, 0, 0)]
+                at name_appear
                 
-                frame:
-                    xysize (400, 400)
-                    background Frame("gui/frame.png", 10, 10)
-                    xalign 0.5
-                    
-                    add Solid("#3282b8") alpha 0.3
-                    
-                    if isinstance(character_sprite, str) and character_sprite.startswith("#"):
-                        add Solid(character_sprite) xysize (360, 360) xalign 0.5 yalign 0.5
-                    else:
-                        add character_sprite xysize (360, 360) xalign 0.5 yalign 0.5
-                
-                text character_name:
-                    size 36
-                    color "#ffe75e"
-                    xalign 0.5
-                    text_align 0.5
-                    font "gui/fonts/TippytoesRegular.ttf"
-                    outlines [(2, "#000000", 0, 0)]
-                
-                frame:
-                    xysize (300, 60)
-                    background "#3282b8"
-                    xalign 0.5
-                    
-                    text "КЛАСС 7-А":
-                        size 24
-                        color "#ffffff"
-                        xalign 0.5
-                        yalign 0.5
-                        font "gui/fonts/TippytoesRegular.ttf"
-                
-                frame:
-                    xysize (400, 200)
-                    background "#1e3d59"
-                    
-                    text character_description:
-                        size 20
-                        color "#ffffff"
-                        text_align 0.5
-                        xalign 0.5
-                        yalign 0.5
-                        xsize 360
-                        slow_cps 30
-            
-            vbox:
-                spacing 30
-                xysize (1050, 840)
-                
-                frame:
-                    xysize (800, 80)
-                    background "#ffe75e"
-                    xalign 0.5
-                    
-                    text "ПРОФИЛЬ УЧЕНИКА":
-                        size 32
-                        color "#0f4c75"
-                        xalign 0.5
-                        yalign 0.5
-                        font "gui/fonts/TippytoesRegular.ttf"
-                        outlines [(2, "#ffffff", 0, 0)]
+            fixed:
+                add Solid(main_color):
+                    xysize (400, 6000)
+                    anchor (0.5, 0.5)
+                    xpos 0.5
+                    ypos 300
+                    rotate -85
                 
                 if character_stats:
                     vbox:
-                        spacing 20
+                        xpos 250
+                        ypos -100
+                        spacing 30
+                        at stats_appear
                         
                         for info_name, info_value in character_stats.items():
-                            frame:
-                                xysize (900, 70)
-                                background "#1e3d59"
-                                at stat_grow
-                                
-                                hbox:
-                                    spacing 20
-                                    xpos 20
-                                    yalign 0.5
-                                    
-                                    # Иконка
-                                    text ICONS.get(info_name, "📝"):
-                                        size 32
-                                        yalign 0.5
-                                    
-                                    text f"{info_name}:":
-                                        size 24
-                                        color "#ffe75e"
-                                        xsize 200
-                                        yalign 0.5
-                                        font "gui/fonts/TippytoesRegular.ttf"
-                                    
-                                    text str(info_value):
-                                        size 22
-                                        color "#ffffff"
-                                        yalign 0.5
-                                        xsize 720
-                else:
-                    frame:
-                        xysize (900, 300)
-                        background "#1e3d59"
-                        
-                        vbox:
-                            spacing 20
-                            xalign 0.5
-                            yalign 0.5
-                            
-                            text "Неизвестно":
-                                size 32
-                                color "#ffe75e"
-                                xalign 0.5
-                                font "gui/fonts/TippytoesRegular.ttf"
-    
-    frame:
-        pos (800, 950)
-        background "#3282b8"
-        at button_fade_in
+                            text f"{info_name.upper()}{str(info_value).upper()}":
+                                size 50
+                                color "#FFFFFF"
+                                font FONT_NAME
+                                outlines [(2, "#000000", 0, 0)]
+                                text_align 0.5
+                                ysize 2000
+                                #xsize 2500
         
-        button:
-            xysize (320, 80)
-            background None
-            hover_background "#ffe75e"
-            action Function(close_student_profile)
+        vbox:
+            xpos 1100
+            at character_appear
             
-            text "ЗАКРЫТЬ":
-                size 28
-                color "#ffffff"
-                hover_color "#0f4c75"
-                xalign 0.5
-                yalign 0.5
-                font "gui/fonts/TippytoesRegular.ttf"
-                outlines [(2, "#000000", 0, 0)]
+            #shadow
+            add Transform(character_sprite, matrixcolor=BrightnessMatrix(-1.0)):
+                xalign 0.8
+                yalign 1.0
+                alpha 0.3
+                at shadow_move
+            
+            #character
+            add character_sprite:
+                yoffset -1080
+                xalign 0.9
+                yalign 1.0
+                at character_float
 
-transform text_slide_in:
-    xoffset -500
-    alpha 0.0
-    ease 1.2 xoffset 0 alpha 1.0
-
-transform sprite_slide_in:
-    xoffset -300
-    alpha 0.0
-    ease 1.5 xoffset 0 alpha 1.0
-
-transform data_slide_in:
-    xoffset 300
-    alpha 0.0
-    ease 1.8 xoffset 0 alpha 1.0
-
-transform button_fade_in:
-    alpha 0.0
-    ease 2.0 alpha 1.0
+label hide_student_profile:
+    hide screen student_profile with Dissolve(0.5)
+    window show
+    return
 
 init python:
     def close_student_profile():
         renpy.hide_screen("student_profile")
         renpy.return_statement()
 
-label show_student_profile(character_name="Ученик", character_description="Обычный школьник", character_sprite="#FF6B6B", character_stats=None):
+label show_student_profile(character_name="КАЦУМИ", character_sprite="images/test.png", character_stats=None):
     
     window hide
     
-    show screen student_profile(character_name, character_description, character_sprite, character_stats) with Dissolve(0.8)
-    
-    pause
-
-    hide screen student_profile with Dissolve(0.5)
-    window show
+    show screen student_profile(character_name, character_sprite, character_stats) with Dissolve(0.8)
     
     return
 
 label test_student_profile:
-    "Сейчас покажу стильный профиль ученика!"
     
-    call show_student_profile("Костян Петров", 
-        "Умный и немного замкнутый программист.",
-        "#4A90E2",
-        {"Характер": "Интроверт, аналитик", "Навыки": "Программирование, математика", "Интересы": "IT технологии, игры", "Не любит": "Физкультуру, толпы"})
-    
-    "Первый профиль показан!"
+    call show_student_profile("Кацуми","images/k_test.png",{"": "КЛАСС 2-B Академии Ссыкай", "специальность: ": "программист", "характер: ": "Цундере"})
+
+    K "Хэй, Тайда! Ты чего такой кислый? Опять отчитали? Ожидаемо, для такого дурачка вроде тебя."
+
+    call hide_student_profile
+
+    jump test_another_profile
+
     
     return
 
-label test_another_profile:
-    "Сейчас покажу профиль спортивного ученика!"
-    
-    call show_student_profile("Мишаня Иванов", 
-        "Лидер и капитан. Энергичный, но не очень любит учебу.",
-        "#E74C3C",
-        {"Характер": "Экстраверт, лидер", "Навыки": "Спорт, организация", "Интересы": "Футбол, тусовки", "Не любит": "Домашку, скуку"})
-    
-    "Второй профиль показан!"
+label test_another_profile:    
+    call show_student_profile("Хикару", 
+        "images/f_test.png",
+        {"": "КЛАСС 2-B Академии Ссыкай", "специальность: ": "Создание чертежей", "характер: ": "Кудере"})    
+    H "Если понадобится помощь, обратись ко мне, я одолжу тебе свои конспекты."
     
     return 

@@ -56,25 +56,7 @@ define ctc_mind_indicator = Animation("ctc_mind")
 define robot_bin = robot_say
 define robot = Character("")
 
-
-# Определение персонажей
-define F = Character("Феликс", 
-    what_prefix="",
-    what_suffix="",
-    ctc=ctc_indicator,      
-    ctc_position="nestled",
-    what_slow_abortable=False
-)
-
-define F_m = Character("Феликс", 
-    what_prefix="{i}(",
-    what_suffix="){/i} ",
-    ctc=ctc_mind_indicator,      
-    ctc_position="nestled",
-    what_slow_abortable=False
-)
-
-define S = Character("Секретарь", 
+define H = Character("Хикару", 
     what_prefix="",
     what_suffix="",
     ctc=ctc_indicator,
@@ -82,23 +64,7 @@ define S = Character("Секретарь",
     what_slow_abortable=False
 )
 
-define K = Character("Клементина", 
-    what_prefix="",
-    what_suffix="",
-    ctc=ctc_indicator,
-    ctc_position="nestled",
-    what_slow_abortable=False
-)
-
-define R1 = Character("Аркан", 
-    what_prefix="",
-    what_suffix="",
-    ctc=ctc_indicator,
-    ctc_position="nestled",
-    what_slow_abortable=False
-)
-
-define R2 = Character("Мундштук", 
+define K = Character("Кацуми", 
     what_prefix="",
     what_suffix="",
     ctc=ctc_indicator,
