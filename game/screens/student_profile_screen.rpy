@@ -3,16 +3,18 @@ define FONT_NAME = "gui/fonts/dehinted-DarumadropOne.ttf"
 #region: transforms
 transform diagonal_line_left:
     rotate -45
+    subpixel True
     pause 1
     linear 8.0 rotate -30
     linear 8.0 rotate -45
     repeat
 
 transform diagonal_line_right:
-    rotate -25
+    rotate -5
+    subpixel True
     pause 1
-    linear 8.0 rotate -5
-    linear 8.0 rotate -25
+    linear 7.0 rotate -25
+    linear 7.0 rotate -5
     repeat
 
 transform shadow_move:

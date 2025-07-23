@@ -26,23 +26,23 @@ define config.check_conflicting_properties = True
 ## Цвета текста в интерфейсе.
 
 ## Акцентный цвет используется в заголовках и подчёркнутых текстах.
-define gui.accent_color = '#Ab9250'
+define gui.accent_color = '#8f2f55'
 define black_text_color = "#1E1E20"
 #hover = #c8ab5e
 ## Цвет, используемый в текстовой кнопке, когда она не выбрана и не наведена.
-define gui.idle_color = '#E0E0E0'
+define gui.idle_color = '#8f2f55'
 
 ## Small_color используется в маленьком тексте, который должен быть ярче/темнее,
 ## для того, чтобы выделяться.
-define gui.idle_small_color = '#E0E0E0'
+define gui.idle_small_color = '#8f2f55'
 
 ## Цвет, используемых в кнопках и панелях, когда они наведены.
-define gui.hover_color = '#Ab9250'
+define gui.hover_color = '#8f3f60'
 
 ## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
 ## Кнопка может быть выбрана, если это текущий экран или текущее значение
 ## настройки.
-define gui.selected_color = '#Ab9250'
+define gui.selected_color = '#8f2f55' #6e3c52
 
 ## Цвет, используемый текстовой кнопкой, когда она не может быть выбрана.
 define gui.insensitive_color = '#919498ff'
@@ -54,7 +54,7 @@ define gui.hover_muted_color = '#eac199'
 
 ## Цвета, используемые в E0E0E0 диалогов и выборов.
 define gui.text_color = '#F5F6F8'
-define gui.interface_text_color = '#F5F6F8'
+define gui.interface_text_color = '#8f2f55'
 
 
 ## Шрифты и их размеры #########################################################
@@ -66,7 +66,7 @@ define gui.text_font = "gui/fonts/EBGaramond08-Regular.otf"
 define gui.name_text_font = "gui/fonts/EBGaramond08-Regular.otf"
 
 ## Шрифт, используемый текстом вне игры.
-define gui.interface_text_font = "gui/fonts/TippytoesRegular.ttf"
+define gui.interface_text_font = "gui/fonts/BlackOpsOne.otf"
 
 ## Размер нормального текста диалога.
 define gui.text_size = 45
@@ -243,7 +243,7 @@ define config.thumbnail_width = 384
 define config.thumbnail_height = 216
 
 ## Количество колонок и рядов в таблице слотов.
-define gui.file_slot_cols = 3
+define gui.file_slot_cols = 2
 define gui.file_slot_rows = 2
 
 
@@ -254,7 +254,7 @@ define gui.file_slot_rows = 2
 
 ## Местоположение левого края навигационных кнопок по отношению к левому краю
 ## экрана.
-define gui.navigation_xpos = 60
+define gui.navigation_xpos = 1850
 
 ## Вертикальная позиция индикатора пропуска.
 define gui.skip_ypos = 15
@@ -278,7 +278,7 @@ define gui.pref_button_spacing = 0
 define gui.page_spacing = 0
 
 ## Интервал между слотами.
-define gui.slot_spacing = 15
+define gui.slot_spacing = 55
 
 ## Позиция текста главного меню.
 define gui.main_menu_text_xalign = 1.0

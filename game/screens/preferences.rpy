@@ -50,17 +50,18 @@ screen preferences():
         vbox:
             xfill True
             xalign 0.5
-            spacing 25
+            spacing 20
 
             vbox:
                 xalign 0.5
                 spacing 10
                 label _("Режим экрана"):
                     xalign 0.5
+
                 hbox:
                     xalign 0.5
                     box_wrap True
-                    spacing 200
+                    spacing 20
                     if renpy.variant("pc") or renpy.variant("web"):
                         style_prefix "radio"
                         textbutton _("Оконный") action Preference("display", "window")
@@ -69,17 +70,17 @@ screen preferences():
             vbox:
                 xalign 0.5
                 spacing 15
-                label _("Текст")
+                label _("Текст"):
+                    xalign 0.5
                 hbox:
                     xalign 0.5
-                    spacing 100
-                    xsize 1000
+                    spacing 80
+                    xsize 900
                     vbox:
                         xalign 0.5
                         spacing 15
                         text _("Скорость текста") style "label_bar_text"
                         text _("Скорость авточтения") style "label_bar_text"
-                        text _("Пропускать") style "label_bar_text"
                     vbox:
                         xalign 0.5
                         spacing 15
@@ -87,21 +88,30 @@ screen preferences():
                         yoffset 8
                         bar value Preference("text speed")
                         bar value Preference("auto-forward time")
-                        hbox:
-                            xalign 0.5
-                            spacing 20
-                            style_prefix "check"
-                            textbutton _("Прочитанный текст") action Preference("skip", "seen")
-                            textbutton _("Весь текст") action Preference("skip", "all")
+
+            vbox:
+                xfill True
+                xalign 0.5
+                spacing 15
+                text _("Пропускать") style "label_bar_text":
+                    xalign 0.5
+
+                hbox:
+                    xalign 0.5
+                    spacing 20
+                    style_prefix "check"
+                    textbutton _("Прочитанный текст") action Preference("skip", "seen")
+                    textbutton _("Весь текст") action Preference("skip", "all")
 
             vbox:
                 xalign 0.5
                 spacing 15
-                label _("Звук")
+                label _("Звук"):
+                    xalign 0.5
                 hbox:
                     xalign 0.5
-                    spacing 100
-                    xsize 1000
+                    spacing 80
+                    xsize 900
                     vbox:
                         xalign 0.5
                         spacing 15
@@ -129,17 +139,17 @@ screen preferences():
                                 bar value Preference("sound volume")
                                 if config.sample_sound:
                                     textbutton _("Тест") action Play("sound", config.sample_sound)
-                        if config.has_voice:
-                            hbox:
-                                xalign 0.5
-                                bar value Preference("voice volume")
-                                if config.sample_voice:
-                                    textbutton _("Тест") action Play("voice", config.sample_voice)
-                        if config.has_music or config.has_sound or config.has_voice:
-                            hbox:
-                                xalign 0.5
-                                style_prefix "check"
-                                textbutton _("Без звука") action Preference("all mute", "toggle")
+                        # if config.has_voice:
+                        #     hbox:
+                        #         xalign 0.5
+                        #         bar value Preference("voice volume")
+                        #         if config.sample_voice:
+                        #             textbutton _("Тест") action Play("voice", config.sample_voice)
+                if config.has_music or config.has_sound or config.has_voice:
+                    hbox:
+                        xalign 0.5
+                        style_prefix "check"
+                        textbutton _("Без звука") action Preference("all mute", "toggle")
 
             vbox:
                 xalign 0.5
@@ -149,12 +159,13 @@ screen preferences():
                 hbox:
                     xalign 0.5
                     box_wrap True
-                    spacing 30
+                    spacing 25
                     style_prefix "radio"
                     vbox:
                         xalign 0.5
                         spacing 10
-                        label _("Шрифт")
+                        label _("Шрифт"):
+                            xalign 0.5
 
                         textbutton _("Оригинальный"):
                             action [Preference("font transform", None), 
@@ -172,24 +183,8 @@ screen preferences():
                     vbox:
                         xalign 0.5
                         spacing 10
-                        label _("Размер текста")
-                        textbutton _("Маленький"):
-                            action Preference("font size", 0.8)
-                            style_suffix "radio_button"
-
-                        textbutton _("Обычный"):
-                            action Preference("font size", 1.0)
-                            style_suffix "radio_button"
-
-                        textbutton _("Большой"):
-                            action Preference("font size", 1.2)
-                            style_suffix "radio_button"
-                            tooltip "Внимание! \nТекст может слегка выходить за рамки."
-
-                    vbox:
-                        xalign 0.5
-                        spacing 10
-                        label _("High Contrast Text")
+                        label _("High Contrast Text"):
+                            xalign 0.5
 
                         textbutton _("Enable"):
                             action Preference("high contrast text", "enable")
@@ -201,10 +196,7 @@ screen preferences():
 
     fixed:
         textbutton _("Сброс"):
-            style "navigation_button"
-            xpos 120
-            ypos 30
-            text_align 0.0
+            style "reset_button"
             action Function(reset_preferences)
             tooltip "Сбросить настройки\nна значения по умолчанию"
 
@@ -212,12 +204,18 @@ screen preferences():
     $ tooltip = GetTooltip()
 
     if tooltip:
-        timer 0.033 repeat True action Function(get_mouse)
+        timer 0.025 repeat True action Function(get_mouse)
         $ mx = mouse_xy[0]
         $ my = mouse_xy[1]
+        $ screen_width = config.screen_width if hasattr(config, 'screen_width') else 1920
         frame:
-            pos(mx, my)
-            offset 50, 0
+            if mx < screen_width // 2:
+                xpos mx + 50
+                xanchor 0.0
+            else:
+                xpos mx - 50
+                xanchor 1.0
+            ypos my
             background Frame("gui/frame.png", gui.frame_borders)
             padding (20, 10)
             text tooltip:
@@ -263,6 +261,9 @@ style pref_label:
 
 style pref_label_text:
     yalign 1.0
+    font gui.interface_text_font
+    color gui.interface_text_color
+    text_align 0.5
 
 style label_bar_text:
     color gui.interface_text_color
@@ -283,3 +284,9 @@ style tooltip_text:
     color "#ffffff"
     text_align 0.5
     xalign 0.5
+
+style reset_button:
+    anchor (1.0, 0.5)
+    xpos gui.navigation_xpos
+    yalign 0.0
+    yoffset 45

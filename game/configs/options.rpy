@@ -12,7 +12,7 @@
 ##
 ## Символы "_()", окружающие название, отмечают его как пригодное для перевода.
 
-define config.name = _("Жизнь с огоньком")
+define config.name = _("Мой кибер-двойник опять всё испортил")
 define config.image_cache_size_mb = 512
 
 define config.developer = True
@@ -23,7 +23,7 @@ define config.menu_include_disabled = True
 
 define gui.show_name = True
 
-define config.rollback_enabled = True if config.developer else False
+define config.rollback_enabled = True
 define config.default_fullscreen = False if config.developer else True
 
 
@@ -38,19 +38,17 @@ define config.mouse = { 'default' : [ ("gui/cursor.png", 0, 0)] }
 ## Для отделения абзацев оставляйте между ними пустую строку.
 
 define gui.about = _p("""
-Визуальная новелла разработана в рамках игрового джемма {a=https://vk.com/chapel_jam}Капелла Джем{/a} 
+Визуальная новелла разработана в рамках игрового джемма {a=https://vk.com/chapel_jam}Повидло джем 2{/a} 
 
-Дата релиза: 17.01.2025
+Дата релиза: 29.08.2025
 
 Использованные сторонние ресурсы лежат в файле {i}external_resources.txt{/i}.
 
 Авторы: \n
-{w=0}     - Zabava ({a=https://vk.com/zabavius}ВК{/a}) - сценарий, фоны\n
-{w=0}     - Zella ({a=https://vk.com/zella_art}ВК{/a}, {a=https://www.twitch.tv/zellaross}Twitch{/a}) - фоны, персонажи, CG\n
 {w=0}     - Remi Prochet ({a=https://vk.com/remiprochet}ВК{/a}) - музыка, звуки\n
-{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a})- концепт, персонажи, CG\n
-{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler/}Steam{/a})- код, мини игры, верстка, анимации\n
-{w=0}     - HolieKay - UI\n
+{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a})- сценарий,концепт, персонажи, CG\n
+{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler/}Steam{/a})- код, мини игры, редактура, анимации\n
+{w=0}     - Kapushishin - фоны, сборка новеллы, макеты UI, сбор референсов\n
 """)
 
 
@@ -58,7 +56,7 @@ define gui.about = _p("""
 ## постройке дистрибутивов. Оно должно содержать текст формата ASCII и не должно
 ## содержать пробелы, двоеточия и точки с запятой.
 
-define build.name = "LivingWithTwinkle"
+define build.name = "MyCyberClone"
 
 
 ## Звуки и музыка ##############################################################
@@ -85,7 +83,7 @@ define config.default_music_volume = 0.5
 ## проигрываться в главном меню. Этот файл продолжит проигрываться во время
 ## игры, если не будет остановлен, или не начнёт проигрываться другой аудиофайл.
 
-define config.main_menu_music = music_tower if not persistent.game_completed else music_gratification
+#define config.main_menu_music = music_tower if not persistent.game_completed else music_gratification
 
 
 ## Переходы ####################################################################
@@ -143,14 +141,14 @@ define config.window_hide_transition = Dissolve(.2)
 ## в то время как любая другая цифра — это количество символов, печатаемых в
 ## секунду.
 
-default preferences.text_cps = 40
+default preferences.text_cps = 80
 
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания, а
 ## от 0 до 30 — вполне допустимый диапазон.
 
 default preferences.afm_time = 15
 
-define config.default_text_cps = 40
+define config.default_text_cps = 80
 define config.default_afm_time = 15
 
 ## Максимальное количество страниц сохранений
@@ -173,7 +171,7 @@ define config.has_sync = False
 ## Этот параметр обычно не должен изменяться, а если и изменился, должен быть
 ## текстовой строчкой, а не выражением.
 
-define config.save_directory = "LivingWithTwinkle-1736464150"
+define config.save_directory = "MyCyberClone-10082024"
 
 
 ## Иконка ######################################################################

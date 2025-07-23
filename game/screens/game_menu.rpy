@@ -12,18 +12,18 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     on "replace" action Function(renpy.play, sfx_chains, channel="sfx")
     
     style_prefix "game_menu"
+    
+    add "bg_menu_main"
 
-    if main_menu:
-        add Parallax("menu_background_image", 3)
-        add Parallax("menu_tower_image", 5)
-        add Parallax("menu_clouds_image", 15)
-    else:
-        add "bg_black_t_50"
-
-    add "screen_board" at menu_board_drop:
-            xalign 0.5
+    add "gui/menu/frame_bg.png": 
+    #at menu_board_drop:
+        anchor (0.5, 0.5)
+        xpos 678
+        ypos 560
 
     frame at menu_items_appear:
+        top_margin 15
+        xsize 1390
         style "game_menu_outer_frame"
 
         hbox:
@@ -70,13 +70,9 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     #use navigation
 
-    textbutton _("Вернуться"):
+    textbutton _("Назад"):
         style "return_button"
         action Return()
-
-    label title:
-        xalign 0.5
-        ypos -50
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -92,30 +88,16 @@ style game_menu_scrollbar is gui_vscrollbar
 style game_menu_label is gui_label
 style game_menu_label_text is gui_label_text
 
-style return_button is gui_button
-style return_button_text is navigation_button_text
-
-style game_menu_outer_frame:
-    #bottom_padding 45
-    #top_padding 180
-    xalign 0.5
-    top_padding 150
-    bottom_padding 180
-    # xsize 1000
-
-    #background "gui/overlay/game_menu.png"
-
-# style game_menu_navigation_frame:
-#     xsize 420
-#     yfill True
+# style return_button is gui_button
+# style return_button_text is main_menu_button_text
 
 style game_menu_content_frame:
-    left_margin 60
-    right_margin 30
-    top_margin 15
-
-style game_menu_viewport:
-    xsize 1240
+    #background "#00000085"
+    left_margin 220
+    #right_margin 50
+    top_margin 120
+    bottom_margin 80
+    xsize 1200
 
 style game_menu_vscrollbar:
     unscrollable gui.unscrollable
@@ -129,10 +111,12 @@ style game_menu_label:
 
 style game_menu_label_text:
     size gui.title_text_size
-    color "#fff"
+    color gui.interface_text_color
     yalign 0.5
 
 style return_button:
+    anchor (1.0, 0.5)
     xpos gui.navigation_xpos
+    hover_color gui.hover_color
     yalign 1.0
     yoffset -45
