@@ -36,6 +36,10 @@ screen history():
         if not _history_list:
             label _("История диалогов пуста.")
 
+    add Parallax("gg", 0.2):
+        anchor (0.5, 0.5)
+        at move_appear(1168,599, 1558)
+
 
 ## Это определяет, какие теги могут отображаться на экране истории.
 

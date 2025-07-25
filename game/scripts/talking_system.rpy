@@ -1,22 +1,22 @@
 init -1 python:
     import functools as ft
-    
-    character_previous_attributes = {}
+    talk_key = 'talk_'
 
     def get_character_pose(character_name, current_attrs):
         """Автоматическое определение текущей позы персонажа через layeredimage"""
         for attr in current_attrs:
-            talk_attrs = (character_name, attr, f'talk_{attr}')
-            closed_attrs = (character_name, attr, f'closed_{attr}')
-            
-            if renpy.has_image(talk_attrs) and renpy.has_image(closed_attrs):
-                return attr
+            if not attr.startswith(talk_key):
+                talk_attr = f'{talk_key}{attr}'
+                if renpy.has_image((character_name, talk_attr)):
+                    return attr
+            elif attr.startswith(talk_key):
+                base_attr = attr[len(talk_key):]
+                if renpy.has_image((character_name, base_attr)):
+                    return base_attr
         
         return None
 
     def talking_callback(event, character_name, interact=True, **kwargs):
-        global character_previous_attributes
-        
         if not interact:
             return
             
@@ -27,8 +27,8 @@ init -1 python:
                     current_pose = get_character_pose(character_name, current_attrs)
                     
                     if current_pose:
-                        attrs_str = f'{current_pose} talk_{current_pose}'
-                        renpy.show(f'{character_name} {attrs_str}')
+                        talk_attr = f'{talk_key}{current_pose}'
+                        renpy.show(f'{character_name} {talk_attr}')
                     
             elif event == 'slow_done':
                 if renpy.showing(character_name):
@@ -36,52 +36,70 @@ init -1 python:
                     current_pose = get_character_pose(character_name, current_attrs)
                     
                     if current_pose:
-                        attrs_str = f'{current_pose} closed_{current_pose}'
-                        renpy.show(f'{character_name} {attrs_str}')
+                        renpy.show(f'{character_name} {current_pose}')
                         
                 renpy.restart_interaction()
-                
-            elif event == 'end':
-                if renpy.showing(character_name):
-                    current_attrs = renpy.get_attributes(character_name)
-                    current_pose = get_character_pose(character_name, current_attrs)
-                    
-                    if current_pose:
-                        attrs_str = f'{current_pose} closed_{current_pose}'
-                        renpy.show(f'{character_name} {attrs_str}')
 
+
+image alice_standing:
+    Composite(
+        (970, 1080),
+        (0, 0), 'images/test.png',
+        (0, 0), 'images/mouthOpen.png'
+    )
+
+image alice_standing_mouth_closed:
+    Composite(
+        (970, 1080),
+        (0, 0), 'images/test.png',
+        (0, 0), 'images/mouthClosed.png'
+    )
+
+image alice_sitting:
+    Composite(
+        (970, 1000),
+        (0, 0), 'images/test_sit.png',
+        (0, 0), 'images/mouthOpen_sit.png'
+    )
 
 image alice_standing_mouth_talk:
     choice:
-        'images/mouthOpen.png'
+        'alice_standing'
         pause 0.1
-        'images/mouthClosed.png'
+        'alice_standing_mouth_closed'
         pause 0.15
     repeat
 
-
 image alice_sitting_mouth_talk:
     choice:
-        'images/mouthOpen_sit.png'
+        'alice_sitting'
         pause 0.1
         'images/mouthClosed_sit.png'
         pause 0.15
     repeat
 
-layeredimage alice:    
+image izumi_talk_stand:
+    'images/izumi/1.png'
+    pause 0.1
+    'images/izumi/2.png'
+    pause 0.1
+    'images/izumi/3.png'
+    pause 0.1
+    repeat
+
+layeredimage izumi:
     group pose:
         attribute standing default:
-            'images/test.png'
+            'images/izumi/3.png'
+        attribute talk_standing:
+            'izumi_talk_stand'
+
+layeredimage alice:
+    group pose:
+        attribute standing default:
+            'alice_standing'
         attribute sitting:
-            'images/test_sit.png'
-    
-    group mouth:
-        attribute silence default:
-            'images/mouthClosed.png'
-        attribute closed_standing:
-            'images/mouthClosed.png'
-        attribute closed_sitting:
-            'images/mouthClosed_sit.png'
+            'alice_sitting'
         attribute talk_standing:
             'alice_standing_mouth_talk'
         attribute talk_sitting:
@@ -89,3 +107,6 @@ layeredimage alice:
 
 define alice = Character('Алиса', color='#ffb3ba', image='alice',
                         callback=ft.partial(talking_callback, character_name='alice'))
+
+define izumi = Character('Изуми', color='#ffb3ba', image='izumi',
+                        callback=ft.partial(talking_callback, character_name='izumi'))

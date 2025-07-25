@@ -111,6 +111,10 @@ screen file_slots(title):
                             action DownloadSync()
                             xalign 0.5
 
+    add Parallax("hikaru", 0.2):
+        anchor (0.5, 0.5)
+        at move_appear(959,641)
+
 
 style page_label is gui_label
 style page_label_text is gui_label_text

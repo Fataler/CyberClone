@@ -141,14 +141,14 @@ define config.window_hide_transition = Dissolve(.2)
 ## в то время как любая другая цифра — это количество символов, печатаемых в
 ## секунду.
 
-default preferences.text_cps = 80
+default preferences.text_cps = 60
 
 ## Стандартная задержка авточтения. Большие значения означают долгие ожидания, а
 ## от 0 до 30 — вполне допустимый диапазон.
 
 default preferences.afm_time = 15
 
-define config.default_text_cps = 80
+define config.default_text_cps = 60
 define config.default_afm_time = 15
 
 ## Максимальное количество страниц сохранений

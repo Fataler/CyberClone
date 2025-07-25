@@ -104,6 +104,13 @@ screen achievements_screen():
                                     text ach.name style "achievement_name"
                                     text ach.description style "achievement_description"
 
+
+    add Parallax("kazumi", 1.1):
+        anchor (0.5, 0.5)
+        xpos 840
+        ypos 804
+        at move_appear(840,804)
+
 style achievements_stats_frame:
     background Frame("gui/frame.png", 40, 40)
     padding (20, 20)

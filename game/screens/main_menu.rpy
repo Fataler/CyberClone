@@ -1,21 +1,25 @@
 ## Экран главного меню
 init:
     image bg_white = Solid("#ffffff")
-    image menu_background_image:
-        "gui/menu_bg.png"
-        anchor (0.5, 0.5)
-        xsize 1.10
-        ysize 1.10
-    image menu_tower_image:
-        "gui/menu_tower.png"
-        anchor (0.5, 0.5)
-        xsize 1.25
-        ysize 1.25
-    image menu_clouds_image:
-        "gui/menu_clouds.png"
-        anchor (0.5, 0.5)
-        xsize 1.35
-        ysize 1.35
+    image gg:
+        "gui/menu/gg.png"
+    
+    image umi:
+        "gui/menu/umi.png"
+
+    image hikaru:
+        "gui/menu/hikaru.png"
+    
+    image kazumi:
+        "gui/menu/kazumi.png"
+
+    image den:
+        "gui/menu/den.png"
+
+transform parametric_appear(delay=0.5):
+    alpha 0
+    pause delay
+    linear 0.3 alpha 1
 
 screen main_menu():
     on "show" action Function(renpy.play, sfx_chains, channel="sfx")
@@ -27,21 +31,40 @@ screen main_menu():
     add "bg_menu_main"
     #add Parallax("menu_clouds_image", 15)
 
-    add Parallax("gui/menu/logo.png", 0.2):
+    add Parallax("gui/menu/logo.png", 0.1):
         anchor (0.5, 0.5)
         xpos 423
         ypos 340
-        
 
-    add Parallax("gui/menu/guys_shadow.png", 0.8):
+    add Parallax("gui/menu/guys_shadow.png", 0.5):
         anchor (0.5, 0.5)
-        xpos 1191
-        ypos 682
+        xpos 1140
+        ypos 590
+    
+    add Parallax("umi", 0.6):
+        anchor (0.5, 0.5)
+        xpos 1368
+        ypos 688
+    
+    add Parallax("hikaru", 0.6):
+        anchor (0.5, 0.5)
+        xpos 959
+        ypos 641
+    
+    add Parallax("gg", 0.9):
+        anchor (0.5, 0.5)
+        xpos 1168
+        ypos 599
 
-    add Parallax("gui/menu/guys.png", 0.3):
+    add Parallax("kazumi", 1.1):
         anchor (0.5, 0.5)
-        xpos 1131
-        ypos 680
+        xpos 840
+        ypos 804
+    
+    add Parallax("den", 1.1):
+        anchor (0.5, 0.5)
+        xpos 1370
+        ypos 762
 
     imagebutton:
         idle Transform("avatar_circle", size=(160, 160))
@@ -57,31 +80,30 @@ screen main_menu():
     #spacing gui.navigation_spacing
     
     textbutton _("Начать") action Start():
-        xpos 1171
-        ypos 281
-        text_size 93
+        xpos 1209
+        ypos 173
+        text_size 90
 
     textbutton _("Загрузить") action ShowMenu("load"):
-        xpos 640
-        ypos 610
-        text_size 59
-
+        xpos 646
+        ypos 559
+        text_size 55
         
     
     textbutton _("Достижения") action ShowMenu("achievements_screen"):
-        xpos 500
-        ypos 851
-        text_size 59
+        xpos 537
+        ypos 749
+        text_size 55
 
     textbutton _("Настройки") action ShowMenu("preferences"):
-        xpos 1636
-        ypos 481
-        text_size 59
+        xpos 1666
+        ypos 344
+        text_size 55
 
     textbutton _("Об игре") action [Function(unlock_achievement, THANK_YOU),ShowMenu("about")]:
-        xpos 1655
-        ypos 797
-        text_size 59
+        xpos 1702
+        ypos 699
+        text_size 55
 
     if renpy.variant("pc"):
         textbutton _("Выход") action Quit(confirm=not main_menu):

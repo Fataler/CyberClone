@@ -2,11 +2,23 @@
 
 label test_talking_system:
     "Тестирование системы говорящих персонажей"
+
+    show izumi standing
+    izumi "Привет!"
+    izumi "Сейчас я в стоячей позе."
+
+    izumi "Я говорю."
+    izumi "Сейчас и еще немного говорю."
+    izumi "А теперь я рассказываю очень длинный длинный текст! Много букв разных!"
+
+    izumi "Договорила и ушла."
+    
     
     # Алиса стоит
     show alice standing
     alice "Привет! Я стою."
     alice "Сейчас я в стоячей позе."
+    hide izumi
     
     # Алиса садится
     show alice sitting

@@ -25,6 +25,11 @@ screen about():
                 text "[gui.about!t]\n"
 
             text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
+        
+    add Parallax("den", 0.2):
+        anchor (0.5, 0.5)
+        at move_appear(1370,762, 1548)
+
 
 
 style about_label is gui_label

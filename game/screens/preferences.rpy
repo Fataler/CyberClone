@@ -200,6 +200,10 @@ screen preferences():
             action Function(reset_preferences)
             tooltip "Сбросить настройки\nна значения по умолчанию"
 
+    add Parallax("umi", 0.2):
+        anchor (0.5, 0.5)        
+        at move_appear(1368, 688)
+
 
     $ tooltip = GetTooltip()
 
@@ -222,6 +226,11 @@ screen preferences():
                 font gui.interface_text_font
                 color gui.interface_text_color
                 size 35
+
+transform move_appear(from_x=0, from_y=0, to_x=1588,to_y=588):
+    xpos 1368
+    ypos 688
+    ease 0.5 alpha 1 xpos to_x ypos to_y
 
 init -2 python:
     def get_mouse():
