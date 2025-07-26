@@ -14,8 +14,8 @@ screen history():
 
         for h in _history_list:
             window:
-                has vbox  # Используем vbox вместо fixed
-                spacing 10  # Отступ между именем и текстом
+                has vbox
+                spacing 10
 
                 if h.who:
                     label h.who:
@@ -57,7 +57,7 @@ style history_label_text is gui_label_text
 
 style history_window:
     xfill True
-    ysize None  # Убираем фиксированную высоту
+    ysize None
     padding (10, 20)
 
 style history_name:
@@ -69,7 +69,6 @@ style history_text:
     xpos 70
     xsize 900
     size 40
-    #font gui.text_font
 
 style history_name_text:
     min_width gui.history_name_width

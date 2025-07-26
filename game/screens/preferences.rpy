@@ -46,6 +46,7 @@ screen preferences():
     tag menu
 
     use game_menu(_("Настройки"), scroll="viewport"):
+        style_prefix "pref"
 
         vbox:
             xfill True
@@ -55,13 +56,13 @@ screen preferences():
             vbox:
                 xalign 0.5
                 spacing 10
-                label _("Режим экрана"):
+                xsize 900
+                label _("{u}Режим экрана{/u}"):
                     xalign 0.5
 
                 hbox:
                     xalign 0.5
-                    box_wrap True
-                    spacing 20
+                    spacing 30
                     if renpy.variant("pc") or renpy.variant("web"):
                         style_prefix "radio"
                         textbutton _("Оконный") action Preference("display", "window")
@@ -69,130 +70,165 @@ screen preferences():
 
             vbox:
                 xalign 0.5
-                spacing 15
-                label _("Текст"):
+                spacing 20
+                
+                label _("{u}Текст{/u}"):
                     xalign 0.5
-                hbox:
+                
+                vbox:
                     xalign 0.5
-                    spacing 80
-                    xsize 900
-                    vbox:
-                        xalign 0.5
-                        spacing 15
-                        text _("Скорость текста") style "label_bar_text"
-                        text _("Скорость авточтения") style "label_bar_text"
-                    vbox:
-                        xalign 0.5
-                        spacing 15
-                        xsize 525
-                        yoffset 8
-                        bar value Preference("text speed")
-                        bar value Preference("auto-forward time")
-
-            vbox:
-                xfill True
-                xalign 0.5
-                spacing 15
-                text _("Пропускать") style "label_bar_text":
-                    xalign 0.5
-
-                hbox:
-                    xalign 0.5
-                    spacing 20
-                    style_prefix "check"
-                    textbutton _("Прочитанный текст") action Preference("skip", "seen")
-                    textbutton _("Весь текст") action Preference("skip", "all")
-
-            vbox:
-                xalign 0.5
-                spacing 15
-                label _("Звук"):
-                    xalign 0.5
-                hbox:
-                    xalign 0.5
-                    spacing 80
-                    xsize 900
-                    vbox:
-                        xalign 0.5
-                        spacing 15
-                        if config.has_music:
-                            text _("Громкость музыки") style "label_bar_text"
-                        if config.has_sound:
-                            text _("Громкость звуков") style "label_bar_text"
-                        if config.has_voice:
-                            text _("Громкость голоса") style "label_bar_text"
-                    vbox:
-                        xalign 0.5
-                        spacing 15
-                        xsize 525
-                        xoffset 20
-                        yoffset 8
-                        if config.has_music:
-                            hbox:
-                                xalign 0.5
-                                bar value Preference("music volume")
-                                if config.sample_sound:
-                                    textbutton _("Тест") action Play("sound", config.sample_sound)
-                        if config.has_sound:
-                            hbox:
-                                xalign 0.5
-                                bar value Preference("sound volume")
-                                if config.sample_sound:
-                                    textbutton _("Тест") action Play("sound", config.sample_sound)
-                        # if config.has_voice:
-                        #     hbox:
-                        #         xalign 0.5
-                        #         bar value Preference("voice volume")
-                        #         if config.sample_voice:
-                        #             textbutton _("Тест") action Play("voice", config.sample_voice)
-                if config.has_music or config.has_sound or config.has_voice:
+                    spacing 15
+                    
                     hbox:
+                        style "pref_control_hbox"
+                        
+                        text _("Скорость\nтекста"):
+                            style "pref_text_label"
+                            
+                        bar value Preference("text speed"):
+                            style "pref_bar"
+                    
+                    hbox:
+                        style "pref_control_hbox"
+                        
+                        text _("Скорость\nавточтения"):
+                            style "pref_text_label"
+                            
+                            
+                        bar value Preference("auto-forward time"):
+                            style "pref_bar"
+
+                    vbox:
                         xalign 0.5
-                        style_prefix "check"
-                        textbutton _("Без звука") action Preference("all mute", "toggle")
+                        spacing 15
+                        
+                        label _("{u}Пропускать{/u}"):
+                            xalign 0.5
+
+                        hbox:
+                            xalign 0.5
+                            spacing 30
+                            style_prefix "check"
+                            
+                            textbutton _("Прочитанный текст"):
+                                action Preference("skip", "seen")
+                                
+                            textbutton _("Весь текст"):
+                                action Preference("skip", "all")
 
             vbox:
                 xalign 0.5
-                spacing 10
-                label _("Специальные возможности"):
+                spacing 20
+                
+                label _("{u}Звук{/u}"):
                     xalign 0.5
-                hbox:
+                
+                # Слайдеры громкости
+                vbox:
                     xalign 0.5
-                    box_wrap True
+                    spacing 15
+                    
+                    if config.has_music:
+                        hbox:
+                            style "pref_control_hbox"
+                            
+                            text _("Громкость музыки"):
+                                style "pref_text_label"
+                                
+                            bar value Preference("music volume"):
+                                style "pref_bar"
+                                
+                            if config.sample_sound:
+                                textbutton _("Тест"):
+                                    action Play("sound", config.sample_sound)
+                                    xsize 100
+                                    
+                    if config.has_sound:
+                        hbox:
+                            style "pref_control_hbox"
+                            
+                            text _("Громкость звуков"):
+                                style "pref_text_label"
+                                
+                            bar value Preference("sound volume"):
+                                style "pref_bar"
+                                
+                            if config.sample_sound:
+                                textbutton _("Тест"):
+                                    action Play("sound", config.sample_sound)
+                                    xsize 100
+                
+                    # Кнопка "Без звука"
+                    if config.has_music or config.has_sound or config.has_voice:
+                        vbox:
+                            xalign 0.5
+                            
+                            style_prefix "check"
+                            textbutton _("Без звука"):
+                                action Preference("all mute", "toggle")
+                                xalign 0.5
+
+            vbox:
+                xalign 0.5
+                spacing 20
+                
+                label _("{u}Специальные возможности{/u}"):
+                    xalign 0.5
+                
+                # Настройки шрифта и контрастности в отдельных строках
+                vbox:
+                    xalign 0.5
                     spacing 25
                     style_prefix "radio"
+                    
+                    # Секция шрифта
                     vbox:
                         xalign 0.5
-                        spacing 10
-                        label _("Шрифт"):
+                        spacing 15
+                        
+                        label _("{u}Шрифт{/u}"):
                             xalign 0.5
 
-                        textbutton _("Оригинальный"):
-                            action [Preference("font transform", None), 
+                        hbox:
+                            xalign 0.5
+                            spacing 30
+                            
+                            textbutton _("Оригинальный"):
+                                action [
+                                    Preference("font transform", None), 
                                     SetField(persistent, "current_font", "default"),
-                                    Function(update_font_size)]
-                            style_suffix "radio_button"
+                                    Function(update_font_size)
+                                ]
+                                style_suffix "radio_button"
 
-                        textbutton _("DejaVu Sans"):
-                            action [SetField(persistent, "current_font", "dejavusans"),
+                            textbutton _("DejaVu Sans"):
+                                action [
+                                    SetField(persistent, "current_font", "dejavusans"),
                                     Function(update_font_size),
-                                    Preference("font transform", "dejavusans")]
-                            style_suffix "radio_button"
-                            tooltip "Шрифт, используемый в \nRen'Py по умолчанию"
-
+                                    Preference("font transform", "dejavusans")
+                                ]
+                                style_suffix "radio_button"
+                                tooltip "Шрифт, используемый в \nRen'Py по умолчанию"
+                    
+                    # Секция контрастности
                     vbox:
                         xalign 0.5
-                        spacing 10
-                        label _("High Contrast Text"):
+                        spacing 15
+                        
+                        label _("{u}Высококонтрастный текст{/u}"):
                             xalign 0.5
 
-                        textbutton _("Enable"):
-                            action Preference("high contrast text", "enable")
-                            style_suffix "radio_button"
+                        hbox:
+                            xalign 0.5
+                            spacing 30
+                            
+                            textbutton _("Enable"):
+                                action Preference("high contrast text", "enable")
+                                style_suffix "radio_button"
 
-                        textbutton _("Disable"):
-                            action Preference("high contrast text", "disable")
-                            style_suffix "radio_button"
+                            textbutton _("Disable"):
+                                action Preference("high contrast text", "disable")
+                                style_suffix "radio_button"
 
     fixed:
         textbutton _("Сброс"):
@@ -222,10 +258,7 @@ screen preferences():
             ypos my
             background Frame("gui/frame.png", gui.frame_borders)
             padding (20, 10)
-            text tooltip:
-                font gui.interface_text_font
-                color gui.interface_text_color
-                size 35
+            text tooltip style "tooltip"
 
 transform move_appear(from_x=0, from_y=0, to_x=1588,to_y=588):
     xpos 1368
@@ -239,19 +272,24 @@ init -2 python:
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
-style pref_vbox is vbox
 
 style radio_label is pref_label
 style radio_label_text is pref_label_text
 style label_bar_text is pref_label_text
 style radio_button is gui_button
-style radio_button_text is gui_button_text
+
+style radio_button_text is gui_button_text:
+    text_align 0.5
+    yalign 0.5
 style radio_vbox is pref_vbox
 
 style check_label is pref_label
 style check_label_text is pref_label_text
-style check_button is gui_button
-style check_button_text is gui_button_text
+style check_button is gui_button:
+    yalign 0.5
+style check_button_text is gui_button_text:
+    text_align 0.5
+    yalign 0.5
 style check_vbox is pref_vbox
 
 style slider_label is pref_label
@@ -266,33 +304,50 @@ style mute_all_button_text is check_button_text
 
 style pref_label:
     top_margin gui.pref_spacing
-    bottom_margin 3
+    bottom_margin 10
 
 style pref_label_text:
     yalign 1.0
     font gui.interface_text_font
     color gui.interface_text_color
     text_align 0.5
+    size 42
 
 style label_bar_text:
     color gui.interface_text_color
     font gui.interface_text_font
+    text_align 0.5
+    yalign 0.5
+
+style settings_text is label_bar_text:
+    size 30
+    bold False
 
 style pref_vbox:
-    xsize 338
+    xsize 900
+
+style pref_section_vbox:
+    spacing 20
+    xalign 0.5
+
+style pref_control_hbox:
+    spacing 40
+    xalign 0.5
+    xsize 800
+
+style pref_bar is gui_bar:
+    xsize 380
+    yalign 0.5
+
+style pref_text_label is settings_text:
+    xsize 280
+    text_align 0.0
+    yalign 0.5
 
 style tooltip:
-    padding (10, 5)
-    background "#222222"
-    xalign 0.5
-    yalign 1.0
-    yoffset -50
-
-style tooltip_text:
-    size 106
-    color "#ffffff"
-    text_align 0.5
-    xalign 0.5
+    size 35
+    font gui.interface_text_font
+    color "#f4e5d0"
 
 style reset_button:
     anchor (1.0, 0.5)

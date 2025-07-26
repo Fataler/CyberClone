@@ -61,7 +61,7 @@ screen main_menu():
         xpos 840
         ypos 804
     
-    add Parallax("den", 1.1):
+    add Parallax("den", 1.2):
         anchor (0.5, 0.5)
         xpos 1370
         ypos 762
