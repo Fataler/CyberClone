@@ -1,9 +1,9 @@
 init -1 python:
     import functools as ft
+    
     talk_key = 'talk_'
 
-    def get_character_pose(character_name, current_attrs):
-        """Автоматическое определение текущей позы персонажа через layeredimage"""
+    def get_character_pose(character_name, current_attrs): #legacy
         for attr in current_attrs:
             if not attr.startswith(talk_key):
                 talk_attr = f'{talk_key}{attr}'
@@ -16,12 +16,13 @@ init -1 python:
         
         return None
 
-    def talking_callback(event, character_name, interact=True, **kwargs):
+    def talking_callback(event, character_name, interact=True, **kwargs): #legacy
+        """Callback для персонажей с talk_pose структурой (alice, izumi)"""
         if not interact:
             return
             
         if preferences.text_cps > 0:
-            if event == 'show':
+            if event == 'begin':
                 if renpy.showing(character_name):
                     current_attrs = renpy.get_attributes(character_name)
                     current_pose = get_character_pose(character_name, current_attrs)
@@ -30,13 +31,28 @@ init -1 python:
                         talk_attr = f'{talk_key}{current_pose}'
                         renpy.show(f'{character_name} {talk_attr}')
                     
-            elif event == 'slow_done':
+            elif event == 'slow_done' or event == 'end':
                 if renpy.showing(character_name):
                     current_attrs = renpy.get_attributes(character_name)
                     current_pose = get_character_pose(character_name, current_attrs)
                     
                     if current_pose:
                         renpy.show(f'{character_name} {current_pose}')
+                        
+                renpy.restart_interaction()
+
+    def layered_talking_callback(event, character_name, interact=True, **kwargs):
+        if not interact:
+            return
+            
+        if preferences.text_cps > 0:
+            if event == 'begin' or event == 'show':
+                if renpy.showing(character_name):
+                    renpy.show(f'{character_name} talk')
+                    
+            elif event == 'slow_done' or event == 'end':
+                if renpy.showing(character_name):
+                    renpy.show(f'{character_name} -talk')
                         
                 renpy.restart_interaction()
 
@@ -107,6 +123,3 @@ layeredimage alice:
 
 define alice = Character('Алиса', color='#ffb3ba', image='alice',
                         callback=ft.partial(talking_callback, character_name='alice'))
-
-define izumi = Character('Изуми', color='#ffb3ba', image='izumi',
-                        callback=ft.partial(talking_callback, character_name='izumi'))

@@ -75,46 +75,42 @@ screen preferences():
                 label _("{u}Текст{/u}"):
                     xalign 0.5
                 
+                vpgrid:
+                    cols 2
+                    rows 2
+                    xspacing 250
+                    xsize 900
+                        
+                    text _("Скорость\nтекста"):
+                        style "pref_text_label"
+                        
+                    bar value Preference("text speed"):
+                        style "pref_bar"
+                        
+                    text _("Скорость\nавточтения"):
+                        style "pref_text_label"
+                        
+                        
+                    bar value Preference("auto-forward time"):
+                        style "pref_bar"
+
                 vbox:
                     xalign 0.5
                     spacing 15
                     
-                    hbox:
-                        style "pref_control_hbox"
-                        
-                        text _("Скорость\nтекста"):
-                            style "pref_text_label"
-                            
-                        bar value Preference("text speed"):
-                            style "pref_bar"
-                    
-                    hbox:
-                        style "pref_control_hbox"
-                        
-                        text _("Скорость\nавточтения"):
-                            style "pref_text_label"
-                            
-                            
-                        bar value Preference("auto-forward time"):
-                            style "pref_bar"
-
-                    vbox:
+                    label _("{u}Пропускать{/u}"):
                         xalign 0.5
-                        spacing 15
-                        
-                        label _("{u}Пропускать{/u}"):
-                            xalign 0.5
 
-                        hbox:
-                            xalign 0.5
-                            spacing 30
-                            style_prefix "check"
+                    hbox:
+                        xalign 0.5
+                        spacing 30
+                        style_prefix "check"
+                        
+                        textbutton _("Прочитанный текст"):
+                            action Preference("skip", "seen")
                             
-                            textbutton _("Прочитанный текст"):
-                                action Preference("skip", "seen")
-                                
-                            textbutton _("Весь текст"):
-                                action Preference("skip", "all")
+                        textbutton _("Весь текст"):
+                            action Preference("skip", "all")
 
             vbox:
                 xalign 0.5
@@ -124,29 +120,25 @@ screen preferences():
                     xalign 0.5
                 
                 # Слайдеры громкости
-                vbox:
-                    xalign 0.5
-                    spacing 15
+                vpgrid:
+                    cols 2
+                    rows 2
+                    xspacing 250
+                    xsize 900
                     
                     if config.has_music:
-                        hbox:
-                            style "pref_control_hbox"
+                        text _("Громкость музыки"):
+                            style "pref_text_label"
                             
-                            text _("Громкость музыки"):
-                                style "pref_text_label"
-                                
-                            bar value Preference("music volume"):
-                                style "pref_bar"
-                                
-                            if config.sample_sound:
-                                textbutton _("Тест"):
-                                    action Play("sound", config.sample_sound)
-                                    xsize 100
+                        bar value Preference("music volume"):
+                            style "pref_bar"
+                            
+                        if config.sample_sound:
+                            textbutton _("Тест"):
+                                action Play("sound", config.sample_sound)
+                                xsize 100
                                     
                     if config.has_sound:
-                        hbox:
-                            style "pref_control_hbox"
-                            
                             text _("Громкость звуков"):
                                 style "pref_text_label"
                                 
@@ -158,15 +150,15 @@ screen preferences():
                                     action Play("sound", config.sample_sound)
                                     xsize 100
                 
-                    # Кнопка "Без звука"
-                    if config.has_music or config.has_sound or config.has_voice:
-                        vbox:
+                # Кнопка "Без звука"
+                if config.has_music or config.has_sound or config.has_voice:
+                    vbox:
+                        xalign 0.5
+                        
+                        style_prefix "check"
+                        textbutton _("Без звука"):
+                            action Preference("all mute", "toggle")
                             xalign 0.5
-                            
-                            style_prefix "check"
-                            textbutton _("Без звука"):
-                                action Preference("all mute", "toggle")
-                                xalign 0.5
 
             vbox:
                 xalign 0.5

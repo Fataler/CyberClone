@@ -3,6 +3,24 @@
 label test_talking_system:
     "Тестирование системы говорящих персонажей"
 
+    show taida idle at center:
+        yalign 0.5
+    taida "Привет!"
+    show taida happy
+    taida "asdfasdfsadfasdfasdfasdfsadfasdfasdfsadf asdfasdasdasd"
+    taida "Я говорю."
+    show taida sad
+    taida "Сейчас и еще немного говорю."
+    taida "А теперь я рассказываю очень длинный длинный текст! Много букв разных!"
+    show taida thinking at right:
+        yalign 0.5
+
+    taida "Я думаю."
+    taida "Я думаю о том, что я думаю."
+    taida "Я думаю о том, что я думаю о том, что я думаю."
+    taida "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
+    taida "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю. Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
+
     show izumi standing
     izumi "Привет!"
     izumi "Сейчас я в стоячей позе."
@@ -48,7 +66,7 @@ label test_talking_system:
 
 label test_binary_text:
     show bg_white
-    $ set_textbox_robot()
+    $ set_character_dzinzo()
     robot_bin "Привет, мир!"
     robot_bin "Произвожу проверку состояния системы..."
     robot_bin "Состояние аккумулятора: 99 процентов. Циклов заряда: 2"
@@ -68,7 +86,7 @@ label test_binary_text:
 
     robot_bin "Несмотря на то, что в мою память заложено много баз данных, некоторые вещи я не могу объяснить."
 
-    $ set_textbox_normal()
+    $ set_character_taida()
     robot_bin "Предположение: стоит прекратить транслировать бинарный текст в логи."
     robot_bin "Это усложнит их чтение и анализ, если они будут использоваться в будущем."
     robot_bin "Произвожу правку конфигурации Ввода и вывода."
