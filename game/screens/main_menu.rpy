@@ -17,7 +17,7 @@ init:
         "gui/menu/den.png"
 
     image gg_shadow:
-        "gui/menu/Shadow_Den.png"
+        "gui/menu/Shadow_Taida_Dzindzo.png"
 
     image umi_shadow:
         "gui/menu/Shadow_Umi.png"
