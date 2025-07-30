@@ -16,6 +16,61 @@ init:
     image den:
         "gui/menu/den.png"
 
+    image gg_shadow:
+        "gui/menu/Shadow_Den.png"
+
+    image umi_shadow:
+        "gui/menu/Shadow_Umi.png"
+
+    image hikaru_shadow:
+        "gui/menu/Shadow_Hikaru.png"
+    
+    image kazumi_shadow:
+        "gui/menu/Shadow_Kazumi.png"
+
+    image den_shadow:
+        "gui/menu/Shadow_Den.png"
+
+    image gg_chirkash:
+        "gui/menu/Chirkash_Taida_Dzindzo_1.png"
+        pause 0.1
+        "gui/menu/Chirkash_Taida_Dzindzo_2.png"
+        pause 0.1
+        "gui/menu/Chirkash_Taida_Dzindzo_3.png"
+        repeat
+    
+    image umi_chirkash:
+        "gui/menu/Chirkash_Umi_1.png"
+        pause 0.1
+        "gui/menu/Chirkash_Umi_2.png"
+        pause 0.1
+        "gui/menu/Chirkash_Umi_3.png"
+        repeat
+
+    image hikaru_chirkash:
+        "gui/menu/Chirkash_Hikaru_1.png"
+        pause 0.1
+        "gui/menu/Chirkash_Hikaru_2.png"
+        pause 0.1
+        "gui/menu/Chirkash_Hikaru_3.png"
+        repeat
+    
+    image kazumi_chirkash:
+        "gui/menu/Chirkash_Kazumi_1.png"
+        pause 0.1
+        "gui/menu/Chirkash_Kazumi_2.png"
+        pause 0.1
+        "gui/menu/Chirkash_Kazumi_3.png"
+        repeat
+
+    image den_chirkash:
+        "gui/menu/Chirkashi_Den_1.png"
+        pause 0.1
+        "gui/menu/Chirkashi_Den_2.png"
+        pause 0.1
+        "gui/menu/Chirkashi_Den_3.png"
+        repeat
+
 transform parametric_appear(delay=0.5):
     alpha 0
     pause delay
