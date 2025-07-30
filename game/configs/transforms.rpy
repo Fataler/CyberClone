@@ -22,7 +22,7 @@ transform face_left:
 transform face_right:
     xzoom 1.0
 
-transform delay_appear(delay = 1, time = 0.5)
+transform delay_appear(delay = 1.0, time = 0.5):
     alpha 0
     pause delay
     linear time alpha 1.0
