@@ -57,37 +57,37 @@ layeredimage taida:
 
     group emotion if_any "idle":
         attribute neutral default: #нейтральное
-            'images/taida/GG_mini_5.png'
+            'images/taida/Taida_mini_neutral.png'
         attribute cry: #плач
-            'images/taida/GG_mini_1.png'
+            'images/taida/Taida_mini_cry.png'
         attribute dream: #сон
-            'images/taida/GG_mini_2.png'
+            'images/taida/Taida_mini_dream.png'
         attribute surprised: #удивлен
-            'images/taida/GG_mini_3.png'
+            'images/taida/Taida_mini_surprised.png'
         attribute sad_angry: #грусть + злость
-            'images/taida/GG_mini_4.png'
+            'images/taida/Taida_mini_sad_angry.png'
         attribute angry: #злость
-            'images/taida/GG_mini_6.png'
+            'images/taida/Taida_mini_angry.png'
         attribute sad: #печаль
-            'images/taida/GG_mini_7.png'
+            'images/taida/Taida_mini_sad.png'
         attribute fear: #страх
-            'images/taida/GG_mini_8.png'
+            'images/taida/Taida_mini_fear.png'
         attribute crazy: #безумие
-            'images/taida/GG_mini_9.png'
+            'images/taida/Taida_mini_crazy.png'
         attribute happy: #счастье
-            'images/taida/GG_mini_10.png'
+            'images/taida/Taida_mini_happy.png'
         attribute tricky: #хитрость
-            'images/taida/GG_mini_11.png'
+            'images/taida/Taida_mini_tricky.png'
         attribute neutral_happy: #нейтральное счастье
-            'images/taida/GG_mini_12.png'
+            'images/taida/Taida_mini_neutral_happy.png'
         attribute thinking: #думаю
-            'images/taida/GG_mini_13.png'
+            'images/taida/Taida_mini_thinking.png'
         attribute asharasen: #ашарашен
-            'images/taida/GG_mini_14.png'
+            'images/taida/Taida_mini_asharasen.png'
         attribute calm: #спокойно
-            'images/taida/GG_mini_15.png'
+            'images/taida/Taida_mini_calm.png'
         attribute depressed: #депрессия
-            'images/taida/GG_mini_16.png'
+            'images/taida/Taida_mini_depressed.png'
 
 
     group emotion if_any "thinking":
