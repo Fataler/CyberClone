@@ -51,16 +51,16 @@ define taida = Character('Тайда', color='#4a9eff', image='taida',
 layeredimage taida:
     group pose:
         attribute idle default:
-            'images/taida/GG_mini_1.png'
+            'images/taida/Taida_mini_neutral.png'
         attribute thinking:
-            'images/taida/GG_mini_thinking.png'
+            'images/taida/Taida_mini_thinking.png'
 
     group emotion if_any "idle":
-        attribute neutral default: #нейтральное
+        attribute neutral default: #нецтральный
             'images/taida/Taida_mini_neutral.png'
-        attribute cry: #плач
+        attribute cry: #плачет
             'images/taida/Taida_mini_cry.png'
-        attribute dream: #сон
+        attribute dream: #мечтательный
             'images/taida/Taida_mini_dream.png'
         attribute surprised: #удивлен
             'images/taida/Taida_mini_surprised.png'
@@ -68,25 +68,25 @@ layeredimage taida:
             'images/taida/Taida_mini_sad_angry.png'
         attribute angry: #злость
             'images/taida/Taida_mini_angry.png'
-        attribute sad: #печаль
+        attribute sad: #печальный
             'images/taida/Taida_mini_sad.png'
-        attribute fear: #страх
+        attribute fear: #испуганный
             'images/taida/Taida_mini_fear.png'
         attribute crazy: #безумие
             'images/taida/Taida_mini_crazy.png'
-        attribute happy: #счастье
+        attribute happy: #счастливый
             'images/taida/Taida_mini_happy.png'
         attribute tricky: #хитрость
             'images/taida/Taida_mini_tricky.png'
-        attribute neutral_happy: #нейтральное счастье
+        attribute neutral_happy: #нейтральный счастливый
             'images/taida/Taida_mini_neutral_happy.png'
         attribute thinking: #думаю
             'images/taida/Taida_mini_thinking.png'
         attribute asharasen: #ашарашен
             'images/taida/Taida_mini_asharasen.png'
-        attribute calm: #спокойно
+        attribute calm: #спокойный
             'images/taida/Taida_mini_calm.png'
-        attribute depressed: #депрессия
+        attribute depressed: #депрессивный
             'images/taida/Taida_mini_depressed.png'
 
 
