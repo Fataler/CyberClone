@@ -3,65 +3,53 @@
 label test_talking_system:
     "Тестирование системы говорящих персонажей"
 
-    show taida idle at center:
+    show i neutral
+    i "izumi neutral"
+    show i angry
+    i "izumi angry"
+    show i asharasen
+    i "izumi asharasen"
+    show i calm
+    i "izumi calm"
+    show i dreamy
+    i "izumi dreamy"
+    show i interested
+    i "izumi interested"
+    show i neutral_2
+    i "izumi neutral_2"
+    show i thinking
+    i "izumi thinking"
+    show i tricky
+    i "izumi tricky"
+    show i very_angry
+    i "izumi very_angry"
+    
+    show dad
+    dad "Привет!"
+    dad "Как дела?"
+    show mom
+    mom "Привет!"
+    mom "Как дела?"
+
+    show t idle at center:
         yalign 0.5
-    taida "Привет!"
-    show taida happy
-    taida "asdfasdfsadfasdfasdfasdfsadfasdfasdfsadf asdfasdasdasd"
-    taida "Я говорю."
-    show taida sad
-    taida "Сейчас и еще немного говорю."
-    taida "А теперь я рассказываю очень длинный длинный текст! Много букв разных!"
-    show taida thinking at right:
+    t "Привет!"
+    show t happy
+    t "asdfasdfsadfasdfasdfasdfsadfasdfasdfsadf asdfasdasdasd"
+    t "Я говорю."
+    show t sad
+    t "Сейчас и еще немного говорю."
+    t "А теперь я рассказываю очень длинный длинный текст! Много букв разных!"
+    show t thinking at right:
         yalign 0.5
 
-    taida "Я думаю."
-    taida "Я думаю о том, что я думаю."
-    taida "Я думаю о том, что я думаю о том, что я думаю."
-    taida "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
-    taida "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю. Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
-
-    show izumi standing
-    izumi "Привет!"
-    izumi "Сейчас я в стоячей позе."
-
-    izumi "Я говорю."
-    izumi "Сейчас и еще немного говорю."
-    izumi "А теперь я рассказываю очень длинный длинный текст! Много букв разных!"
-
-    izumi "Договорила и ушла."
+    t "Я думаю."
+    t "Я думаю о том, что я думаю."
+    t "Я думаю о том, что я думаю о том, что я думаю."
+    t "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
+    t "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю. Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
     
-    
-    # Алиса стоит
-    show alice standing
-    alice "Привет! Я стою."
-    alice "Сейчас я в стоячей позе."
-    hide izumi
-    
-    # Алиса садится
-    show alice sitting
-    alice "А теперь я села."
-    alice "Теперь я сижу."
-    
-    # Смена поз
-    show alice standing
-    alice "Встаю."
-
-    "Тестовая фраза рассказчика"
-    
-    show alice sitting  
-    alice "Сажусь."
-    
-    show alice standing
-    alice "И снова встаю."
-    
-    # Финал
-    show alice sitting
-    alice "Последний раз сажусь."
-    alice "Тест завершён."
-    
-    hide alice
-    
+    "Конец"
     return
 
 label test_binary_text:

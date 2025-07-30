@@ -49,12 +49,10 @@ init python:
             for anim in self.click_animations[:]:
                 anim['timer'] -= dt
                 
-                # Проверяем и удаляем сразу если время вышло
                 if anim['timer'] <= 0:
                     self.click_animations.remove(anim)
                 else:
-                    # Обновляем только если анимация еще активна
-                    anim['alpha'] = anim['timer']  # Используем timer напрямую вместо max
+                    anim['alpha'] = anim['timer']
                     anim['y'] -= dt * 100
                 
         def check_score_messages(self):

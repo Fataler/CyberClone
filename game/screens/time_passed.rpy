@@ -16,8 +16,8 @@ transform show_screen_transform:
 transform loading_move:
     xzoom -1.0
     parallel:
-        xpos -128 yalign 0.95  # начальная позиция слева
-        linear run_time xpos 1920+128   # движение вправо за 7 секунд
+        xpos -128 yalign 0.95
+        linear run_time xpos 1920+128
     parallel:
         block:
             ease 1 yoffset 20
