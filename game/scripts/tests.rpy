@@ -2,6 +2,62 @@
 
 label test_talking_system:
     "Тестирование системы говорящих персонажей"
+    # group emotion:
+    #     attribute neutral default:
+    #         "images/Izumi/Izumi_neutral.png"
+    #     attribute angry:
+    #         "images/Izumi/Izumi_angry.png"
+    #     attribute asharasen:
+    #         "images/Izumi/Izumi_asharasen.png"
+    #     attribute calm:
+    #         "images/Izumi/Izumi_calm.png"
+    #     attribute dreamy:
+    #         "images/Izumi/Izumi_dreamy.png"
+    #     attribute interested:
+    #         "images/Izumi/Izumi_interested.png"
+    #     attribute neutral_2:
+    #         "images/Izumi/Izumi_neutral_2.png"
+    #     attribute neutral_3:
+    #         "images/Izumi/Izumi_neutral_3.png"
+    #     attribute smug:
+    #         "images/Izumi/Izumi_smug.png"
+    #     attribute thinking:
+    #         "images/Izumi/Izumi_thinking.png"
+    #     attribute tricky:
+    #         "images/Izumi/Izumi_tricky.png"
+    #     attribute very_angry:
+    #         "images/Izumi/Izumi_very_angry.png"
+    show i neutral
+    i "izumi neutral"
+    show i angry
+    i "izumi angry"
+    show i asharasen
+    i "izumi asharasen"
+    show i calm
+    i "izumi calm"
+    show i dreamy
+    i "izumi dreamy"
+    show i interested
+    i "izumi interested"
+    show i neutral_2
+    i "izumi neutral_2"
+    show i thinking
+    i "izumi thinking"
+    show i tricky
+    i "izumi tricky"
+    show i very_angry
+    i "izumi very_angry"
+
+
+    
+    show dad
+    dad "Привет!"
+    dad "Как дела?"
+    show mom
+    mom "Привет!"
+    mom "Как дела?"
+
+
 
     show taida idle at center:
         yalign 0.5

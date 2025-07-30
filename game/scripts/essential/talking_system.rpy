@@ -103,13 +103,6 @@ image izumi_talk_stand:
     pause 0.1
     repeat
 
-layeredimage izumi:
-    group pose:
-        attribute standing default:
-            'images/izumi/3.png'
-        attribute talk_standing:
-            'izumi_talk_stand'
-
 layeredimage alice:
     group pose:
         attribute standing default:

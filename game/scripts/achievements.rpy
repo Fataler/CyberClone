@@ -1,8 +1,6 @@
 init -2 python:
-    # Версия системы достижений
     ACHIEVEMENTS_VERSION = 1
 
-    # Проверка версии и сброс при необходимости
     if not hasattr(persistent, '_achievements_version') or persistent._achievements_version != ACHIEVEMENTS_VERSION:
         persistent._achievements_version = ACHIEVEMENTS_VERSION
         persistent._achievement_unlocked = {}
@@ -22,7 +20,6 @@ init python:
             self.hidden = hidden
             self.icon = icon
             
-            # Создаем серую версию иконки при инициализации
             self.gray_icon = Transform(self.icon, matrixcolor=SaturationMatrix(0.0))
             
         @property
@@ -31,10 +28,8 @@ init python:
             
         def unlock(self):
             if not self.unlocked:
-                # Сохраняем состояние в persistent
                 persistent._achievement_unlocked[self.id] = True
                 renpy.play(sfx_ui_achieve, channel="ui")
-                # Показываем нотификацию
                 renpy.show_screen("achievement_popup", achievement=self)
                 renpy.restart_interaction()
 
@@ -60,13 +55,6 @@ init python:
             False,
             "images/achievements/fire.jpg"
         ),
-        # WOLF_HUNTER: Achievement(
-        #     WOLF_HUNTER,
-        #     "Логово найдено",
-        #     "Найдите логово собирателя волчьих хвостов",
-        #     False,
-        #     icon="images/achievements/wolf.png"
-        # ),
         FIRST_CHAPTER: Achievement(
             FIRST_CHAPTER,
             "Первая глава",
