@@ -24,20 +24,20 @@ define robot_bin = robot_say
 define robot = Character("")
 
 #region characters
-define t = Character('Тайда', color='#4a9eff', image='taida',
-                        callback=ft.partial(layered_talking_callback, character_name='taida'))
+define t = Character('Тайда', color='#4a9eff', image='t',
+                        callback=ft.partial(layered_talking_callback, character_name='t'))
                         
-define d = Character('Дзинзо', color='#ffdfba', image='dzinzo',
-                        callback=ft.partial(layered_talking_callback, character_name='dzinzo'))
+define d = Character('Дзинзо', color='#ffdfba', image='d',
+                        callback=ft.partial(layered_talking_callback, character_name='d'))
 
-define u = Character('Юми', color='#ffdfba', image='umi',
-                        callback=ft.partial(layered_talking_callback, character_name='umi'))
+define u = Character('Юми', color='#ffdfba', image='u',
+                        callback=ft.partial(layered_talking_callback, character_name='u'))
 
-define k = Character('Кацуми', color='#ffdfba', image='kazumi',
-                        callback=ft.partial(layered_talking_callback, character_name='kazumi'))
+define k = Character('Кацуми', color='#ffdfba', image='k',
+                        callback=ft.partial(layered_talking_callback, character_name='k'))
 
-define h = Character('Хикару', color='#bae1ff', image='hikaru',
-                        callback=ft.partial(layered_talking_callback, character_name='hikaru'))
+define h = Character('Хикару', color='#bae1ff', image='h',
+                        callback=ft.partial(layered_talking_callback, character_name='h'))
 
 define d = Character('Ден', color='#ffdfba', image='den',
                         callback=ft.partial(layered_talking_callback, character_name='den'))
@@ -56,7 +56,7 @@ define mom = Character('Мама', color='#ffdfba', image='mom',
 
 #region Taida  
 
-layeredimage taida:
+layeredimage t:
     group pose:
         attribute idle default:
             'images/taida/Taida_mini_neutral.png'

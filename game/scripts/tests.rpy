@@ -2,31 +2,7 @@
 
 label test_talking_system:
     "Тестирование системы говорящих персонажей"
-    # group emotion:
-    #     attribute neutral default:
-    #         "images/Izumi/Izumi_neutral.png"
-    #     attribute angry:
-    #         "images/Izumi/Izumi_angry.png"
-    #     attribute asharasen:
-    #         "images/Izumi/Izumi_asharasen.png"
-    #     attribute calm:
-    #         "images/Izumi/Izumi_calm.png"
-    #     attribute dreamy:
-    #         "images/Izumi/Izumi_dreamy.png"
-    #     attribute interested:
-    #         "images/Izumi/Izumi_interested.png"
-    #     attribute neutral_2:
-    #         "images/Izumi/Izumi_neutral_2.png"
-    #     attribute neutral_3:
-    #         "images/Izumi/Izumi_neutral_3.png"
-    #     attribute smug:
-    #         "images/Izumi/Izumi_smug.png"
-    #     attribute thinking:
-    #         "images/Izumi/Izumi_thinking.png"
-    #     attribute tricky:
-    #         "images/Izumi/Izumi_tricky.png"
-    #     attribute very_angry:
-    #         "images/Izumi/Izumi_very_angry.png"
+
     show i neutral
     i "izumi neutral"
     show i angry
@@ -47,8 +23,6 @@ label test_talking_system:
     i "izumi tricky"
     show i very_angry
     i "izumi very_angry"
-
-
     
     show dad
     dad "Привет!"
@@ -57,67 +31,25 @@ label test_talking_system:
     mom "Привет!"
     mom "Как дела?"
 
-
-
-    show taida idle at center:
+    show t idle at center:
         yalign 0.5
-    taida "Привет!"
-    show taida happy
-    taida "asdfasdfsadfasdfasdfasdfsadfasdfasdfsadf asdfasdasdasd"
-    taida "Я говорю."
-    show taida sad
-    taida "Сейчас и еще немного говорю."
-    taida "А теперь я рассказываю очень длинный длинный текст! Много букв разных!"
-    show taida thinking at right:
+    t "Привет!"
+    show t happy
+    t "asdfasdfsadfasdfasdfasdfsadfasdfasdfsadf asdfasdasdasd"
+    t "Я говорю."
+    show t sad
+    t "Сейчас и еще немного говорю."
+    t "А теперь я рассказываю очень длинный длинный текст! Много букв разных!"
+    show t thinking at right:
         yalign 0.5
 
-    taida "Я думаю."
-    taida "Я думаю о том, что я думаю."
-    taida "Я думаю о том, что я думаю о том, что я думаю."
-    taida "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
-    taida "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю. Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
-
-    show izumi standing
-    izumi "Привет!"
-    izumi "Сейчас я в стоячей позе."
-
-    izumi "Я говорю."
-    izumi "Сейчас и еще немного говорю."
-    izumi "А теперь я рассказываю очень длинный длинный текст! Много букв разных!"
-
-    izumi "Договорила и ушла."
+    t "Я думаю."
+    t "Я думаю о том, что я думаю."
+    t "Я думаю о том, что я думаю о том, что я думаю."
+    t "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
+    t "Я думаю о том, что я думаю о том, что я думаю о том, что я думаю. Я думаю о том, что я думаю о том, что я думаю о том, что я думаю."
     
-    
-    # Алиса стоит
-    show alice standing
-    alice "Привет! Я стою."
-    alice "Сейчас я в стоячей позе."
-    hide izumi
-    
-    # Алиса садится
-    show alice sitting
-    alice "А теперь я села."
-    alice "Теперь я сижу."
-    
-    # Смена поз
-    show alice standing
-    alice "Встаю."
-
-    "Тестовая фраза рассказчика"
-    
-    show alice sitting  
-    alice "Сажусь."
-    
-    show alice standing
-    alice "И снова встаю."
-    
-    # Финал
-    show alice sitting
-    alice "Последний раз сажусь."
-    alice "Тест завершён."
-    
-    hide alice
-    
+    "Конец"
     return
 
 label test_binary_text:
