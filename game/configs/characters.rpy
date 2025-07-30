@@ -24,7 +24,7 @@ define robot_bin = robot_say
 define robot = Character("")
 
 #region characters
-define t = Character('Тайда', color='#4a9eff', image='t',
+define t = Character('Тайда', color='#4a9eff', image_small='t',
                         callback=ft.partial(layered_talking_callback, character_name='t'))
                         
 define d = Character('Дзинзо', color='#ffdfba', image='d',
@@ -133,6 +133,114 @@ image taida_talk_thinking:
 #endregion
 
 #region Dzinzo
+
+#region Umi
+
+layeredimage u:
+    group pose:
+        attribute open default:
+            Null()
+        attribute closed:
+            Null()
+        attribute greeting:
+            "images/Umi/Umi_pose3_smile.png"
+
+    group emotion if_any "open":
+        attribute neutral default:
+            "images/Umi/Umi_pose1_neutral.png"
+        attribute angry:
+            "images/Umi/Umi_pose1_angry.png"
+        attribute cute:
+            "images/Umi/Umi_pose1_cute.png"
+        attribute embarrassed:
+            "images/Umi/Umi_pose1_embrassed.png"
+        attribute laugh:
+            "images/Umi/Umi_pose1_laught.png"
+        attribute laugh_wall:
+            "images/Umi/Umi_pose1_laught_4stena.png"
+        attribute surprised:
+            "images/Umi/Umi_pose1_surprised.png"
+        attribute thinking:
+            "images/Umi/Umi_pose1_thinking.png"
+    
+    group emotion if_any "closed":
+        attribute alluring default:
+            "images/Umi/Umi_pose2_alluring.png"
+        attribute confused:
+            "images/Umi/Umi_pose2_confused.png"
+        attribute cry:
+            "images/Umi/Umi_pose2_cry.png"
+        attribute cry_embarrassed:
+            "images/Umi/Umi_pose2_cry_asharashen.png"
+        attribute sad_cry:
+            "images/Umi/Umi_pose2_sad_cry.png"
+        attribute touched:
+            "images/Umi/Umi_pose2_touched.png"
+        attribute tricky:
+            "images/Umi/Umi_pose2_tricky.png"
+    
+    group emotion if_any "greeting":
+        attribute smile default:
+            "images/Umi/Umi_pose3_smile.png"
+        attribute confused:
+            "images/Umi/Umi_pose3_confused.png"
+        attribute offended:
+            "images/Umi/Umi_pose3_offended.png"
+        attribute offended_sad:
+            "images/Umi/Umi_pose3_offended_sad.png"
+
+    group mouth if_any "open":
+        attribute talk:
+            "umi_talk_open"
+    
+    group mouth if_any "closed":
+        attribute talk:
+            "umi_talk_closed"
+
+    group mouth if_any "greeting":
+        attribute talk:
+            "umi_talk_greeting"
+
+    group dress if_any "open":
+        attribute school default:
+            "images/Umi/Umi_pose1_shkolnoe.png"
+        attribute summer:
+            "images/Umi/Umi_pose1_letnee.png"
+    
+    group dress if_any "closed":
+        attribute school default:
+            "images/Umi/Umi_pose2_shkolnoe.png"
+        attribute summer:
+            "images/Umi/Umi_pose2_letnee.png"
+
+    group dress if_any "greeting":
+        attribute school default:
+            Null()
+
+image umi_talk_open:
+    "images/Umi/Umi_pose1_rot1.png"
+    pause 0.1
+    "images/Umi/Umi_pose1_rot2.png"
+    pause 0.1
+    "images/Umi/Umi_pose1_rot3.png"
+    repeat
+
+image umi_talk_closed:
+    "images/Umi/Umi_pose2_rot1.png"
+    pause 0.1
+    "images/Umi/Umi_pose2_rot2.png"
+    pause 0.1
+    "images/Umi/Umi_pose2_rot3.png"
+    repeat
+
+image umi_talk_greeting:
+    "images/Umi/Umi_pose3_rot1.png"
+    pause 0.1
+    "images/Umi/Umi_pose3_rot2.png"
+    pause 0.1
+    "images/Umi/Umi_pose3_rot3.png"
+    repeat
+
 #endregion
 
 #region Dad

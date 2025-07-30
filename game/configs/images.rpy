@@ -1,7 +1,20 @@
 #images 
 
 ## Определения фоновых изображений
-
+# Фоны из папки Backgrounds
+image bg_amusement_park = "images/Backgrounds/Amusement Park.jpg"
+image bg_backyard = "images/Backgrounds/Backyard.jpg"
+image bg_battle_scene = "images/Backgrounds/Battle Scene.jpg"
+image bg_class_room = "images/Backgrounds/Class Room.jpg"
+image bg_garage_dirty = "images/Backgrounds/Garage Durty.jpg"
+image bg_garage = "images/Backgrounds/Garage.jpg"
+image bg_living_room = "images/Backgrounds/Living Room.jpg"
+image bg_monitor = "images/Backgrounds/Monitor.jpg"
+image bg_near_home = "images/Backgrounds/Near Home.jpg"
+image bg_near_school = "images/Backgrounds/Near School.jpg"
+image bg_robo_class_room = "images/Backgrounds/Robo-class Room.jpg"
+image bg_school_entrance = "images/Backgrounds/School Entrance.jpg"
+image bg_square = "images/Backgrounds/Square.jpg"
 
 ## Общие изображения
 image bg_black = Solid("#000")
@@ -42,4 +55,4 @@ transform fade_to_light:
     linear 1.0 matrixcolor TintMatrix("#000000") * ColorMatrix(1.0, 1.0, 1.0, 0.7)
     linear 1.0 matrixcolor TintMatrix("#000000") * ColorMatrix(1.0, 1.0, 1.0, 0.0)
 
-# Цветные заглушки для титров
+
