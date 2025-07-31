@@ -25,6 +25,8 @@ define robot = Character("")
 
 #region characters
 define t = Character('Тайда', color='#4a9eff', image='t', callback=speaker('t'))
+
+define t_t = Character('', color='#4a9eff', image='t')
                         
 define d = Character('Дзинзо', color='#ffdfba', image='d',
                         callback=speaker('d'))

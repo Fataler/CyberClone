@@ -233,6 +233,10 @@ label test_taida_states:
     t calm "t idle calm"
     
     t depressed "t idle depressed"
+
+    t_t "t thinking"
+
+    t_t "t thinking"
     
     hide t
     "Тест состояний Taida завершён!"
