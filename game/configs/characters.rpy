@@ -90,7 +90,7 @@ layeredimage t:
             'images/taida/Taida_mini_neutral_happy.png'
         attribute thinking: #думаю
             'images/taida/Taida_mini_thinking.png'
-        attribute asharasen: #ашарашен
+        attribute asharashen: #ашарашен
             'images/taida/Taida_mini_asharasen.png'
         attribute calm: #спокойный
             'images/taida/Taida_mini_calm.png'

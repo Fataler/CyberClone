@@ -1,6 +1,8 @@
 ﻿label start:
 
     menu:
+            "Начало игры":
+                jump chapter1
             "Битва покемонов (тест)":
                 jump test_pokemon_battle
             "Личное дело ученика2 (тест)":
