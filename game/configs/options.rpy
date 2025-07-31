@@ -25,13 +25,14 @@ define gui.show_name = True
 
 define config.rollback_enabled = True
 define config.default_fullscreen = False if config.developer else True
+define config.speaking_attribute = "talk"
 
 
 ## Версия игры.
 
 define config.version = "1.0"
 
-define config.mouse = { 'default' : [ ("gui/cursor.png", 0, 0)] }
+define config.mouse = { 'default' : [ ("gui/cursor.png", 0, 0)], 'robot' : [ ("gui/cursorR.png", 0, 0)]}
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.

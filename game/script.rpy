@@ -1,5 +1,4 @@
 ﻿label start:
-
     menu:
             "Начало игры":
                 jump chapter1

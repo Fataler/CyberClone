@@ -5,9 +5,15 @@
 init -2:
     $_game_menu_screen = "pause_menu"
 
+default pause_character_counter = 0
+
+init python:
+    def next_pause_character():
+        global pause_character_counter
+        pause_character_counter = pause_character_counter % 5 + 1
+
 screen pause_menu():
-    on "show" action Function(renpy.play, sfx_chains, channel="sfx")
-    on "replace" action Function(renpy.play, sfx_chains, channel="sfx")
+    on "show" action Function(next_pause_character)
 
     modal True
 
@@ -36,6 +42,77 @@ screen pause_menu():
             textbutton _("Настройки") action [Hide("pause_menu"), ShowMenu("preferences")]
             textbutton _("Главное меню") action [Hide("pause_menu"), MainMenu()]
             textbutton _("Вернуться") action Return()
+
+    if pause_character_counter == 1:
+        add "gg_shadow":
+            anchor (0.5, 0.5)   
+            pos (1555, 565)
+            at delay_appear(0.3)
+        
+        add Parallax("gg", 0.2):
+            anchor (0.5, 0.5)
+            at move_appear(1370, 695, 1558)
+
+        add "gg_chirkash":
+            anchor (0.5, 0.5)  
+            pos (1565, 535)
+            at delay_appear(0.3)
+    elif pause_character_counter == 2:
+        add "den_shadow":
+            anchor (0.5, 0.5)   
+            pos (1590, 530)
+            at delay_appear(0.3)
+
+        add Parallax("den", 0.2):
+            anchor (0.5, 0.5)
+            at move_appear(1370,762, 1548)
+
+        add "den_chirkash":
+            anchor (0.5, 0.5)  
+            pos (1590, 530)
+            at delay_appear(0.3)
+    elif pause_character_counter == 3:
+        add "hikaru_shadow":
+            anchor (0.5, 0.5)   
+            pos (1600, 535)
+            at delay_appear(0.3)
+
+        add Parallax("hikaru", 0.2):
+            anchor (0.5, 0.5)
+            at move_appear(1380, 700)
+
+        add "hikaru_chirkash":
+            anchor (0.5, 0.5)  
+            pos (1600, 535)
+            at delay_appear(0.3)
+    elif pause_character_counter == 4:
+        add "kazumi_shadow":
+            anchor (0.5, 0.5)   
+            pos (1605, 540)
+            at delay_appear(0.3)
+
+        add Parallax("kazumi", 0.2):
+            anchor (0.5, 0.5)
+            at move_appear(1375, 690)
+
+        add "kazumi_chirkash":
+            anchor (0.5, 0.5)  
+            pos (1605, 540)
+            at delay_appear(0.3)
+    elif pause_character_counter == 5:
+        add "umi_shadow":
+            anchor (0.5, 0.5)   
+            pos (1610, 540)
+            at delay_appear(0.3)
+
+        add Parallax("umi", 0.2):
+            anchor (0.5, 0.5)        
+            at move_appear(1368, 688)
+
+        add "umi_chirkash":
+            anchor (0.5, 0.5)  
+            pos (1610, 540)
+            at delay_appear(0.3)
 
 style pause_menu_button is main_menu_button:
     xalign 0.5

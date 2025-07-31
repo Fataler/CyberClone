@@ -14,6 +14,8 @@ label test_talking_system:
 
     call test_umi_states
     
+    call test_taida_states
+    
     # show t idle at center:
     #     yalign 0.5
     t "Привет!"
@@ -179,9 +181,11 @@ label test_umi_states:
     
     show u greeting smile school
     u "u greeting smile school"
+
+    hide u
     
-    show u greeting confused school
-    u "u greeting confused school"
+    #show u greeting confused school
+    u confused "u greeting confused school"
     
     show u greeting offended school
     u "u greeting offended school"
@@ -191,5 +195,50 @@ label test_umi_states:
     
     hide u
     "Тест состояний Umi завершён!"
+    
+    return
+
+label test_taida_states:
+    "Тестирование всех состояний персонажа Taida"
+    
+    show bg_class_room
+    "=== ПОЗА IDLE ==="
+    
+    t idle neutral "t idle neutral"
+    
+    t idle cry "t idle cry"
+    
+    t dream "t idle dream"
+    
+    t surprised "t idle surprised"
+    
+    t sad_angry "t idle sad_angry"
+    
+    t angry "t idle angry"
+    
+    t sad "t idle sad"
+    
+    t fear "t idle fear"
+    
+    t crazy "t idle crazy"
+    
+    t happy "t idle happy"
+    
+    t tricky "t idle tricky"
+    
+    t neutral_happy "t idle neutral_happy"
+    
+    t asharasen "t idle asharasen"
+    
+    t calm "t idle calm"
+    
+    t depressed "t idle depressed"
+
+    t_t "t thinking"
+
+    t_t "t thinking"
+    
+    hide t
+    "Тест состояний Taida завершён!"
     
     return

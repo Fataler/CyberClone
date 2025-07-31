@@ -32,7 +32,7 @@ screen say(who, what):
     window:
         id "window"
         style "window"
-        background Image(textbox_style, xalign=0.5, yalign=1.0)  # Прямо здесь для динамического обновления
+        background Image(textbox_style, xalign=0.5, yalign=1.0)
 
         if who is not None:
             window:
@@ -49,9 +49,9 @@ screen say(who, what):
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0
 
-    if not (config.developer):
-        key "mouseup_4" action ShowMenu("history")
-        key "K_PAGEUP" action ShowMenu("history")
+    # if not (config.developer):
+    #     key "mouseup_4" action ShowMenu("history")
+    #     key "K_PAGEUP" action ShowMenu("history")
 
 
 ## Делает namebox доступным для стилизации через объект Character.
@@ -69,10 +69,10 @@ style namebox_label is say_label
 
 style window:
     xalign 0.5
-    xfill True
+    #xfill True
+    xsize 1700
     yalign gui.textbox_yalign
     ysize gui.textbox_height
-    # Убираем background отсюда, так как он теперь прямо в экране
 
 style namebox:
     xpos gui.name_xpos

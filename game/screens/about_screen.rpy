@@ -35,7 +35,6 @@ screen about():
         anchor (0.5, 0.5)
         at move_appear(1370,762, 1548)
 
-
     add "den_chirkash":
         anchor (0.5, 0.5)  
         pos (1590, 530)

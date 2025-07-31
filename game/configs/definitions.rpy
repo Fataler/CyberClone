@@ -14,15 +14,17 @@ define CHARACTER_DZINZO = "Dzinzo"
 
 init python:
     def set_character_taida():
-        global textbox_style, character
+        global textbox_style, character, default_mouse
         character = CHARACTER_TAIDA
         textbox_style = TEXTBOX_NORMAL
+        default_mouse  = "default"
         renpy.restart_interaction()
     
     def set_character_dzinzo():
-        global textbox_style, character
+        global textbox_style, character, default_mouse
         character = CHARACTER_DZINZO
         textbox_style = TEXTBOX_ROBOT
+        default_mouse  = "robot"
         renpy.restart_interaction()
     
     def set_textbox_custom(path):
