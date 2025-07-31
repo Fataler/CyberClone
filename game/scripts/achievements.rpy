@@ -20,7 +20,7 @@ init python:
             self.hidden = hidden
             self.icon = icon
             
-            self.gray_icon = Transform(self.icon, matrixcolor=SaturationMatrix(0.0))
+            self.gray_icon = Transform(self.icon, matrixcolor=SaturationMatrix(1.0))
             
         @property
         def unlocked(self):
@@ -37,66 +37,81 @@ init python:
     ACHIEVEMENT_POPUP_ICON_SIZE = 64
 
     # ID достижений
-    FIRST_STEPS = "first_steps"
-    WOLF_HUNTER = "wolf_hunter"
-    PIPE_MASTER = "pipe_master"
+    FUTURE_HISTORIAN = "future_historian"
+    MAX_DAMAGE = "max_damage"
+    STRATEGIST = "strategist"
+    PIG_SLAYER = "pig_slayer"
+    GENIUS = "genius"
     FIRST_CHAPTER = "first_chapter"
     SECOND_CHAPTER = "second_chapter"
-    GAME_COMPLETED = "game_completed"
+    THIRD_CHAPTER = "third_chapter"
     THANK_YOU = "thank_you"
-    HOLD_THE_DOOR = "hold_the_door"
 
     # Список достижений
     achievements = {
-        FIRST_STEPS: Achievement(
-            FIRST_STEPS,
-            "Первые шаги",
-            "Добро пожаловать в игру!",
-            False,
-            "images/achievements/fire.jpg"
-        ),
         FIRST_CHAPTER: Achievement(
             FIRST_CHAPTER,
-            "Первая глава",
-            "Прочтите первую главу",
+            "Пройти 1 акт",
+            "",
             False,
-            "images/achievements/1.jpg"
+            "gui/menu/achievements/1.png"
         ),
         SECOND_CHAPTER: Achievement(
             SECOND_CHAPTER,
-            "Вторая глава",
-            "Прочтите вторую главу",
+            "Пройти 2 акт",
+            "",
             False,
-            "images/achievements/2.jpg"
+            "gui/menu/achievements/2.png"
         ),
-        GAME_COMPLETED: Achievement(
-            GAME_COMPLETED,
-            "Третья глава",
-            "Пройдите всю игру",
+        THIRD_CHAPTER: Achievement(
+            THIRD_CHAPTER,
+            "Пройти 3 акт",
+            "",
             False,
-            "images/achievements/3.jpg"
+            "gui/menu/achievements/3.png"
         ),
         THANK_YOU: Achievement(
             THANK_YOU,
-            "Посетить \"Об игре\"",
-            "Спасибо за проявленный интерес!",
-            True,
-            "images/achievements/blue fire.jpg"
+            "Спасибо, что прошёл игру. От всего сердца :)",
+            "Пройти игру",
+            False,
+            "gui/menu/achievements/heart.png"
         ),
-        PIPE_MASTER: Achievement(
-            PIPE_MASTER,
-            "Марио?",
-            "Самостоятельно разберитесь с трубами",
+        FUTURE_HISTORIAN: Achievement(
+            FUTURE_HISTORIAN,
+            "Историк будущего",
+            "Добро пожаловать в эпоху Эдо 2.0 — теперь с киберимплантами и корпоративным сёгунатом",
             True,
-            "images/achievements/pipe.jpg"
+            "gui/menu/achievements/samurai.png"
         ),
-        HOLD_THE_DOOR: Achievement(
-            HOLD_THE_DOOR,
-            "Затворник",
-            "Игнорируйте Клем до последнего",
+        MAX_DAMAGE: Achievement(
+            MAX_DAMAGE,
+            "Почти получилось, ты просто поддавался",
+            "Нанести Дзиндзо максимальное количество урона",
             True,
-            "images/achievements/fire.jpg"
-        )
+            "gui/menu/achievements/pokeball.png"
+        ),
+        STRATEGIST: Achievement(
+            STRATEGIST,
+            "Трус? Нет, стратег",
+            "Попытаться сбежать из боя",
+            True,
+            "gui/menu/achievements/chess.png"
+        ),
+        PIG_SLAYER: Achievement(
+            PIG_SLAYER,
+            "Бессмысленность и беспощадность",
+            "Одержи победу над Ужасным Вепрем",
+            True,
+            "gui/menu/achievements/pig.png"
+        ),
+        GENIUS: Achievement(
+            GENIUS,
+            "Гений поневоле",
+            "Ты ответил правильно на всё. Системе не оставили выбора. Тебе — тоже",
+            True,
+            "gui/menu/achievements/gears.png"
+        ),
     }
 
     def unlock_achievement(id):
