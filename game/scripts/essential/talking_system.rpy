@@ -2,6 +2,30 @@ init -1 python:
     import functools as ft
     
     talk_key = 'talk_'
+    speaking = None
+
+    def while_speaking(char, speak_d, done_d, st, at):
+        if speaking == char:
+            return speak_d, .1
+        else:
+            return done_d, None
+
+    curried_while_speaking = renpy.curry(while_speaking)
+
+    def WhileSpeaking(char, speaking_d, done_d=Null()):
+        return DynamicDisplayable(curried_while_speaking(char, speaking_d, done_d))
+
+    def speaker_callback(char, event, **kwargs):        
+        global speaking
+        
+        if event == "show" or event == "begin":
+            speaking = char
+        elif event == 'slow_done':
+            speaking = None
+        elif event == "end":
+            speaking = None
+
+    speaker = renpy.curry(speaker_callback)
 
     def get_character_pose(character_name, current_attrs): #legacy
         for attr in current_attrs:

@@ -1,5 +1,4 @@
 ﻿label start:
-
     menu:
             "Битва покемонов (тест)":
                 jump test_pokemon_battle

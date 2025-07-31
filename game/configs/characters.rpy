@@ -24,39 +24,34 @@ define robot_bin = robot_say
 define robot = Character("")
 
 #region characters
-define t = Character('Тайда', color='#4a9eff', image_small='t',
-                        callback=ft.partial(layered_talking_callback, character_name='t'))
+define t = Character('Тайда', color='#4a9eff', image='t', callback=speaker('t'))
                         
 define d = Character('Дзинзо', color='#ffdfba', image='d',
-                        callback=ft.partial(layered_talking_callback, character_name='d'))
+                        callback=speaker('d'))
 
 define u = Character('Юми', color='#ffdfba', image='u',
-                        callback=ft.partial(layered_talking_callback, character_name='u'))
+                        callback=speaker('u'))
 
 define k = Character('Кацуми', color='#ffdfba', image='k',
-                        callback=ft.partial(layered_talking_callback, character_name='k'))
+                        callback=speaker('k'))
 
 define h = Character('Хикару', color='#bae1ff', image='h',
-                        callback=ft.partial(layered_talking_callback, character_name='h'))
+                        callback=speaker('h'))
 
 define d = Character('Ден', color='#ffdfba', image='den',
-                        callback=ft.partial(layered_talking_callback, character_name='den'))
+                        callback=speaker('den'))
 
 define i = Character('Изуми', color='#ffb3ba', image='i', 
-                        callback=ft.partial(layered_talking_callback, character_name = "i"))
+                        callback=speaker('i'))
 
 define dad = Character('Папа', color='#ffdfba', image='dad',
-                        callback=ft.partial(layered_talking_callback, character_name='dad'))
+                        callback=speaker('dad'))
 
 define mom = Character('Мама', color='#ffdfba', image='mom',
-                        callback=ft.partial(layered_talking_callback, character_name='mom'))
+                        callback=speaker('mom'))
 
-
-#endregion
-
-#region Taida  
-
-layeredimage t:
+#region Taida
+layeredimage side t:
     group pose:
         attribute idle default:
             'images/taida/Taida_mini_neutral.png'
@@ -97,20 +92,11 @@ layeredimage t:
         attribute depressed: #депрессивный
             'images/taida/Taida_mini_depressed.png'
 
-
-    group emotion if_any "thinking":
-        attribute neutral default:
-            Null()
-        attribute confused:
-            'images/taida/GG_mini_13.png'
-        attribute focused:
-            'images/taida/GG_mini_14.png'
-
     group mouth:
         attribute talk if_any "idle":
-            'taida_talk_idle'
+            WhileSpeaking('t', 'taida_talk_idle', Null())
         attribute talk if_any "thinking":
-            'taida_talk_thinking'
+            WhileSpeaking('t', 'taida_talk_thinking', Null())
 
 image taida_talk_idle:
     'images/taida/GG_mini_rot_1.png'
@@ -118,7 +104,6 @@ image taida_talk_idle:
     'images/taida/GG_mini_rot_2.png'
     pause 0.1
     'images/taida/GG_mini_rot_3.png'
-    pause 0.1
     repeat
 
 image taida_talk_thinking:
@@ -129,10 +114,10 @@ image taida_talk_thinking:
     'images/taida/GG_mini_rot_3.png'
     pause 0.1
     repeat
-
 #endregion
 
 #region Dzinzo
+#endregion
 
 #region Umi
 
@@ -191,15 +176,15 @@ layeredimage u:
 
     group mouth if_any "open":
         attribute talk:
-            "umi_talk_open"
+            WhileSpeaking('u', 'umi_talk_open', Null())
     
     group mouth if_any "closed":
         attribute talk:
-            "umi_talk_closed"
+            WhileSpeaking('u', 'umi_talk_closed', Null())
 
     group mouth if_any "greeting":
         attribute talk:
-            "umi_talk_greeting"
+            WhileSpeaking('u', 'umi_talk_greeting', Null())
 
     group dress if_any "open":
         attribute school default:
@@ -255,7 +240,7 @@ layeredimage dad:
 
     group mouth:
         attribute talk if_any "idle":
-            "dad_talk_idle"
+            WhileSpeaking('dad', 'dad_talk_idle', Null())
 
 image dad_talk_idle:
     "images/dad/Dad_rot_1.png"
@@ -278,7 +263,7 @@ layeredimage mom:
 
     group mouth:
         attribute talk if_any "idle":
-            "mom_talk_idle"
+            WhileSpeaking('mom', 'mom_talk_idle', Null())
 
 image mom_talk_idle:
     "images/mom/Mom_rot_1.png"
@@ -325,7 +310,7 @@ layeredimage i:
     
     group mouth:
         attribute talk if_any "idle":
-            "izumi_talk_idle"
+            WhileSpeaking('i', 'izumi_talk_idle', Null())
 
 image izumi_talk_idle:
     "images/Izumi/Izumi_rot_1.png"
