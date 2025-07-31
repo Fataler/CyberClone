@@ -25,7 +25,6 @@ define gui.show_name = True
 
 define config.rollback_enabled = True
 define config.default_fullscreen = False if config.developer else True
-define config.speaking_attribute = "talk"
 
 
 ## Версия игры.
