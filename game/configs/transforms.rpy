@@ -22,6 +22,36 @@ transform face_left:
 transform face_right:
     xzoom 1.0
 
+# для сцен с 4 персонажами
+transform quad_left:
+    xalign 0.01
+    yalign 1.0
+
+transform quad_left_center:
+    xalign 0.33
+    yalign 1.0
+
+transform quad_right_center:
+    xalign 0.66
+    yalign 1.0
+
+transform quad_right:
+    xalign 0.99
+    yalign 1.0
+
+# для сцен с 3 персонажами
+transform trio_left:
+    xalign 0.1
+    yalign 1.0
+
+transform trio_center:
+    xalign 0.5
+    yalign 1.0
+
+transform trio_right:
+    xalign 0.95
+    yalign 1.0
+
 transform delay_appear(delay = 1.0, time = 0.5):
     alpha 0
     pause delay

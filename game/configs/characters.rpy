@@ -125,6 +125,8 @@ layeredimage side t:
             WhileSpeaking('t', 'taida_talk_idle', Null())
         attribute talk if_any "thinking":
             WhileSpeaking('t', 'taida_talk_thinking', Null())
+        attribute talk if_any "asharashen":
+            WhileSpeaking('t', 'taida_talk_asharashen', Null())
 
 image taida_talk_idle:
     'images/taida/GG_mini_rot_1.png'
@@ -484,7 +486,7 @@ layeredimage den:
 
     group mouth:
         attribute talk if_any "idle":
-            WhileSpeaking('d', 'd_talk_idle', Null())
+            WhileSpeaking('den', 'den_talk_idle', Null())
 """
 image mom_talk_idle:
     "images/mom/Mom_rot_1.png"
