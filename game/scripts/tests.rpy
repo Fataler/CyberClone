@@ -14,6 +14,8 @@ label test_talking_system:
 
     call test_umi_states
     
+    call test_dzinzo_states
+    
     call test_taida_states
     
     # show t idle at center:
@@ -184,7 +186,7 @@ label test_umi_states:
 
     hide u
     
-    #show u greeting confused school
+    show u greeting confused school
     u confused "u greeting confused school"
     
     show u greeting offended school
@@ -205,6 +207,8 @@ label test_taida_states:
     "=== ПОЗА IDLE ==="
     
     t idle neutral "t idle neutral"
+
+    t "Размещение диалога по отношению к текстовому окну. Это могут быть целые f f f f f f"
     
     t idle cry "t idle cry"
     
@@ -240,5 +244,71 @@ label test_taida_states:
     
     hide t
     "Тест состояний Taida завершён!"
+    
+    return
+
+label test_dzinzo_states:
+    "Тестирование всех состояний персонажа Dzinzo"
+    
+    show bg_near_school
+    "=== ПОЗА POSE1 (ШКОЛЬНАЯ ФОРМА) ==="
+    
+    show d pose1 neutral school
+    d "d pose1 neutral school"
+    
+    show d pose1 happy school
+    d "d pose1 happy school"
+    t "d a"
+    
+    show d pose1 very_happy school
+    d "d pose1 very_happy school"
+    
+    show d pose1 surprised school
+    d "d pose1 surprised school"
+    
+    show d pose1 thinking school
+    d "d pose1 thinking school"
+    
+    show d pose1 cunning school
+    d "d pose1 cunning school"
+    
+    show d pose1 relief school
+    d "d pose1 relief school"
+    
+    "=== ПОЗА POSE1 (ЛЕТНЯЯ ФОРМА) ==="
+    
+    show d pose1 neutral summer
+    d "d pose1 neutral summer"
+    
+    show d pose1 happy summer
+    d "d pose1 happy summer"
+    
+    "=== ПОЗА POSE2 (ШКОЛЬНАЯ ФОРМА) ==="
+    
+    show d pose2 neutral school
+    d "d pose2 neutral school"
+    
+    show d pose2 sad school
+    d "d pose2 sad school"
+    
+    show d pose2 melancholy school
+    d "d pose2 melancholy school"
+    
+    show d pose2 osharashen school
+    d "d pose2 osharashen school"
+    
+    show d pose2 pupupu school
+    d "d pose2 pupupu school"
+    
+    "=== ПОЗА POSE2 (ЛЕТНЯЯ ФОРМА) ==="
+    
+    show d pose2 neutral summer
+    d "d pose2 neutral summer"
+    
+    show d pose2 sad summer
+    d "d pose2 sad summer"
+    
+    hide d
+    "Тест состояний Dzinzo завершён!"
     
     return

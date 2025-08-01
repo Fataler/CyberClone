@@ -24,33 +24,27 @@ define robot_bin = robot_say
 define robot = Character("")
 
 #region characters
-define t = Character('Тайда', color='#4a9eff', image='t', callback=speaker('t'))
+define t = Character('Тайда', color='#2e5686', image='t', callback=speaker('t'))
 
-define t_t = Character('', color='#4a9eff', image='t')
+define t_t = Character('', color='#2e5686', image='t')
                         
-define d = Character('Дзинзо', color='#ffdfba', image='d',
-                        callback=speaker('d'))
+define d = Character('Дзинзо', color='#3f3931', image='d', callback=speaker('d'))
 
-define u = Character('Юми', color='#ffdfba', image='u',
-                        callback=speaker('u'))
+define d_t = Character('', color='#3f3931', image='d')
 
-define k = Character('Кацуми', color='#ffdfba', image='k',
-                        callback=speaker('k'))
+define u = Character('Юми', color='#681744', image='u', callback=speaker('u'))
 
-define h = Character('Хикару', color='#bae1ff', image='h',
-                        callback=speaker('h'))
+define k = Character('Кацуми', color='#171658', image='k', callback=speaker('k'))
 
-define d = Character('Ден', color='#ffdfba', image='den',
-                        callback=speaker('den'))
+define h = Character('Хикару', color='#66161a', image='h', callback=speaker('h'))
 
-define i = Character('Изуми', color='#ffb3ba', image='i', 
-                        callback=speaker('i'))
+define den = Character('Ден', color='#7e7719', image='den', callback=speaker('den'))
 
-define dad = Character('Папа', color='#ffdfba', image='dad',
-                        callback=speaker('dad'))
+define i = Character('Изуми', color='#431755', image='i', callback=speaker('i'))
 
-define mom = Character('Мама', color='#ffdfba', image='mom',
-                        callback=speaker('mom'))
+define dad = Character('Папа', color='#0f4244', image='dad', callback=speaker('dad'))
+
+define mom = Character('Мама', color='#15350b', image='mom', callback=speaker('mom'))
 
 #region Taida
 layeredimage side t:
@@ -119,6 +113,80 @@ image taida_talk_thinking:
 #endregion
 
 #region Dzinzo
+
+image side d = LayeredImageProxy("d", Transform(crop=(0, 0, 600, 460), xoffset=-80))
+
+layeredimage d:
+    group pose:
+        attribute pose1 default:
+            Null()
+        attribute pose2:
+            Null()
+
+    group emotion if_any "pose1":
+        attribute neutral default:
+            "images/Dindzo/Dzindzo_pose1_neutral.png"
+        attribute happy:
+            "images/Dindzo/Dzindzo_pose1_happy.png"
+        attribute very_happy:
+            "images/Dindzo/Dzindzo_pose1_very_happy.png"
+        attribute surprised:
+            "images/Dindzo/Dzindzo_pose1_surprised.png"
+        attribute thinking:
+            "images/Dindzo/Dzindzo_pose1_thinking.png"
+        attribute cunning:
+            "images/Dindzo/Dzindzo_pose1_cunning.png"
+        attribute relief:
+            "images/Dindzo/Dzindzo_pose1_relief.png"
+    
+    group emotion if_any "pose2":
+        attribute neutral default:
+            "images/Dindzo/Dzindzo_pose2_neutral.png"
+        attribute sad:
+            "images/Dindzo/Dzindzo_pose2_sad.png"
+        attribute melancholy:
+            "images/Dindzo/Dzindzo_pose2_melancholy.png"
+        attribute osharashen:
+            "images/Dindzo/Dzindzo_pose2_osharashen.png"
+        attribute pupupu:
+            "images/Dindzo/Dzindzo_pose2_pupupu.png"
+
+    group mouth if_any "pose1":
+        attribute talk:
+            WhileSpeaking('d', 'dzinzo_talk_pose1', Null())
+    
+    group mouth if_any "pose2":
+        attribute talk:
+            WhileSpeaking('d', 'dzinzo_talk_pose2', Null())
+
+    group dress if_any "pose1":
+        attribute school default:
+            "images/Dindzo/Dzindzo_pose1_shkolnoe.png"
+        attribute summer:
+            "images/Dindzo/Dzindzo_pose1_letnee.png"
+    
+    group dress if_any "pose2":
+        attribute school default:
+            "images/Dindzo/Dzindzo_pose2_shkolnoe.png"
+        attribute summer:
+            "images/Dindzo/Dzindzo_pose2_letnee.png"
+
+image dzinzo_talk_pose1:
+    "images/Dindzo/Dzindzo_pose1_rot1.png"
+    pause 0.1
+    "images/Dindzo/Dzindzo_pose1_rot2.png"
+    pause 0.1
+    "images/Dindzo/Dzindzo_pose1_rot3.png"
+    repeat
+
+image dzinzo_talk_pose2:
+    "images/Dindzo/Dzindzo_pose2_rot1.png"
+    pause 0.1
+    "images/Dindzo/Dzindzo_pose2_rot2.png"
+    pause 0.1
+    "images/Dindzo/Dzindzo_pose2_rot3.png"
+    repeat
+
 #endregion
 
 #region Umi
