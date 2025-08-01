@@ -28,11 +28,11 @@ define t = Character('Тайда', color='#2e5686', image='t', callback=speaker(
 
 define t_f = Character('Тайда', color='#2e5686', image='t_f', callback=speaker('t'))
 
-define t_t = Character('', color='#2e5686', image='t')
+define t_t = Character(None, color='#2e5686', image='t')
                         
 define d = Character('Дзинзо', color='#3f3931', image='d', callback=speaker('d'))
 
-define d_t = Character('', color='#3f3931', image='d')
+define d_t = Character(None, color='#3f3931', image='d')
 
 define u = Character('Юми', color='#681744', image='u', callback=speaker('u'))
 
