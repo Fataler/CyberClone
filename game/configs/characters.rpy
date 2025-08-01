@@ -426,28 +426,74 @@ image umi_talk_greeting:
 
 #endregion
 
-#region Kazumi
+#region Katsumi
 layeredimage k:
     group pose:
-        attribute idle default:
+        attribute pose1 default:
+            Null()
+        attribute pose2:
             Null()
 
-    group emotion if_any "idle":
+    group emotion if_any "pose1":
         attribute neutral default:
-            "images/Kazumi/neutral.png"
+            "images/Katsumi/Katsumi_pose1_neutral.png"
+        attribute happy:
+            "images/Katsumi/Katsumi_pose1_happy.png"
+        attribute concerned:
+            "images/Katsumi/Katsumi_pose1_concerned.png"
+        attribute confused:
+            "images/Katsumi/Katsumi_pose1_confused.png"
+        attribute irritated:
+            "images/Katsumi/Katsumi_pose1_irritated.png"
+        attribute cunning:
+            "images/Katsumi/Katsumi_pose1_cunning.png"
+        attribute neutral_4stena:
+            "images/Katsumi/Katsumi_pose1_neutral_4stena.png"
+    
+    group emotion if_any "pose2":
+        attribute neutral default:
+            "images/Katsumi/Katsumi_pose2_neutral.png"
+        attribute annoyed:
+            "images/Katsumi/Katsumi_pose2_annoyed.png"
+        attribute cunning:
+            "images/Katsumi/Katsumi_pose2_cunning.png"
+        attribute asharashen:
+            "images/Katsumi/Katsumi_pose2_ashrashen.png"
+        attribute didnt_understand:
+            "images/Katsumi/Katsumi_pose2_didnt_understand.png"
+        attribute self_confident:
+            "images/Katsumi/Katsumi_pose2_self_confident.png"
+        attribute neutral_4stena:
+            "images/Katsumi/Katsumi_pose2_neutral_4stena.png"
 
-    group mouth:
-        attribute talk if_any "idle":
-            WhileSpeaking('k', 'k_talk_idle', Null())
-"""
-image mom_talk_idle:
-    "images/mom/Mom_rot_1.png"
+    group mouth if_any "pose1":
+        attribute talk:
+            WhileSpeaking('k', 'katsumi_talk_pose1', Null())
+    
+    group mouth if_any "pose2":
+        attribute talk:
+            WhileSpeaking('k', 'katsumi_talk_pose2', Null())
+
+image katsumi_talk_pose1:
+    "images/Katsumi/Katsumi_pose1_rot1.png"
     pause 0.1
-    "images/mom/Mom_rot_2.png"
+    "images/Katsumi/Katsumi_pose1_rot2.png"
     pause 0.1
-    "images/mom/Mom_rot_3.png"
+    "images/Katsumi/Katsumi_pose1_rot3.png"
+    pause 0.1
+    "images/Katsumi/Katsumi_pose1_rot4.png"
     repeat
-"""
+
+image katsumi_talk_pose2:
+    "images/Katsumi/Katsumi_pose2_rot1.png"
+    pause 0.1
+    "images/Katsumi/Katsumi_pose2_rot2.png"
+    pause 0.1
+    "images/Katsumi/Katsumi_pose2_rot3.png"
+    pause 0.1
+    "images/Katsumi/Katsumi_pose2_rot4.png"
+    repeat
+
 #endregion
 
 #region Hikaru

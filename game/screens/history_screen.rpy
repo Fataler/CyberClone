@@ -47,11 +47,6 @@ screen history():
 
     add "gg_chirkash":
         anchor (0.5, 0.5)  
-        pos (1565, 535)
-        at delay_appear(0.3)
-
-    add "gg_chirkash":
-        anchor (0.5, 0.5)  
         pos (1550, 575)
         at delay_appear(0.3)
 
