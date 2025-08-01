@@ -25,6 +25,7 @@ define gui.show_name = True
 
 define config.rollback_enabled = True
 define config.default_fullscreen = False if config.developer else True
+define config.speaking_attribute = "talk"
 
 
 ## Версия игры.
@@ -47,8 +48,8 @@ define gui.about = _p("""
 Авторы: \n
 {w=0}     - Remi Prochet ({a=https://vk.com/remiprochet}ВК{/a}) - музыка, звуки\n
 {w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a})- сценарий,концепт, персонажи, CG\n
-{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler/}Steam{/a})- код, мини игры, редактура, анимации\n
-{w=0}     - Kapushishin - фоны, сборка новеллы, макеты UI, сбор референсов\n
+{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a})- код, мини игры, редактура, анимации\n
+{w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a})- фоны, сборка новеллы, макеты UI, сбор референсов\n
 """)
 
 

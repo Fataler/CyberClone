@@ -47,7 +47,7 @@ screen say(who, what):
     ## По стандарту не показывается на варианте для мобильных устройств — мало
     ## места.
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.0 yalign 1.0 zoom 0.9
 
     # if not (config.developer):
     #     key "mouseup_4" action ShowMenu("history")
@@ -69,8 +69,8 @@ style namebox_label is say_label
 
 style window:
     xalign 0.5
-    #xfill True
-    xsize 1700
+    xfill True
+    #xsize 1700
     yalign gui.textbox_yalign
     ysize gui.textbox_height
 
@@ -92,6 +92,8 @@ style say_label:
 style say_dialogue:
     properties gui.text_properties("dialogue")
 
+    #yalign 0.5
+    
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos

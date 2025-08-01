@@ -17,7 +17,7 @@ screen about():
 
         vbox:
 
-            label "[config.name!t]"
+            text "[config.name!t]"
             text _("Версия [config.version!t]\n")
 
             ## gui.about обычно установлено в options.rpy.

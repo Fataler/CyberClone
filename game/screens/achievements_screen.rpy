@@ -1,3 +1,7 @@
+init :
+    image check = "gui/check.png"
+    image check_bg = "gui/check_bg.png"
+
 # Экран достижений
 screen achievements_screen():
     tag menu
@@ -9,7 +13,8 @@ screen achievements_screen():
 
             if (config.developer):
                 textbutton _("Cброс") action Function(reset_achievements)
-                textbutton _("Test") action Function(unlock_achievement, THANK_YOU)
+                textbutton _("Test") action Function(unlock_achievement, FUTURE_HISTORIAN)
+                textbutton _("Unlock All") action Function(unlock_all_achievements)
             
             # Статистика достижений
             frame:
@@ -48,6 +53,7 @@ screen achievements_screen():
                             spacing 10
                             xfill True
                             
+                            # Иконка
                             frame:
                                 style "achievement_icon_frame"
                                 xsize ACHIEVEMENT_ICON_SIZE + 20
@@ -60,14 +66,31 @@ screen achievements_screen():
                                     yalign 0.5
 
                             vbox:
-                                spacing 5
+                                spacing 40
                                 xfill True
+
                                 hbox:
                                     spacing 5
                                     xfill True
-                                    text ach.name style "achievement_name"
-                                    text "Получено" style "achievement_check"
-                                    
+
+                                    frame:
+                                        background None
+                                        xsize 750
+                                        ysize 50
+                                        text ach.name style "achievement_name":
+                                            xalign 0.0
+                                            yalign 0.5
+
+                                    fixed:
+                                        xsize 50
+                                        ysize 50
+                                        add "check_bg":
+                                            xalign 0.5
+                                            yalign 0.5
+                                        add "check":
+                                            xalign 1.0
+                                            yalign -0.7
+
                                 text ach.description style "achievement_description"
                             
                     
@@ -78,7 +101,7 @@ screen achievements_screen():
                 for ach in locked_achievements:
                     frame:
                         style "achievement_item_frame"
-                        
+
                         hbox:
                             spacing 10
                             xfill True
@@ -93,16 +116,41 @@ screen achievements_screen():
                                     fit "contain"
                                     xalign 0.5
                                     yalign 0.5
-                            
+
                             vbox:
-                                spacing 5
+                                spacing 40
                                 xfill True
+
+                                hbox:
+                                    spacing 5
+                                    xfill True
+
+                                    frame:
+                                        background None
+                                        xsize 750
+                                        ysize 50
+                                        if ach.hidden:
+                                            text "???" style "achievement_name":
+                                                xalign 0.0
+                                                yalign 0.5
+                                        else:
+                                            text ach.name style "achievement_name":
+                                                xalign 0.0
+                                                yalign 0.5
+
+                                    fixed:
+                                        xsize 50
+                                        ysize 50
+                                        add "check_bg":
+                                            xalign 0.5
+                                            yalign 0.5
+
                                 if ach.hidden:
-                                    text "???" style "achievement_name"
                                     text "Секретное достижение" style "achievement_description"
                                 else:
-                                    text ach.name style "achievement_name"
                                     text ach.description style "achievement_description"
+
+                                
 
     add "kazumi_shadow":
         anchor (0.5, 0.5)   
@@ -121,7 +169,7 @@ screen achievements_screen():
         at delay_appear(0.3)
 
 style achievements_stats_frame:
-    background Frame("gui/frame.png", 40, 40)
+    background None #Frame("gui/frame.png", 40, 40)
     padding (20, 20)
     margin (0, 0, 0, 20)
     xfill True
@@ -141,7 +189,7 @@ style achievements_progress_bar:
     xalign 0.5
 
 style achievement_item_frame:
-    background Frame("gui/frame.png", 40, 40)
+    background "#f3f3f334" #Frame("gui/frame.png", 40, 40)
     padding (20, 20)
     xfill True
     margin (0, 0, 0, 10)
@@ -149,10 +197,12 @@ style achievement_item_frame:
 style achievement_name is gui_text:
     color gui.accent_color
     size 35
+    xalign 0.0
 
 style achievement_description is gui_text:
     color gui.text_color
     size 24
+    xalign 0.5
 
 style achievements_group_header is gui_text:
     size 36
@@ -162,11 +212,11 @@ style achievement_popup_frame:
     xalign 1.0
     yalign 0.0
     xsize 500
-    background Frame("gui/frame.png", 40, 40)
+    background "#f3f3f334"
     padding (20, 20)
 
 style achievement_popup_title:
-    color "#89e30e"
+    color "#55880d"
     size 30
     xalign 0.5
     text_align 0.5

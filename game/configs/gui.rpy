@@ -26,11 +26,11 @@ define config.check_conflicting_properties = True
 ## Цвета текста в интерфейсе.
 
 ## Акцентный цвет используется в заголовках и подчёркнутых текстах.
-define gui.accent_color = '#8f2f55'
+define gui.accent_color = '#b33b6b'
 define black_text_color = "#1E1E20"
 #hover = #c8ab5e
 ## Цвет, используемый в текстовой кнопке, когда она не выбрана и не наведена.
-define gui.idle_color = '#8f2f55'
+define gui.idle_color = '#9e335e'
 
 ## Small_color используется в маленьком тексте, который должен быть ярче/темнее,
 ## для того, чтобы выделяться.
@@ -53,17 +53,17 @@ define gui.muted_color = '#e0a366'
 define gui.hover_muted_color = '#eac199'
 
 ## Цвета, используемые в E0E0E0 диалогов и выборов.
-define gui.text_color = '#F5F6F8'
+define gui.text_color = '#1C1C1C'
 define gui.interface_text_color = '#8f2f55'
 
 
 ## Шрифты и их размеры #########################################################
 
 ## Шрифт, используемый внутриигровым текстом.
-define gui.text_font = "gui/fonts/EBGaramond08-Regular.otf"
+define gui.text_font = "gui/fonts/Evolventa-Regular.ttf"
 
 ## Шрифт, используемый именами персонажей.
-define gui.name_text_font = "gui/fonts/EBGaramond08-Regular.otf"
+define gui.name_text_font = "gui/fonts/BlackOpsOne.otf"
 
 ## Шрифт, используемый текстом вне игры.
 define gui.interface_text_font = "gui/fonts/BlackOpsOne.otf"
@@ -103,13 +103,13 @@ define gui.textbox_height = 278
 
 ## Местоположение текстового окна по вертикали экрана. 0.0 — верх, 0.5 — центр и
 ## 1.0 — низ.
-define gui.textbox_yalign = 1.0
+define gui.textbox_yalign = 0.98
 
 
 ## Местоположение имени говорящего персонажа по отношению к текстовому окну.
 ## Это могут быть целые значения в пикселях слева и сверху от начала окна или
 ## процентное отношение, например, 0.5 для центрирования.
-define gui.name_xpos = 0.5
+define gui.name_xpos = 0.30
 define gui.name_ypos = 0
 
 ## Горизонтальное выравнивание имени персонажа. Это может быть 0.0 для
@@ -124,7 +124,7 @@ define gui.namebox_height = None
 
 ## Границы окна, содержащего имя персонажа слева, сверху, справа и снизу по
 ## порядку.
-define gui.namebox_borders = Borders(5, 5, 5, 5)
+define gui.namebox_borders = Borders(90, 20, 90, 20)
 
 ## Если True, фон текстового окна будет моститься (расширяться по эффекту
 ## плитки). Если False, фон текстового окна будет фиксированным.
@@ -134,11 +134,11 @@ define gui.namebox_tile = False
 ## Размещение диалога по отношению к текстовому окну. Это могут быть целые
 ## значения в пикселях слева и сверху от текстового окна или процентное
 ## отношение, например, 0.5 для центрирования.
-define gui.dialogue_xpos = 402
-define gui.dialogue_ypos = 75
+define gui.dialogue_xpos = 500
+define gui.dialogue_ypos = 100
 
 ## Максимальная ширина текста диалога в пикселях.
-define gui.dialogue_width = 1116
+define gui.dialogue_width = 950
 
 ## Горизонтальное выравнивание текста диалога. Это может быть 0.0 для
 ## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного

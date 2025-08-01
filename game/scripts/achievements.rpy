@@ -123,3 +123,7 @@ init python:
         persistent._achievement_unlocked.clear()
         renpy.save_persistent()
         renpy.restart_interaction()
+
+    def unlock_all_achievements():
+        for ach in achievements.values():
+            ach.unlock()
