@@ -26,6 +26,8 @@ define robot = Character("")
 #region characters
 define t = Character('Тайда', color='#4a9eff', image='t', callback=speaker('t'))
 
+define t_f = Character('Тайда', color='#4a9eff', image='t_f', callback=speaker('t'))
+
 define t_t = Character('', color='#4a9eff', image='t')
                         
 define d = Character('Дзинзо', color='#ffdfba', image='d',
@@ -40,7 +42,7 @@ define k = Character('Кацуми', color='#ffdfba', image='k',
 define h = Character('Хикару', color='#bae1ff', image='h',
                         callback=speaker('h'))
 
-define d = Character('Ден', color='#ffdfba', image='den',
+define den = Character('Ден', color='#ffdfba', image='den',
                         callback=speaker('den'))
 
 define i = Character('Изуми', color='#ffb3ba', image='i', 
@@ -52,16 +54,140 @@ define dad = Character('Папа', color='#ffdfba', image='dad',
 define mom = Character('Мама', color='#ffdfba', image='mom',
                         callback=speaker('mom'))
 
-#region Taida
+define teacher = Character('Учитель', color='#ffdfba', image='teacher')
+
+#region Taida mini
 layeredimage side t:
     group pose:
         attribute idle default:
             'images/taida/Taida_mini_neutral.png'
         attribute thinking:
             'images/taida/Taida_mini_thinking.png'
+        attribute angry:
+            'images/taida/Taida_mini_angry.png'
+        attribute asharashen:
+            'images/taida/Taida_mini_asharashen.png'
+        attribute calm:
+            'images/taida/Taida_mini_calm.png'
+        attribute crazy:
+            'images/taida/Taida_mini_crazy.png'
+        attribute cry:
+            'images/taida/Taida_mini_cry.png'
+        attribute depressed:
+            'images/taida/Taida_mini_depressed.png'
+        attribute dream:
+            'images/taida/Taida_mini_dream.png'
+        attribute fear:
+            'images/taida/Taida_mini_fear.png'
+        attribute happy:
+            'images/taida/Taida_mini_happy.png'
+        attribute neutral_happy:
+            'images/taida/Taida_mini_neutral_happy.png'
+        attribute sad:
+            'images/taida/Taida_mini_sad.png'
+        attribute sad_angry:
+            'images/taida/Taida_mini_sad_angry.png'
+        attribute surprised:
+            'images/taida/Taida_mini_surprised.png'
+        attribute tricky:
+            'images/taida/Taida_mini_tricky.png'
 
     group emotion if_any "idle":
-        attribute neutral default: #нецтральный
+        attribute neutral default: #нейтральный
+            'images/taida/Taida_mini_neutral.png'
+        attribute cry: #плачет
+            'images/taida/Taida_mini_cry.png'
+        attribute dream: #мечтательный
+            'images/taida/Taida_mini_dream.png'
+        attribute surprised: #удивлен
+            'images/taida/Taida_mini_surprised.png'
+        attribute sad_angry: #грусть + злость
+            'images/taida/Taida_mini_sad_angry.png'
+        attribute angry: #злость
+            'images/taida/Taida_mini_angry.png'
+        attribute sad: #печальный
+            'images/taida/Taida_mini_sad.png'
+        attribute fear: #испуганный
+            'images/taida/Taida_mini_fear.png'
+        attribute crazy: #безумие
+            'images/taida/Taida_mini_crazy.png'
+        attribute happy: #счастливый
+            'images/taida/Taida_mini_happy.png'
+        attribute tricky: #хитрость
+            'images/taida/Taida_mini_tricky.png'
+        attribute neutral_happy: #нейтральный счастливый
+            'images/taida/Taida_mini_neutral_happy.png'
+        attribute thinking: #думаю
+            'images/taida/Taida_mini_thinking.png'
+        attribute asharashen: #ашарашен
+            'images/taida/Taida_mini_asharasen.png'
+        attribute calm: #спокойный
+            'images/taida/Taida_mini_calm.png'
+        attribute depressed: #депрессивный
+            'images/taida/Taida_mini_depressed.png'
+
+    group mouth:
+        attribute talk if_any "idle":
+            WhileSpeaking('t', 'taida_talk_idle', Null())
+        attribute talk if_any "thinking":
+            WhileSpeaking('t', 'taida_talk_thinking', Null())
+
+image taida_talk_idle:
+    'images/taida/GG_mini_rot_1.png'
+    pause 0.1
+    'images/taida/GG_mini_rot_2.png'
+    pause 0.1
+    'images/taida/GG_mini_rot_3.png'
+    repeat
+
+image taida_talk_thinking:
+    'images/taida/GG_mini_rot_1.png'
+    pause 0.1
+    'images/taida/GG_mini_rot_2.png'
+    pause 0.1
+    'images/taida/GG_mini_rot_3.png'
+    pause 0.1
+    repeat
+#endregion
+
+#region Taida full
+layeredimage t_f:
+    group pose:
+        attribute idle default:
+            'images/taida/Taida_neutral.png'
+        attribute thinking:
+            'images/taida/Taida_thinking.png'
+        attribute angry:
+            'images/taida/Taida_angry.png'
+        attribute asharashen:
+            'images/taida/Taida_asharashen.png'
+        attribute calm:
+            'images/taida/Taida_calm.png'
+        attribute crazy:
+            'images/taida/Taida_crazy.png'
+        attribute cry:
+            'images/taida/Taida_cry.png'
+        attribute depressed:
+            'images/taida/Taida_depressed.png'
+        attribute dream:
+            'images/taida/Taida_dream.png'
+        attribute fear:
+            'images/taida/Taida_fear.png'
+        attribute happy:
+            'images/taida/Taida_happy.png'
+        attribute neutral_happy:
+            'images/taida/Taida_neutral_happy.png'
+        attribute sad:
+            'images/taida/Taida_sad.png'
+        attribute sad_angry:
+            'images/taida/Taida_sad_angry.png'
+        attribute surprised:
+            'images/taida/Taida_surprised.png'
+        attribute tricky:
+            'images/taida/Taida_tricky.png'
+
+    group emotion if_any "idle":
+        attribute neutral default: #нейтральный
             'images/taida/Taida_mini_neutral.png'
         attribute cry: #плачет
             'images/taida/Taida_mini_cry.png'
@@ -230,6 +356,78 @@ image umi_talk_greeting:
 
 #endregion
 
+#region Kazumi
+layeredimage k:
+    group pose:
+        attribute idle default:
+            Null()
+
+    group emotion if_any "idle":
+        attribute neutral default:
+            "images/Kazumi/neutral.png"
+
+    group mouth:
+        attribute talk if_any "idle":
+            WhileSpeaking('k', 'k_talk_idle', Null())
+"""
+image mom_talk_idle:
+    "images/mom/Mom_rot_1.png"
+    pause 0.1
+    "images/mom/Mom_rot_2.png"
+    pause 0.1
+    "images/mom/Mom_rot_3.png"
+    repeat
+"""
+#endregion
+
+#region Hikaru
+layeredimage h:
+    group pose:
+        attribute idle default:
+            Null()
+
+    group emotion if_any "idle":
+        attribute neutral default:
+            "images/Hikaru/neutral.png"
+
+    group mouth:
+        attribute talk if_any "idle":
+            WhileSpeaking('h', 'h_talk_idle', Null())
+"""
+image mom_talk_idle:
+    "images/mom/Mom_rot_1.png"
+    pause 0.1
+    "images/mom/Mom_rot_2.png"
+    pause 0.1
+    "images/mom/Mom_rot_3.png"
+    repeat
+"""
+#endregion
+
+#region Den
+layeredimage den:
+    group pose:
+        attribute idle default:
+            Null()
+
+    group emotion if_any "idle":
+        attribute neutral default:
+            "images/Den/neutral.png"
+
+    group mouth:
+        attribute talk if_any "idle":
+            WhileSpeaking('d', 'd_talk_idle', Null())
+"""
+image mom_talk_idle:
+    "images/mom/Mom_rot_1.png"
+    pause 0.1
+    "images/mom/Mom_rot_2.png"
+    pause 0.1
+    "images/mom/Mom_rot_3.png"
+    repeat
+"""
+#endregion
+
 #region Dad
 layeredimage dad:
     group pose:
@@ -322,4 +520,30 @@ image izumi_talk_idle:
     "images/Izumi/Izumi_rot_3.png"
     repeat
 
+#endregion
+
+#region Teacher
+layeredimage teacher:
+    group pose:
+        attribute idle default:
+            Null()
+
+    group emotion if_any "idle":
+        attribute neutral default:
+            "images/Teacher/normal.png"
+        attribute serious:
+            "images/Teacher/brow.png"
+
+    group mouth:
+        attribute talk if_any "idle":
+            WhileSpeaking('teacher', 'teacher_talk_idle', Null())
+"""
+image mom_talk_idle:
+    "images/mom/Mom_rot_1.png"
+    pause 0.1
+    "images/mom/Mom_rot_2.png"
+    pause 0.1
+    "images/mom/Mom_rot_3.png"
+    repeat
+"""
 #endregion
