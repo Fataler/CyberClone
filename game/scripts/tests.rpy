@@ -204,45 +204,165 @@ label test_taida_states:
     "Тестирование всех состояний персонажа Taida"
     
     show bg_class_room
-    "=== ПОЗА IDLE ==="
     
-    t idle neutral "t idle neutral"
+    "=== ПОЗА EAR (БЕЗ ШКОЛЬНОЙ ФОРМЫ) ==="
+    
+    show t_f ear neutral
+    t ear neutral "ear neutral (default)"
+    
+    show t_f ear careless
+    t ear careless "ear careless (беззаботный)"
+    
+    show t_f ear cute
+    t ear cute "ear cute (милый)"
+    
+    show t_f ear cute_cry
+    t ear cute_cry "ear cute_cry (плачет)"
+    
+    show t_f ear embarrassed
+    t ear embarrassed "ear embarrassed (смущенный)"
+    
+    show t_f ear laugh
+    t ear laugh "ear laugh (непосредственный)"
+    
+    show t_f ear neutral_camera
+    t ear neutral_camera "ear neutral_camera (4 стена)"
+    
+    show t_f ear silly
+    t ear silly "ear silly (глупый)"
+    
+    show t_f ear oops
+    t ear oops "ear oops (упс)"
+    
+    show t_f ear surprised
+    t ear surprised "ear surprised (удивлен)"
+    
+    "=== ПОЗА EAR_SCHOOL (В ШКОЛЬНОЙ ФОРМЕ) ==="
+    
+    show t_f ear_school neutral
+    t ear_school neutral "ear_school neutral (default)"
+    
+    show t_f ear_school cry
+    t ear_school cry "ear_school cry (плачет)"
+    
+    show t_f ear_school dream
+    t ear_school dream "ear_school dream (мечтательный)"
+    
+    show t_f ear_school surprised
+    t ear_school surprised "ear_school surprised (удивлен)"
+    
+    show t_f ear_school sad_angry
+    t ear_school sad_angry "ear_school sad_angry (грусть+злость)"
+    
+    show t_f ear_school angry
+    t ear_school angry "ear_school angry (злость)"
+    
+    show t_f ear_school sad
+    t ear_school sad "ear_school sad (печальный)"
+    
+    show t_f ear_school fear
+    t ear_school fear "ear_school fear (испуганный)"
+    
+    show t_f ear_school crazy
+    t ear_school crazy "ear_school crazy (безумие)"
+    
+    show t_f ear_school happy
+    t ear_school happy "ear_school happy (счастливый)"
+    
+    show t_f ear_school tricky
+    t ear_school tricky "ear_school tricky (хитрость)"
+    
+    show t_f ear_school neutral_happy
+    t ear_school neutral_happy "ear_school neutral_happy (нейтральный счастливый)"
+    
+    show t_f ear_school think
+    t ear_school think "ear_school thinking (думаю)"
+    
+    show t_f ear_school asharashen
+    t ear_school asharashen "ear_school asharashen (ашарашен)"
+    
+    show t_f ear_school calm
+    t ear_school calm "ear_school calm (спокойный)"
+    
+    show t_f ear_school depressed
+    t ear_school depressed "ear_school depressed (депрессивный)"
+    
+    "=== ПОЗА THINKING (ПОЗА 2) ==="
+    
+    show t_f thinking neutral school
+    t thinking neutral "thinking neutral (default)"
+    
+    show t_f thinking cunning school
+    t thinking cunning "thinking cunning (хитрый)"
+    
+    show t_f thinking neutral_4stena school
+    t thinking neutral_4stena "thinking neutral_4stena (4 стена)"
+    
+    show t_f thinking asharashen school
+    t thinking asharashen "thinking asharashen (ашарашен)"
+    
+    show t_f thinking genius school
+    t thinking genius "thinking genius (гений)"
+    
+    show t_f thinking sleepy school
+    t thinking sleepy "thinking sleepy (сонный)"
+    
+    show t_f thinking think school
+    t thinking think "thinking thinking (думает)"
+    
+    show t_f thinking thinking_hard school
+    t thinking thinking_hard "thinking thinking_hard (сильно думает)"
+    
+    show t_f thinking tired school
+    t thinking tired "thinking tired (устал)"
+    
+    "=== ПОЗА HZ (ПОЗА 1) ==="
+    
+    show t_f hz neutral school
+    t hz neutral "hz neutral (default)"
+    
+    show t_f hz cry_4stena school
+    t hz cry_4stena "hz cry_4stena (плачет 4 стена)"
+    
+    show t_f hz cry_sad school
+    t hz cry_sad "hz cry_sad (плачет подавленно)"
+    
+    show t_f hz cry_why school
+    t hz cry_why "hz cry_why (плачет вопросительно)"
+    
+    show t_f hz happy school
+    t hz happy "hz happy (счастлив)"
+    
+    show t_f hz smile school
+    t "hz smile (улыбается)"
+    
+    show t_f hz dissatisfied school
+    t hz dissatisfied "hz dissatisfied (недоволен)"
+    
+    show t_f hz neutral_4stena school
+    t hz neutral_4stena "hz neutral_4stena (нейтральный 4 стена)"
+    
+    show t_f hz glad school
+    t hz glad "hz glad (радуется)"
+    
+    show t_f hz wtf school
+    t hz wtf "hz wtf"
+    
+    "=== ТЕСТ ЛЕТНЕЙ ФОРМЫ ==="
+    
+    show t_f ear neutral summer_norm
+    t ear neutral summer_norm "ear neutral summer_norm"
+    
+    show t_f thinking neutral summer_strem
+    t thinking neutral summer_strem "thinking neutral summer_strem"
+    
+    show t_f hz neutral summer_norm
+    t hz neutral summer_norm "hz neutral summer_norm"
 
-    t "Размещение диалога по отношению к текстовому окну. Это могут быть целые f f f f f f"
+    show t_f hz neutral summer_strem
+    t hz neutral summer_strem "hz neutral summer_strem"
     
-    t idle cry "t idle cry"
-    
-    t dream "t idle dream"
-    
-    t surprised "t idle surprised"
-    
-    t sad_angry "t idle sad_angry"
-    
-    t angry "t idle angry"
-    
-    t sad "t idle sad"
-    
-    t fear "t idle fear"
-    
-    t crazy "t idle crazy"
-    
-    t happy "t idle happy"
-    
-    t tricky "t idle tricky"
-    
-    t neutral_happy "t idle neutral_happy"
-    
-    t asharasen "t idle asharasen"
-    
-    t calm "t idle calm"
-    
-    t depressed "t idle depressed"
-
-    t_t "t thinking"
-
-    t_t "t thinking"
-    
-    hide t
+    hide t_f
     "Тест состояний Taida завершён!"
     
     return
@@ -257,8 +377,12 @@ label test_dzinzo_states:
     d "d pose1 neutral school"
     
     show d pose1 happy school
+    hide d
     d "d pose1 happy school"
     t "d a"
+    d_t "мысли дзинзо"
+    show t_f happy
+    t_f "мысли тайда"
     
     show d pose1 very_happy school
     d "d pose1 very_happy school"

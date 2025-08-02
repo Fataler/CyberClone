@@ -50,83 +50,7 @@ define mom = Character('Мама', color='#15350b', image='mom', callback=speake
 
 define teacher = Character('Учитель', color='#ffdfba', image='teacher')
 
-#region Taida mini
-layeredimage side t:
-    group pose:
-        attribute idle default:
-            'images/taida/Taida_mini_neutral.png'
-        attribute thinking_smile:
-            'images/taida/Taida_mini_thinking_smile.png'
-        attribute angry:
-            'images/taida/Taida_mini_angry.png'
-        attribute asharashen:
-            'images/taida/Taida_mini_asharashen.png'
-        attribute dream:
-            'images/taida/Taida_mini_dream.png'
-        attribute crazy:
-            'images/taida/Taida_mini_crazy.png'
-        attribute cry:
-            'images/taida/Taida_mini_cry.png'
-        attribute depressed:
-            'images/taida/Taida_mini_depressed.png'
-        attribute thinking:
-            'images/taida/Taida_mini_dream.png'
-        attribute fear:
-            'images/taida/Taida_mini_fear.png'
-        attribute dream_happy:
-            'images/taida/Taida_mini_dream_happy.png'
-        attribute neutral_happy:
-            'images/taida/Taida_mini_neutral_happy.png'
-        attribute sad:
-            'images/taida/Taida_mini_sad.png'
-        attribute sad_angry:
-            'images/taida/Taida_mini_sad_angry.png'
-        attribute surprised:
-            'images/taida/Taida_mini_surprised.png'
-        attribute tricky:
-            'images/taida/Taida_mini_tricky.png'
-
-    group emotion if_any "idle":
-        attribute idle default:
-            'images/taida/Taida_mini_neutral.png'
-        attribute thinking_smile:
-            'images/taida/Taida_mini_thinking_smile.png'
-        attribute angry:
-            'images/taida/Taida_mini_angry.png'
-        attribute asharashen:
-            'images/taida/Taida_mini_asharashen.png'
-        attribute dream:
-            'images/taida/Taida_mini_dream.png'
-        attribute crazy:
-            'images/taida/Taida_mini_crazy.png'
-        attribute cry:
-            'images/taida/Taida_mini_cry.png'
-        attribute depressed:
-            'images/taida/Taida_mini_depressed.png'
-        attribute thinking:
-            'images/taida/Taida_mini_dream.png'
-        attribute fear:
-            'images/taida/Taida_mini_fear.png'
-        attribute dream_happy:
-            'images/taida/Taida_mini_dream_happy.png'
-        attribute neutral_happy:
-            'images/taida/Taida_mini_neutral_happy.png'
-        attribute sad:
-            'images/taida/Taida_mini_sad.png'
-        attribute sad_angry:
-            'images/taida/Taida_mini_sad_angry.png'
-        attribute surprised:
-            'images/taida/Taida_mini_surprised.png'
-        attribute tricky:
-            'images/taida/Taida_mini_tricky.png'
-
-    group mouth:
-        attribute talk if_any "idle":
-            WhileSpeaking('t', 'taida_talk_idle', Null())
-        attribute talk if_any "thinking":
-            WhileSpeaking('t', 'taida_talk_thinking', Null())
-        attribute talk if_any "asharashen":
-            WhileSpeaking('t', 'taida_talk_asharashen', Null())
+image side t = LayeredImageProxy("t_f", Transform(crop=(0, 0, 600, 460), xoffset=0))
 
 image taida_talk_idle:
     'images/taida/GG_mini_rot_1.png'
@@ -149,46 +73,70 @@ image taida_talk_thinking:
 #region Taida full
 layeredimage t_f:
     group pose:
-        attribute ear default:
+        attribute ear: #pose3
             Null()
-        attribute thinking:
+        attribute ear_school default: #pose3_school
             Null()
-        attribute hz:
+        attribute thinking: #pose2
+            Null()
+        attribute hz: #pose1
             Null()
 
     group emotion if_any "ear":
         attribute neutral default: #нейтральный
             'images/taida/Taida_pose3_neutral.png'
-        attribute cry: #плачет
-            'images/taida/Taida_pose3_cry.png'
-        attribute dream: #мечтательный
-            'images/taida/Taida_pose3_dream.png'
-        attribute surprised: #удивлен
+        attribute careless: #беззаботный
+            'images/taida/Taida_pose3_careless.png'
+        attribute cute: #милый
+            'images/taida/Taida_pose3_cute.png'
+        attribute cute_cry: #плачет
+            'images/taida/Taida_pose3_cute_cry.png'
+        attribute embarrassed: #smushen
+            'images/taida/Taida_pose3_embarrassed.png'
+        attribute laugh:
+            'images/taida/Taida_pose3_neposredstvenniy.png'
+        attribute neutral_camera:
+            'images/taida/Taida_pose3_Neutral_4stena.png'
+        attribute silly:
+            'images/taida/Taida_pose3_neutral_silly.png'
+        attribute oops:
+            'images/taida/Taida_pose3_oooops.png'
+        attribute surprised:
             'images/taida/Taida_pose3_surprised.png'
+
+    group emotion if_any "ear_school":
+        attribute neutral default: #нейтральный
+            'images/taida/Taida_pose3_shkolnoe_neutral.png'
+        attribute cry: #плачет
+            'images/taida/Taida_pose3_shkolnoe_cry.png'
+        attribute dream: #мечтательный
+            'images/taida/Taida_pose3_shkolnoe_dream.png'
+        attribute surprised: #удивлен
+            'images/taida/Taida_pose3_shkolnoe_surprised.png'
         attribute sad_angry: #грусть + злость
-            'images/taida/Taida_pose3_sad_angry.png'
+            'images/taida/Taida_pose3_shkolnoe_sad_angry.png'
         attribute angry: #злость
-            'images/taida/Taida_pose3_angry.png'
+            'images/taida/Taida_pose3_shkolnoe_angry.png'
         attribute sad: #печальный
-            'images/taida/Taida_pose3_sad.png'
+            'images/taida/Taida_pose3_shkolnoe_sad.png'
         attribute fear: #испуганный
-            'images/taida/Taida_pose3_fear.png'
+            'images/taida/Taida_pose3_shkolnoe_fear.png'
         attribute crazy: #безумие
-            'images/taida/Taida_pose3_crazy.png'
+            'images/taida/Taida_pose3_shkolnoe_crazy.png'
         attribute happy: #счастливый
-            'images/taida/Taida_pose3_happy.png'
+            'images/taida/Taida_pose3_shkolnoe_happy.png'
         attribute tricky: #хитрость
-            'images/taida/Taida_pose3_tricky.png'
+            'images/taida/Taida_pose3_shkolnoe_tricky.png'
         attribute neutral_happy: #нейтральный счастливый
-            'images/taida/Taida_pose3_neutral_happy.png'
-        attribute thinking: #думаю
-            'images/taida/Taida_pose3_thinking.png'
+            'images/taida/Taida_pose3_shkolnoe_neutral_happy.png'
+        attribute think: #думаю
+            'images/taida/Taida_pose3_shkolnoe_thinking.png'
         attribute asharashen: #ашарашен
-            'images/taida/Taida_pose3_asharasen.png'
+            'images/taida/Taida_pose3_shkolnoe_asharashen.png'
         attribute calm: #спокойный
-            'images/taida/Taida_pose3_calm.png'
+            'images/taida/Taida_pose3_shkolnoe_calm.png'
         attribute depressed: #депрессивный
-            'images/taida/Taida_pose3_depressed.png'
+            'images/taida/Taida_pose3_shkolnoe_depressed.png'
 
     group emotion if_any "thinking":
         attribute neutral default: #нейтральный
@@ -203,7 +151,7 @@ layeredimage t_f:
             'images/taida/Taida_pose2_shine_genious.png'
         attribute sleepy: #сонный
             'images/taida/Taida_pose2_sleepy.png'
-        attribute thinking: #думает
+        attribute think: #думает
             'images/taida/Taida_pose2_thinking.png'
         attribute thinking_hard: #сильно думает
             'images/taida/Taida_pose2_thinking_sad.png'
@@ -237,6 +185,10 @@ layeredimage t_f:
         attribute talk:
             WhileSpeaking('t_f', 'taida_talk_ear', Null())
     
+    group mouth if_any "ear_school":
+        attribute talk:
+            WhileSpeaking('t_f', 'taida_talk_ear', Null())
+    
     group mouth if_any "thinking":
         attribute talk:
             WhileSpeaking('t_f', 'taida_talk_thinking', Null())
@@ -249,9 +201,13 @@ layeredimage t_f:
         attribute school default:
             Null()
         attribute summer_norm:
-            "images/taida/.png"
+            "images/taida/Taida_pose3_norm.png"
         attribute summer_strem:
-            "images/taida/.png"  
+            "images/taida/Taida_pose3_strem.png"  
+
+    group dress if_any "ear_school":
+        attribute school default:
+            Null()
 
     group dress if_any "thinking":
         attribute school default:
@@ -263,7 +219,7 @@ layeredimage t_f:
 
     group dress if_any "hz":
         attribute school default:
-            "images/taida/Taida_pose1_shkolnoe"
+            "images/taida/Taida_pose1_shkolnoe.png"
         attribute summer_norm:
             "images/taida/Taida_pose1_norm.png"
         attribute summer_strem:
