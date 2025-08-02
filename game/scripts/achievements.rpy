@@ -100,7 +100,7 @@ init python:
         ),
         PIG_SLAYER: Achievement(
             PIG_SLAYER,
-            "Бессмысленность и беспощадность",
+            "Кабанье проклятье",
             "Одержи победу над Ужасным Вепрем",
             True,
             "gui/menu/achievements/pig.png"

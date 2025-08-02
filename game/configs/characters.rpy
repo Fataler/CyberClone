@@ -42,7 +42,7 @@ define h = Character('Хикару', color='#66161a', image='h', callback=speake
 
 define den = Character('Ден', color='#7e7719', image='den', callback=speaker('den'))
 
-define i = Character('Изуми', color='#431755', image='i', callback=speaker('i'))
+define i = Character('Изуми-сенсей', color='#431755', image='i', callback=speaker('i'))
 
 define dad = Character('Папа', color='#0f4244', image='dad', callback=speaker('dad'))
 
@@ -55,26 +55,26 @@ layeredimage side t:
     group pose:
         attribute idle default:
             'images/taida/Taida_mini_neutral.png'
-        attribute thinking:
-            'images/taida/Taida_mini_thinking.png'
+        attribute thinking_smile:
+            'images/taida/Taida_mini_thinking_smile.png'
         attribute angry:
             'images/taida/Taida_mini_angry.png'
         attribute asharashen:
             'images/taida/Taida_mini_asharashen.png'
-        attribute calm:
-            'images/taida/Taida_mini_calm.png'
+        attribute dream:
+            'images/taida/Taida_mini_dream.png'
         attribute crazy:
             'images/taida/Taida_mini_crazy.png'
         attribute cry:
             'images/taida/Taida_mini_cry.png'
         attribute depressed:
             'images/taida/Taida_mini_depressed.png'
-        attribute dream:
+        attribute thinking:
             'images/taida/Taida_mini_dream.png'
         attribute fear:
             'images/taida/Taida_mini_fear.png'
-        attribute happy:
-            'images/taida/Taida_mini_happy.png'
+        attribute dream_happy:
+            'images/taida/Taida_mini_dream_happy.png'
         attribute neutral_happy:
             'images/taida/Taida_mini_neutral_happy.png'
         attribute sad:
@@ -87,38 +87,38 @@ layeredimage side t:
             'images/taida/Taida_mini_tricky.png'
 
     group emotion if_any "idle":
-        attribute neutral default: #нейтральный
+        attribute idle default:
             'images/taida/Taida_mini_neutral.png'
-        attribute cry: #плачет
-            'images/taida/Taida_mini_cry.png'
-        attribute dream: #мечтательный
-            'images/taida/Taida_mini_dream.png'
-        attribute surprised: #удивлен
-            'images/taida/Taida_mini_surprised.png'
-        attribute sad_angry: #грусть + злость
-            'images/taida/Taida_mini_sad_angry.png'
-        attribute angry: #злость
+        attribute thinking_smile:
+            'images/taida/Taida_mini_thinking_smile.png'
+        attribute angry:
             'images/taida/Taida_mini_angry.png'
-        attribute sad: #печальный
-            'images/taida/Taida_mini_sad.png'
-        attribute fear: #испуганный
-            'images/taida/Taida_mini_fear.png'
-        attribute crazy: #безумие
+        attribute asharashen:
+            'images/taida/Taida_mini_asharashen.png'
+        attribute dream:
+            'images/taida/Taida_mini_dream.png'
+        attribute crazy:
             'images/taida/Taida_mini_crazy.png'
-        attribute happy: #счастливый
-            'images/taida/Taida_mini_happy.png'
-        attribute tricky: #хитрость
-            'images/taida/Taida_mini_tricky.png'
-        attribute neutral_happy: #нейтральный счастливый
-            'images/taida/Taida_mini_neutral_happy.png'
-        attribute thinking: #думаю
-            'images/taida/Taida_mini_thinking.png'
-        attribute asharashen: #ашарашен
-            'images/taida/Taida_mini_asharasen.png'
-        attribute calm: #спокойный
-            'images/taida/Taida_mini_calm.png'
-        attribute depressed: #депрессивный
+        attribute cry:
+            'images/taida/Taida_mini_cry.png'
+        attribute depressed:
             'images/taida/Taida_mini_depressed.png'
+        attribute thinking:
+            'images/taida/Taida_mini_dream.png'
+        attribute fear:
+            'images/taida/Taida_mini_fear.png'
+        attribute dream_happy:
+            'images/taida/Taida_mini_dream_happy.png'
+        attribute neutral_happy:
+            'images/taida/Taida_mini_neutral_happy.png'
+        attribute sad:
+            'images/taida/Taida_mini_sad.png'
+        attribute sad_angry:
+            'images/taida/Taida_mini_sad_angry.png'
+        attribute surprised:
+            'images/taida/Taida_mini_surprised.png'
+        attribute tricky:
+            'images/taida/Taida_mini_tricky.png'
 
     group mouth:
         attribute talk if_any "idle":
@@ -149,94 +149,148 @@ image taida_talk_thinking:
 #region Taida full
 layeredimage t_f:
     group pose:
-        attribute idle default:
-            'images/taida/Taida_neutral.png'
+        attribute ear default:
+            Null()
         attribute thinking:
-            'images/taida/Taida_thinking.png'
-        attribute angry:
-            'images/taida/Taida_angry.png'
-        attribute asharashen:
-            'images/taida/Taida_asharashen.png'
-        attribute calm:
-            'images/taida/Taida_calm.png'
-        attribute crazy:
-            'images/taida/Taida_crazy.png'
-        attribute cry:
-            'images/taida/Taida_cry.png'
-        attribute depressed:
-            'images/taida/Taida_depressed.png'
-        attribute dream:
-            'images/taida/Taida_dream.png'
-        attribute fear:
-            'images/taida/Taida_fear.png'
-        attribute happy:
-            'images/taida/Taida_happy.png'
-        attribute neutral_happy:
-            'images/taida/Taida_neutral_happy.png'
-        attribute sad:
-            'images/taida/Taida_sad.png'
-        attribute sad_angry:
-            'images/taida/Taida_sad_angry.png'
-        attribute surprised:
-            'images/taida/Taida_surprised.png'
-        attribute tricky:
-            'images/taida/Taida_tricky.png'
+            Null()
+        attribute hz:
+            Null()
 
-    group emotion if_any "idle":
+    group emotion if_any "ear":
         attribute neutral default: #нейтральный
-            'images/taida/Taida_mini_neutral.png'
+            'images/taida/Taida_pose3_neutral.png'
         attribute cry: #плачет
-            'images/taida/Taida_mini_cry.png'
+            'images/taida/Taida_pose3_cry.png'
         attribute dream: #мечтательный
-            'images/taida/Taida_mini_dream.png'
+            'images/taida/Taida_pose3_dream.png'
         attribute surprised: #удивлен
-            'images/taida/Taida_mini_surprised.png'
+            'images/taida/Taida_pose3_surprised.png'
         attribute sad_angry: #грусть + злость
-            'images/taida/Taida_mini_sad_angry.png'
+            'images/taida/Taida_pose3_sad_angry.png'
         attribute angry: #злость
-            'images/taida/Taida_mini_angry.png'
+            'images/taida/Taida_pose3_angry.png'
         attribute sad: #печальный
-            'images/taida/Taida_mini_sad.png'
+            'images/taida/Taida_pose3_sad.png'
         attribute fear: #испуганный
-            'images/taida/Taida_mini_fear.png'
+            'images/taida/Taida_pose3_fear.png'
         attribute crazy: #безумие
-            'images/taida/Taida_mini_crazy.png'
+            'images/taida/Taida_pose3_crazy.png'
         attribute happy: #счастливый
-            'images/taida/Taida_mini_happy.png'
+            'images/taida/Taida_pose3_happy.png'
         attribute tricky: #хитрость
-            'images/taida/Taida_mini_tricky.png'
+            'images/taida/Taida_pose3_tricky.png'
         attribute neutral_happy: #нейтральный счастливый
-            'images/taida/Taida_mini_neutral_happy.png'
+            'images/taida/Taida_pose3_neutral_happy.png'
         attribute thinking: #думаю
-            'images/taida/Taida_mini_thinking.png'
+            'images/taida/Taida_pose3_thinking.png'
         attribute asharashen: #ашарашен
-            'images/taida/Taida_mini_asharasen.png'
+            'images/taida/Taida_pose3_asharasen.png'
         attribute calm: #спокойный
-            'images/taida/Taida_mini_calm.png'
+            'images/taida/Taida_pose3_calm.png'
         attribute depressed: #депрессивный
-            'images/taida/Taida_mini_depressed.png'
+            'images/taida/Taida_pose3_depressed.png'
 
-    group mouth:
-        attribute talk if_any "idle":
-            WhileSpeaking('t', 'taida_talk_idle', Null())
-        attribute talk if_any "thinking":
-            WhileSpeaking('t', 'taida_talk_thinking', Null())
+    group emotion if_any "thinking":
+        attribute neutral default: #нейтральный
+            'images/taida/Taida_pose2_neutral.png'
+        attribute cunning: #хитрый
+            'images/taida/Taida_pose2_cunning.png'
+        attribute neutral_4stena: #4 стена нейтральный
+            'images/taida/Taida_pose2_neutral_4stena.png'
+        attribute asharashen: #ашарашен
+            'images/taida/Taida_pose2_osharashen.png'
+        attribute genius: #гений
+            'images/taida/Taida_pose2_shine_genious.png'
+        attribute sleepy: #сонный
+            'images/taida/Taida_pose2_sleepy.png'
+        attribute thinking: #думает
+            'images/taida/Taida_pose2_thinking.png'
+        attribute thinking_hard: #сильно думает
+            'images/taida/Taida_pose2_thinking_sad.png'
+        attribute tired: #устал
+            'images/taida/Taida_pose2_tired.png'
 
-image taida_talk_idle:
-    'images/taida/GG_mini_rot_1.png'
+    group emotion if_any "hz":
+        attribute neutral default: #нейтральный
+            'images/taida/Taida_pose1_neutral.png'
+        attribute cry_4stena: #плачет 4 стена
+            'images/taida/Taida_pose1_cry_4stena.png'
+        attribute cry_sad: #плачет подавленно
+            'images/taida/Taida_pose1_cry_sad.png'
+        attribute cry_why: #плачет вопросительно
+            'images/taida/Taida_pose1_cry_why.png'
+        attribute happy: #счастлив
+            'images/taida/Taida_pose1_happy.png'
+        attribute smile: #улыбается
+            'images/taida/Taida_pose1_hz.png'
+        attribute dissatisfied: #недоволен
+            'images/taida/Taida_pose1_nedovolen.png'
+        attribute neutral_4stena: #нейтральный 4 стена
+            'images/taida/Taida_pose1_neutral_4stena.png'
+        attribute glad: #радуется
+            'images/taida/Taida_pose1_neutral_happy.png'
+        attribute wtf: #wtf
+            'images/taida/Taida_pose1_wtf.png'
+
+
+    group mouth if_any "ear":
+        attribute talk:
+            WhileSpeaking('t_f', 'taida_talk_ear', Null())
+    
+    group mouth if_any "thinking":
+        attribute talk:
+            WhileSpeaking('t_f', 'taida_talk_thinking', Null())
+
+    group mouth if_any "hz":
+        attribute talk:
+            WhileSpeaking('t_f', 'taida_talk_hz', Null())
+
+    group dress if_any "ear":
+        attribute school default:
+            Null()
+        attribute summer_norm:
+            "images/taida/.png"
+        attribute summer_strem:
+            "images/taida/.png"  
+
+    group dress if_any "thinking":
+        attribute school default:
+            "images/taida/Taida_pose2_shkolnoe.png"
+        attribute summer_norm:
+            "images/taida/Taida_pose2_norm.png"
+        attribute summer_strem:
+            "images/taida/Taida_pose2_strem.png"            
+
+    group dress if_any "hz":
+        attribute school default:
+            "images/taida/Taida_pose1_shkolnoe"
+        attribute summer_norm:
+            "images/taida/Taida_pose1_norm.png"
+        attribute summer_strem:
+            "images/taida/Taida_pose1_strem.png"  
+
+image taida_talk_ear:
+    'images/taida/Taida_pose3_rot1.png'
     pause 0.1
-    'images/taida/GG_mini_rot_2.png'
+    'images/taida/Taida_pose3_rot2.png'
     pause 0.1
-    'images/taida/GG_mini_rot_3.png'
+    'images/taida/Taida_pose3_rot3.png'
     repeat
 
 image taida_talk_thinking:
-    'images/taida/GG_mini_rot_1.png'
+    'images/taida/Taida_pose2_rot1.png'
     pause 0.1
-    'images/taida/GG_mini_rot_2.png'
+    'images/taida/Taida_pose2_rot2.png'
     pause 0.1
-    'images/taida/GG_mini_rot_3.png'
+    'images/taida/Taida_pose2_rot3.png'
+    repeat
+
+image taida_talk_hz:
+    'images/taida/Taida_pose1_rot1.png'
     pause 0.1
+    'images/taida/Taida_pose1_rot2.png'
+    pause 0.1
+    'images/taida/Taida_pose1_rot3.png'
     repeat
 #endregion
 

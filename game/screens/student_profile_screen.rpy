@@ -88,7 +88,8 @@ transform character_float:
 #region: images
 init:
     image bg = Solid("#FFFFFF")
-    image video_cat = Movie(channel='video_ch', play="video/cat.ogv", loops=0, stop_music=True, loop=True)
+    image video_katsumi = Movie(channel='video_ch', play="video/katsumi.ogv", loops=0, stop_music=True, loop=False)
+    image video_katsumi_loop = Movie(channel='video_ch', play="video/katsumi.ogv", loops=0, stop_music=True, loop=True)
 
 init python:
     def diagonal_line_left_element(color):
@@ -203,19 +204,27 @@ label show_student_profile(character_name="КАЦУМИ", character_sprite="imag
     return
 
 screen test_video():
-    add "video_cat":
+    add "video_katsumi":
         xalign 0.5
         yalign 0.5
         xsize 1920
         ysize 1080
 
+screen test_video_loop():
+    add "video_katsumi_loop":
+        xalign 0.5
+        yalign 0.5
+        xsize 1920
+        ysize 1080    
+
 label test_video:
     window hide
 
     show screen test_video
-    pause 1.0
-    
-    K "Хэй, Тайда! Ты чего такой кислый? Опять отчитали? Ожидаемо, для такого дурачка вроде тебя."
+    show screen test_video_loop
+
+    k "Хэй, Тайда! Ты чего такой кислый? Опять отчитали? Ожидаемо, для такого дурачка вроде тебя."
+
     hide screen test_video with Dissolve(0.5)
     return
 
@@ -223,7 +232,7 @@ label test_student_profile:
     
     call show_student_profile("Кацуми","images/k_test.png",{"": "КЛАСС 2-B Академии Ссыкай", "специальность: ": "программист", "характер: ": "Цундере"})
 
-    K "Хэй, Тайда! Ты чего такой кислый? Опять отчитали? Ожидаемо, для такого дурачка вроде тебя."
+    k "Хэй, Тайда! Ты чего такой кислый? Опять отчитали? Ожидаемо, для такого дурачка вроде тебя."
 
     call hide_student_profile
 
@@ -236,6 +245,6 @@ label test_another_profile:
     call show_student_profile("Хикару", 
         "images/f_test.png",
         {"": "КЛАСС 2-B Академии Ссыкай", "специальность: ": "Создание чертежей", "характер: ": "Кудере"})    
-    H "Если понадобится помощь, обратись ко мне, я одолжу тебе свои конспекты."
+    h "Если понадобится помощь, обратись ко мне, я одолжу тебе свои конспекты."
     
     return 
