@@ -382,7 +382,7 @@ label test_dzinzo_states:
     hide d
     d "d pose1 happy school"
     t "d a"
-    d_t "мысли дзинзо"
+    d_t "мысли Дзиндзо"
     show t_f happy
     t_f "мысли тайда"
     
