@@ -208,7 +208,7 @@ layeredimage t_f:
         attribute summer_norm:
             "images/taida/Taida_pose1_norm.png"
         attribute summer_strem:
-            "images/taida/Taida_pose1_strem_left.png"
+            "images/taida/Taida_pose1_strem.png"
 
     group mouth if_any "ear":
         attribute talk:
@@ -632,6 +632,7 @@ image h_talk_explain:
 #region Den
 layeredimage den:
     at auto_flip("den")
+    yoffset 1
     
     group direction:
         attribute right default:
@@ -673,17 +674,29 @@ layeredimage den:
         attribute wink:
             "images/Den/Den_krutoi_wink.png"
 
-    group dress if_any "idle":
+    group dress if_all("idle", "right"):
         attribute school default:
             "images/Den/Den_achovsmisle_shkolnoe.png"
         attribute summer:
             "images/Den/Den_achovsmisle_letnee_vpravo.png"
+
+    group dress if_all("idle", "left"):
+        attribute school default:
+            "images/Den/Den_achovsmisle_shkolnoe.png"
+        attribute summer:
+            Transform("images/Den/Den_achovsmisle_letnee_vlevo.png", xzoom=-1, xoffset=-110)
         
-    group dress if_any "awesome":
+    group dress if_all("awesome", "right"):
         attribute school default:
             "images/Den/Den_krutoi_shkolnoe.png"
         attribute summer:
             "images/Den/Den_krutoi_letnee_vpravo.png"
+
+    group dress if_all("awesome", "left"):
+        attribute school default:
+            "images/Den/Den_krutoi_shkolnoe.png"
+        attribute summer:
+            Transform("images/Den/Den_krutoi_letnee_vlevo.png", xzoom=-1, xoffset=10)
 
     group mouth:
         attribute talk if_any "idle":

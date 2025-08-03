@@ -443,205 +443,232 @@ label test_dzinzo_states:
     return
 
 label test_hikaru_states:
-    "Тестирование всех состояний персонажа hikaru"
-    
-    show bg_amusement_park
-    "=== ПОЗА idle (ШКОЛЬНАЯ ФОРМА) ==="
-    
-    show h idle neutral school
-    h "h idle neutral school"
-    
-    show h idle angry school
-    h "h idle angry school"
-    
-    show h idle cunning school
-    h "h idle cunning school"
-    
-    show h idle shy school
-    h "h idle shy school"
-    
-    show h idle happy school
-    h "h idle happy school"
-    
-    show h idle smile school
-    h "h idle smile school"
-    
-    show h idle surprised school
-    h "h idle surprised school"
-    
-    show h idle smug school
-    h "h idle smug school"
-    
-    
-    "=== ПОЗА explain (ШКОЛЬНАЯ ФОРМА) ==="
-    
-    show h explain neutral school
-    h "h explain neutral school"
-    
-    show h explain neutral_talk school
-    h "h explain neutral_talk school"
-    
-    show h explain asharashen school
-    h "h explain asharashen school"
-    
-    show h explain nervous school
-    h "h explain nervous school"
-    
-    show h explain surprised school
-    h "h explain surprised school"
-    
-    show h explain think school
-    h "h explain think school"
-    
+    "Тестирование всех состояний персонажа Hikaru"
 
-    
+    show bg_amusement_park
+
+    "=== ПОЗА idle (ШКОЛЬНАЯ ФОРМА) ==="
+
+    show h idle neutral school right
+    h "h idle neutral school"
+
+    show h idle angry school right
+    h "h idle angry school"
+
+    show h idle cunning school right
+    h "h idle cunning school"
+
+    show h idle shy school right
+    h "h idle shy school"
+
+    show h idle happy school right
+    h "h idle happy school"
+
+    show h idle smile school right
+    h "h idle smile school"
+
+    show h idle surprised school right
+    h "h idle surprised school"
+
+    show h idle smug school right
+    h "h idle smug school"
+
     "=== ПОЗА idle (ЛЕТНЯЯ ФОРМА) ==="
-    
-    show h idle neutral summer
+
+    show h idle neutral summer right
     h "h idle neutral summer"
-    
-    show h idle angry summer
+
+    show h idle angry summer right
     h "h idle angry summer"
-    
-    show h idle cunning summer
+
+    show h idle cunning summer right
     h "h idle cunning summer"
-    
-    show h idle shy summer
+
+    show h idle shy summer right
     h "h idle shy summer"
-    
-    show h idle happy summer
+
+    show h idle happy summer right
     h "h idle happy summer"
-    
-    show h idle smile summer
+
+    show h idle smile summer right
     h "h idle smile summer"
-    
-    show h idle surprised summer
+
+    show h idle surprised summer right
     h "h idle surprised summer"
-    
-    show h idle smug summer
+
+    show h idle smug summer right
     h "h idle smug summer"
-    
+
+    "=== ПОЗА explain (ШКОЛЬНАЯ ФОРМА) ==="
+
+    show h explain neutral school right
+    h "h explain neutral school"
+
+    show h explain neutral_talk school right
+    h "h explain neutral_talk school"
+
+    show h explain asharashen school right
+    h "h explain asharashen school"
+
+    show h explain nervous school right
+    h "h explain nervous school"
+
+    show h explain surprised school right
+    h "h explain surprised school"
+
+    show h explain think school right
+    h "h explain think school"
+
     "=== ПОЗА explain (ЛЕТНЯЯ ФОРМА) ==="
-    
-    show h explain neutral summer
+
+    show h explain neutral summer right
     h "h explain neutral summer"
-    
-    show h explain neutral_talk summer
+
+    show h explain neutral_talk summer left
     h "h explain neutral_talk summer"
-    
-    show h explain asharashen summer
+
+    show h explain asharashen summer right
     h "h explain asharashen summer"
-    
-    show h explain nervous summer
+
+    show h explain nervous summer right
     h "h explain nervous summer"
-    
-    show h explain surprised summer
+
+    show h explain surprised summer right
     h "h explain surprised summer"
-    
-    show h explain think summer
+
+    show h explain think summer right
     h "h explain think summer"
-    
-    
+
+    "=== Проверка направления LEFT (выборочно) ==="
+
+    show h idle neutral school left
+    h "h idle neutral school left"
+
+    show h explain neutral summer left
+    h "h explain neutral summer left"
+
     hide h
-    "Тест состояний hikaru завершён!"
-    
+    "Тест состояний Hikaru завершён!"
+
     return
 
 label test_den_states:
-    "Тестирование всех состояний персонажа den"
-    
+    "Тестирование всех состояний персонажа Den"
+
     show bg_amusement_park
-    "=== ПОЗА idle (ШКОЛЬНАЯ ФОРМА) ==="
-    
-    show den idle neutral school
+
+    "=== idle‑RIGHT (ШКОЛЬНАЯ ФОРМА) ==="
+
+    show den idle neutral school right
     den "den idle neutral school"
-    
-    show den idle cry school
+
+    show den idle cry school right
     den "den idle cry school"
-    
-    show den idle serious school
+
+    show den idle serious school right
     den "den idle serious school"
-    
-    show den idle nervous school
+
+    show den idle nervous school right
     den "den idle nervous school"
-    
-    show den idle asharashen school
+
+    show den idle asharashen school right
     den "den idle asharashen school"
-    
 
-    
-    "=== ПОЗА awesome (ШКОЛЬНАЯ ФОРМА) ==="
-    
-    show den awesome neutral school
-    den "den awesome neutral school"
-    
-    show den awesome happy school
-    den "den awesome happy school"
-    
-    show den awesome tricky school
-    den "den awesome tricky school"
-    
-    show den awesome surprised school
-    den "den awesome surprised school"
-    
-    show den awesome sad school
-    den "den awesome sad school"
-    
-    show den awesome shy school
-    den "den awesome shy school"
-    
-    show den awesome wink school
-    den "den awesome wink school"
-    
-  
+    "=== idle‑LEFT (ШКОЛЬНАЯ ФОРМА) ==="
 
-    
-    "=== ПОЗА idle (ЛЕТНЯЯ ФОРМА) ==="
-    
-    show den idle neutral summer
+    show den idle neutral school left
+    den "den idle neutral school left"
+
+    show den idle cry school left
+    den "den idle cry school left"
+
+    "=== idle‑RIGHT (ЛЕТНЯЯ ФОРМА) ==="
+
+    show den idle neutral summer right
     den "den idle neutral summer"
-    
-    show den idle cry summer
-    den "den idle cry summer"
-    
-    show den idle serious summer
-    den "den idle serious summer"
-    
-    show den idle nervous summer
-    den "den idle nervous summer"
-    
-    show den idle asharashen summer
-    den "den idle asharashen summer"
-    
 
-    
-    "=== ПОЗА awesome (ЛЕТНЯЯ ФОРМА) ==="
-    
-    show den awesome neutral summer
+    show den idle cry summer right
+    den "den idle cry summer"
+
+    show den idle serious summer right
+    den "den idle serious summer"
+
+    show den idle nervous summer right
+    den "den idle nervous summer"
+
+    show den idle asharashen summer right
+    den "den idle asharashen summer"
+
+    "=== idle‑LEFT (ЛЕТНЯЯ ФОРМА) ==="
+
+    show den idle neutral summer left
+    den "den idle neutral summer left"
+
+    show den idle nervous summer left
+    den "den idle nervous summer left"
+
+    "=== awesome‑RIGHT (ШКОЛЬНАЯ ФОРМА) ==="
+
+    show den awesome neutral school right
+    den "den awesome neutral school"
+
+    show den awesome happy school right
+    den "den awesome happy school"
+
+    show den awesome tricky school right
+    den "den awesome tricky school"
+
+    show den awesome surprised school right
+    den "den awesome surprised school"
+
+    show den awesome sad school right
+    den "den awesome sad school"
+
+    show den awesome shy school right
+    den "den awesome shy school"
+
+    show den awesome wink school right
+    den "den awesome wink school"
+
+    "=== awesome‑LEFT (ШКОЛЬНАЯ ФОРМА) ==="
+
+    show den awesome neutral school left
+    den "den awesome neutral school left"
+
+    show den awesome sad school left
+    den "den awesome sad school left"
+
+    "=== awesome‑RIGHT (ЛЕТНЯЯ ФОРМА) ==="
+
+    show den awesome neutral summer right
     den "den awesome neutral summer"
-    
-    show den awesome happy summer
+
+    show den awesome happy summer right
     den "den awesome happy summer"
-    
-    show den awesome tricky summer
+
+    show den awesome tricky summer right
     den "den awesome tricky summer"
-    
-    show den awesome surprised summer
+
+    show den awesome surprised summer right
     den "den awesome surprised summer"
-    
-    show den awesome sad summer
-    den "den awesome sad summer"
-    
-    show den awesome shy summer
+
+    show den awesome shy summer right
     den "den awesome shy summer"
-    
-    show den awesome wink summer
+
+    show den awesome wink summer right
     den "den awesome wink summer"
-  
-    
+
+    "=== awesome‑LEFT (ЛЕТНЯЯ ФОРМА) ==="
+
+    show den awesome neutral summer left
+    den "den awesome neutral summer left"
+
+    show den awesome surprised summer left
+    den "den awesome surprised summer left"
+
     hide den
-    "Тест состояний den завершён!"
-    
+    "Тест состояний Den завершён!"
+
     return
 
 label test_teacher_states:
