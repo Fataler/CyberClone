@@ -376,9 +376,9 @@ layeredimage u:
             "images/Umi/Umi_pose1_cute.png"
         attribute embarrassed:
             "images/Umi/Umi_pose1_embrassed.png"
-        attribute laugh:
+        attribute happy:
             "images/Umi/Umi_pose1_laught.png"
-        attribute laugh_wall:
+        attribute happy_4stena:
             "images/Umi/Umi_pose1_laught_4stena.png"
         attribute surprised:
             "images/Umi/Umi_pose1_surprised.png"
@@ -386,15 +386,15 @@ layeredimage u:
             "images/Umi/Umi_pose1_thinking.png"
     
     group emotion if_any "closed":
-        attribute alluring default:
+        attribute neutral default:
             "images/Umi/Umi_pose2_alluring.png"
-        attribute confused:
+        attribute cute:
             "images/Umi/Umi_pose2_confused.png"
-        attribute cry:
+        attribute cry_2:
             "images/Umi/Umi_pose2_cry.png"
-        attribute cry_embarrassed:
+        attribute asharashen:
             "images/Umi/Umi_pose2_cry_asharashen.png"
-        attribute sad_cry:
+        attribute cry:
             "images/Umi/Umi_pose2_sad_cry.png"
         attribute touched:
             "images/Umi/Umi_pose2_touched.png"
@@ -408,7 +408,7 @@ layeredimage u:
             "images/Umi/Umi_pose3_confused.png"
         attribute offended:
             "images/Umi/Umi_pose3_offended.png"
-        attribute offended_sad:
+        attribute sad:
             "images/Umi/Umi_pose3_offended_sad.png"
 
     group mouth if_any "open":
