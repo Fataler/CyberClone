@@ -153,9 +153,6 @@ label test_umi_states:
     show u closed alluring school
     u "u closed alluring school"
     
-    show u closed confused school
-    u "u closed confused school"
-    
     show u closed cry school
     u "u closed cry school"
     
@@ -216,26 +213,26 @@ label test_taida_states:
     show t_f ear cute
     t ear cute "ear cute (милый)"
     
-    show t_f ear cute_cry
-    t ear cute_cry "ear cute_cry (плачет)"
+    show t_f ear shy
+    t ear shy "ear shy"
     
     show t_f ear embarrassed
     t ear embarrassed "ear embarrassed (смущенный)"
     
-    show t_f ear laugh
-    t ear laugh "ear laugh (непосредственный)"
+    show t_f ear happy
+    t ear happy "ear happy"
     
-    show t_f ear neutral_camera
-    t ear neutral_camera "ear neutral_camera (4 стена)"
+    show t_f ear neutral_4stena
+    t ear neutral_4stena "ear neutral_4stena"
     
     show t_f ear silly
-    t ear silly "ear silly (глупый)"
+    t ear silly "ear silly"
     
-    show t_f ear oops
-    t ear oops "ear oops (упс)"
+    show t_f ear confused
+    t ear confused "ear confused"
     
     show t_f ear surprised
-    t ear surprised "ear surprised (удивлен)"
+    t ear surprised "ear surprised"
     
     "=== ПОЗА EAR_SCHOOL (В ШКОЛЬНОЙ ФОРМЕ) ==="
     
@@ -251,11 +248,11 @@ label test_taida_states:
     show t_f ear_school surprised
     t ear_school surprised "ear_school surprised (удивлен)"
     
-    show t_f ear_school sad_angry
-    t ear_school sad_angry "ear_school sad_angry (грусть+злость)"
-    
     show t_f ear_school angry
-    t ear_school angry "ear_school angry (злость)"
+    t ear_school angry "ear_school angry"
+    
+    show t_f ear_school cry_angry
+    t ear_school cry_angry "ear_school cry_angry"
     
     show t_f ear_school sad
     t ear_school sad "ear_school sad (печальный)"
@@ -272,14 +269,14 @@ label test_taida_states:
     show t_f ear_school tricky
     t ear_school tricky "ear_school tricky (хитрость)"
     
-    show t_f ear_school neutral_happy
-    t ear_school neutral_happy "ear_school neutral_happy (нейтральный счастливый)"
+    show t_f ear_school smile
+    t ear_school smile "ear_school smile"
     
     show t_f ear_school think
-    t ear_school think "ear_school thinking (думаю)"
+    t ear_school think "ear_school think"
     
     show t_f ear_school asharashen
-    t ear_school asharashen "ear_school asharashen (ашарашен)"
+    t ear_school asharashen "ear_school asharashen"
     
     show t_f ear_school calm
     t ear_school calm "ear_school calm (спокойный)"
@@ -338,8 +335,6 @@ label test_taida_states:
     
     show t_f hz dissatisfied school
     t hz dissatisfied "hz dissatisfied (недоволен)"
-
-    hide t_f
     
     show t_f hz neutral_4stena school left
     t hz neutral_4stena "hz neutral_4stena (нейтральный 4 стена)"
@@ -386,8 +381,6 @@ label test_dzinzo_states:
     d "d pose1 happy school"
     t "d a"
     d_t "мысли Дзиндзо"
-    show t_f happy
-    t_f "мысли тайда"
     
     show d pose1 very_happy school
     d "d pose1 very_happy school"
@@ -516,7 +509,7 @@ label test_hikaru_states:
     show h explain surprised school right
     h "h explain surprised school"
 
-    show h explain think school right
+    show h explain thinking school right
     h "h explain think school"
 
     "=== ПОЗА explain (ЛЕТНЯЯ ФОРМА) ==="
