@@ -246,6 +246,18 @@ image taida_talk_hz:
     pause 0.1
     'images/taida/Taida_pose1_rot3.png'
     repeat
+
+image taida_stars:
+    'images/taida/Taida_pose2_shine_genious_star1.png'
+    pause 0.4
+    'images/taida/Taida_pose2_shine_genious_star2.png'
+    pause 0.4
+    'images/taida/Taida_pose2_shine_genious_star3.png'
+    pause 0.4
+    'images/taida/Taida_pose2_shine_genious_star2.png'
+    pause 0.4
+    repeat
+
 #endregion
 
 #region Dzinzo

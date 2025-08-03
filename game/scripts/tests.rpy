@@ -363,6 +363,9 @@ label test_taida_states:
 
     show t_f hz neutral summer_strem
     t hz neutral summer_strem "hz neutral summer_strem"
+
+    show t_f thinking genius school
+    t thinking genius school "ear neutral school"
     
     hide t_f
     "Тест состояний Taida завершён!"
