@@ -2,7 +2,6 @@ init :
     image check = "gui/check.png"
     image check_bg = "gui/check_bg.png"
 
-# Экран достижений
 screen achievements_screen():
     tag menu
     
@@ -16,7 +15,6 @@ screen achievements_screen():
                 textbutton _("Test") action Function(unlock_achievement, FUTURE_HISTORIAN)
                 textbutton _("Unlock All") action Function(unlock_all_achievements)
             
-            # Статистика достижений
             frame:
                 style "achievements_stats_frame"
                 
@@ -37,7 +35,6 @@ screen achievements_screen():
                         xfill True
                         style "achievements_progress_bar"
             
-            # Группируем достижения
             python:
                 unlocked_achievements = [ach for ach in achievements.values() if ach.unlocked]
                 locked_achievements = [ach for ach in achievements.values() if not ach.unlocked]
@@ -84,6 +81,7 @@ screen achievements_screen():
                                     fixed:
                                         xsize 50
                                         ysize 50
+                                        xoffset -10
                                         add "check_bg":
                                             xalign 0.5
                                             yalign 0.5
@@ -141,6 +139,8 @@ screen achievements_screen():
                                     fixed:
                                         xsize 50
                                         ysize 50
+                                        xoffset -10
+
                                         add "check_bg":
                                             xalign 0.5
                                             yalign 0.5
@@ -212,8 +212,8 @@ style achievement_popup_frame:
     xalign 1.0
     yalign 0.0
     xsize 500
-    background "#f3f3f334"
-    padding (20, 20)
+    background Frame("gui/frame_achievement.png", 25, 25, 25, 25)
+    padding (30, 30)
 
 style achievement_popup_title:
     color "#55880d"
@@ -245,7 +245,6 @@ style achievement_check is gui_text:
     xalign 1.0
     yalign 0.5
 
-# Экран всплывающего уведомления о достижении
 screen achievement_popup(achievement):
     modal False
     zorder 100
@@ -264,7 +263,7 @@ screen achievement_popup(achievement):
 
             hbox:
                 xfill True
-                text "Достижение разблокировано!" style "achievement_popup_title"
+                text "Получено достижение!" style "achievement_popup_title"
                 
             hbox:
                 spacing 15

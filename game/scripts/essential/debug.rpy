@@ -1,20 +1,3 @@
-init -999 python:                 # compat shims ASAP
-    import os, datetime
-
-    if not hasattr(renpy, "list_files"):
-        def _list_files():
-            out = []
-            for r, _d, fs in os.walk(config.basedir):
-                for f in fs:
-                    out.append(os.path.relpath(os.path.join(r, f), config.basedir).replace("\\", "/"))
-            return out
-        renpy.list_files = _list_files
-
-    if not hasattr(renpy, "get_side_image"):
-        def _get_side_image(*_a, **_k):
-            return None
-        renpy.get_side_image = _get_side_image
-
 init -1 python:
     import os, datetime
 
@@ -36,7 +19,7 @@ init -1 python:
 screen dev_hud():
     if _show_hud:
         frame align (1.0, 1.0) padding (6, 4) background "#0008":
-            text "%d × %d" % renpy.get_mouse_pos()
+            text "%d × %d" % renpy.get_mouse_pos() style "debug_text"
         timer 0.33 action renpy.restart_interaction repeat True
 
 screen dev_hotkeys():

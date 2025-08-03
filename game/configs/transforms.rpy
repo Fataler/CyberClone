@@ -1,3 +1,7 @@
+init python:
+    eye_on = ImageDissolve("gui/masks/eye_mask.png", 0.3, 10, reverse=False)
+    eye_off = ImageDissolve("gui/masks/eye_mask.png", 0.3, 10, reverse=True)
+
 transform bandit_c_left:
     xalign -0.2
     yalign 1.0
