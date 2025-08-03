@@ -24,15 +24,15 @@ define robot_bin = robot_say
 define robot = Character("")
 
 #region characters
-define t = Character('Тайда', color='#2e5686', image='t', callback=speaker('t_f'))
+define t = Character('Тайда', color='#05681b', image='t', callback=speaker('t_f'))
 
-define t_f = Character('Тайда', color='#2e5686', image='t_f', callback=speaker('t_f'))
+define t_f = Character('Тайда', color='#05681b', image='t_f', callback=speaker('t_f'))
 
-define t_t = Character(None, color='#2e5686', image='t')
+define t_t = Character(None, color='#05681b', image='t')
                         
-define d = Character('Дзиндзо', color='#3f3931', image='d', callback=speaker('d'))
+define d = Character('Дзиндзо', color='#2d0231', image='d', callback=speaker('d'))
 
-define d_t = Character(None, color='#3f3931', image='d')
+define d_t = Character(None, color='#2d0231', image='d')
 
 define u = Character('Юми', color='#681744', image='u', callback=speaker('u'))
 
@@ -42,18 +42,20 @@ define h = Character('Хикару', color='#66161a', image='h', callback=speake
 
 define den = Character('Ден', color='#7e7719', image='den', callback=speaker('den'))
 
-define i = Character('Изуми-сенсей', color='#431755', image='i', callback=speaker('i'))
+define i = Character('Изуми-сенсей', color='#01565c', image='i', callback=speaker('i'))
 
-define dad = Character('Папа', color='#0f4244', image='dad', callback=speaker('dad'))
+define dad = Character('Папа', color='#21202c', image='dad', callback=speaker('dad'))
 
-define mom = Character('Мама', color='#15350b', image='mom', callback=speaker('mom'))
+define mom = Character('Мама', color='#23301f', image='mom', callback=speaker('mom'))
 
 define teacher = Character('Учитель', color='#726351', image='teacher')
+
+define seller = Character('Продавщица', color='#964a04', image='seller', callback=speaker('seller'))
 
 image side t = LayeredImageProxy("t_f", Transform(crop=(0, 0, 600, 460), xoffset=0))
 #endregion
 
-#region Taida full
+#region Taida
 layeredimage t_f:
     at auto_flip("t_f")
 
@@ -302,7 +304,7 @@ layeredimage d:
             "images/Dindzo/Dzindzo_pose2_sad.png"
         attribute melancholy:
             "images/Dindzo/Dzindzo_pose2_melancholy.png"
-        attribute osharashen:
+        attribute asharashen:
             "images/Dindzo/Dzindzo_pose2_osharashen.png"
         attribute pupupu:
             "images/Dindzo/Dzindzo_pose2_pupupu.png"
@@ -553,23 +555,76 @@ layeredimage h:
     group pose:
         attribute idle default:
             Null()
+        attribute explain:
+            Null()
 
     group emotion if_any "idle":
         attribute neutral default:
-            "images/Hikaru/neutral.png"
+            "images/Hikaru/hikaru_handonhand_neutral.png"
+        attribute angry:
+            "images/Hikaru/hikaru_handonhand_besit.png"
+        attribute cunning:
+            "images/Hikaru/hikaru_handonhand_cunning.png"
+        attribute shy:
+            "images/Hikaru/hikaru_handonhand_cute.png"
+        attribute happy:
+            "images/Hikaru/hikaru_handonhand_happy.png"
+        attribute smile:
+            "images/Hikaru/hikaru_handonhand_neutral_happy.png"
+        attribute surprised:
+            "images/Hikaru/hikaru_handonhand_oooops.png"
+        attribute smug:
+            "images/Hikaru/hikaru_handonhand_samodovolen.png"
+
+    group emotion if_any "explain":
+        attribute neutral default:
+            "images/Hikaru/Hikaru_explains_nedovolen.png"
+        attribute neutral_talk:
+            "images/Hikaru/Hikaru_explains_nedovolen_ochen.png"
+        attribute asharashen:
+            "images/Hikaru/Hikaru_explains_osharashen.png"
+        attribute nervous:
+            "images/Hikaru/Hikaru_explains_rasstroen.png"
+        attribute surprised:
+            "images/Hikaru/Hikaru_explains_surprised.png"
+        attribute think:
+            "images/Hikaru/Hikaru_explains_thinking.png"
+
+
+    group dress if_any "idle":
+        attribute school default:
+            "images/Hikaru/hikaru_handonhand_shkolnoe.png"
+        attribute summer:
+            "images/Hikaru/hikaru_handonhand_letnee.png"
+        
+    group dress if_any "explain":
+        attribute school default:
+            "images/Hikaru/Hikaru_explains_shkolnoe.png"
+        attribute summer:
+            "images/Hikaru/Hikaru_explains_letnee.png"
 
     group mouth:
         attribute talk if_any "idle":
             WhileSpeaking('h', 'h_talk_idle', Null())
-"""
-image mom_talk_idle:
-    "images/mom/Mom_rot_1.png"
+        attribute talk if_any "explain":
+            WhileSpeaking('h', 'h_talk_explain', Null())
+
+image h_talk_idle:
+    "images/Hikaru/hikaru_handonhand_rot1.png"
     pause 0.1
-    "images/mom/Mom_rot_2.png"
+    "images/Hikaru/hikaru_handonhand_rot2.png"
     pause 0.1
-    "images/mom/Mom_rot_3.png"
+    "images/Hikaru/hikaru_handonhand_rot3.png"
     repeat
-"""
+
+image h_talk_explain:
+    "images/Hikaru/Hikaru_explains_rot1.png"
+    pause 0.1
+    "images/Hikaru/Hikaru_explains_rot2.png"
+    pause 0.1
+    "images/Hikaru/Hikaru_explains_rot3.png"
+    repeat
+
 #endregion
 
 #region Den
@@ -585,23 +640,71 @@ layeredimage den:
     group pose:
         attribute idle default:
             Null()
+        attribute awesome:
+            Null()
 
     group emotion if_any "idle":
         attribute neutral default:
-            "images/Den/neutral.png"
+            "images/Den/Den_achovsmisle_neutral.png"
+        attribute cry:
+            "images/Den/Den_achovsmisle_cry.png"
+        attribute serious:
+            "images/Den/Den_achovsmisle_neutral_sad.png"
+        attribute nervous:
+            "images/Den/Den_achovsmisle_ooooops.png"
+        attribute asharashen:
+            "images/Den/Den_achovsmisle_osharashen.png"
+
+    group emotion if_any "awesome":
+        attribute neutral default:
+            "images/Den/Den_krutoi_neutral.png"
+        attribute happy:
+            "images/Den/Den_krutoi_happy.png"
+        attribute tricky:
+            "images/Den/Den_krutoi_pervert.png"
+        attribute surprised:
+            "images/Den/Den_krutoi_pupupu.png"
+        attribute sad:
+            "images/Den/Den_krutoi_sad.png"
+        attribute shy:
+            "images/Den/Den_krutoi_shy.png"
+        attribute wink:
+            "images/Den/Den_krutoi_wink.png"
+
+    group dress if_any "idle":
+        attribute school default:
+            "images/Den/Den_achovsmisle_shkolnoe.png"
+        attribute summer:
+            "images/Den/Den_achovsmisle_letnee_vpravo.png"
+        
+    group dress if_any "awesome":
+        attribute school default:
+            "images/Den/Den_krutoi_shkolnoe.png"
+        attribute summer:
+            "images/Den/Den_krutoi_letnee_vpravo.png"
 
     group mouth:
         attribute talk if_any "idle":
             WhileSpeaking('den', 'den_talk_idle', Null())
-"""
-image mom_talk_idle:
-    "images/mom/Mom_rot_1.png"
+        attribute talk if_any "awesome":
+            WhileSpeaking('den', 'den_talk_awesome', Null())
+
+image den_talk_idle:
+    "images/Den/Den_achovsmisle_rot1.png"
     pause 0.1
-    "images/mom/Mom_rot_2.png"
+    "images/Den/Den_achovsmisle_rot2.png"
     pause 0.1
-    "images/mom/Mom_rot_3.png"
+    "images/Den/Den_achovsmisle_rot3.png"
     repeat
-"""
+
+image den_talk_awesome:
+    "images/Den/Den_krutoi_rot1.png"
+    pause 0.1
+    "images/Den/Den_krutoi_rot2.png"
+    pause 0.1
+    "images/Den/Den_krutoi_rot3.png"
+    repeat
+
 #endregion
 
 #region Dad
@@ -687,7 +790,7 @@ layeredimage i:
             "images/Izumi/Izumi_neutral.png"
         attribute angry:
             "images/Izumi/Izumi_angry.png"
-        attribute asharasen:
+        attribute asharashen:
             "images/Izumi/Izumi_asharasen.png"
         attribute calm:
             "images/Izumi/Izumi_calm.png"
@@ -738,20 +841,60 @@ layeredimage teacher:
 
     group emotion if_any "idle":
         attribute neutral default:
-            "images/Teacher/normal.png"
-        attribute serious:
-            "images/Teacher/brow.png"
+            "images/Teacher/Teacher_neutral.png"
+        attribute angry:
+            "images/Teacher/Teacher_angry.png"
+        attribute smile:
+            "images/Teacher/Teacher_neutral_happy.png"
+        attribute surprised:
+            "images/Teacher/Teacher_surprised.png"
+        attribute happy:
+            "images/Teacher/Teacher_sus_happy.png"
+        attribute sad:
+            "images/Teacher/Teacher_vzdoh.png"
 
     group mouth:
         attribute talk if_any "idle":
             WhileSpeaking('teacher', 'teacher_talk_idle', Null())
-"""
-image mom_talk_idle:
-    "images/mom/Mom_rot_1.png"
+
+image teacher_talk_idle:
+    "images/teacher/Teacher_rot1.png"
     pause 0.1
-    "images/mom/Mom_rot_2.png"
+    "images/teacher/Teacher_rot2.png"
     pause 0.1
-    "images/mom/Mom_rot_3.png"
+    "images/teacher/Teacher_rot3.png"
     repeat
-"""
+
+#endregion
+
+#region Seller
+layeredimage seller:
+    at auto_flip("seller")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
+    group pose:
+        attribute idle default:
+            Null()
+
+    group emotion if_any "idle":
+        attribute neutral default:
+            "images/TraderKalmar/TraderKalmar.png"
+
+    group mouth:
+        attribute talk if_any "idle":
+            WhileSpeaking('seller', 'seller_talk_idle', Null())
+
+image seller_talk_idle:
+    "images/TraderKalmar/TraderKalmar_rot1.png"
+    pause 0.1
+    "images/TraderKalmar/TraderKalmar_rot2.png"
+    pause 0.1
+    "images/TraderKalmar/TraderKalmar_rot3.png"
+    repeat
+
 #endregion

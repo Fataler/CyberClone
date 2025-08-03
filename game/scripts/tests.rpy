@@ -89,8 +89,8 @@ label test_izumi_states:
     i "izumi neutral"
     show i angry
     i "izumi angry"
-    show i asharasen
-    i "izumi asharasen"
+    show i asharashen
+    i "izumi asharashen"
     show i calm
     i "izumi calm"
     show i dreamy
@@ -440,4 +440,247 @@ label test_dzinzo_states:
     hide d
     "Тест состояний Dzinzo завершён!"
     
+    return
+
+label test_hikaru_states:
+    "Тестирование всех состояний персонажа hikaru"
+    
+    show bg_amusement_park
+    "=== ПОЗА idle (ШКОЛЬНАЯ ФОРМА) ==="
+    
+    show h idle neutral school
+    h "h idle neutral school"
+    
+    show h idle angry school
+    h "h idle angry school"
+    
+    show h idle cunning school
+    h "h idle cunning school"
+    
+    show h idle shy school
+    h "h idle shy school"
+    
+    show h idle happy school
+    h "h idle happy school"
+    
+    show h idle smile school
+    h "h idle smile school"
+    
+    show h idle surprised school
+    h "h idle surprised school"
+    
+    show h idle smug school
+    h "h idle smug school"
+    
+    
+    "=== ПОЗА explain (ШКОЛЬНАЯ ФОРМА) ==="
+    
+    show h explain neutral school
+    h "h explain neutral school"
+    
+    show h explain neutral_talk school
+    h "h explain neutral_talk school"
+    
+    show h explain asharashen school
+    h "h explain asharashen school"
+    
+    show h explain nervous school
+    h "h explain nervous school"
+    
+    show h explain surprised school
+    h "h explain surprised school"
+    
+    show h explain think school
+    h "h explain think school"
+    
+
+    
+    "=== ПОЗА idle (ЛЕТНЯЯ ФОРМА) ==="
+    
+    show h idle neutral summer
+    h "h idle neutral summer"
+    
+    show h idle angry summer
+    h "h idle angry summer"
+    
+    show h idle cunning summer
+    h "h idle cunning summer"
+    
+    show h idle shy summer
+    h "h idle shy summer"
+    
+    show h idle happy summer
+    h "h idle happy summer"
+    
+    show h idle smile summer
+    h "h idle smile summer"
+    
+    show h idle surprised summer
+    h "h idle surprised summer"
+    
+    show h idle smug summer
+    h "h idle smug summer"
+    
+    "=== ПОЗА explain (ЛЕТНЯЯ ФОРМА) ==="
+    
+    show h explain neutral summer
+    h "h explain neutral summer"
+    
+    show h explain neutral_talk summer
+    h "h explain neutral_talk summer"
+    
+    show h explain asharashen summer
+    h "h explain asharashen summer"
+    
+    show h explain nervous summer
+    h "h explain nervous summer"
+    
+    show h explain surprised summer
+    h "h explain surprised summer"
+    
+    show h explain think summer
+    h "h explain think summer"
+    
+    
+    hide h
+    "Тест состояний hikaru завершён!"
+    
+    return
+
+label test_den_states:
+    "Тестирование всех состояний персонажа den"
+    
+    show bg_amusement_park
+    "=== ПОЗА idle (ШКОЛЬНАЯ ФОРМА) ==="
+    
+    show den idle neutral school
+    den "den idle neutral school"
+    
+    show den idle cry school
+    den "den idle cry school"
+    
+    show den idle serious school
+    den "den idle serious school"
+    
+    show den idle nervous school
+    den "den idle nervous school"
+    
+    show den idle asharashen school
+    den "den idle asharashen school"
+    
+
+    
+    "=== ПОЗА awesome (ШКОЛЬНАЯ ФОРМА) ==="
+    
+    show den awesome neutral school
+    den "den awesome neutral school"
+    
+    show den awesome happy school
+    den "den awesome happy school"
+    
+    show den awesome tricky school
+    den "den awesome tricky school"
+    
+    show den awesome surprised school
+    den "den awesome surprised school"
+    
+    show den awesome sad school
+    den "den awesome sad school"
+    
+    show den awesome shy school
+    den "den awesome shy school"
+    
+    show den awesome wink school
+    den "den awesome wink school"
+    
+  
+
+    
+    "=== ПОЗА idle (ЛЕТНЯЯ ФОРМА) ==="
+    
+    show den idle neutral summer
+    den "den idle neutral summer"
+    
+    show den idle cry summer
+    den "den idle cry summer"
+    
+    show den idle serious summer
+    den "den idle serious summer"
+    
+    show den idle nervous summer
+    den "den idle nervous summer"
+    
+    show den idle asharashen summer
+    den "den idle asharashen summer"
+    
+
+    
+    "=== ПОЗА awesome (ЛЕТНЯЯ ФОРМА) ==="
+    
+    show den awesome neutral summer
+    den "den awesome neutral summer"
+    
+    show den awesome happy summer
+    den "den awesome happy summer"
+    
+    show den awesome tricky summer
+    den "den awesome tricky summer"
+    
+    show den awesome surprised summer
+    den "den awesome surprised summer"
+    
+    show den awesome sad summer
+    den "den awesome sad summer"
+    
+    show den awesome shy summer
+    den "den awesome shy summer"
+    
+    show den awesome wink summer
+    den "den awesome wink summer"
+  
+    
+    hide den
+    "Тест состояний den завершён!"
+    
+    return
+
+label test_teacher_states:
+    "Тестирование всех состояний персонажа teacher"
+    
+    show bg_amusement_park
+    "=== ПОЗА idle ==="
+
+    show teacher idle neutral
+    teacher "teacher idle neutral"
+
+    show teacher idle angry
+    teacher "teacher idle angry"
+
+    show teacher idle smile
+    teacher "teacher idle smile"
+
+    show teacher idle surprised
+    teacher "teacher idle surprised"
+
+    show teacher idle happy
+    teacher "teacher idle happy"
+    
+    show teacher idle sad
+    teacher "teacher idle sad"
+
+    hide teacher
+    "Тест состояний teacher завершён!"
+    return
+
+label test_seller_states:
+    "Тестирование всех состояний персонажа seller"
+    
+    show bg_amusement_park
+    "=== ПОЗА idle ==="
+
+    show seller idle
+    seller "teacher idle neutral"
+
+    hide seller
+    "Тест состояний seller завершён!"
     return

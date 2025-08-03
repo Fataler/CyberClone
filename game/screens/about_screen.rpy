@@ -31,7 +31,7 @@ screen about():
         pos (1590, 530)
         at delay_appear(0.3)
 
-    add Parallax("den", 0.2):
+    add Parallax("denis", 0.2):
         anchor (0.5, 0.5)
         at move_appear(1370,762, 1548)
 
