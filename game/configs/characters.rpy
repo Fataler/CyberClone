@@ -49,6 +49,8 @@ define dad = Character('Папа', color='#21202c', image='dad', callback=speake
 define mom = Character('Мама', color='#23301f', image='mom', callback=speaker('mom'))
 
 define teacher = Character('Учитель', color='#726351', image='teacher')
+
+define seller = Character('Продавщица', color='#964a04', image='seller', callback=speaker('seller'))
 #endregion
 
 #region Taida
