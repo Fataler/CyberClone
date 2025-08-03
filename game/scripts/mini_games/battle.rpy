@@ -24,7 +24,7 @@ label start_pokemon_battle:
 label test_pokemon_battle:
     "Сейчас начнется битва!"
     
-    call start_pokemon_battle
+    call start_pokemon_battle from _call_start_pokemon_battle
 
     scene bg_black with Dissolve(1)
     

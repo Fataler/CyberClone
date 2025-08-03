@@ -1,7 +1,7 @@
 label test_talking_system:
     "Тестирование системы говорящих персонажей"
 
-    call test_izumi_states
+    call test_izumi_states from _call_test_izumi_states
     
     show dad
     dad "Привет!"
@@ -12,11 +12,11 @@ label test_talking_system:
     mom "Как дела?"
     hide mom
 
-    call test_umi_states
+    call test_umi_states from _call_test_umi_states
     
-    call test_dzinzo_states
+    call test_dzinzo_states from _call_test_dzinzo_states
     
-    call test_taida_states
+    call test_taida_states from _call_test_taida_states
     
     # show t idle at center:
     #     yalign 0.5

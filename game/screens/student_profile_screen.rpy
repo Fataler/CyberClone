@@ -230,11 +230,11 @@ label test_video:
 
 label test_student_profile:
     
-    call show_student_profile("Кацуми","images/k_test.png",{"": "КЛАСС 2-B Академии Ссыкай", "специальность: ": "программист", "характер: ": "Цундере"})
+    call show_student_profile("Кацуми","images/k_test.png",{"": "КЛАСС 2-B Академии Ссыкай", "специальность: ": "программист", "характер: ": "Цундере"}) from _call_show_student_profile
 
     k "Хэй, Тайда! Ты чего такой кислый? Опять отчитали? Ожидаемо, для такого дурачка вроде тебя."
 
-    call hide_student_profile
+    call hide_student_profile from _call_hide_student_profile
 
     jump test_another_profile
 
@@ -244,7 +244,7 @@ label test_student_profile:
 label test_another_profile:    
     call show_student_profile("Хикару", 
         "images/f_test.png",
-        {"": "КЛАСС 2-B Академии Ссыкай", "специальность: ": "Создание чертежей", "характер: ": "Кудере"})    
+        {"": "КЛАСС 2-B Академии Ссыкай", "специальность: ": "Создание чертежей", "характер: ": "Кудере"}) from _call_show_student_profile_1    
     h "Если понадобится помощь, обратись ко мне, я одолжу тебе свои конспекты."
     
     return 
