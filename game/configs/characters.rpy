@@ -51,6 +51,16 @@ define mom = Character('Мама', color='#23301f', image='mom', callback=speake
 define teacher = Character('Учитель', color='#726351', image='teacher')
 
 define seller = Character('Продавщица', color='#964a04', image='seller', callback=speaker('seller'))
+
+define stranger = Character('Одноклассник', color='#6b3b0f')
+
+define b_1 = Character('Отец Юми', color='#21202c', image='umi_dad', callback=speaker('umi_dad'))
+
+define b_2 = Character('Батя', color='#21202c', image='umi_dad', callback=speaker('umi_dad'))
+
+define together = Character('Все', color='#420303')
+
+define story_teller = Character(None, kind=nvl, color="#1a1a1f")
 #endregion
 
 #region Taida
@@ -83,17 +93,17 @@ layeredimage t_f:
             'images/taida/Taida_pose3_careless.png'
         attribute cute: #милый
             'images/taida/Taida_pose3_cute.png'
-        attribute cute_cry: #плачет
+        attribute shy: #shy
             'images/taida/Taida_pose3_cute_cry.png'
         attribute embarrassed: #smushen
             'images/taida/Taida_pose3_embarrassed.png'
-        attribute laugh:
+        attribute happy:
             'images/taida/Taida_pose3_neposredstvenniy.png'
-        attribute neutral_camera:
+        attribute neutral_4stena:
             'images/taida/Taida_pose3_Neutral_4stena.png'
         attribute silly:
             'images/taida/Taida_pose3_neutral_silly.png'
-        attribute oops:
+        attribute confused:
             'images/taida/Taida_pose3_oooops.png'
         attribute surprised:
             'images/taida/Taida_pose3_surprised.png'
@@ -107,9 +117,9 @@ layeredimage t_f:
             'images/taida/Taida_pose3_shkolnoe_dream.png'
         attribute surprised: #удивлен
             'images/taida/Taida_pose3_shkolnoe_surprised.png'
-        attribute sad_angry: #грусть + злость
+        attribute angry: #грусть + злость
             'images/taida/Taida_pose3_shkolnoe_sad_angry.png'
-        attribute angry: #злость
+        attribute cry_angry: #злость
             'images/taida/Taida_pose3_shkolnoe_angry.png'
         attribute sad: #печальный
             'images/taida/Taida_pose3_shkolnoe_sad.png'
@@ -121,7 +131,7 @@ layeredimage t_f:
             'images/taida/Taida_pose3_shkolnoe_happy.png'
         attribute tricky: #хитрость
             'images/taida/Taida_pose3_shkolnoe_tricky.png'
-        attribute neutral_happy: #нейтральный счастливый
+        attribute smile: #нейтральный счастливый
             'images/taida/Taida_pose3_shkolnoe_neutral_happy.png'
         attribute think: #думаю
             'images/taida/Taida_pose3_shkolnoe_thinking.png'
@@ -192,15 +202,7 @@ layeredimage t_f:
         attribute summer_norm:
             "images/taida/Taida_pose2_norm.png"
         attribute summer_strem:
-            "images/taida/Taida_pose2_strem.png"   
-
-    # group dress if_all ("hz", "right"):
-    #     attribute school  default:
-    #         "images/taida/Taida_pose1_shkolnoe.png"
-    #     attribute summer_norm:
-    #         "images/taida/Taida_pose1_norm.png"
-    #     attribute summer_strem:
-    #         "images/taida/Taida_pose1_strem.png"
+            "images/taida/Taida_pose2_strem.png"
 
     group dress if_any "hz":
         attribute school  default:
@@ -376,9 +378,9 @@ layeredimage u:
             "images/Umi/Umi_pose1_cute.png"
         attribute embarrassed:
             "images/Umi/Umi_pose1_embrassed.png"
-        attribute laugh:
+        attribute happy:
             "images/Umi/Umi_pose1_laught.png"
-        attribute laugh_wall:
+        attribute happy_4stena:
             "images/Umi/Umi_pose1_laught_4stena.png"
         attribute surprised:
             "images/Umi/Umi_pose1_surprised.png"
@@ -386,15 +388,15 @@ layeredimage u:
             "images/Umi/Umi_pose1_thinking.png"
     
     group emotion if_any "closed":
-        attribute alluring default:
+        attribute neutral default:
             "images/Umi/Umi_pose2_alluring.png"
-        attribute confused:
+        attribute cute:
             "images/Umi/Umi_pose2_confused.png"
-        attribute cry:
+        attribute cry_2:
             "images/Umi/Umi_pose2_cry.png"
-        attribute cry_embarrassed:
+        attribute asharashen:
             "images/Umi/Umi_pose2_cry_asharashen.png"
-        attribute sad_cry:
+        attribute cry:
             "images/Umi/Umi_pose2_sad_cry.png"
         attribute touched:
             "images/Umi/Umi_pose2_touched.png"
@@ -408,7 +410,7 @@ layeredimage u:
             "images/Umi/Umi_pose3_confused.png"
         attribute offended:
             "images/Umi/Umi_pose3_offended.png"
-        attribute offended_sad:
+        attribute sad:
             "images/Umi/Umi_pose3_offended_sad.png"
 
     group mouth if_any "open":
@@ -487,11 +489,11 @@ layeredimage k:
             "images/Katsumi/Katsumi_pose1_neutral.png"
         attribute happy:
             "images/Katsumi/Katsumi_pose1_happy.png"
-        attribute concerned:
+        attribute worried:
             "images/Katsumi/Katsumi_pose1_concerned.png"
         attribute confused:
             "images/Katsumi/Katsumi_pose1_confused.png"
-        attribute irritated:
+        attribute angry:
             "images/Katsumi/Katsumi_pose1_irritated.png"
         attribute cunning:
             "images/Katsumi/Katsumi_pose1_cunning.png"
@@ -509,7 +511,7 @@ layeredimage k:
             "images/Katsumi/Katsumi_pose2_ashrashen.png"
         attribute didnt_understand:
             "images/Katsumi/Katsumi_pose2_didnt_understand.png"
-        attribute self_confident:
+        attribute smug:
             "images/Katsumi/Katsumi_pose2_self_confident.png"
         attribute neutral_4stena:
             "images/Katsumi/Katsumi_pose2_neutral_4stena.png"
@@ -585,11 +587,11 @@ layeredimage h:
             "images/Hikaru/Hikaru_explains_nedovolen_ochen.png"
         attribute asharashen:
             "images/Hikaru/Hikaru_explains_osharashen.png"
-        attribute nervous:
+        attribute sad:
             "images/Hikaru/Hikaru_explains_rasstroen.png"
         attribute surprised:
             "images/Hikaru/Hikaru_explains_surprised.png"
-        attribute think:
+        attribute thinking:
             "images/Hikaru/Hikaru_explains_thinking.png"
 
 
@@ -651,7 +653,7 @@ layeredimage den:
             "images/Den/Den_achovsmisle_neutral.png"
         attribute cry:
             "images/Den/Den_achovsmisle_cry.png"
-        attribute serious:
+        attribute sad:
             "images/Den/Den_achovsmisle_neutral_sad.png"
         attribute nervous:
             "images/Den/Den_achovsmisle_ooooops.png"
@@ -801,7 +803,7 @@ layeredimage i:
             Null()
 
     group emotion if_any "idle":
-        attribute neutral default:
+        attribute intersted:
             "images/Izumi/Izumi_neutral.png"
         attribute angry:
             "images/Izumi/Izumi_angry.png"
@@ -811,11 +813,11 @@ layeredimage i:
             "images/Izumi/Izumi_calm.png"
         attribute dreamy:
             "images/Izumi/Izumi_dreamy.png"
-        attribute interested:
+        attribute neutral default:
             "images/Izumi/Izumi_interested.png"
         attribute neutral_2:
             "images/Izumi/Izumi_neutral_2.png"
-        attribute neutral_3:
+        attribute happy:
             "images/Izumi/Izumi_neutral_3.png"
         attribute smug:
             "images/Izumi/Izumi_smug.png"

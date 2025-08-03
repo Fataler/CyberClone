@@ -35,7 +35,7 @@ label chapter1:
     teacher "Скоро конец учебного года и экзамены, а у тебя в голове пустота!"
 
     #teacher angry
-    teacher "Быстро отвечай: с какого по какой год была эпоха Эдо?"
+    teacher angry "Быстро отвечай: с какого по какой год была эпоха Эдо?"
 
     menu:
         "Сказать как знаешь":
@@ -892,5 +892,7 @@ label chapter1:
 
     #темный экран
     scene bg_black with Dissolve(1)
+
+    jump chapter2
 
 
