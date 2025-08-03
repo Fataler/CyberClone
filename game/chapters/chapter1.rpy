@@ -893,4 +893,6 @@ label chapter1:
     #темный экран
     scene bg_black with Dissolve(1)
 
+    jump chapter2
+
 
