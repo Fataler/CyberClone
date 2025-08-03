@@ -13,7 +13,7 @@ init:
     image kazumi:
         "gui/menu/kazumi.png"
 
-    image den:
+    image denis:
         "gui/menu/den.png"
 
     image gg_shadow:
@@ -116,7 +116,7 @@ screen main_menu():
         xpos 840
         ypos 804
     
-    add Parallax("den", 1.2):
+    add Parallax("denis", 1.2):
         anchor (0.5, 0.5)
         xpos 1370
         ypos 762
@@ -155,7 +155,7 @@ screen main_menu():
         ypos 344
         text_size 55
 
-    textbutton _("Об игре") action [Function(unlock_achievement, THANK_YOU),ShowMenu("about")]:
+    textbutton _("Об игре") action [ShowMenu("about")]: #Function(unlock_achievement, THANK_YOU),
         xpos 1702
         ypos 699
         text_size 55

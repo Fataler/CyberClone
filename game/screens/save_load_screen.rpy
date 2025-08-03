@@ -135,6 +135,9 @@ style slot_button is gui_button
 style slot_button_text is gui_button_text
 style slot_time_text is slot_button_text:
     size 30
+    #color gui.text_color
+    #hover_color "#FFF"
+
 style slot_name_text is slot_button_text
 
 style page_label:

@@ -88,8 +88,7 @@ transform character_float:
 #region: images
 init:
     image bg = Solid("#FFFFFF")
-    image video_katsumi = Movie(channel='video_ch', play="video/katsumi.ogv", loops=0, stop_music=True, loop=False)
-    image video_katsumi_loop = Movie(channel='video_ch', play="video/katsumi.ogv", loops=0, stop_music=True, loop=True)
+    image video_katsumi = Movie(channel='video_ch', play="video/katsumi.webm", loops=0, stop_music=True, loop=False)
 
 init python:
     def diagonal_line_left_element(color):
@@ -210,18 +209,10 @@ screen test_video():
         xsize 1920
         ysize 1080
 
-screen test_video_loop():
-    add "video_katsumi_loop":
-        xalign 0.5
-        yalign 0.5
-        xsize 1920
-        ysize 1080    
-
 label test_video:
     window hide
 
     show screen test_video
-    show screen test_video_loop
 
     k "Хэй, Тайда! Ты чего такой кислый? Опять отчитали? Ожидаемо, для такого дурачка вроде тебя."
 

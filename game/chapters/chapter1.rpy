@@ -7,10 +7,16 @@ label chapter1:
 
     #01 Hit.wav
     #Анимация открытия глаз
-    show bg_class_room
+    window hide
+    show bg_class_room 
+    with eye_on 
+    with hpunch
     #звук стука
+    
+    $ renpy.pause(0.3)
 
-    t_t sad "..." with vpunch
+    t_t sad "..." with dissolve
+    
 
     t_t surprised "Ч-что?.."
 
