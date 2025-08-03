@@ -1,5 +1,6 @@
 init -1 python:
     import functools as ft
+    from renpy.curry import curry
     
     talk_key = 'talk_'
     speaking = None
@@ -10,7 +11,7 @@ init -1 python:
         else:
             return done_d, None
 
-    curried_while_speaking = renpy.curry(while_speaking)
+    curried_while_speaking = curry(while_speaking)
 
     def WhileSpeaking(char, speaking_d, done_d=Null()):
         return DynamicDisplayable(curried_while_speaking(char, speaking_d, done_d))
@@ -25,7 +26,7 @@ init -1 python:
         elif event == "end":
             speaking = None
 
-    speaker = renpy.curry(speaker_callback)
+    speaker = curry(speaker_callback)
 
     def get_character_pose(character_name, current_attrs): #legacy
         for attr in current_attrs:
