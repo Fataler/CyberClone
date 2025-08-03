@@ -51,6 +51,16 @@ define mom = Character('Мама', color='#23301f', image='mom', callback=speake
 define teacher = Character('Учитель', color='#726351', image='teacher', callback=speaker('teacher'))
 
 define seller = Character('Продавщица', color='#964a04', image='seller', callback=speaker('seller'))
+
+define stranger = Character('Одноклассник', color='#6b3b0f')
+
+define b_1 = Character('Отец Юми', color='#21202c', image='umi_dad', callback=speaker('umi_dad'))
+
+define b_2 = Character('Батя', color='#21202c', image='umi_dad', callback=speaker('umi_dad'))
+
+define together = Character('Все', color='#420303')
+
+define story_teller = Character(None, kind=nvl, color="#1a1a1f")
 #endregion
 
 #region Taida
@@ -192,15 +202,7 @@ layeredimage t_f:
         attribute summer_norm:
             "images/taida/Taida_pose2_norm.png"
         attribute summer_strem:
-            "images/taida/Taida_pose2_strem.png"   
-
-    # group dress if_all ("hz", "right"):
-    #     attribute school  default:
-    #         "images/taida/Taida_pose1_shkolnoe.png"
-    #     attribute summer_norm:
-    #         "images/taida/Taida_pose1_norm.png"
-    #     attribute summer_strem:
-    #         "images/taida/Taida_pose1_strem.png"
+            "images/taida/Taida_pose2_strem.png"
 
     group dress if_any "hz":
         attribute school  default:
