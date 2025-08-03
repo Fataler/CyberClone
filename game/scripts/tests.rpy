@@ -338,11 +338,13 @@ label test_taida_states:
     
     show t_f hz dissatisfied school
     t hz dissatisfied "hz dissatisfied (недоволен)"
+
+    hide t_f
     
-    show t_f hz neutral_4stena school
+    show t_f hz neutral_4stena school left
     t hz neutral_4stena "hz neutral_4stena (нейтральный 4 стена)"
     
-    show t_f hz glad school
+    show t_f hz glad school right
     t hz glad "hz glad (радуется)"
     
     show t_f hz wtf school

@@ -24,9 +24,9 @@ define robot_bin = robot_say
 define robot = Character("")
 
 #region characters
-define t = Character('Тайда', color='#2e5686', image='t', callback=speaker('t'))
+define t = Character('Тайда', color='#2e5686', image='t', callback=speaker('t_f'))
 
-define t_f = Character('Тайда', color='#2e5686', image='t_f', callback=speaker('t'))
+define t_f = Character('Тайда', color='#2e5686', image='t_f', callback=speaker('t_f'))
 
 define t_t = Character(None, color='#2e5686', image='t')
                         
@@ -48,30 +48,21 @@ define dad = Character('Папа', color='#0f4244', image='dad', callback=speake
 
 define mom = Character('Мама', color='#15350b', image='mom', callback=speaker('mom'))
 
-define teacher = Character('Учитель', color='#ffdfba', image='teacher')
+define teacher = Character('Учитель', color='#726351', image='teacher')
 
 image side t = LayeredImageProxy("t_f", Transform(crop=(0, 0, 600, 460), xoffset=0))
-
-image taida_talk_idle:
-    'images/taida/GG_mini_rot_1.png'
-    pause 0.1
-    'images/taida/GG_mini_rot_2.png'
-    pause 0.1
-    'images/taida/GG_mini_rot_3.png'
-    repeat
-
-image taida_talk_thinking:
-    'images/taida/GG_mini_rot_1.png'
-    pause 0.1
-    'images/taida/GG_mini_rot_2.png'
-    pause 0.1
-    'images/taida/GG_mini_rot_3.png'
-    pause 0.1
-    repeat
 #endregion
 
 #region Taida full
 layeredimage t_f:
+    at auto_flip("t_f")
+
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
     group pose:
         attribute ear: #pose3
             Null()
@@ -180,23 +171,6 @@ layeredimage t_f:
         attribute wtf: #wtf
             'images/taida/Taida_pose1_wtf.png'
 
-
-    group mouth if_any "ear":
-        attribute talk:
-            WhileSpeaking('t_f', 'taida_talk_ear', Null())
-    
-    group mouth if_any "ear_school":
-        attribute talk:
-            WhileSpeaking('t_f', 'taida_talk_ear', Null())
-    
-    group mouth if_any "thinking":
-        attribute talk:
-            WhileSpeaking('t_f', 'taida_talk_thinking', Null())
-
-    group mouth if_any "hz":
-        attribute talk:
-            WhileSpeaking('t_f', 'taida_talk_hz', Null())
-
     group dress if_any "ear":
         attribute school default:
             Null()
@@ -215,15 +189,39 @@ layeredimage t_f:
         attribute summer_norm:
             "images/taida/Taida_pose2_norm.png"
         attribute summer_strem:
-            "images/taida/Taida_pose2_strem.png"            
+            "images/taida/Taida_pose2_strem.png"   
+
+    # group dress if_all ("hz", "right"):
+    #     attribute school  default:
+    #         "images/taida/Taida_pose1_shkolnoe.png"
+    #     attribute summer_norm:
+    #         "images/taida/Taida_pose1_norm.png"
+    #     attribute summer_strem:
+    #         "images/taida/Taida_pose1_strem.png"
 
     group dress if_any "hz":
-        attribute school default:
+        attribute school  default:
             "images/taida/Taida_pose1_shkolnoe.png"
         attribute summer_norm:
             "images/taida/Taida_pose1_norm.png"
         attribute summer_strem:
-            "images/taida/Taida_pose1_strem.png"  
+            "images/taida/Taida_pose1_strem_left.png"
+
+    group mouth if_any "ear":
+        attribute talk:
+            WhileSpeaking('t_f', 'taida_talk_ear', Null())
+    
+    group mouth if_any "ear_school":
+        attribute talk:
+            WhileSpeaking('t_f', 'taida_talk_ear', Null())
+    
+    group mouth if_any "thinking":
+        attribute talk:
+            WhileSpeaking('t_f', 'taida_talk_thinking', Null())
+
+    group mouth if_any "hz":
+        attribute talk:
+            WhileSpeaking('t_f', 'taida_talk_hz', Null())
 
 image taida_talk_ear:
     'images/taida/Taida_pose3_rot1.png'
@@ -255,6 +253,14 @@ image taida_talk_hz:
 image side d = LayeredImageProxy("d", Transform(crop=(0, 0, 600, 460), xoffset=-80))
 
 layeredimage d:
+    at auto_flip("d")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+    
     group pose:
         attribute pose1 default:
             Null()
@@ -330,6 +336,14 @@ image dzinzo_talk_pose2:
 #region Umi
 
 layeredimage u:
+    at auto_flip("u")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
     group pose:
         attribute open default:
             Null()
@@ -438,6 +452,14 @@ image umi_talk_greeting:
 
 #region Katsumi
 layeredimage k:
+    at auto_flip("k")
+
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
     group pose:
         attribute pose1 default:
             Null()
@@ -508,6 +530,14 @@ image katsumi_talk_pose2:
 
 #region Hikaru
 layeredimage h:
+    at auto_flip("h")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
     group pose:
         attribute idle default:
             Null()
@@ -532,6 +562,14 @@ image mom_talk_idle:
 
 #region Den
 layeredimage den:
+    at auto_flip("den")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
     group pose:
         attribute idle default:
             Null()
@@ -556,6 +594,14 @@ image mom_talk_idle:
 
 #region Dad
 layeredimage dad:
+    at auto_flip("dad")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
     group pose:
         attribute idle default:
             Null()
@@ -579,6 +625,14 @@ image dad_talk_idle:
 
 #region Mom
 layeredimage mom:
+    at auto_flip("mom")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
     group pose:
         attribute idle default:
             Null()
@@ -604,6 +658,14 @@ image mom_talk_idle:
 #region Izumi
 
 layeredimage i:
+    at auto_flip("i")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
     group pose:
         attribute idle default:
             Null()
@@ -650,6 +712,14 @@ image izumi_talk_idle:
 
 #region Teacher
 layeredimage teacher:
+    at auto_flip("teacher")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
     group pose:
         attribute idle default:
             Null()
