@@ -155,7 +155,7 @@ screen main_menu():
         ypos 344
         text_size 55
 
-    textbutton _("Об игре") action [Function(unlock_achievement, THANK_YOU),ShowMenu("about")]:
+    textbutton _("Об игре") action [ShowMenu("about")]: #Function(unlock_achievement, THANK_YOU),
         xpos 1702
         ypos 699
         text_size 55

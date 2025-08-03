@@ -49,13 +49,12 @@ define dad = Character('Папа', color='#21202c', image='dad', callback=speake
 define mom = Character('Мама', color='#23301f', image='mom', callback=speaker('mom'))
 
 define teacher = Character('Учитель', color='#726351', image='teacher')
-
-define seller = Character('Продавщица', color='#964a04', image='seller', callback=speaker('seller'))
-
-image side t = LayeredImageProxy("t_f", Transform(crop=(0, 0, 600, 460), xoffset=0))
 #endregion
 
 #region Taida
+
+image side t = LayeredImageProxy("t_f", Transform(crop=(0, 0, 600, 460), xoffset=0))
+
 layeredimage t_f:
     at auto_flip("t_f")
 
@@ -465,13 +464,14 @@ image umi_talk_greeting:
 #endregion
 
 #region Katsumi
+
 layeredimage k:
     at auto_flip("k")
 
     group direction:
-        attribute right default:
+        attribute right:
             Null()
-        attribute left:
+        attribute left default:
             Null()
 
     group pose:
