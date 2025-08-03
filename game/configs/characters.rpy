@@ -30,7 +30,7 @@ define t_f = Character('Тайда', color='#2e5686', image='t_f', callback=spea
 
 define t_t = Character(None, color='#2e5686', image='t')
                         
-define d = Character('Дзинзо', color='#3f3931', image='d', callback=speaker('d'))
+define d = Character('Дзиндзо', color='#3f3931', image='d', callback=speaker('d'))
 
 define d_t = Character(None, color='#3f3931', image='d')
 
