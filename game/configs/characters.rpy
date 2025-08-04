@@ -230,6 +230,10 @@ layeredimage t_f:
         attribute talk:
             WhileSpeaking('t_f', 'taida_talk_hz', Null())
 
+    group effects if_any "genius":
+        attribute stars:
+            "taida_stars"
+
 image taida_talk_ear:
     'images/taida/Taida_pose3_rot1.png'
     pause 0.1
