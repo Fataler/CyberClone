@@ -80,6 +80,10 @@ transform delay_appear(delay = 1.0, time = 0.5):
     pause delay
     linear time alpha 1.0
 
+transform zoom_appear(start = 0, end = 1.0, time = 0.5):
+    zoom start
+    linear time zoom end
+
 # Уход персонажа за левый край экрана
 transform exit_left(time=2.0):
     parallel:

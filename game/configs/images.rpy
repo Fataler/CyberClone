@@ -32,11 +32,14 @@ image bg_black_t_90 = Solid("#000000e6")
 
 ## цгшки
 
-image umi_on_floor = "images/CG/Robo-class Room.png"
-image guitar_solo = "images/CG/Garage.png"
-image squid = "images/CG/Square.png"
+image umi_on_floor:
+    "images/CG/Robo-class Room.png"
 
-image d1 = "images/d1.png"
+image guitar_solo:
+    "images/CG/Garage.png"
+
+image squid:
+    "images/CG/Square.png"
 
 image bg_menu_main = "gui/menu/bg.png"
 

@@ -363,6 +363,7 @@ image dzinzo_talk_pose2:
 
 layeredimage u:
     at auto_flip("u")
+    yoffset 1
     
     group direction:
         attribute right default:
