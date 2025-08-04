@@ -1,7 +1,3 @@
-init python:
-    eye_on = ImageDissolve("gui/masks/eye_mask.png", 0.3, 10, reverse=False)
-    eye_off = ImageDissolve("gui/masks/eye_mask.png", 0.3, 10, reverse=True)
-
 transform bandit_c_left:
     xalign -0.2
     yalign 1.0
@@ -26,9 +22,30 @@ transform face_left:
 transform face_right:
     xzoom 1.0
 
+# для сцен с 5 персонажами
+transform penta_left:
+    xalign 0
+    yalign 1.0
+
+transform penta_left_center:
+    xalign 0.25
+    yalign 1.0
+
+transform penta_center:
+    xalign 0.5
+    yalign 1.0
+
+transform penta_right_center:
+    xalign 0.75
+    yalign 1.0
+
+transform penta_right:
+    xalign 1.0
+    yalign 1.0
+
 # для сцен с 4 персонажами
 transform quad_left:
-    xalign 0.01
+    xalign 0
     yalign 1.0
 
 transform quad_left_center:
@@ -40,7 +57,7 @@ transform quad_right_center:
     yalign 1.0
 
 transform quad_right:
-    xalign 0.99
+    xalign 1.0
     yalign 1.0
 
 # для сцен с 3 персонажами
@@ -55,6 +72,8 @@ transform trio_center:
 transform trio_right:
     xalign 0.95
     yalign 1.0
+
+
 
 transform delay_appear(delay = 1.0, time = 0.5):
     alpha 0
@@ -111,6 +130,29 @@ transform enter_c_right(time=2.0, from_left=False, xalign=0.95):
             ease 0.2 yoffset 20
             ease 0.2 yoffset 0
             repeat (int(time * 2.5))
+
+transform enter_scene(time=2.0, from_left=False, xalign=0.95, y=125):
+    xpos (-1000 if from_left else 2000)
+    ypos (y)
+    parallel:
+        ease time xalign xalign
+    parallel:
+        block:
+            ease 0.2 yoffset 20
+            ease 0.2 yoffset 0
+            repeat (int(time * 2.5))
+
+transform move_on_scene(time=2.0, x=960, xalign=0.95, y=125):
+    xpos (x)
+    ypos (y)
+    parallel:
+        ease time xalign xalign
+    parallel:
+        block:
+            ease 0.2 yoffset 20
+            ease 0.2 yoffset 0
+            repeat (int(time * 2.5))
+
 
 transform step_up(steps=1, step_time=0.3, step_size=10):
     yoffset 0

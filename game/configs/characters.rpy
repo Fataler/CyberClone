@@ -48,7 +48,7 @@ define dad = Character('Папа', color='#21202c', image='dad', callback=speake
 
 define mom = Character('Мама', color='#23301f', image='mom', callback=speaker('mom'))
 
-define teacher = Character('Учитель', color='#726351', image='teacher')
+define teacher = Character('Учитель', color='#726351', image='teacher', callback=speaker('teacher'))
 
 define seller = Character('Продавщица', color='#964a04', image='seller', callback=speaker('seller'))
 
@@ -218,7 +218,7 @@ layeredimage t_f:
     
     group mouth if_any "ear_school":
         attribute talk:
-            WhileSpeaking('t_f', 'taida_talk_ear', Null())
+            WhileSpeaking('t_f', 'taida_talk_ear_school', Null())
     
     group mouth if_any "thinking":
         attribute talk:
@@ -235,6 +235,15 @@ image taida_talk_ear:
     pause 0.1
     'images/taida/Taida_pose3_rot3.png'
     repeat
+
+image taida_talk_ear_school:
+    'images/taida/Taida_pose3_ear_school_rot1.png'
+    pause 0.1
+    'images/taida/Taida_pose3_ear_school_rot2.png'
+    pause 0.1
+    'images/taida/Taida_pose3_ear_school_rot3.png'
+    repeat
+
 
 image taida_talk_thinking:
     'images/taida/Taida_pose2_rot1.png'
@@ -267,7 +276,7 @@ image taida_stars:
 
 #region Dzinzo
 
-image side d = LayeredImageProxy("d", Transform(crop=(0, 0, 600, 460), xoffset=-80))
+image side d = LayeredImageProxy("d", Transform(crop=(0, 0, 700, 460), xoffset=-80))
 
 layeredimage d:
     at auto_flip("d")

@@ -89,6 +89,10 @@ transform character_float:
 init:
     image bg = Solid("#FFFFFF")
     image video_katsumi = Movie(channel='video_ch', play="video/katsumi.webm", loops=0, stop_music=True, loop=False)
+    image video_hikaru = Movie(channel='video_ch', play="video/hikaru.webm", loops=0, stop_music=True, loop=False)
+    image video_den = Movie(channel='video_ch', play="video/den.webm", loops=0, stop_music=True, loop=False)
+    image video_umi = Movie(channel='video_ch', play="video/umi.webm", loops=0, stop_music=True, loop=False)
+    image video_izumi = Movie(channel='video_ch', play="video/izumi.webm", loops=0, stop_music=True, loop=False)
 
 init python:
     def diagonal_line_left_element(color):
@@ -202,8 +206,36 @@ label show_student_profile(character_name="КАЦУМИ", character_sprite="imag
     
     return
 
-screen test_video():
+screen profile_katsumi():
     add "video_katsumi":
+        xalign 0.5
+        yalign 0.5
+        xsize 1920
+        ysize 1080
+
+screen profile_hikaru():
+    add "video_hikaru":
+        xalign 0.5
+        yalign 0.5
+        xsize 1920
+        ysize 1080
+
+screen profile_den():
+    add "video_den":
+        xalign 0.5
+        yalign 0.5
+        xsize 1920
+        ysize 1080
+
+screen profile_umi():
+    add "video_umi":
+        xalign 0.5
+        yalign 0.5
+        xsize 1920
+        ysize 1080
+
+screen profile_izumi():
+    add "video_izumi":
         xalign 0.5
         yalign 0.5
         xsize 1920
@@ -212,11 +244,11 @@ screen test_video():
 label test_video:
     window hide
 
-    show screen test_video
+    show screen profile_katsumi
 
     k "Хэй, Тайда! Ты чего такой кислый? Опять отчитали? Ожидаемо, для такого дурачка вроде тебя."
 
-    hide screen test_video with Dissolve(0.5)
+    hide screen profile_katsumi with Dissolve(0.5)
     return
 
 label test_student_profile:
