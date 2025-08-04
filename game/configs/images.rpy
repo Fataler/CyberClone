@@ -31,6 +31,9 @@ image bg_black_t_80 = Solid("#000000cc")
 image bg_black_t_90 = Solid("#000000e6")
 
 ## цгшки
+image suhariki = "images/Prochee/Емельян.png"
+image energy_drink = "images/Prochee/Имба.png"
+image pizza = "images/Prochee/Пицца.png"
 
 image umi_on_floor:
     "images/CG/Robo-class Room.png"
