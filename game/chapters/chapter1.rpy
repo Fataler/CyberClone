@@ -409,7 +409,7 @@ label chapter1:
     show den sad left
 
     #t surprised
-    t_t surprised "Денис резко отворил дверь класса." with vpunch
+    t_t surprised "Денис резко отворил дверь класса." with hpunch
 
     #sfx
     #звук битой посуды
@@ -424,8 +424,13 @@ label chapter1:
     t_t "За дверью послышался вскрик и звук битой посуды."
 
     #цг u
+    show umi_on_floor
 
     t_t "Перед нами открылась картина лежащей на полу девушки и подноса с разбитыми чашками. "
+
+    hide umi_on_floor
+
+    show u closed cute school at quad_left, face_right with Dissolve(1)
 
     t_t "Это была Юми."
 
@@ -436,7 +441,6 @@ label chapter1:
     hide screen profile_umi with Dissolve(0.5)
 
     #u shoked
-    show u closed cute school at quad_left, face_right with Dissolve(1)
     show den awesome shy
     #den пахабная ухмылка
 
@@ -512,10 +516,11 @@ label chapter1:
     #t neutral happy
     t_t smile "Ребята посмеялись и пошли доставать оборудование. "
 
-    show u left at move_on_scene(time=4, x=300, xalign=-1.5, y=1080)
-    hide u
+    show u left at quad_left, move_on_scene(time=4.0, xalign=-1.5)
 
     t_t "Юми побежала заваривать новый чай."
+
+    hide u
 
     show k neutral
     show h neutral
@@ -542,7 +547,6 @@ label chapter1:
 
     # анимация захода слева
     show i smug right at enter_scene(2.0, True, xalign=-0.2)
-    #show i smug right at Move((-10, 0), (0, 0), 1.0) with Dissolve(0.5)
 
     t_t "В этот момент вошла преподавательница кружка. "
 
@@ -574,7 +578,7 @@ label chapter1:
     i "Так, ну и что будем с этим делать? Тащите паштет."
 
     #u neutral/smile
-    show u open cute school right at enter_scene(2.0, True, xalign=-0.1, y=240)
+    show u open cute school right at enter_scene(time=2.0, from_left=True, xalign=-0.1)
     $ renpy.pause(1.5)
     show i smug left at penta_left_center
     show den neutral at penta_center
