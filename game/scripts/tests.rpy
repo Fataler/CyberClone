@@ -298,8 +298,8 @@ label test_taida_states:
     show t_f thinking asharashen school
     t thinking asharashen "thinking asharashen (ашарашен)"
     
-    show t_f thinking genius school
-    t thinking genius "thinking genius (гений)"
+    show t_f thinking genius stars school
+    t thinking genius stars "thinking genius (гений)"
     
     show t_f thinking sleepy school
     t thinking sleepy "thinking sleepy (сонный)"
