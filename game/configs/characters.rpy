@@ -34,6 +34,8 @@ define d = Character('Дзиндзо', color='#2d0231', image='d', callback=spea
 
 define d_t = Character(None, color='#2d0231', image='d')
 
+define d_f = Character('Дзиндзо', color='#2d0231', image='d_f', callback=speaker('d_f'))
+
 define u = Character('Юми', color='#681744', image='u', callback=speaker('u'))
 
 define k = Character('Кацуми', color='#171658', image='k', callback=speaker('k'))
@@ -276,10 +278,10 @@ image taida_stars:
 
 #region Dzinzo
 
-image side d = LayeredImageProxy("d", Transform(crop=(0, 0, 700, 460), xoffset=-80))
+image side d = LayeredImageProxy("d_f", Transform(crop=(0, 0, 700, 460), xoffset=-80))
 
-layeredimage d:
-    at auto_flip("d")
+layeredimage d_f:
+    at auto_flip("d_f")
     
     group direction:
         attribute right default:
