@@ -131,9 +131,9 @@ transform enter_c_right(time=2.0, from_left=False, xalign=0.95):
             ease 0.2 yoffset 0
             repeat (int(time * 2.5))
 
-transform enter_scene(time=2.0, from_left=False, xalign=0.95, y=125):
+transform enter_scene(time=2.0, from_left=False, xalign=0.95, y=1.0):
     xpos (-1000 if from_left else 2000)
-    ypos (y)
+    yalign(y)
     parallel:
         ease time xalign xalign
     parallel:
@@ -142,9 +142,9 @@ transform enter_scene(time=2.0, from_left=False, xalign=0.95, y=125):
             ease 0.2 yoffset 0
             repeat (int(time * 2.5))
 
-transform move_on_scene(time=2.0, x=960, xalign=0.95, y=125):
-    xpos (x)
-    ypos (y)
+transform move_on_scene(time=2.0, xalign=0.95):
+#    xpos (x)
+#    ypos (y)
     parallel:
         ease time xalign xalign
     parallel:

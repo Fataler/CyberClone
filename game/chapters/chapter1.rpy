@@ -148,6 +148,8 @@ label chapter1:
     #t shoked
     t asharashen "Я. Всё. Понял."
 
+    hide teacher with Dissolve(1)
+
     #t sad/depressed/neutral
     t_t neutral "Я развернулся и поплелся к выходу." 
 
@@ -409,7 +411,7 @@ label chapter1:
     show den sad left
 
     #t surprised
-    t_t surprised "Денис резко отворил дверь класса." with vpunch
+    t_t surprised "Денис резко отворил дверь класса." with hpunch
 
     #sfx
     #звук битой посуды
@@ -424,19 +426,23 @@ label chapter1:
     t_t "За дверью послышался вскрик и звук битой посуды."
 
     #цг u
+    show umi_on_floor with Dissolve(0.5)
 
     t_t "Перед нами открылась картина лежащей на полу девушки и подноса с разбитыми чашками. "
 
-    t_t "Это была Юми."
+    hide umi_on_floor with Dissolve(0.5)
 
-    show k pose1 worried
+    show u closed cute school at quad_left, face_right with Dissolve(1)
+
+    t_t "Это была Юми."
 
     show screen profile_umi
     ""
     hide screen profile_umi with Dissolve(0.5)
 
+    show k pose1 worried
+
     #u shoked
-    show u closed cute school at quad_left, face_right with Dissolve(1)
     show den awesome shy
     #den пахабная ухмылка
 
@@ -512,10 +518,11 @@ label chapter1:
     #t neutral happy
     t_t smile "Ребята посмеялись и пошли доставать оборудование. "
 
-    show u left at move_on_scene(time=4, x=300, xalign=-1.5, y=1080)
-    hide u
+    show u left at quad_left, move_on_scene(time=4.0, xalign=-1.5)
 
     t_t "Юми побежала заваривать новый чай."
+
+    hide u
 
     show k neutral
     show h neutral
@@ -542,7 +549,6 @@ label chapter1:
 
     # анимация захода слева
     show i smug right at enter_scene(2.0, True, xalign=-0.2)
-    #show i smug right at Move((-10, 0), (0, 0), 1.0) with Dissolve(0.5)
 
     t_t "В этот момент вошла преподавательница кружка. "
 
@@ -574,7 +580,7 @@ label chapter1:
     i "Так, ну и что будем с этим делать? Тащите паштет."
 
     #u neutral/smile
-    show u open cute school right at enter_scene(2.0, True, xalign=-0.1, y=240)
+    show u open cute school right at enter_scene(time=2.0, from_left=True, xalign=-0.1)
     $ renpy.pause(1.5)
     show i smug left at penta_left_center
     show den neutral at penta_center
@@ -615,7 +621,7 @@ label chapter1:
     t_t neutral "На лице у Юми появилось сначала озадаченное выражение."
 
     #u cry
-    show u closed cry
+    show u closed cry at penta_left
     #t zameshatelstvo
     t_t surprised "Которое затем сменилось слезами."
 
@@ -774,104 +780,163 @@ label chapter1:
     #t neutral
     t_t neutral "Так время, отведённое на кружок, вышло, и мы начали собираться по домам."
 
-    show u closed neutral school left with Dissolve(1)
+    show u closed cute school left with Dissolve(1)
 
     t_t "Ребята разбрелись кто куда, и мы с Юми пошли в сторону дома."
 
+    show u at center, step_up()
+
     t_t "Мы часто ходим домой после школы вместе, потому что живём неподалеку."
+
+    show u at center, step_up()
 
     #t thinking
     t_t think "На самом деле она совсем не такая, какой кажется окружающим."
 
+    show u at center, step_up()
+
     #t shy happy
     t_t happy "Помимо того, что она очень милая и добрая, крайне ответственная, хозяйственная и понимающая, она умеет здорово играть на музыкальных инструментах и… в игровые автоматы. "
+
+    show u at center, step_up()
 
     #t crazy, tricky
     t_t crazy "Иногда мы заходим в аркадный зал и спускаем там всю мелочь, что есть в карманах."
 
+    show u at center, step_up()
+
     #t mad
     t_t think "Во время игры в её глазах загорается опасный огонёк. Юми начинает сражаться с автоматом так, как будто это противник в бою. Причём почти всегда выигрывает."
 
+    show u at center, step_up()
+
     t_t "Бывало, что соседние игроки отрывались от своих игр и подходили посмотреть на это шоу. "
+
+    show u at center, step_up()
 
     #t neutral_happy
     t_t happy "Словно фурия она уничтожала игровые автоматы (иногда буквально, и нам приходилось оплачивать нанесённый ущерб)."
 
+    show u at center, step_up()
+
     #t depressed
     t_t depressed "В последний раз, когда мы проиграли там карманные деньги с обедов за 2 недели, её отец настрого запретил ей приближаться к залу."
+
+    show u at center, step_up()
 
     #t dream/ confused smile
     t_t smile "Мы нашли альтернативу: автоматы с мягкими игрушками. Менее опасно, но с таким же азартом."
 
+    show u at center, step_up()
+
     t_t "Если случается так, что мы не достали ни одной игрушки — Юми очень сильно расстраивается и ещё пару дней ходит с лицом убийцы. "
+
+    show u at center, step_up()
 
     #t asharashen
     t_t asharashen "В такие дни лучше не подходить к ней, если не хотите получить чай с цианидом."
 
+    show u at center, step_up()
+
     #t smug
     t_t dream "Я стараюсь, чтобы она улыбалась. Иногда слегка наклоняю автомат или использую монетку на нитке."
 
+    show u at center, step_up()
+
     t_t "Таким образом автомату становится чуть проще выплюнуть очередную вожделенную плюшевую лисичку или котика. "
+
+    show u at center, step_up()
 
     #t asharashen
     t_t asharashen "Да, пару раз нас ловил на этом охранник, выгонял и ворчал, что вызовет родителей — но ради её улыбки я готов был рисковать снова."
 
-    $ renpy.pause(1.5)
-
-    show u touched
+    show u touched at center, step_up()
 
     t_t neutral "Пока мы шли, я заметил, что всё это время неосознанно смотрел на неё. Юми, конечно, это уловила и слегка улыбнулась."
+
+    show u at center, step_up()
 
     #t neutral_happy
     t_t happy "Что ж, сегодня замечательный день, чтобы сходить поудить пару игрушек."
 
+    show u at center, step_up()
+
     #t neutral_happy
     t smile "Слушай, может, прогуляемся ещё немного?"
 
+    show u at center, step_up()
+
     t "Сегодня такая замечательная погода."
+
+    show u at center, step_up()
 
     #u depressed
     u cute "Жарковато…"
 
+    show u at center, step_up()
+
     t_t calm "Я подмигнул ей."
+
+    show u at center, step_up()
 
     #t dream
     t happy "Особенно около автоматов."
 
-    show u closed tricky
+    show u closed tricky at center, step_up()
 
     #t neutral
     t_t smile "На секунду в её глазах мелькнул нездоровый интерес, но она вздохнула и потупила взгляд."
 
+    show u at center, step_up()
+
     #u sad
     u closed neutral "Прости, Тайда-кун, но сегодня я очень занята."
+
+    show u at center, step_up()
 
     #u neutral
     u "Папа попросил помочь в гараже — протереть гитары, разобрать хлам."
 
+    show u at center, step_up()
+
     #t чтото с закрытыми глазами
     t_t neutral "Я пожал плечами. Жаль, что не удастся сегодня, но стоит попытать удачи завтра?"
+
+    show u at center, step_up()
 
     #t neutral
     t_t "Я уже собрался попрощаться с подругой, как она задала вопрос:"
 
+    show u at center, step_up()
+
     #t smile
-    u cute "Может, присоединишься? А после я приготовлю вкусный ужин! Ты же любишь курицу с карри?"
+    u neutral "Может, присоединишься? А после я приготовлю вкусный ужин! Ты же любишь курицу с карри?"
+
+    show u touched at center, step_up()
 
     #u super smile
-    show u touched
     #t confused
     t_t asharashen "Юми обворожительно улыбнулась и театрально похлопала ресницами на своих ярких красивых глазках."
 
+    show u at center, step_up()
+
     t_t "Внутри меня что-то екнуло. "
 
+    show u at center, step_up()
+
     t_t fear "Я не очень хотел в такой классный день разбирать грязные шмотки её отца в гараже и выслушивать очередные \"удивительные\" истории о его рокерском прошлом."
+
+    show u at center, step_up()
 
     #t shoked
     t_t "Нужна срочная отмазка. Любая. Прямо сейчас!"
 
+    show u at center, step_up()
+
     #t nervous
     t_t crazy "Иначе меня затащат в обитель древнего рокопитека!"
+
+    show u at center, step_up()
 
     t_t asharashen "Я резко развернулся на пятках и махнул рукой."
 
@@ -879,7 +944,7 @@ label chapter1:
     t "Прости, увидимся завтра, мне нужно покормить рыб на дне нашего пруда!"
 
     #t surprised
-    u open thinking "Тайда!.."
+    u neutral "Тайда!.."
 
     t_t "…донеслось до меня где-то вдали. Но я уже бежал прочь."
 
@@ -937,7 +1002,7 @@ label chapter1:
 
     dad "Ишь какой быстрый."
 
-    show dad at move_on_scene(x=2310, xalign=0.5)
+    show dad at move_on_scene(xalign=0.5)
 
     # подвинуть dad в центр
 
@@ -951,7 +1016,7 @@ label chapter1:
     dad "Сначала уроки, потом игрушки, понял меня?"
 
     #передвижение мамы на сцену
-    show mom left at enter_scene(xalign=0.8, y=200)
+    show mom left at enter_scene(xalign=0.8)
 
     mom "Ой, Синдзи, не ругай его, он устал после школы…"
 
@@ -963,7 +1028,7 @@ label chapter1:
     t_t depressed "Мама всплеснула руками и мягко выпроводила отца из комнаты. Они ушли заниматься своими делами."
 
     show dad left at move_on_scene(time=3.0, xalign=1.4)
-    show mom right at move_on_scene(time=3.0, x=1550, xalign=1.4, y=200)
+    show mom right at move_on_scene(time=3.0, xalign=1.4)
 
     #t sad
     t_t sad "Моё настроение совсем пропало. Вечер идёт наперекосяк."
