@@ -148,6 +148,8 @@ label chapter1:
     #t shoked
     t asharashen "Я. Всё. Понял."
 
+    hide teacher with Dissolve(1)
+
     #t sad/depressed/neutral
     t_t neutral "Я развернулся и поплелся к выходу." 
 
@@ -424,21 +426,21 @@ label chapter1:
     t_t "За дверью послышался вскрик и звук битой посуды."
 
     #цг u
-    show umi_on_floor
+    show umi_on_floor with Dissolve(0.5)
 
     t_t "Перед нами открылась картина лежащей на полу девушки и подноса с разбитыми чашками. "
 
-    hide umi_on_floor
+    hide umi_on_floor with Dissolve(0.5)
 
     show u closed cute school at quad_left, face_right with Dissolve(1)
 
     t_t "Это была Юми."
 
-    show k pose1 worried
-
     show screen profile_umi
     ""
     hide screen profile_umi with Dissolve(0.5)
+
+    show k pose1 worried
 
     #u shoked
     show den awesome shy
@@ -619,7 +621,7 @@ label chapter1:
     t_t neutral "На лице у Юми появилось сначала озадаченное выражение."
 
     #u cry
-    show u closed cry
+    show u closed cry at penta_left
     #t zameshatelstvo
     t_t surprised "Которое затем сменилось слезами."
 
@@ -1000,7 +1002,7 @@ label chapter1:
 
     dad "Ишь какой быстрый."
 
-    show dad at move_on_scene(x=2310, xalign=0.5)
+    show dad at move_on_scene(xalign=0.5)
 
     # подвинуть dad в центр
 
@@ -1014,7 +1016,7 @@ label chapter1:
     dad "Сначала уроки, потом игрушки, понял меня?"
 
     #передвижение мамы на сцену
-    show mom left at enter_scene(xalign=0.8, y=200)
+    show mom left at enter_scene(xalign=0.8)
 
     mom "Ой, Синдзи, не ругай его, он устал после школы…"
 
@@ -1026,7 +1028,7 @@ label chapter1:
     t_t depressed "Мама всплеснула руками и мягко выпроводила отца из комнаты. Они ушли заниматься своими делами."
 
     show dad left at move_on_scene(time=3.0, xalign=1.4)
-    show mom right at move_on_scene(time=3.0, x=1550, xalign=1.4, y=200)
+    show mom right at move_on_scene(time=3.0, xalign=1.4)
 
     #t sad
     t_t sad "Моё настроение совсем пропало. Вечер идёт наперекосяк."
