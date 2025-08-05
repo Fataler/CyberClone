@@ -1742,11 +1742,11 @@ t_t "Моя мама очень любит что-то сажать, выращ�
 t_t confused "Её стараниями в нашем саду растёт много цветущих красивых растений. "
 
 show expression "bush1" at Transform(xalign=1.0, yalign=1.0), size_change(0.6, 0.6) onlayer master zorder 2
-show expression "bush3" at Transform(xalign=1.0, yalign=0.7), size_change(0.35, 0.35) as bushh1 onlayer master zorder 2
-show expression "bush3" at Transform(xalign=-0.2, yalign=0.7), size_change(0.35, 0.35) as bushh2 onlayer master zorder 2
+show expression "bush3" at Transform(xalign=0.9, yalign=0.7), size_change(0.35, 0.35) as bushh1 onlayer master zorder 2
+show expression "bush3" at Transform(xalign=1.2, yalign=1.0), size_change(0.5, 0.5) as bushh2 onlayer master zorder 2
 
-show k pose1 cunning left at Transform(xalign=-0.05, yalign=0.6), size_change(0.5, 0.5) onlayer master zorder 1
-show den awesome neutral left at Transform(xalign=0.93, yalign=0.6), size_change(0.4, 0.4) onlayer master zorder 1
+show k pose1 cunning right at Transform(xalign=0.95, yalign=0.6), size_change(0.5, 0.5) onlayer master zorder 1
+show den awesome neutral left at Transform(xalign=0.85, yalign=0.6), size_change(0.5, 0.5) onlayer master zorder 1
 show h idle neutral left at Transform(xalign=1.05, yalign=1.0), size_change(0.6, 0.6) onlayer master zorder 1
 
 t_t neutral "Мы спрятались за ближайшим к моему окну кустом, откуда открывался вид на небольшой сад."
