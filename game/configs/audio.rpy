@@ -1,13 +1,5 @@
 # Музыка
-define music_trouble = "audio/bg/And Here Comes the Trouble.ogg"
-define music_nostalgy = "audio/bg/Bird Nostalgy.ogg"
-define music_klementine = "audio/bg/Clementine Theme.ogg"
-define music_felix = "audio/bg/Felix Theme.ogg"
-define music_gratification = "audio/bg/Gratification.ogg"
-define music_hover = "audio/bg/Hover.ogg"
-define music_poultry = "audio/bg/Poultry house.ogg"
-define music_tower = "audio/bg/The Tower.ogg"
-define music_bandits = "audio/bg/Two Bandits.ogg"
+define music_assembling = "audio/bg/Assembling.ogg"
 
 # Игра
 define sfx_nightmare = "audio/sfx/01 Nightmare.ogg"

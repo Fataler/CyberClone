@@ -19,6 +19,7 @@ image bg_square = "images/Backgrounds/Square.jpg"
 ## Общие изображения
 image bg_black = Solid("#000")
 image bg_white = Solid("#fff")
+image bg_paper = Solid("#FFE7CE")
 
 image bg_black_t_10 = Solid("#0000001a")
 image bg_black_t_20 = Solid("#00000033")
@@ -31,9 +32,17 @@ image bg_black_t_80 = Solid("#000000cc")
 image bg_black_t_90 = Solid("#000000e6")
 
 ## цгшки
-image suhariki = "images/Prochee/Емельян.png"
-image energy_drink = "images/Prochee/Имба.png"
-image pizza = "images/Prochee/Пицца.png"
+image suhariki:
+    "images/Prochee/Емельян.png"
+    anchor (0.5, 0.5)
+
+image energy_drink:
+    "images/Prochee/Имба.png"
+    anchor (0.5, 0.5)
+
+image pizza:
+    "images/Prochee/Пицца.png"
+    anchor (0.5, 0.5)
 
 image umi_on_floor:
     "images/CG/Robo-class Room.png"

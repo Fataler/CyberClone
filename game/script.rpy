@@ -18,3 +18,5 @@
                 jump test_simple_conditions
             "Видео приветствие":
                 jump test_video
+            "Сборка":
+                jump cutscene_slideshow
