@@ -195,7 +195,9 @@ with Dissolve(1)
 # Мини игра пазл 
 
 # ЦГ робот готов
+call assembling_scene
 
+scene bg_robo_class_room
 show k pose2 cunning right at penta_right_center
 show den awesome neutral right at penta_left
 show h idle smug left at penta_right
@@ -325,7 +327,7 @@ t_t "Кацуми оставалась непреклонной."
 
 k angry "А если ты забудешь запереть за собой дверь и нашего робота украдут?"
 
-t ha happy "Я хоть раз забывал закрыть кабинет?!"
+t happy "Я хоть раз забывал закрыть кабинет?!"
 
 k cunning "А тебе это хоть раз доверяли?!"
 

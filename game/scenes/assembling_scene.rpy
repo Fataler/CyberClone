@@ -153,7 +153,7 @@ transform slide_from_left_center:
 transform slide_to_left:
     ease 2.0 xpos -0.5
 
-label cutscene_slideshow:
+label assembling_scene:
     play music music_assembling fadein 0.5 fadeout 0.5
     scene assembling_bg
     with dissolve
@@ -162,7 +162,7 @@ label cutscene_slideshow:
     with None
     pause 2.5
     
-    "Нажмите, чтобы продолжить..."
+    "Искуственный интеллект натренирован на 96\%."
     
     show a_2 at slide_from_right_bottom
     show a_1 at slide_to_left
@@ -171,7 +171,7 @@ label cutscene_slideshow:
     
     hide a_1
     
-    "Нажмите, чтобы продолжить..."
+    "Материнская плата успешно сконфигурирована."
     
     show a_3 at slide_from_right_top
     show a_2 at slide_to_left
@@ -180,7 +180,7 @@ label cutscene_slideshow:
     
     hide a_2
     
-    "Нажмите, чтобы продолжить..."
+    "Рассчеты завершены. Погрешность 0.005\%."
 
     show a_4 at slide_from_right_bottom
     show a_3 at slide_to_left
@@ -189,7 +189,7 @@ label cutscene_slideshow:
     
     hide a_3
     
-    "Нажмите, чтобы продолжить..."
+    "Чай разогрет! Печеньки поданы!\n (А также, изучена вся доступная информация из городской библиотеки по сборке шарнирных прототипов.)"
     
     show a_5 at slide_from_right_top
     show a_4 at slide_to_left
@@ -198,23 +198,23 @@ label cutscene_slideshow:
     
     hide a_4
     
-    "Нажмите, чтобы продолжить..."
+    "{size=180}IT'S ALIVE!!!"
     
     show a_6 at slide_from_left_center
     show a_5 at slide_to_left
     with None
-    pause 2.5
+    pause 5
     
     hide a_5
-    
-    "Нажмите, чтобы продолжить..."
 
     show a_6 at slide_to_left
     with None
+
+    pause 1.5
     
     scene bg_black
     with dissolve
 
-    pause
+    stop music
     
     return

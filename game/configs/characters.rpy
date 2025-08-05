@@ -1,25 +1,3 @@
-image ctc_rotate:
-    "gui/bubble.png"
-    size (32, 32)
-    anchor (0.5, 0.5)
-    alpha 1
-    linear 2 alpha 0.6
-    linear 2 alpha 1
-    repeat
-
-define ctc_indicator = Animation("ctc_rotate")
-
-image ctc_mind:
-    "gui/ctc_mind.png"
-    size (32, 32)
-    anchor (0.5, 0.5)
-    alpha 1
-    linear 2 alpha 0.6
-    linear 2 alpha 1
-    repeat
-
-define ctc_mind_indicator = Animation("ctc_mind")
-
 define robot_bin = robot_say
 define robot = Character("")
 
@@ -849,7 +827,7 @@ layeredimage i:
             Null()
 
     group emotion if_any "idle":
-        attribute intersted:
+        attribute interested:
             "images/Izumi/Izumi_neutral.png"
         attribute angry:
             "images/Izumi/Izumi_angry.png"
