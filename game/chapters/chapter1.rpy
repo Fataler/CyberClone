@@ -431,12 +431,7 @@ label chapter1:
     t_t "За дверью послышался вскрик и звук битой посуды."
 
     #цг u
-    show umi_on_floor with Dissolve(0.5)
-    pause 10
-
-    t_t "Перед нами открылась картина лежащей на полу девушки и подноса с разбитыми чашками. "
-
-    hide umi_on_floor with Dissolve(0.5)
+    call umi_cg_scene
 
     show u closed cute school at quad_left, face_right with Dissolve(1)
 
@@ -920,24 +915,36 @@ label chapter1:
 
     #картинка с пиццей
     #цг
-    show pizza at Transform(xpos=0.35, ypos=0.2) with Dissolve(0.5)
+    show pizza at y_offset_appear(-100, 0):
+        pos (0.5, 0.5)
 
     #t smile
     t_t calm "Пицца \"Красный ценник\". На вид — еда из постапокалипсиса, но что-то в ней есть. В корзину."
     
     #картинка с энергосом
     #цг
-    hide pizza with Dissolve(0.5)
-    show energy_drink at Transform(xpos=0.35, ypos=0.2) with Dissolve(0.5)
+    show pizza at y_offset_hide(0, 100)
+    pause 0.5
+    hide pizza
+
+    show energy_drink at y_offset_appear(-100, 0):
+        pos (0.5, 0.5)
     #t dream
     t_t smile "Ооо, энергетик IMBA Power. Настоящее топливо для кибератлетов. То, что надо, для тяжелой ночки. Берем!"
 
     #картинка с сухариками
-    hide energy_drink with Dissolve(0.5)
-    show suhariki at Transform(xpos=0.35, ypos=0.2) with Dissolve(0.5)
+ 
+    show energy_drink at y_offset_hide(0, 100)
+    pause 0.5
+
+    show suhariki at y_offset_appear(-100, 0):
+        pos (0.5, 0.5)
+
     t_t happy "Напоследок, те самые сухари со вкусом хрена! Вкус подозрительно похож на васаби, а на упаковке — удивительно напоминающий Дена персонаж. Сюда!"
 
-    hide suhariki with Dissolve(0.5)
+    show suhariki at y_offset_hide(0, 100)
+    pause 0.5
+    hide suhariki
 
     #t neutral
     t_t neutral "Набрав легендарного лута, я двинул к дому."
