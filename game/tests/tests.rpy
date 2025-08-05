@@ -17,18 +17,6 @@ label test_talking_system:
     call test_dzinzo_states from _call_test_dzinzo_states
     
     call test_taida_states from _call_test_taida_states
-    
-    # show t idle at center:
-    #     yalign 0.5
-    t "Привет!"
-    show t happy
-    t "asdfasdfsadfasdfasdfasdfsadfasdfasdfsadf asdfasdasdasd"
-    t "Я говорю."
-    show t sad
-    t "Сейчас и еще немного говорю."
-    t "А теперь я рассказываю очень длинный длинный текст! Много букв разных!"
-    show t thinking at right:
-        yalign 0.5
 
     t "Я думаю."
     t "Я думаю о том, что я думаю."
@@ -125,14 +113,14 @@ label test_umi_states:
     show u open cute school
     u "u open cute school"
     
-    show u open embarrassed school  
+    show u open embarrassed school
     u "u open embarrassed school"
     
-    show u open laugh school
-    u "u open laugh school"
+    show u open happy school
+    u "u open happy school"
     
-    show u open laugh_wall school
-    u "u open laugh_wall school"
+    show u open happy_4stena school
+    u "u open happy_4stena school"
     
     show u open surprised school
     u "u open surprised school"
@@ -141,26 +129,47 @@ label test_umi_states:
     u "u open thinking school"
     
     "=== ПОЗА OPEN (ЛЕТНЯЯ ФОРМА) ==="
-    
+
     show u open neutral summer
     u "u open neutral summer"
+    
+    show u open angry summer
+    u "u open angry summer"
     
     show u open cute summer
     u "u open cute summer"
     
+    show u open embarrassed summer
+    u "u open embarrassed summer"
+    
+    show u open happy summer
+    u "u open happy summer"
+    
+    show u open happy_4stena summer
+    u "u open happy_4stena summer"
+    
+    show u open surprised summer
+    u "u open surprised summer"
+    
+    show u open thinking summer
+    u "u open thinking summer"
+    
     "=== ПОЗА CLOSED (ШКОЛЬНАЯ ФОРМА) ==="
     
-    show u closed alluring school
-    u "u closed alluring school"
+    show u closed neutral school
+    u "u closed neutral school"
+    
+    show u closed cute school
+    u "u closed cute school"
+    
+    show u closed cry_2 school
+    u "u closed cry_2 school"
+    
+    show u closed asharashen school
+    u "u closed asharashen school"
     
     show u closed cry school
     u "u closed cry school"
-    
-    show u closed cry_embarrassed school
-    u "u closed cry_embarrassed school"
-    
-    show u closed sad_cry school
-    u "u closed sad_cry school"
     
     show u closed touched school
     u "u closed touched school"
@@ -170,8 +179,23 @@ label test_umi_states:
     
     "=== ПОЗА CLOSED (ЛЕТНЯЯ ФОРМА) ==="
     
-    show u closed alluring summer
-    u "u closed alluring summer"
+    show u closed neutral summer
+    u "u closed neutral summer"
+    
+    show u closed cute summer
+    u "u closed cute summer"
+    
+    show u closed cry_2 summer
+    u "u closed cry_2 summer"
+    
+    show u closed asharashen summer
+    u "u closed asharashen summer"
+    
+    show u closed cry summer
+    u "u closed cry summer"
+    
+    show u closed touched summer
+    u "u closed touched summer"
     
     show u closed tricky summer
     u "u closed tricky summer"
@@ -181,16 +205,14 @@ label test_umi_states:
     show u greeting smile school
     u "u greeting smile school"
 
-    hide u
-    
     show u greeting confused school
-    u confused "u greeting confused school"
+    u "u greeting confused school"
     
     show u greeting offended school
     u "u greeting offended school"
     
-    show u greeting offended_sad school
-    u "u greeting offended_sad school"
+    show u greeting sad school
+    u "u greeting sad school"
     
     hide u
     "Тест состояний Umi завершён!"
@@ -386,64 +408,93 @@ label test_dzinzo_states:
     show bg_near_school
     "=== ПОЗА POSE1 (ШКОЛЬНАЯ ФОРМА) ==="
     
-    show d pose1 neutral school
-    d "d pose1 neutral school"
+    show d_f pose1 neutral school
+    d pose1 neutral school "d pose1 neutral school"
     
-    show d pose1 happy school
-    hide d
-    d "d pose1 happy school"
-    t "d a"
-    d_t "мысли Дзиндзо"
+    show d_f pose1 happy school
+    d pose1 happy school "d pose1 happy school"
     
-    show d pose1 very_happy school
-    d "d pose1 very_happy school"
+    show d_f pose1 very_happy school
+    d pose1 very_happy school "d pose1 very_happy school"
     
-    show d pose1 surprised school
-    d "d pose1 surprised school"
+    show d_f pose1 surprised school
+    d pose1 surprised school "d pose1 surprised school"
     
-    show d pose1 thinking school
-    d "d pose1 thinking school"
+    show d_f pose1 thinking school
+    d pose1 thinking school "d pose1 thinking school"
     
-    show d pose1 cunning school
-    d "d pose1 cunning school"
+    show d_f pose1 cunning school
+    d pose1 cunning school "d pose1 cunning school"
     
-    show d pose1 relief school
-    d "d pose1 relief school"
+    show d_f pose1 relief school
+    d pose1 relief school "d pose1 relief school"
     
     "=== ПОЗА POSE1 (ЛЕТНЯЯ ФОРМА) ==="
     
-    show d pose1 neutral summer
-    d "d pose1 neutral summer"
+    show d_f pose1 neutral summer
+    d pose1 neutral summer "d pose1 neutral summer"
     
-    show d pose1 happy summer
-    d "d pose1 happy summer"
+    show d_f pose1 happy summer
+    d pose1 happy summer "d pose1 happy summer"
+    
+    show d_f pose1 very_happy summer
+    d pose1 very_happy summer "d pose1 very_happy summer"
+    
+    show d_f pose1 surprised summer
+    d pose1 surprised summer "d pose1 surprised summer"
+    
+    show d_f pose1 thinking summer
+    d pose1 thinking summer "d pose1 thinking summer"
+    
+    show d_f pose1 cunning summer
+    d pose1 cunning summer "d pose1 cunning summer"
+    
+    show d_f pose1 relief summer
+    d pose1 relief summer "d pose1 relief summer"
     
     "=== ПОЗА POSE2 (ШКОЛЬНАЯ ФОРМА) ==="
     
-    show d pose2 neutral school
-    d "d pose2 neutral school"
+    show d_f pose2 neutral school
+    d pose2 neutral school "d pose2 neutral school"
     
-    show d pose2 sad school
-    d "d pose2 sad school"
+    show d_f pose2 sad school
+    d pose2 sad school "d pose2 sad school"
     
-    show d pose2 melancholy school
-    d "d pose2 melancholy school"
+    show d_f pose2 melancholy school
+    d pose2 melancholy school "d pose2 melancholy school"
     
-    show d pose2 osharashen school
-    d "d pose2 osharashen school"
+    show d_f pose2 asharashen school
+    d pose2 asharashen school "d pose2 asharashen school"
     
-    show d pose2 pupupu school
-    d "d pose2 pupupu school"
+    show d_f pose2 pupupu school
+    d pose2 pupupu school "d pose2 pupupu school"
     
     "=== ПОЗА POSE2 (ЛЕТНЯЯ ФОРМА) ==="
     
-    show d pose2 neutral summer
-    d "d pose2 neutral summer"
+    show d_f pose2 neutral summer
+    d pose2 neutral summer "d pose2 neutral summer"
     
-    show d pose2 sad summer
-    d "d pose2 sad summer"
+    show d_f pose2 sad summer
+    d pose2 sad summer "d pose2 sad summer"
     
-    hide d
+    show d_f pose2 melancholy summer
+    d pose2 melancholy summer "d pose2 melancholy summer"
+    
+    show d_f pose2 asharashen summer
+    d pose2 asharashen summer "d pose2 asharashen summer"
+    
+    show d_f pose2 pupupu summer
+    d pose2 pupupu summer "d pose2 pupupu summer"
+
+    "=== ПОЗА POSE3 ==="
+    
+    show d_f pose3 neutral school
+    d pose3 neutral school "d pose3 neutral school"
+    
+    show d_f pose3 smile school
+    d pose3 smile school "d pose3 smile school"
+    
+    hide d_f
     "Тест состояний Dzinzo завершён!"
     
     return
@@ -513,17 +564,14 @@ label test_hikaru_states:
     show h explain neutral_talk school right
     h "h explain neutral_talk school"
 
-    show h explain asharashen school right
+    show h explain asharashen school
     h "h explain asharashen school"
 
-    show h explain nervous school right
-    h "h explain nervous school"
+    show h explain sad school right
+    h "h explain sad school"
 
     show h explain surprised school right
     h "h explain surprised school"
-
-    show h explain thinking school right
-    h "h explain think school"
 
     "=== ПОЗА explain (ЛЕТНЯЯ ФОРМА) ==="
 
@@ -536,14 +584,8 @@ label test_hikaru_states:
     show h explain asharashen summer right
     h "h explain asharashen summer"
 
-    show h explain nervous summer right
-    h "h explain nervous summer"
-
     show h explain surprised summer right
     h "h explain surprised summer"
-
-    show h explain think summer right
-    h "h explain think summer"
 
     "=== Проверка направления LEFT (выборочно) ==="
 
@@ -571,8 +613,8 @@ label test_den_states:
     show den idle cry school right
     den "den idle cry school"
 
-    show den idle serious school right
-    den "den idle serious school"
+    show den idle sad school right
+    den "den idle sad school"
 
     show den idle nervous school right
     den "den idle nervous school"
@@ -595,9 +637,6 @@ label test_den_states:
 
     show den idle cry summer right
     den "den idle cry summer"
-
-    show den idle serious summer right
-    den "den idle serious summer"
 
     show den idle nervous summer right
     den "den idle nervous summer"

@@ -33,15 +33,15 @@ image bg_black_t_90 = Solid("#000000e6")
 
 ## цгшки
 image suhariki:
-    "images/Prochee/Емельян.png"
+    "images/Prochee/emelyan.png"
     anchor (0.5, 0.5)
 
 image energy_drink:
-    "images/Prochee/Имба.png"
+    "images/Prochee/imba.png"
     anchor (0.5, 0.5)
 
 image pizza:
-    "images/Prochee/Пицца.png"
+    "images/Prochee/pizza.png"
     anchor (0.5, 0.5)
 
 image umi_on_floor:
@@ -57,13 +57,13 @@ image all_shocked:
     "images/CG/CG RGG.png"
 
 image bush1:
-    "images/Prochee/Куст.png"
+    "images/Prochee/Kust.png"
 
 image bush2:
-    "images/Prochee/Куст2.png"
+    "images/Prochee/Kust2.png"
 
 image bush3:
-    "images/Prochee/Куст3.png"
+    "images/Prochee/Kust3.png"
 
 image bg_menu_main = "gui/menu/bg.png"
 
