@@ -60,16 +60,16 @@ init python:
                 self.show_message("Господин, расскажите правила этой игры.")
                 self.message_shown[10] = True
             elif self.score == 20 and not self.message_shown[20]:
-                self.show_message("Просто нажимать по кабану? Понятно...")
+                self.show_message("Подождите, и это правда всё, что нужно делать?")
                 self.message_shown[20] = True
             elif self.score == 30 and not self.message_shown[30]:
-                self.show_message("Кажется, этот кабан так просто не сдастся.")
+                self.show_message("Ваши развлечения весьма специфичны, господин Тайда.")
                 self.message_shown[30] = True
             elif self.score == 40 and not self.message_shown[40]:
-                self.show_message("Кабан опять хрюкнул. Это значит, вы побеждаете?")
+                self.show_message("Кажется, этот кабан так просто не сдастся.")
                 self.message_shown[40] = True
             elif self.score == 50 and not self.message_shown[50]:
-                self.show_message("Ого! Вы на полпути к победе!")
+                self.show_message("Кабан опять хрюкнул. Это значит, вы побеждаете?")
                 self.message_shown[50] = True
             elif self.score == 60 and not self.message_shown[60]:
                 self.show_message("Он продолжает терпеть. Уважительно. Но неэффективно.")
@@ -78,10 +78,10 @@ init python:
                 self.show_message("Наблюдаю снижение боевого духа кабана. Продолжайте атаку.")
                 self.message_shown[70] = True
             elif self.score == 80 and not self.message_shown[80]:
-                self.show_message("Критический клик! Вы невероятны, господин!")
+                self.show_message("Отлично! Еще немного!")
                 self.message_shown[80] = True
             elif self.score == 90 and not self.message_shown[90]:
-                self.show_message("Отлично! Еще немного!")
+                self.show_message("Кажется я ещё недостаточно понял, как нужно развлекаться по-настоящему.")
                 self.message_shown[90] = True
 
         def show_message(self, text):
@@ -260,7 +260,7 @@ label test_clicker_game:
     $ result = renpy.call_screen("clicker_game")
     if result:
         $ unlock_achievement("pig_slayer")
-        "Отлично! Вы прогнали Ужасного Вепря!"
+#        "Отлично! Вы прогнали Ужасного Вепря!"
     else:
         "Вы вышли из игры."
     return 

@@ -44,6 +44,9 @@ image guitar_solo:
 image squid:
     "images/CG/Square.png"
 
+image all_shocked:
+    "images/CG/CG RGG.png"
+
 image bg_menu_main = "gui/menu/bg.png"
 
 init:

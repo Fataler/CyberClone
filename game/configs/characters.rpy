@@ -205,6 +205,8 @@ layeredimage t_f:
             "images/taida/Taida_pose2_norm.png"
         attribute summer_strem:
             "images/taida/Taida_pose2_strem.png"
+        attribute naked:
+            Null()
 
     group dress if_any "hz":
         attribute school  default:
@@ -213,6 +215,8 @@ layeredimage t_f:
             "images/taida/Taida_pose1_norm.png"
         attribute summer_strem:
             "images/taida/Taida_pose1_strem.png"
+        attribute naked:
+            Null()
 
     group mouth if_any "ear":
         attribute talk:
@@ -298,6 +302,8 @@ layeredimage d_f:
             Null()
         attribute pose2:
             Null()
+        attribute pose3:
+            Null()
 
     group emotion if_any "pose1":
         attribute neutral default:
@@ -327,11 +333,21 @@ layeredimage d_f:
         attribute pupupu:
             "images/Dindzo/Dzindzo_pose2_pupupu.png"
 
+    group emotion if_any "pose3":
+        attribute neutral default:
+            "images/Dindzo/Dzindzo_bez_prikolov_thinking.png"
+        attribute smile:
+            "images/Dindzo/Dzindzo_bez_prikolov_neutral.png"
+
     group mouth if_any "pose1":
         attribute talk:
             WhileSpeaking('d', 'dzinzo_talk_pose1', Null())
     
     group mouth if_any "pose2":
+        attribute talk:
+            WhileSpeaking('d', 'dzinzo_talk_pose2', Null())
+
+    group mouth if_any "pose3":
         attribute talk:
             WhileSpeaking('d', 'dzinzo_talk_pose2', Null())
 
