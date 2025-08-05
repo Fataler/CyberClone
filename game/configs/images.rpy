@@ -56,6 +56,15 @@ image squid:
 image all_shocked:
     "images/CG/CG RGG.png"
 
+image bush1:
+    "images/Prochee/Куст.png"
+
+image bush2:
+    "images/Prochee/Куст2.png"
+
+image bush3:
+    "images/Prochee/Куст3.png"
+
 image bg_menu_main = "gui/menu/bg.png"
 
 init:

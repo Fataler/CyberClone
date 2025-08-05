@@ -54,13 +54,13 @@ define teacher = Character('Учитель', color='#726351', image='teacher', c
 
 define seller = Character('Продавщица', color='#964a04', image='seller', callback=speaker('seller'))
 
-define stranger = Character('Одноклассник', color='#6b3b0f')
+#define stranger = Character('Одноклассник', color='#6b3b0f')
 
 define b_1 = Character('Отец Юми', color='#21202c', image='umi_dad', callback=speaker('umi_dad'))
 
 define b_2 = Character('Батя', color='#21202c', image='umi_dad', callback=speaker('umi_dad'))
 
-define together = Character('Все', color='#420303')
+#define together = Character('Все', color='#420303')
 
 define story_teller = Character(None, kind=nvl, color="#1a1a1f")
 
@@ -68,7 +68,7 @@ define story_teller = Character(None, kind=nvl, color="#1a1a1f")
 init python:
     def speak_as(name, text, color="#232324"):
         Character(name, color=color)(text)
-        
+
 #endregion
 
 #region Taida
@@ -950,6 +950,38 @@ image seller_talk_idle:
     "images/TraderKalmar/TraderKalmar_rot2.png"
     pause 0.1
     "images/TraderKalmar/TraderKalmar_rot3.png"
+    repeat
+
+#endregion
+
+#region Umi_dad
+layeredimage seller:
+    at auto_flip("umi_dad")
+    
+    group direction:
+        attribute right default:
+            Null()
+        attribute left:
+            Null()
+
+    group pose:
+        attribute idle default:
+            Null()
+
+    group emotion if_any "idle":
+        attribute neutral default:
+            "images/DadUmi/Batya.png"
+
+    group mouth:
+        attribute talk if_any "idle":
+            WhileSpeaking('umi_dad', 'umi_dad_talk_idle', Null())
+
+image umi_dad_talk_idle:
+    "images/DadUmi/Batya_rot_1.png"
+    pause 0.1
+    "images/DadUmi/Batya_rot_2.png"
+    pause 0.1
+    "images/DadUmi/Batya_rot_3.png"
     repeat
 
 #endregion

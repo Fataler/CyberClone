@@ -73,7 +73,9 @@ transform trio_right:
     xalign 0.95
     yalign 1.0
 
-
+transform size_change(x=0.5, z=0.5):
+    xzoom x
+    yzoom z
 
 transform delay_appear(delay = 1.0, time = 0.5):
     alpha 0
