@@ -233,6 +233,19 @@ label test_taida_states:
     
     show t_f ear surprised
     t ear surprised "ear surprised"
+
+    show t_f ear cry
+    t ear cry "ear cry"
+
+    show t_f ear crazy
+    t ear crazy "ear crazy"
+
+    show t_f ear angry
+    t ear angry "ear angry"
+
+    show t_f ear asharashen
+    t ear asharashen "ear asharashen"
+
     
     "=== ПОЗА EAR_SCHOOL (В ШКОЛЬНОЙ ФОРМЕ) ==="
     

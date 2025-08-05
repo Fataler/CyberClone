@@ -115,6 +115,14 @@ layeredimage t_f:
             'images/taida/Taida_pose3_oooops.png'
         attribute surprised:
             'images/taida/Taida_pose3_surprised.png'
+        attribute cry:
+            'images/taida/Taida_pose3_v_trusax_cry.png'
+        attribute crazy:
+            'images/taida/Taida_pose3_v_trusax_crazy.png'
+        attribute angry:
+            'images/taida/Taida_pose3_v_trusax_angry.png'
+        attribute asharashen:
+            'images/taida/Taida_pose3_v_trusax_ahsrashen.png'
 
     group emotion if_any "ear_school":
         attribute neutral default: #нейтральный
