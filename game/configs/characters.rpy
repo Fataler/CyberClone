@@ -30,7 +30,7 @@ define t_f = Character('Тайда', color='#05681b', image='t_f', callback=spea
 
 define t_t = Character(None, color='#05681b', image='t')
                         
-define d = Character('Дзиндзо', color='#2d0231', image='d', callback=speaker('d'))
+define d = Character('Дзиндзо', color='#2d0231', image='d', callback=speaker('d_f'))
 
 define d_t = Character(None, color='#2d0231', image='d')
 
@@ -341,15 +341,15 @@ layeredimage d_f:
 
     group mouth if_any "pose1":
         attribute talk:
-            WhileSpeaking('d', 'dzinzo_talk_pose1', Null())
+            WhileSpeaking('d_f', 'dzinzo_talk_pose1', Null())
     
     group mouth if_any "pose2":
         attribute talk:
-            WhileSpeaking('d', 'dzinzo_talk_pose2', Null())
+            WhileSpeaking('d_f', 'dzinzo_talk_pose2', Null())
 
     group mouth if_any "pose3":
         attribute talk:
-            WhileSpeaking('d', 'dzinzo_talk_pose2', Null())
+            WhileSpeaking('d_f', 'dzinzo_talk_pose2', Null())
 
     group dress if_any "pose1":
         attribute school default:
