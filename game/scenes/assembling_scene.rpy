@@ -12,12 +12,12 @@ transform xbeat(amplitude=30, period=0.54, hit=0.08):
     pause period - hit*2
     repeat
 
-image assembling_bg = "images/CG RGG/bg.png"
+image paper_bg = "images/CG RGG/bg.png"
 
 transform blink:
     alpha 0
     linear 0.5 alpha 1
-    pause 1
+    pause 1.5
     linear 0.5 alpha 0
     repeat
 
@@ -151,11 +151,12 @@ transform slide_from_left_center:
     ease 2.0 xpos 0.5
 
 transform slide_to_left:
+    anchor (0.5, 0.5)
     ease 2.0 xpos -0.5
 
 label assembling_scene:
     play music music_assembling fadein 0.5 fadeout 0.5
-    scene assembling_bg
+    scene paper_bg
     with dissolve
     
     show a_1 at slide_from_right_top

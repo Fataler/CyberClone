@@ -1,29 +1,34 @@
 # Музыка
 define music_assembling = "audio/bg/Assembling.ogg"
+define music_rock = "audio/bg/Rock.ogg"
+define music_comedy = "audio/bg/Comedy V2.ogg"
+define music_comedy_loop = "audio/bg/Comedy(loop).ogg"
+define music_comedy = "audio/bg/Comedy.ogg"
+define music_main_theme_2_v3 = "audio/bg/Main Theme 2 V3.ogg"
+define music_main_theme_2 = "audio/bg/Main Theme 2.ogg"
+define music_main_theme_3_v2 = "audio/bg/Main Theme 3 V2.ogg"
+define music_main_theme_3 = "audio/bg/Main Theme 3.ogg"
+define music_main_theme = "audio/bg/Main Theme.ogg"
+define music_melancholy = "audio/bg/Melancholy.ogg"
 
 # Игра
-define sfx_nightmare = "audio/sfx/01 Nightmare.ogg"
-define sfx_knock = "audio/sfx/02 Knock.ogg"
-define sfx_agressive_knock = "audio/sfx/03 Agressive Knock.ogg"
-define sfx_body_fall = "audio/sfx/04 Body Fall.ogg"
-define sfx_letter = "audio/sfx/05 Letter.ogg"
-define sfx_water_and_fire = "audio/sfx/06 Water and Fire.ogg"
-define sfx_disassemble = "audio/sfx/07 Disassemble.ogg"
-define sfx_knocked_down_door = "audio/sfx/08 Knocked Down Door.ogg"
-define sfx_hat = "audio/sfx/09 Hat.ogg"
-define sfx_timeskip = "audio/sfx/10 Timeskip.ogg"
-define sfx_blackboard = "audio/sfx/11 Blackboard.ogg"
-
-define sfx_chains = "audio/sfx/UI 06 Blackboard Down.ogg" #
-define sfx_explosion = "audio/sfx/12 Explosion.ogg" #
-define sfx_lever = "audio/sfx/13 Lever.ogg"
+define sfx_hit = "audio/sfx/01 Hit.wav"
+define sfx_bell = "audio/sfx/02 Bell.ogg"
+define sfx_birds_v2 = "audio/sfx/03 Birds V2.ogg"
+define sfx_birds = "audio/sfx/03 Birds.ogg"
+define sfx_knock = "audio/sfx/04 Knock.ogg"
+define sfx_bushes_v2 = "audio/sfx/05 Bushes V2.ogg"
+define sfx_bushes = "audio/sfx/05 Bushes.ogg"
+define sfx_giggles_v2 = "audio/sfx/06 Giggles v2.ogg"
+define sfx_giggles = "audio/sfx/06 Giggles.ogg"
+define sfx_crowd = "audio/sfx/07 Crowd.ogg"
+define sfx_furniture = "audio/sfx/08 Furniture.ogg"
+define sfx_throwing_things_around = "audio/sfx/09 Throwing things around.ogg"
 
 # Интерфейс
-define sfx_ui_over = "audio/sfx/UI 01 Over.ogg" #
-define sfx_ui_click = "audio/sfx/UI 02 Click.ogg" #
-define sfx_ui_pipe_click = "audio/sfx/UI 03 Pipe Click.ogg" #
-define sfx_ui_win = "audio/sfx/UI 04 Win.ogg" #
-define sfx_ui_achieve = "audio/sfx/UI 05 Achive.ogg" #
+define sfx_ui_achieve = "audio/sfx/UI 01 Achive.ogg"
+define sfx_ui_click = "audio/sfx/UI 02 Click.ogg"
+define sfx_ui_over = "audio/sfx/UI 03 Over.ogg"
 
 # каналы
 init python:

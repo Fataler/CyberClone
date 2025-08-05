@@ -11,18 +11,20 @@ init python:
     if persistent.current_font is None:
         persistent.current_font = "default"
 
-    def update_font_size():
-        if (persistent.current_font == "default"):
-            style.navigation_button_text.size = 55
-            style.navigation_vbox.area = (0, 300, 700, 100)
-        else:
-            style.navigation_button_text.size = 40
-            style.navigation_vbox.area = (0, 330, 700, 100)
+    # def update_font_size():
+        # if (persistent.current_font == "default"):
+        #     gui.text_size = 10
+        #     style.navigation_button_text.size = 30
+        #     #style.navigation_vbox.area = (0, 300, 700, 100)
+        # else:
+        #     gui.text_size = 10
+        #     style.navigation_button_text.size = 10
+        #     #style.navigation_vbox.area = (0, 330, 700, 100)
         
-        style.rebuild()
-        renpy.restart_interaction()
+        # style.rebuild()
+        # renpy.restart_interaction()
 
-    config.start_callbacks.append(update_font_size)
+    # config.start_callbacks.append(update_font_size)
 
     def reset_preferences():
         _preferences.set_volume('music', 0.1)
@@ -189,14 +191,14 @@ screen preferences():
                                 action [
                                     Preference("font transform", None), 
                                     SetField(persistent, "current_font", "default"),
-                                    Function(update_font_size)
+                                    #Function(update_font_size)
                                 ]
                                 style_suffix "radio_button"
 
                             textbutton _("DejaVu Sans"):
                                 action [
                                     SetField(persistent, "current_font", "dejavusans"),
-                                    Function(update_font_size),
+                                    #Function(update_font_size),
                                     Preference("font transform", "dejavusans")
                                 ]
                                 style_suffix "radio_button"

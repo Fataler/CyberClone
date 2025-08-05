@@ -59,13 +59,13 @@ style history_window is empty
 
 style history_name is gui_label
 style history_name_text is gui_label_text
-style history_text is gui_text
+style history_text is text
 
 style history_label is gui_label
 style history_label_text is gui_label_text
 
 style history_window:
-    xfill True
+    #xfill True
     ysize None
     padding (10, 20)
 
@@ -76,13 +76,13 @@ style history_name:
 
 style history_text:
     xpos 70
-    xsize 900
+    xsize 850
     size 40
 
 style history_name_text:
     min_width gui.history_name_width
     textalign gui.history_name_xalign
-    size 50
+    size 40
 
 style history_label:
     xfill True
