@@ -40,7 +40,7 @@ screen pause_menu():
             textbutton _("Загрузить") action [Hide("pause_menu"), ShowMenu("load")]
             textbutton _("История") action [Hide("pause_menu"), ShowMenu("history")]
             textbutton _("Настройки") action [Hide("pause_menu"), ShowMenu("preferences")]
-            textbutton _("Главное меню") action [Hide("pause_menu"), MainMenu()]
+            textbutton _("Главное меню") action MainMenu()
             textbutton _("Вернуться") action Return()
 
     if pause_character_counter == 1:
