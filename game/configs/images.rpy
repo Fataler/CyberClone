@@ -57,13 +57,13 @@ image all_shocked:
     "images/CG/CG RGG.png"
 
 image bush1:
-    "images/Prochee/Куст.png"
+    "images/Prochee/Kust.png"
 
 image bush2:
-    "images/Prochee/Куст2.png"
+    "images/Prochee/Kust2.png"
 
 image bush3:
-    "images/Prochee/Куст3.png"
+    "images/Prochee/Kust3.png"
 
 image bg_menu_main = "gui/menu/bg.png"
 
