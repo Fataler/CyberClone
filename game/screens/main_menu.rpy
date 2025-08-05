@@ -77,9 +77,6 @@ transform parametric_appear(delay=0.5):
     linear 0.3 alpha 1
 
 screen main_menu():
-    on "show" action Function(renpy.play, sfx_chains, channel="sfx")
-    on "replace" action Function(renpy.play, sfx_chains, channel="sfx")
-
     tag menu
 
     #add Parallax("menu_background_image", 3)
@@ -167,7 +164,7 @@ screen main_menu():
             text_size 50
 
     if show_main_menu_fade:
-        add "bg_white" at menu_alpha_out(1)
+        add "bg_paper" at menu_alpha_out(1)
         timer 1 action SetVariable("show_main_menu_fade", False)
 
 style main_menu_button:

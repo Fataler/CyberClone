@@ -80,6 +80,11 @@ transform delay_appear(delay = 1.0, time = 0.5):
     pause delay
     linear time alpha 1.0
 
+transform delay_hide(delay = 1.0, time = 0.5):
+    alpha 1.0
+    pause delay
+    linear time alpha 0.0
+
 transform zoom_appear(start = 0, end = 1.0, time = 0.5):
     zoom start
     linear time zoom end
@@ -313,3 +318,43 @@ transform flipping(repeats=3, pause_time=0.9, flip_time=0.3):
         pause pause_time
         xzoom 1.0
         repeat repeats
+
+transform y_offset_appear(start=0, end=100, time=0.5):
+    yoffset start
+    alpha 0
+    linear time yoffset end alpha 1.0
+
+transform y_offset_hide(start=0, end=100, time=0.5):
+    yoffset start
+    alpha 1.0
+    linear time yoffset end alpha 0.0
+
+transform x_offset_appear(start=0, end=100, time=0.5):
+    xoffset start
+    alpha 0
+    easein_quad time xoffset end alpha 1.0
+
+transform x_offset_hide(start=0, end=100, time=0.5):
+    xoffset start
+    alpha 1.0
+    easein_quad time xoffset end alpha 0.0
+
+transform take_in(start=0, end=100, time=0.5):
+    xoffset start
+    yoffset start
+    alpha 0
+    parallel:
+        easein_quad time/2 xoffset end/2 yoffset end/2
+        easein_quad time/2 xoffset end yoffset end
+    parallel:
+        easein_quad time/2 alpha 1.0
+
+transform take_out(start=0, end=100, time=0.5):
+    xoffset start
+    yoffset start
+    alpha 1.0
+    parallel:
+        easein_quad time/2 xoffset -end/2 yoffset end/2
+        easein_quad time/2 xoffset -end yoffset end
+    parallel:
+        easein_quad time alpha 0

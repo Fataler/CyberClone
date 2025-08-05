@@ -1,17 +1,25 @@
 ################################################################################
 ## Сплешскрин
 ################################################################################
-init -2 python:
-    renpy.music.register_channel("video", loop=False, stop_on_mute=True, tight=False, movie=True)
-    renpy.music.register_channel("video_ch", "video", loop=False, stop_on_mute=True, tight=False, movie=True)
-
 default show_main_menu_fade = False
+default splash_duration = 5.0
 
 init:
-    image logo_jam = Movie(channel='video_ch', play="video/jam4.ogv", loops=0, stop_music=True)
+    image splash_gradient = "gui/splash/gradient.png"
+    image splash_logo = "gui/splash/logo.png"
+    image splash_bg = "gui/splash/bg.png"
 
 screen logo_jam():
-    add "logo_jam"
+    add "splash_bg"
+
+    add "splash_gradient" at delay_appear(0, 1)
+        
+    add "splash_logo":
+        align (0.5, 0.5)
+    
+    
+    add "bg_black" at delay_hide(0, 1)
+    add "bg_paper" at delay_appear(4, 1)
         
 label splashscreen:
 
@@ -25,16 +33,13 @@ label splashscreen:
     with Dissolve(1.0)
 
     stop music
-    scene bg_white
-
-    $ renpy.music.set_volume(0.5, channel='video_ch')  
 
     show screen logo_jam
 
     if persistent.first_start:
-        $renpy.pause(4.85, hard=True)
+        $renpy.pause(splash_duration, hard=True) # не скипабельно
     else:
-        $renpy.pause(4.85)
+        $renpy.pause(splash_duration)
 
     $renpy.music.stop(channel='video_ch', fadeout=None)
     hide screen logo_jam
