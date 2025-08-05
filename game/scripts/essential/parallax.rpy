@@ -31,3 +31,15 @@ init python:
         
         def visit(self):
             return [self.image]
+
+
+screen parallax_bg(image_name, movement_speed = 10):
+    zorder 0
+    add Parallax(image_name, movement_speed)
+
+label parallax_test:
+    scene bg_paper
+    show screen parallax_bg("images/CG RGG/cg1 b.png", 10)
+    "..."
+    hide screen parallax_bg
+    return
