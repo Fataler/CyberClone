@@ -66,7 +66,7 @@ image bush3:
     "images/Prochee/Kust3.png"
 
 image bush4:
-    "images/Prochee/Куст4.png"
+    "images/Prochee/Kust5.png"
 
 image bg_menu_main = "gui/menu/bg.png"
 

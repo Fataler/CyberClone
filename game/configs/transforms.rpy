@@ -164,6 +164,12 @@ transform move_on_scene(time=2.0, xalign=0.95):
             ease 0.2 yoffset 0
             repeat (int(time * 2.5))
 
+transform move_on_scene_repeat(easey=0, offsety=0):
+    parallel:
+        block:
+            ease easey yoffset offsety
+            ease easey yoffset 0
+            repeat
 
 transform step_up(steps=1, step_time=0.3, step_size=10):
     yoffset 0

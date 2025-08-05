@@ -941,7 +941,7 @@ image seller_talk_idle:
 #endregion
 
 #region Umi_dad
-layeredimage seller:
+layeredimage umi_dad:
     at auto_flip("umi_dad")
     
     group direction:
