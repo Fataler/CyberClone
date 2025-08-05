@@ -19,4 +19,4 @@
             "Видео приветствие":
                 jump test_video
             "Сборка":
-                jump cutscene_slideshow
+                jump assembling_scene

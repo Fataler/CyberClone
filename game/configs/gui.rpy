@@ -232,7 +232,7 @@ define gui.choice_button_text_insensitive_color = '#7070707f'
 define gui.slot_button_width = 414
 define gui.slot_button_height = 309
 define gui.slot_button_borders = Borders(15, 15, 15, 15)
-define gui.slot_button_text_size = 21
+define gui.slot_button_text_size = 35
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
 define gui.slot_button_text_selected_idle_color = gui.selected_color
@@ -365,8 +365,6 @@ define gui.history_text_xpos = 255
 define gui.history_text_ypos = 3
 define gui.history_text_width = 1110
 define gui.history_text_xalign = 0.0
-
-define gui.slot_button_text_size = 35
 
 
 ## Режим NVL ###################################################################

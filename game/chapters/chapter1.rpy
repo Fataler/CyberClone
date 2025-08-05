@@ -32,7 +32,7 @@ label chapter1:
     show teacher right
 
     #teacher serious
-    teacher serious "Тайда, опять ты спишь на уроке!"
+    teacher angry "Тайда, опять ты спишь на уроке!"
 
     teacher "Что происходит с тобой?"
 

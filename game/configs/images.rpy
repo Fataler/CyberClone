@@ -33,15 +33,15 @@ image bg_black_t_90 = Solid("#000000e6")
 
 ## цгшки
 image suhariki:
-    "images/Prochee/Емельян.png"
+    "images/Prochee/emelyan.png"
     anchor (0.5, 0.5)
 
 image energy_drink:
-    "images/Prochee/Имба.png"
+    "images/Prochee/imba.png"
     anchor (0.5, 0.5)
 
 image pizza:
-    "images/Prochee/Пицца.png"
+    "images/Prochee/pizza.png"
     anchor (0.5, 0.5)
 
 image umi_on_floor:
