@@ -85,8 +85,8 @@ screen main_menu():
 
     add Parallax("gui/menu/logo.png", 0.1):
         anchor (0.5, 0.5)
-        xpos 423
-        ypos 340
+        xpos 450
+        ypos 310
 
     add Parallax("gui/menu/guys_shadow.png", 0.5):
         anchor (0.5, 0.5)

@@ -19,6 +19,12 @@ screen pause_menu():
 
     add "bg_menu_main" at menu_board_drop
 
+    add Parallax("gui/menu/logo.png", 0.1):
+        anchor (0.5, 0.5)
+        xpos 400
+        ypos 500
+        zoom 0.8
+
     frame:
         style_prefix "pause_menu"
         background None #"#00000080"
