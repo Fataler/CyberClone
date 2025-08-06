@@ -1,8 +1,9 @@
 label chapter3:
 #АКТ 3
 #темный экран
+play music music_main_theme_3 fadein 0.5 fadeout 1.0 loop
 scene bg_living_room with Dissolve(1)
-play music music_main_theme_3 loop
+
 #темный экран
 
 t_t thinking tired naked "Яркий луч солнца светил в глаза. Я попытался их открыть, но они словно слиплись."
@@ -29,8 +30,11 @@ t_t asharashen "Стук повторился. К нему прибавилис�
 t_t "Половина вещей из шкафа была выкинута мной на пол, но желаемое найти не удалось. "
 t_t thinking_hard "Чертыхаясь и обливаясь потом, я схватил первое попавшееся."
 t_t hz wtf "Это были шорты, которые я носил ещё в средней школе, в максимально дурацкой расцветке."
+show t_f ear asharashen summer_strem with Dissolve(1)
+
 t_t cry_sad "Еле-еле натянув их на себя, я раскрыл шторы и увидел очень злые лица друзей."
 
+hide t_f with Dissolve(1)
 show den awesome sad left summer at trio_left
 show k pose1 angry right at trio_center
 show h idle angry left summer at trio_right
@@ -117,6 +121,7 @@ t_t thinking thinking_hard "Что ж..."
 t_t hz cry_sad "Остаток дня нам оставалось лишь наблюдать, как робот гуляет с девушкой, которая мне нравится."
 
 hide bush4 onlayer screens
+scene bg_black with Dissolve(1)
 #слайдшоу цг 
 call park_scene
 
@@ -125,6 +130,7 @@ t_t hz cry_sad "Что я мог?.."
 
 #темный экран
 hide bush4 onlayer screens
+play music music_main_theme_3 fadein 0.5 fadeout 1.0 loop
 scene bg_black with Dissolve(1)
 pause 1.0
 scene bg_amusement_park with Dissolve(1)
@@ -387,6 +393,8 @@ show h at giggle
 
 t_t "Ребята засмеялись. "
 
+show d_f pose1 neutral
+
 k neutral "Конечно же, нужен, как ты можешь так говорить? Теперь ты наш друг!"
 
 den wink "Ты очень крутой, чел!"
@@ -402,6 +410,6 @@ k pose2 neutral_4stena "Что ж! Раз все вопросы мы решил�
 $ speak_as("Все", "Дааа!!!~")
 
 scene bg_black with Dissolve(1)
-pause 1.0
+pause 3.0
 
 jump epilogue
