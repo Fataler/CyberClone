@@ -27,6 +27,11 @@ define sfx_giggles = "audio/sfx/06 Giggles.ogg"
 define sfx_crowd = "audio/sfx/07 Crowd.ogg"
 define sfx_furniture = "audio/sfx/08 Furniture.ogg"
 define sfx_throwing_things_around = "audio/sfx/09 Throwing things around.ogg"
+define sfx_pressure = "audio/sfx/Pressure.ogg"
+define sfx_open_door = "audio/sfx/Door-Close-SFX.ogg"
+define sfx_slap = "audio/sfx/Slap.mp3"
+define sfx_steps_on_road = "audio/sfx/Steps_on_road.mp3"
+define sfx_vshooh = "audio/sfx/vshooh.ogg"
 
 # Интерфейс
 define sfx_ui_achieve = "audio/sfx/UI 01 Achive.ogg"

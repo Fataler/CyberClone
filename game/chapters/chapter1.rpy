@@ -177,6 +177,7 @@ label chapter1:
     #t surprised
     t_t surprised "Раздвижная дверь с грохотом ушла в сторону — и группа ребят, подслушивавших у двери, ввалилась в кабинет." with hpunch
 
+    play sfx sfx_giggles_v2
     #смешки
 
     t_t "За дверью толпился народ, жаждущий услышать, как меня отчитывают."
@@ -579,7 +580,7 @@ label chapter1:
 
     # анимация захода слева
     show i smug right at enter_scene(2.0, True, xalign=-0.2)
-
+    play sfx sfx_open_door
     t_t "В этот момент вошла преподавательница кружка. "
 
     #i neutral
@@ -590,7 +591,7 @@ label chapter1:
     hide screen profile_izumi with Dissolve(0.5)
     #all neutral
     show k neutral
-    show h neutral
+    show h neutral left
     show den neutral left
     
     $ speak_as("Все", "Здравствуйте, миссис Изуми!")
@@ -649,7 +650,7 @@ label chapter1:
 
     #u thinking
     show u closed cute
-
+    $ renpy.music.set_volume(0, delay=0.5, channel="music")
     #t neutral
     t_t ear_school neutral "На лице у Юми появилось сначала озадаченное выражение."
 
@@ -679,11 +680,12 @@ label chapter1:
     #k happy
     #h happy
     #den happy
+    play sfx sfx_giggles_v2
     show k pose1 happy at giggle
     show h idle happy at giggle
     show den awesome happy at giggle
-    show i happy
-
+    show i happy left
+    $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
     #t neutral_happy
     t_t smile "Ребята рассмеялись. "
 
@@ -712,22 +714,26 @@ label chapter1:
 
     #sfx
     #Звук подзатыльника
-
+    play sfx sfx_slap
+    show den idle asharashen at fear
     #h serious
     h cunning "Ден, не начинай."
 
     #den sad
-    show den sad
 
     t_t "Ден недовольно потёр затылок и уязвлённое самолюбие."
 
     i smug "Все за дело!"
 
+   
+
     #k neutral
     #h neutral
     #den neutral
     $ renpy.music.set_volume(0, delay=0.5, channel="music")
-    scene bg_black with Dissolve(1)
+    hide i
+    scene bg_black 
+    with Dissolve(1)
     $ renpy.pause(1.0)
     show bg_robo_class_room
     $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
@@ -919,12 +925,13 @@ label chapter1:
     #t nervous smile
     t "Прости, увидимся завтра, мне нужно покормить рыб на дне нашего пруда!"
 
+    play sfx sfx_steps_on_road
+    $ renpy.music.set_volume(0, delay=0.5, channel="music")
+
     #t surprised
     u neutral "Тайда!.."
 
     t_t "...донеслось до меня где-то вдали. Но я уже бежал прочь."
-
-    #$ renpy.music.set_volume(0, delay=0.5, channel="music")
 
     scene bg_black
     with Dissolve(1)
@@ -940,7 +947,7 @@ label chapter1:
 
     #Near Home.JPG
     scene bg_near_home with Dissolve(1)
-    #$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
+    $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 
     #t neutral
     t_t neutral "По пути я забежал в магазинчик возле дома, где продают зарубежные сладости и деликатесы. Денис его боготворит."
@@ -954,28 +961,30 @@ label chapter1:
 
     #t smile
     t_t calm "Пицца \"Красный ценник\". На вид — еда из постапокалипсиса, но что-то в ней есть. В корзину."
-    
+    play sfx sfx_vshooh
     #картинка с энергосом
     #цг
     show pizza at y_offset_hide(0, 100)
     pause 0.5
     hide pizza
-
+    stop sfx
     show energy_drink at y_offset_appear(-100, 0):
         pos (0.5, 0.5)
     #t dream
     t_t thinking cunning "Ооо, энергетик IMBA Power. Настоящее топливо для кибератлетов. То, что надо, для тяжелой ночки. Берем!"
 
     #картинка с сухариками
- 
+    play sfx sfx_vshooh
     show energy_drink at y_offset_hide(0, 100)
     pause 0.5
+    hide energy_drink
+    stop sfx
 
     show suhariki at y_offset_appear(-100, 0):
         pos (0.5, 0.5)
 
     t_t genius "Напоследок, те самые сухари со вкусом хрена! Вкус подозрительно похож на васаби, а на упаковке — удивительно напоминающий Дена персонаж. Сюда!"
-
+    play sfx sfx_vshooh
     show suhariki at y_offset_hide(0, 100)
     pause 0.5
     hide suhariki
@@ -991,6 +1000,7 @@ label chapter1:
     scene bg_living_room with Dissolve(1)
     play music music_main_theme_2_v3 fadein 0.5 loop
     #$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
+    play sfx sfx_open_door
     t_t "Мам, Пап, привет, я дома!"
 
     #t neutral

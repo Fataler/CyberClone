@@ -3,6 +3,7 @@ label chapter2:
 #Class Room.JPG
 $ renpy.pause(1.0)
 show bg_class_room with Dissolve(1)
+play music music_main_theme_2_v3 fadein 0.5 loop
 
 t_t thinking tired "Ранним утром я уже сидел в классе. "
 
@@ -88,6 +89,7 @@ t_t ear_school neutral "Ребята больше не выглядели так
 
 t_t "Мы решили отложить этот разговор до школьного кружка."
 
+$ renpy.music.set_volume(0, delay=0.5, channel="music")
 scene bg_black
 hide k
 hide den
@@ -99,6 +101,7 @@ $ renpy.pause(1.0)
 
 #Robo-Class Room.JPG
 show bg_robo_class_room with Dissolve(1)
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 
 show k pose1 cunning right at quad_right
 show den idle sad left at quad_right_center
@@ -107,6 +110,7 @@ with Dissolve(1)
 
 t_t "Все мы сидим за столом кружка и задумчиво смотрим друг на друга. "
 
+play sfx sfx_open_door
 show i calm right at enter_scene(from_left=True, xalign=-0.1)
 
 t_t "В класс заходит миссис Изуми."
@@ -170,6 +174,7 @@ hide den
 hide h
 with Dissolve(1)
 
+
 #Assembling Demo 2.ogg
 #музыка
 
@@ -196,6 +201,7 @@ with Dissolve(1)
 call assembling_scene
 
 scene bg_robo_class_room
+play music music_main_theme_2_v3 fadein 0.5 loop
 show k pose2 cunning right at penta_right_center
 show den awesome neutral right at penta_left
 show h idle smug left at penta_right
@@ -213,7 +219,9 @@ t_t "Даже я."
 t_t cunning "И, честно говоря, это было круто. Общее дело сближает."
 
 t_t ear_school neutral "И вот мы стоим перед ним. Нашим изобретением."
-
+stop music fadeout 1.0
+play sfx sfx_pressure fadein 0.5 loop
+$ renpy.music.set_volume(0.3, delay=0.5, channel="sfx")
 #ЦГ ребята в ауте и Дзиндзо
 show all_shocked with Dissolve(0.5)
 "..."
@@ -239,14 +247,19 @@ show den asharashen
 show h explain asharashen
 show d_f pose3 neutral with Dissolve(1.0)
 
-i "Почему робот выглядит точь‑в‑точь как Тайда?!"
 
+i "Почему робот выглядит точь‑в‑точь как Тайда?!"
+stop sfx fadeout 0.5
+$ renpy.music.set_volume(1.0, delay=0.5, channel="sfx")
+play music music_comedy loop
 show k at giggle
 show i at fear
 show den at giggle
 show h at fear
 
-"Точно!"
+
+
+$ speak_as("Все", "Точно!")
 
 show k at fear
 
