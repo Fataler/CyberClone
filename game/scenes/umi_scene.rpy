@@ -12,7 +12,7 @@ pause 0.5
 
 show umi_cg at _appear(0.5, 0.3)
 pause 0.5
-show umi_cg with hpunch
+#show umi_cg with hpunch
 pause 5
 
 t_t "Перед нами открылась картина лежащей на полу девушки и подноса с разбитыми чашками. "

@@ -2,6 +2,7 @@ label chapter1:
     scene black
     #Melancholy.ogg
     #музыка
+  
     "..."
     "......"
     "........."
@@ -9,15 +10,20 @@ label chapter1:
     #01 Hit.wav
     #Анимация открытия глаз
     window hide
+    play sfx sfx_hit
+    pause 0.2
     show bg_class_room 
     with eye_on 
     with hpunch
     #sfx
     #звук стука
+
     
     $ renpy.pause(0.3)
 
     t_t thinking school sleepy "..." with dissolve
+    play sfx sfx_crowd
+    play sfx2 sfx_giggles_v2
     
     t_t thinking asharashen "Ч-что?.."
 
@@ -25,12 +31,13 @@ label chapter1:
     #sfx
     #смешки
     #sfx
+
     #Main Theme 2 Demo.ogg 
+   
     #музыка
 
     #Учитель серьезный 
-    show teacher right
-
+    show teacher right with Dissolve(0.5)
     #teacher serious
     teacher angry "Тайда, опять ты спишь на уроке!"
 
@@ -55,6 +62,7 @@ label chapter1:
             #шум толпы, разговоры
             
     hide teacher
+    play music music_main_theme_2_v3 fadein 0.5 loop
 
     #t neutral
     t_t ear_school sad "Я опустился за парту."
@@ -66,33 +74,40 @@ label chapter1:
     t_t cry "Казалось, будто они взорвут мой мозг и улетят, если я не буду крепко держаться за свой лоб."
 
     #t thinking
-    t_t think "Наверное, не стоило ложиться в 4 утра."
+    t_t thinking thinking_hard "Наверное, не стоило ложиться в 4 утра."
 
-    t_t dream "Но я не зря пожертвовал своим сном."
+    t_t genius "Но я не зря пожертвовал своим сном."
 
     #t dream
-    t_t calm "Всю ночь я пытался выбить редкий лут — Меч Тёмного Феникса. И у меня получилось!"
+    t_t "Всю ночь я пытался выбить редкий лут — Меч Тёмного Феникса. И у меня получилось!"
 
     t_t "Теперь мне не будет равных."
 
     t_t "Может, меня наконец-то заметят. Кто знает — вдруг получится пробиться в киберспорт."
 
     #t smug/happy
-    t_t happy "А там уже и девчонки станут внимательнее, и друзья будут просить советы."
+    t_t "А там уже и девчонки станут внимательнее, и друзья будут просить советы."
 
-    t_t "Они будут восхищаться."
+    t_t genius stars "Они будут восхищаться."
 
     #t angry/serious
-    t_t angry "А тем, кто меня дразнил... Да пусть себе живут. Мне не до них."
+    t_t ear_school angry "А тем, кто меня дразнил... Да пусть себе живут. Мне не до них."
 
     #музыка
     #02 Bell.ogg
+    $ renpy.music.set_volume(0.2, delay=0.5, channel="music")
+    play sfx sfx_bell
+    $ renpy.pause(5.0)
+    $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
+    play sfx2 sfx_furniture
+
+    #play sfx sfx_throwing_things_around
     #sfx
     #шум толпы и шум двигаемых стульев
-    pause 2.0
 
     #t neutral/pain
     t_t sad "Мысли путались в голове, видимо, я ещё не до конца проснулся."
+    
     t_t "Я вновь пропустил всё, что говорил учитель."
 
     #teacher neutral
@@ -105,10 +120,10 @@ label chapter1:
     hide teacher
 
     #t neutral
-    t_t neutral "День действительно обещал быть хорошим."
+    t_t dream "День действительно обещал быть хорошим."
 
     #t dream
-    t_t dream "На улице тёплая солнечная погода, в кармане есть немного денег."
+    t_t "На улице тёплая солнечная погода, в кармане есть немного денег."
 
     #t happy
     t_t happy "И самое главное — я наконец-то погуляю с Юми!"
@@ -141,24 +156,24 @@ label chapter1:
     #teacher serious
     teacher "Не \"угу\", а \"обязательно приду!\" Понял?!" 
 
-    t_t neutral "Он дождался, пока последний ученик выйдет и закроет дверь."
+    t_t asharashen "Он дождался, пока последний ученик выйдет и закроет дверь."
 
     #teacher angry
     teacher angry "Иначе лично выпишу тебе пинка под зад!"
 
     #t shoked
-    t asharashen "Я. Всё. Понял."
+    t fear "Я. Всё. Понял."
 
     hide teacher with Dissolve(1)
 
     #t sad/depressed/neutral
-    t_t neutral "Я развернулся и поплелся к выходу." 
+    t_t sad "Я развернулся и поплелся к выходу." 
 
     #sfx
     #звук удара
     #тряска экрана
-    $ hpunch
     $ renpy.pause(0.5)
+    play sfx sfx_hit
     #t surprised
     t_t surprised "Раздвижная дверь с грохотом ушла в сторону — и группа ребят, подслушивавших у двери, ввалилась в кабинет." with hpunch
 
@@ -170,13 +185,17 @@ label chapter1:
 
     #t angry
     t_t angry "Сглотнув обиду, я молча пошёл прочь."
-
+#    $ renpy.music.set_volume(0, delay=0.5, channel="music")
+    stop music fadeout 0.5
     scene bg_black with Dissolve(1)
 
     $ renpy.pause(1.0)
 
     scene bg_near_school with Dissolve(1)
-
+#    $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
+    play music music_main_theme_3_v2 fadein 1.0 loop
+    play sfx sfx_birds_v2 fadein 1.0 loop
+    $ renpy.music.set_volume(0.3, delay=0.5, channel="sfx")
     #музыка пункт 3
 
     #t neutral
@@ -199,10 +218,10 @@ label chapter1:
     #t neutral
     t_t neutral "Я устроился под деревом, открыл контейнер и вдохнул аромат жареной рыбы, риса в кисло-сладком соусе и тушёных овощей."
 
-    t_t "Ну и ни к чему мне эта дурацкая история."
+    t_t hz wtf "Ну и ни к чему мне эта дурацкая история."
 
     #t angry
-    t_t angry "Пусть учит тех, кому нужна. Зачем мне тратить на это свои силы?"
+    t_t "Пусть учит тех, кому нужна. Зачем мне тратить на это свои силы?"
 
     # экран k
     show k right at trio_center with Dissolve(0.5)
@@ -233,7 +252,7 @@ label chapter1:
     hide screen profile_hikaru with Dissolve(0.5)
 
     #t smile
-    t_t smile "Я улыбнулся."
+    t_t ear_school smile "Я улыбнулся."
 
     t "Привет, ребята."
 
@@ -253,18 +272,18 @@ label chapter1:
     t_t dream "..."
 
     #t neutral_happy
-    t think "Представьте, если бы где-то был мир, где можно делать только то, что действительно хочется..."
+    t thinking think "Представьте, если бы где-то был мир, где можно делать только то, что действительно хочется..."
 
     #t dream
-    t smile "Никаких условностей. Чувства голода, желания спать. Никакой усталости. Труда. Дурацких обязанностей."
+    t neutral "Никаких условностей. Чувства голода, желания спать. Никакой усталости. Труда. Дурацких обязанностей."
 
-    t "И можно целыми днями сидеть в кино или в игры играть!"
+    t cunning "И можно целыми днями сидеть в кино или в игры играть!"
 
     show k pose2 smug
     show h smug 
     show den awesome shy
     #t neutral
-    t_t neutral "Ребята задумались."
+    t_t ear_school neutral "Ребята задумались."
 
     #h довольный или мечтательный
     h "Или просто сидеть у воды с удочкой..."
@@ -275,10 +294,12 @@ label chapter1:
     #k строгая или усмехнулась х)
     t_t "Кацуми нахмурилась, но усмехнулась. "
 
-    k "А как же стремление к новому? К открытиям, к развитию?"
+    k pose1 cunning "А как же стремление к новому? К открытиям, к развитию?"
 
     #k neutral
-    k neutral "Неужели вам совсем не хочется понять, как устроен этот мир?"
+    k neutral_4stena "Неужели вам совсем не хочется понять, как устроен этот мир?"
+
+    show k neutral
 
     #den calm
     den surprised "Хмм... Не особо."
@@ -287,7 +308,7 @@ label chapter1:
     t neutral "Ну да, пускай это будет проблемой для кого-то другого."
 
     #k кислое выражение лица
-    show k pose2 didnt_understand
+    show k pose2 neutral
     show den neutral
     show h neutral
 
@@ -299,11 +320,11 @@ label chapter1:
     t_t "Облака плыли медленно и совсем никуда не спешили, как и мы."
 
     #t dream
-    t dream "Когда-нибудь — может, наши внуки, а может, и те, кто будет жить после них..."
+    t thinking think "Когда-нибудь — может, наши внуки, а может, и те, кто будет жить после них..."
 
-    t "Создадут роботов с настоящим интеллектом, которые будут делать все за нас!"
+    t genius "Создадут роботов с настоящим интеллектом, которые будут делать все за нас!"
 
-    t smile "Если бы у меня был такой — отправил бы его в школу вместо себя."
+    t cunning "Если бы у меня был такой — отправил бы его в школу вместо себя."
 
     t "И пусть учит историю, если кому-то так хочется."
 
@@ -311,18 +332,18 @@ label chapter1:
     t think "А если бы вдруг... ну, скажем, меня взяли в заложники."
 
     #t happy/smug
-    t happy "Меня и какую-нибудь девушку..."
+    t ear_school happy "Меня и какую-нибудь девушку..."
 
     #den ну как всегда довольный похабный или ехидный
     den wink "Стройную и с длинными волосами?!"
 
     #t thinking
-    t_t dream "Я на секунду задумался. А потом отмахнулся от Дена."
+    t_t thinking genius "Я на секунду задумался. А потом отмахнулся от Дена."
 
     show den neutral
 
     #t neutral
-    t think "Да какая разница? Не суть."
+    t ear_school think "Да какая разница? Не суть."
 
     #t thinking
     t neutral "Возьмут в заложники и скажут:"
@@ -334,7 +355,7 @@ label chapter1:
     t think "Вот тогда я бы пожалел, что ничего не учил."
 
     #t neutral
-    t neutral "Но вообще — если бы у меня был такой андроид, он бы всё делал за меня."
+    t calm "Но вообще — если бы у меня был такой андроид, он бы всё делал за меня."
 
     #t neutral happy
     t thinking genius stars "А я бы весь день играл и зарабатывал круглые суммы на фарме голды!"
@@ -378,24 +399,28 @@ label chapter1:
     hide den
     scene bg_black 
     with Dissolve(0.5)
-
+    stop sfx fadeout 1.0
+    stop music fadeout 1.0
+    #$ renpy.music.set_volume(0, delay=0.5, channel="music")
     #t neutral
     t_t neutral "Мы неторопливо поднялись, отряхнулись и потопали навстречу приключениям."
 
     t_t "Дорога приключений привела нас, правда, не в грандиозный поход к подножию скалы Хоккаге и не в жерло Роковой Горы, а во всё тот же кружок робототехники. "
 
     scene bg_robo_class_room with Dissolve(0.5)
+    play music music_main_theme_2_v3 fadein 0.5
+    #$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 
     t_t neutral "Мы — его единственные участники."
 
     t_t "Из нас получилась довольно разношерстная команда, если судить честно."
 
-    show k cunning at quad_right_center, face_right with Dissolve(1)
+    show k pose2 neutral at quad_right_center, face_right with Dissolve(1)
     #k thinking
 
     t_t calm "Кацуми — первоклассный программист. Очень умная девушка. Мне иногда страшно представить ход её мыслей и насколько далеко они могут вести..."
 
-    show h explain thinking at quad_right, face_left with Dissolve(1)
+    show h explain neutral at quad_right, face_left with Dissolve(1)
     #h thinking
 
     t_t "Хикару — прирождённый инженер. Говорят, в детстве он мог собрать из кубиков очистную систему небольшого провинциального города."
@@ -406,7 +431,7 @@ label chapter1:
     t_t "Ден – мастер пайки. Всего одним щелчком па... паяльника и с достаточным количеством припоя он может сделать что-то, похожее на микропроцессор. "
 
     #t smug
-    t_t dream "А я... Ну, я просто рукастый. С ранних лет я увлекаюсь моделизмом и могу склеивать, сверлить и привинчивать что угодно к чему угодно. "
+    t_t smile "А я... Ну, я просто рукастый. С ранних лет я увлекаюсь моделизмом и могу склеивать, сверлить и привинчивать что угодно к чему угодно. "
 
     t_t thinking genius stars "Моя техника проста: если что-то должно двигаться, но не двигается — нужен WD-40. Если двигается, но не должно — синяя изолента."
     t_t "Всё остальное уже находится в лучшем виде."
@@ -416,6 +441,7 @@ label chapter1:
     show den sad left
 
     #t surprised
+    play sfx sfx_hit
     t_t ear_school surprised "Денис резко отворил дверь класса." with hpunch
 
     #sfx
@@ -424,17 +450,19 @@ label chapter1:
     #k surprised
     #h surprised
     #den surprised
-    show k pose2 didnt_understand
+    show k pose2 asharashen
     show h asharashen
-    show den nervous
+    show den asharashen
+    play sfx sfx_throwing_things_around
+    $ renpy.music.set_volume(0, delay=0.5, channel="music")
 
-    t_t "За дверью послышался вскрик и звук битой посуды."
+    t_t "За дверью послышался вскрик и звук битой посуды." with hpunch
 
     #цг u
     call umi_cg_scene
 
     show u closed cute school at quad_left, face_right with Dissolve(1)
-
+    $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
     t_t "Это была Юми."
 
     window hide
@@ -442,10 +470,10 @@ label chapter1:
     pause 10
     hide screen profile_umi with Dissolve(0.5)
 
-    show k pose1 worried
-
+    show k pose1 worried at quad_right_center
+    show h explain asharashen left at quad_right
     #u shoked
-    show den awesome shy
+    show den awesome shy at quad_left_center
     #den пахабная ухмылка
 
     #t surprised/volnenie
@@ -462,7 +490,7 @@ label chapter1:
     h sad "Погоди, ты же поранишься! Сейчас подмету."
 
     #k serious
-    t_t "Кацуми помогла мне поднять Юми на ноги."
+    t_t smile "Кацуми помогла мне поднять Юми на ноги."
 
     #t neutral
     t_t dream "Та лишь немного разбила коленки, и теперь там будут синяки. Как обычно."
@@ -489,7 +517,7 @@ label chapter1:
 
     t_t "Хикару вздохнул, уже зная ответ, и повернулся к нему:"
 
-    h "Причина тряски?"
+    h explain neutral "Причина тряски?"
 
     #den happy
     den wink "День прожит не зря!"
@@ -497,7 +525,7 @@ label chapter1:
     h "Тебе нравится, когда кто-то падает и бьёт посуду?"
 
     #den пахабная улыбка
-    show den tricky
+    show den tricky at giggle
 
     t_t "Ден лишь загадочно похихикал и пошёл доставать из холодильника паштет."
 
@@ -547,7 +575,7 @@ label chapter1:
     show den idle nervous
     
     #t thinking
-    t_t depressed "Скепсис на наших лицах было сложно не заметить."
+    t_t thinking think "Скепсис на наших лицах было сложно не заметить."
 
     # анимация захода слева
     show i smug right at enter_scene(2.0, True, xalign=-0.2)
@@ -556,13 +584,16 @@ label chapter1:
 
     #i neutral
     i happy "Всем доброго денёчка!~"
-
+    window hide
+    show screen profile_izumi with Dissolve(0.5)
+    pause 10
+    hide screen profile_izumi with Dissolve(0.5)
     #all neutral
     show k neutral
     show h neutral
-    show den neutral
-
-    "Здравствуйте, миссис Изуми!"
+    show den neutral left
+    
+    $ speak_as("Все", "Здравствуйте, миссис Изуми!")
 
     #t neutral
     t_t neutral "Она выглядела, как обычно: синяки под глазами, кружка кофе и неиссякаемый энтузиазм."
@@ -576,7 +607,7 @@ label chapter1:
     show den nervous
     show i tricky
 
-    t_t sad "Изуми фамильярно распихала нас от стола с изобретением. Мы заразили её своей скептичной миной. "
+    t_t thinking thinking_hard "Изуми фамильярно распихала нас от стола с изобретением. Мы заразили её своей скептичной миной. "
 
     #i thinking
     i "Так, ну и что будем с этим делать? Тащите паштет."
@@ -605,7 +636,7 @@ label chapter1:
     i smug "Ну ничего, тебе не обязательно всё помнить."
 
     #t tricky
-    t tricky "Мы собираем дурацкую ерун..."
+    t hz wtf "Мы собираем дурацкую ерун..."
 
     #i angry
     i angry "Но-но!"
@@ -614,16 +645,20 @@ label chapter1:
     i happy "Мы собираем шедевр, который перевернёт представление о робототехнике!"
 
     #t depressed
-    t depressed "В общем, это робот, который намазывает паштет на хлеб."
+    t thinking thinking_hard "В общем, это робот, который намазывает паштет на хлеб."
 
     #u thinking
-    show u thinking
+    show u closed cute
 
     #t neutral
-    t_t neutral "На лице у Юми появилось сначала озадаченное выражение."
+    t_t ear_school neutral "На лице у Юми появилось сначала озадаченное выражение."
 
     #u cry
     show u closed cry at penta_left
+    show k pose1 worried
+    show h idle surprised
+    show den nervous
+    show i neutral_2
     #t zameshatelstvo
     t_t surprised "Которое затем сменилось слезами."
 
@@ -647,6 +682,7 @@ label chapter1:
     show k pose1 happy at giggle
     show h idle happy at giggle
     show den awesome happy at giggle
+    show i happy
 
     #t neutral_happy
     t_t smile "Ребята рассмеялись. "
@@ -690,17 +726,11 @@ label chapter1:
     #k neutral
     #h neutral
     #den neutral
-    hide bg_robo_class_room
-    show bg_black 
-    with Dissolve(1)
-    $ renpy.pause(1)
-    hide bg_black
+    $ renpy.music.set_volume(0, delay=0.5, channel="music")
+    scene bg_black with Dissolve(1)
+    $ renpy.pause(1.0)
     show bg_robo_class_room
-    hide i
-    hide u
-    hide k
-    hide h
-    hide den
+    $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
     show u at quad_left
     show k right at quad_left_center
     show h left at quad_right_center
@@ -775,11 +805,13 @@ label chapter1:
     t_t think "Вот сделают свою часть работы, и тогда я, так уж и быть, завершу начатое!"
 
     #черный экран
+    stop music fadeout 1.0
     scene bg_black with Dissolve(1)
 
     $ renpy.pause(1)
 
     scene bg_school_entrance with Dissolve(1)
+    play music music_main_theme_3_v2 fadein 0.5
 
     #t neutral
     t_t neutral "Так время, отведённое на кружок, вышло, и мы начали собираться по домам."

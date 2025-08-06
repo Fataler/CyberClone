@@ -4,8 +4,10 @@ define music_rock = "audio/bg/Rock.ogg"
 define music_comedy = "audio/bg/Comedy V2.ogg"
 define music_comedy_loop = "audio/bg/Comedy(loop).ogg"
 define music_comedy = "audio/bg/Comedy.ogg"
+#басы
 define music_main_theme_2_v3 = "audio/bg/Main Theme 2 V3.ogg"
 define music_main_theme_2 = "audio/bg/Main Theme 2.ogg"
+#стардювеллей
 define music_main_theme_3_v2 = "audio/bg/Main Theme 3 V2.ogg"
 define music_main_theme_3 = "audio/bg/Main Theme 3.ogg"
 define music_main_theme = "audio/bg/Main Theme.ogg"
@@ -34,3 +36,4 @@ define sfx_ui_over = "audio/sfx/UI 03 Over.ogg"
 init python:
     renpy.music.register_channel("ui", mixer="sfx", loop=False, stop_on_mute=True, tight=True, buffer_queue=True)
     renpy.music.register_channel("sfx", mixer="sfx", loop=False, stop_on_mute=True, tight=True, buffer_queue=True)
+    renpy.music.register_channel("sfx2", mixer="sfx", loop=False, stop_on_mute=True, tight=True, buffer_queue=True)
