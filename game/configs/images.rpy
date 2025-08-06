@@ -56,6 +56,12 @@ image squid:
 image all_shocked:
     "images/CG/CG RGG.png"
 
+image novel_end:
+    "images/CG/cg_novel_end_stars-.png"
+
+image novel_end_stars:
+    "images/CG/cg_novel_end_stars+.png"
+
 image bush1:
     "images/Prochee/Kust.png"
 

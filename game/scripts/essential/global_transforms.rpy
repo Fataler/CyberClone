@@ -1,4 +1,4 @@
-transform _appear(time = 1.0, delay = 0.0):
+transform g_appear(time = 1.0, delay = 0.0):
     alpha 0
     pause delay
     linear time alpha 1
