@@ -1701,7 +1701,11 @@ t_t "Я напал на него со спины."
 
 scene bg_black with Dissolve(1)
 
-call test_pokemon_battle
+play music music_rock
+
+call screen pokemon_battle with Dissolve(1.0)
+
+stop music fadeout 1.0
 
 scene bg_black
 

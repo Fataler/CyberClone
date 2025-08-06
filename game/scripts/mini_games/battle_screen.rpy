@@ -1,14 +1,13 @@
+init python:
+    def get_taida_sprite(path):
+        return Transform(path, zoom=0.8)
+
+    def get_dzinzo_sprite(path):
+        return Transform(path, zoom=0.7, xzoom=-1)
+
 #region images
 image bg_battle = "images/MiniGames/Battle/bg.png"
 
-image taida_sprite:
-    "images/MiniGames/Battle/gg.png"
-    zoom 0.8
-
-image dzinzo_sprite:
-    "images/MiniGames/Battle/rgg.png"
-    xzoom -1
-    zoom 0.65
 #endregion
 
 define MSG_TAIDA_DEFAULT = "Что сделает Тайда?"
@@ -16,32 +15,32 @@ define MSG_TAIDA_DEFEATED = "Тайда повержен! Бой окончен.
 define MSG_ESCAPE_FAILED = "Побег невозможен!"
 
 define BAG_MESSAGES = [
-    "Тайда шарится в сумке и находит пару игрушек из игровых автоматов. Тайда наполняется решимостью.",
-    "В сумке завалялся вчерашний обед. Костяну это не поможет.",
-    "Тайда шарится в сумке, но больше ничего не может найти.",]
+    "Тайда шарится в сумке и находит пару игрушек из игровых автоматов. Они наполняют его решимостью.",
+    "В сумке завалялся вчерашний обед. Тайде это не поможет.",
+    "Тайда шарится в сумке, но больше ничего не может найти."]
 
 define MAGIC_MESSAGES = [
-    "Тайда начинает носиться по комнате. Дзиндзо недоумевает и теряет 2 HP.",
-    "Чтобы отдохнуть, Тайда притворился спящим. Дзиндзо теряет 20 секунд времени и 2 HP.",
-    "Тайда слишком устал и не может двигаться. Дзиндзо начинает опаздывать и теряет 2 HP.",
-    "Больше это не сработает."]
+    "Тайда начинает носиться по комнате. Дзиндзо недоумевает и теряет {b}2 HP{/b}.",
+    "Тайда слишком устал и не может двигаться. Дзиндзо начинает опаздывать и теряет {b}2 HP{/b}.",
+    "Чтобы отдохнуть, Тайда притворился спящим. Дзиндзо теряет {b}20 секунд времени{/b} и {b}2 HP{/b}.",
+    "У Тайды закончились идеи. Больше это не сработает."]
 
 define TAIDA_BATTLE_MESSAGES = [
-    "Собрав все свои силы, Тайда ударяет Дзиндзо. Снято 2 HP.",
-    "Тайда снова наносит удар! Критический промах. Снятно 2 HP.",
-    "Тайда решает применить свой особый удар. Удар оказывается неэффективным. Снято 2 HP.",
-    "Тайда: 'Нет! Мы ещё не закончили!'"]
+    "Собрав все свои силы, Тайда ударяет Дзиндзо. Снято {b}2 HP{/b}.",
+    "Тайда снова наносит удар! Критический промах. Снятно {b}2 HP{/b}.",
+    "Тайда решает применить свой особый удар. Удар оказывается неэффективным. Снято {b}2 HP{/b}.",
+    "Тайда: \n'Нет! Мы ещё не закончили!'"]
 
 define DZINZO_BATTLE_MESSAGES = [
     "Дзиндзо не понимает что проиходит и пропускает ход.",
-    "Дзиндзо пропускает ход и говорит: 'Господин, что происходит? Это какая-то тренировка ваших физических способностей?",
-    "Дзиндзо: 'Простите, меня ждет ваша мама в саду. Позвольте мне отканяться.'",]
+    "Дзиндзо пропускает ход и говорит: \n'Господин, что происходит? Это какая-то тренировка ваших физических способностей?'",
+    "Дзиндзо: \n'Простите, меня ждет ваша мама в саду. Позвольте мне откланяться.'",]
 
-define MSG_DZINZO_ATTACK = "Дзиндзо: 'Хорошо, давайте я проверю ваши показатели защиты.' Дзиндзо наносит удар. Снято 999 HP."
+define MSG_DZINZO_ATTACK = "Дзиндзо: 'Хорошо, давайте я проверю ваши показатели защиты.' \nДзиндзо наносит удар. Снято {b}999 HP{/b}."
 
-default kostyan_hp = 100
+default player_hp = 100
 default mishanya_hp = 100
-default battle_state = "select_action" #"select_action"  # select_action, attacking, enemy_turn, defeated, kostyan_defeated, message_show
+default battle_state = ACTIONS.SELECT_ACTION #"select_action"  # select_action, attacking, enemy_turn, defeated, kostyan_defeated, message_show
 default battle_message = ""
 default show_battle_buttons = True
 default magic_used = False
@@ -49,40 +48,53 @@ default bag_message_index = 0
 default magic_message_index = 0
 default taida_battle_index = 0
 default dzinzo_battle_index = 0
+default escape_attempted = False
+
+init python:
+    class ACTIONS:
+            ESCAPE = "escape_action"
+            BAG = "bag_action"
+            MAGIC = "magic_action"
+            ATTACK = "attack_action"
+            ATTACKING = "attacking_action"
+            SELECT_ACTION = "select_action"
+            ENEMY_TURN = "enemy_turn_action"
+            ENEMY_SKIP = "enemy_skip_action"
+            DEFEATED = "defeated"
 
 transform pokemon_attack_left:
     xoffset 0
-    linear 0.15 xoffset -40
-    linear 0.15 xoffset 40
-    linear 0.15 xoffset -40
-    linear 0.15 xoffset 40
-    linear 0.15 xoffset 0
+    linear 0.1 xoffset -40
+    linear 0.1 xoffset 40
+    linear 0.1 xoffset -40
+    linear 0.1 xoffset 40
+    linear 0.1 xoffset 0
 
 transform pokemon_attack_right:
     xoffset 0
-    linear 0.15 xoffset 40
-    linear 0.15 xoffset -40
-    linear 0.15 xoffset 40
-    linear 0.15 xoffset -40
-    linear 0.15 xoffset 0
+    linear 0.1 xoffset 40
+    linear 0.1 xoffset -40
+    linear 0.1 xoffset 40
+    linear 0.1 xoffset -40
+    linear 0.1 xoffset 0
 
-transform dzinzo_hit_effect:
+transform hit_effect:
     matrixcolor TintMatrix("#ff0000") * BrightnessMatrix(0.3)
-    linear 0.3 matrixcolor TintMatrix("#ff0000") * BrightnessMatrix(0.8)
-    linear 0.3 matrixcolor TintMatrix("#ff0000") * BrightnessMatrix(0.3)
-    linear 0.4 matrixcolor IdentityMatrix()
+    linear 0.2 matrixcolor TintMatrix("#ff0000") * BrightnessMatrix(0.8)
+    linear 0.2 matrixcolor TintMatrix("#ff0000") * BrightnessMatrix(0.3)
+    linear 0.3 matrixcolor IdentityMatrix()
 
 transform battle_entrance_left:
     xoffset -400
     alpha 0.0
-    ease 1.5 xoffset 0 alpha 1.0
+    ease 1 xoffset 0 alpha 1.0
 
 transform battle_entrance_right:
     xoffset 400
     alpha 0.0
-    ease 1.5 xoffset 0 alpha 1.0
+    ease 1 xoffset 0 alpha 1.0
 
-transform kostyan_defeat_shake:
+transform defeat_shake:
     xoffset 0
     linear 0.1 xoffset -10
     linear 0.1 xoffset 10
@@ -100,7 +112,7 @@ style message_text:
     yalign 0.5
 
 transform taida_pos:
-    pos (0, -215)
+    pos (-50, -198)
     anchor (0.0, 0.5)
 
 transform dzinzo_pos:
@@ -109,8 +121,8 @@ transform dzinzo_pos:
 
 transform ui_fade_in:
     alpha 0.0
-    pause 1.0
-    ease 0.8 alpha 1.0
+    pause 0.5
+    ease 0.5 alpha 1.0
 
 screen pokemon_battle():
     tag battle
@@ -140,22 +152,30 @@ screen pokemon_battle():
                 spacing 10
                 text "HP" size 18 color "#000000"
                 bar:
-                    value AnimatedValue(kostyan_hp, 100, 2.0)
+                    value AnimatedValue(player_hp, 100, 1.0)
                     range 100
                     ysize 18
                     left_bar "#00FF00"
                     right_bar "#808080"
             
-            text "[kostyan_hp]/100" size 20 color "#000000" xalign 1.0
+            text "[player_hp]/100" size 20 color "#000000" xalign 1.0
 
-        if battle_state == "kostyan_defeated":
-            add "taida_sprite" at kostyan_defeat_shake, taida_pos
-        elif battle_state == "attacking":
-            add "taida_sprite" at pokemon_attack_left, taida_pos
-        elif battle_state == "select_action":
-            add "taida_sprite" at taida_pos
+        if battle_state == ACTIONS.ESCAPE:
+            add get_taida_sprite("side t ear summer_norm angry") at taida_pos
+        elif battle_state == ACTIONS.BAG:
+            add get_taida_sprite("side t ear summer_norm crazy") at taida_pos
+        elif battle_state == ACTIONS.MAGIC:
+            add get_taida_sprite("side t ear summer_norm asharashen") at taida_pos
+        elif battle_state == ACTIONS.SELECT_ACTION:
+            add get_taida_sprite("side t ear summer_norm") at taida_pos
+        elif battle_state == ACTIONS.ATTACKING:
+            add get_taida_sprite("side t ear summer_norm angry") at pokemon_attack_left, taida_pos
+        elif battle_state == ACTIONS.ENEMY_TURN:
+            add get_taida_sprite("side t ear summer_norm angry") at defeat_shake, hit_effect, taida_pos
+        elif battle_state == ACTIONS.DEFEATED:
+            pass
         else:
-            add "taida_sprite" at taida_pos
+            add get_taida_sprite("side t ear summer_norm") at taida_pos
     
     frame:
         pos (1500, 680)
@@ -178,7 +198,7 @@ screen pokemon_battle():
                 spacing 10
                 text "HP" size 18 color "#000000"
                 bar:
-                    value AnimatedValue(mishanya_hp, 100, 2.0)
+                    value AnimatedValue(mishanya_hp, 100, 1.0)
                     range 100
                     ysize 18
                     left_bar "#00FF00"
@@ -186,20 +206,24 @@ screen pokemon_battle():
 
             text "???/???" size 20 color "#000000" xalign 1.0
 
-        if battle_state == "enemy_turn":
-            add "dzinzo_sprite" at pokemon_attack_right, dzinzo_pos
-        elif battle_state == "enemy_skip":
-            add "dzinzo_sprite" at dzinzo_hit_effect, dzinzo_pos
-        elif battle_state == "select_action":
-            add "dzinzo_sprite" at dzinzo_pos
+        if battle_state == ACTIONS.ENEMY_TURN:
+            add get_dzinzo_sprite("side d thinking") at pokemon_attack_right, dzinzo_pos
+        elif battle_state == ACTIONS.ENEMY_SKIP:
+            add get_dzinzo_sprite("side d thinking") at hit_effect, dzinzo_pos
+        elif battle_state == ACTIONS.SELECT_ACTION:
+            add get_dzinzo_sprite("side d norm") at dzinzo_pos
+        elif battle_state == ACTIONS.MAGIC:
+            add get_dzinzo_sprite("side d surprised") at dzinzo_pos
+        elif battle_state == ACTIONS.BAG:
+            add get_dzinzo_sprite("side d cunning") at dzinzo_pos
         else:
-            add "dzinzo_sprite" at dzinzo_pos
+            add get_dzinzo_sprite("side d norm") at dzinzo_pos
     
 
     frame:
         xpos 0.5
         ypos 0.15
-        xysize (1200, 100)
+        xysize (1200, 200)
         background "#FFFFFF"
         anchor (0.5, 0.5)
         padding (20, 20)
@@ -211,12 +235,12 @@ screen pokemon_battle():
             
             if battle_message:
                 text battle_message style "message_text"
-            elif battle_state == "select_action":
+            elif battle_state == ACTIONS.SELECT_ACTION:
                 text MSG_TAIDA_DEFAULT style "message_text"
             else:
                 text " " style "message_text"
     
-    if show_battle_buttons and battle_state == "select_action":
+    if show_battle_buttons and battle_state == ACTIONS.SELECT_ACTION:
         frame:
             xpos 0.95
             ypos 0.95
@@ -274,63 +298,67 @@ screen pokemon_battle():
                         hover_background "#FFA500"
                         text_outlines [(1, "#000000", 0, 0)]
                         action Function(try_escape)
-    
-    if battle_state == "attacking":
-        timer get_message_time(battle_message) action Function(enemy_attack)
-    elif battle_state == "enemy_turn":
-        timer get_message_time(battle_message) action Function(defeat_kostyan)
-    elif battle_state == "defeated":
-        timer get_message_time(battle_message) action Function(start_kostyan_defeat)
-    elif battle_state == "kostyan_defeated":
-        timer 3.0 action Function(end_battle)
-    elif battle_message == MSG_ESCAPE_FAILED:
-        timer get_message_time(battle_message) action [SetVariable("battle_message", ""), SetVariable("show_battle_buttons", True), SetVariable("battle_state", "select_action")]
-    elif battle_message in BAG_MESSAGES:
-        timer get_message_time(battle_message) + 1.0 action [SetVariable("battle_message", ""), SetVariable("show_battle_buttons", True), SetVariable("battle_state", "select_action")]
-    elif battle_message in MAGIC_MESSAGES:
-        timer get_message_time(battle_message) + 1.0 action [SetVariable("battle_message", ""), SetVariable("show_battle_buttons", True), SetVariable("battle_state", "select_action")]
-    elif battle_message in TAIDA_BATTLE_MESSAGES:
-        timer get_message_time(battle_message) action Function(enemy_attack)
-    elif battle_state == "enemy_skip":
-        timer get_message_time(battle_message) action [SetVariable("battle_message", ""), SetVariable("show_battle_buttons", True), SetVariable("battle_state", "select_action")]
+
+    if battle_state == ACTIONS.ATTACKING:
+        timer get_message_time(battle_message) - 1 action Function(enemy_attack)
+    elif battle_state == ACTIONS.ENEMY_TURN:
+        timer get_message_time(battle_message) + 2 action Function(enemy_attack_final)
+    elif battle_state == ACTIONS.DEFEATED:
+        timer get_message_time(battle_message) action Return()
+    elif battle_state == ACTIONS.ESCAPE:
+        timer get_message_time(battle_message) action [Function(set_battle_state, ACTIONS.SELECT_ACTION)]
+    elif battle_state == ACTIONS.BAG:
+        timer get_message_time(battle_message) action [Function(set_battle_state, ACTIONS.SELECT_ACTION)]
+    elif battle_state == ACTIONS.MAGIC:
+        timer get_message_time(battle_message) action [Function(set_battle_state, ACTIONS.SELECT_ACTION)]
+    elif battle_state == ACTIONS.ENEMY_SKIP:
+        timer get_message_time(battle_message) action [Function(set_battle_state, ACTIONS.SELECT_ACTION)]
 
 init python:
+    def set_battle_state(state):
+        global battle_state, show_battle_buttons, battle_message
+        battle_state = state
+        show_battle_buttons = True
+        battle_message = ""
+        renpy.restart_interaction()
+
     def get_message_time(message):
         if not message:
             return 2.0
         
-        time = 2.0 + len(message) * 0.05
+        time = 2.0 + len(message) * 0.03
         return max(2.0, min(10.0, time))
 
     def start_attack():
-        global battle_state, battle_message, show_battle_buttons, mishanya_hp, taida_battle_index, dzinzo_battle_index
-        
-        battle_state = "attacking"
+        global battle_state, battle_message, show_battle_buttons, mishanya_hp, taida_battle_index
+
+        renpy.play(sfx_hit)
+
+        battle_state = ACTIONS.ATTACKING
         show_battle_buttons = False
         
-        # Проверяем, есть ли ещё сообщения для боя
-        if taida_battle_index < len(TAIDA_BATTLE_MESSAGES) and dzinzo_battle_index < len(DZINZO_BATTLE_MESSAGES):
-            battle_message = TAIDA_BATTLE_MESSAGES[taida_battle_index]
-            mishanya_hp -= 2  # Наносим урон
-            taida_battle_index += 1
-        else:
-            # Если сообщения закончились, начинается настоящий бой
-            battle_message = MSG_DZINZO_ATTACK
+        battle_message = TAIDA_BATTLE_MESSAGES[taida_battle_index]
+        mishanya_hp -= 2
+        taida_battle_index = min(taida_battle_index + 1, len(TAIDA_BATTLE_MESSAGES) - 1)
         
         renpy.restart_interaction()
     
     def try_escape():
-        global battle_message, show_battle_buttons
+        global battle_message, show_battle_buttons, battle_state, escape_attempted
+        
+        unlock_achievement(STRATEGIST)
         
         show_battle_buttons = False
         battle_message = MSG_ESCAPE_FAILED
-        
+        battle_state = ACTIONS.ESCAPE
+        escape_attempted = True
         renpy.restart_interaction()
 
     def try_bag():
-        global battle_message, show_battle_buttons, bag_message_index
+        global battle_message, show_battle_buttons, bag_message_index, battle_state
         
         show_battle_buttons = False
+        battle_state = ACTIONS.BAG
         battle_message = BAG_MESSAGES[bag_message_index]
         
         bag_message_index = min(bag_message_index + 1, len(BAG_MESSAGES) - 1)
@@ -338,10 +366,10 @@ init python:
         renpy.restart_interaction()
     
     def try_magic():
-        global battle_message, show_battle_buttons, magic_message_index, mishanya_hp
+        global battle_message, show_battle_buttons, magic_message_index, mishanya_hp, battle_state
         
         show_battle_buttons = False
-        
+        battle_state = ACTIONS.MAGIC
         battle_message = MAGIC_MESSAGES[magic_message_index]
         
         if magic_message_index < len(MAGIC_MESSAGES) - 1:
@@ -352,53 +380,47 @@ init python:
         renpy.restart_interaction()
         
     def enemy_attack():
-        global kostyan_hp, battle_message, battle_state, dzinzo_battle_index
+        global player_hp, battle_message, battle_state, dzinzo_battle_index
         
         if dzinzo_battle_index < len(DZINZO_BATTLE_MESSAGES):
-            battle_state = "enemy_skip"
+            battle_state = ACTIONS.ENEMY_SKIP
             battle_message = DZINZO_BATTLE_MESSAGES[dzinzo_battle_index]
             dzinzo_battle_index += 1
         else:
-            battle_state = "enemy_turn"
+            battle_state = ACTIONS.ENEMY_TURN
             battle_message = MSG_DZINZO_ATTACK
-            kostyan_hp -= 999
+            player_hp -= 999
+
+        if player_hp <= 0:
+            player_hp = 0
             
-            if kostyan_hp <= 0:
-                kostyan_hp = 0
-        
         renpy.restart_interaction()
     
-    def defeat_kostyan():
-        global battle_message, battle_state, show_battle_buttons
+    def enemy_attack_final():
+        global battle_message, battle_state, show_battle_buttons, escape_attempted, magic_message_index, bag_message_index
         
-        if kostyan_hp <= 0:
+        renpy.play(sfx_hit)
+
+        if (escape_attempted and magic_message_index == len(MAGIC_MESSAGES) - 1 and bag_message_index == len(BAG_MESSAGES) - 1):
+            unlock_achievement(MAX_DAMAGE)
+        
+        if player_hp <= 0:
             battle_message = MSG_TAIDA_DEFEATED
-            battle_state = "defeated"
+            battle_state = ACTIONS.DEFEATED
         else:
             battle_message = ""
-            battle_state = "select_action"
+            battle_state = ACTIONS.SELECT_ACTION
             show_battle_buttons = True
         
         renpy.restart_interaction()
     
-    def start_kostyan_defeat():
-        global battle_state, battle_message
-        
-        battle_state = "kostyan_defeated"
-        battle_message = ""
-        renpy.restart_interaction()
-    
-    def end_battle():
-        renpy.hide_screen("pokemon_battle")
-        renpy.return_statement()
-    
     def reset_battle():
-        global kostyan_hp, mishanya_hp, battle_state, battle_message, show_battle_buttons
+        global player_hp, mishanya_hp, battle_state, battle_message, show_battle_buttons
         global bag_message_index, magic_message_index, taida_battle_index, dzinzo_battle_index, magic_used
         
-        kostyan_hp = 100
+        player_hp = 100
         mishanya_hp = 100
-        battle_state = "select_action"
+        battle_state = ACTIONS.SELECT_ACTION
         battle_message = ""
         show_battle_buttons = True
         bag_message_index = 0
