@@ -69,7 +69,7 @@ layeredimage p_4:
         "a_border"
 
 label park_scene:
-    #play music music_amu fadeout 1.0 fadein 1.0
+    play music fluffing_a_duck fadeout 1.0 fadein 1.0
     
     scene paper_bg
     with dissolve
