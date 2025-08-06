@@ -20,3 +20,5 @@
                 jump test_video
             "Сборка":
                 jump assembling_scene
+            "Dzinzo Rock":
+                jump dzinzo_rock_scene

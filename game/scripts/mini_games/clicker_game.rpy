@@ -221,7 +221,7 @@ screen clicker_game():
     
     if show_bounce_effect:
         $ current_timer_id = bounce_timer_id
-        timer 0.33 action If(bounce_timer_id == current_timer_id, SetScreenVariable("show_bounce_effect", False))
+        timer 0.13 action If(bounce_timer_id == current_timer_id, SetScreenVariable("show_bounce_effect", False))
 
 transform bounce_effect:
     anchor (0.5, 0.5)
@@ -254,13 +254,13 @@ transform victory_button:
 
 style exit_button_text:
     color "#ffffff"
+    hover_color "#a7a6a6"
     outlines [(2, "#000000", 0, 0)]
 
 label test_clicker_game:
     $ result = renpy.call_screen("clicker_game")
     if result:
         $ unlock_achievement("pig_slayer")
-#        "Отлично! Вы прогнали Ужасного Вепря!"
     else:
         "Вы вышли из игры."
     return 
