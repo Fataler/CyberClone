@@ -96,7 +96,7 @@ style say_dialogue:
     xpos gui.dialogue_xpos
     xsize gui.dialogue_width
     ypos gui.dialogue_ypos
-    size my_dialogue_size
+    # size my_dialogue_size
 
     adjust_spacing False
 
@@ -105,6 +105,6 @@ init python:
         if persistent.current_font == "default":
             return gui.text_size
         else:
-            return gui.text_size - 5
+            return gui.text_size - 3
 
 default my_dialogue_size = get_dialogue_size()

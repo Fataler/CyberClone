@@ -314,6 +314,7 @@ layeredimage d_f:
             "images/Dindzo/Dzindzo_pose1_relief.png"
     
     group emotion if_any "pose2":
+        xoffset -50
         attribute neutral default:
             "images/Dindzo/Dzindzo_pose2_neutral.png"
         attribute sad:
@@ -326,6 +327,7 @@ layeredimage d_f:
             "images/Dindzo/Dzindzo_pose2_pupupu.png"
 
     group emotion if_any "pose3":
+        xoffset -50
         attribute neutral default:
             "images/Dindzo/Dzindzo_bez_prikolov_thinking.png"
         attribute smile:
@@ -336,10 +338,12 @@ layeredimage d_f:
             WhileSpeaking('d_f', 'dzinzo_talk_pose1', Null())
     
     group mouth if_any "pose2":
+        xoffset -50
         attribute talk:
             WhileSpeaking('d_f', 'dzinzo_talk_pose2', Null())
 
     group mouth if_any "pose3":
+        xoffset -50
         attribute talk:
             WhileSpeaking('d_f', 'dzinzo_talk_pose2', Null())
 
@@ -350,6 +354,7 @@ layeredimage d_f:
             "images/Dindzo/Dzindzo_pose1_letnee.png"
     
     group dress if_any "pose2":
+        xoffset -50
         attribute school default:
             "images/Dindzo/Dzindzo_pose2_shkolnoe.png"
         attribute summer:

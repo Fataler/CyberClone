@@ -12,6 +12,7 @@ define music_main_theme_3_v2 = "audio/bg/Main Theme 3 V2.ogg"
 define music_main_theme_3 = "audio/bg/Main Theme 3.ogg"
 define music_main_theme = "audio/bg/Main Theme.ogg"
 define music_melancholy = "audio/bg/Melancholy.ogg"
+define music_meatball_parade = "audio/bg/Meatball-Parade.mp3"
 
 # Игра
 define sfx_hit = "audio/sfx/01 Hit.wav"

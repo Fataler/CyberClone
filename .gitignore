@@ -47,3 +47,5 @@ game/renpy_warp_*.rpe.py
 
 !external_resources.txt
 !walkthrough.txt
+game/libs
+*rpe.py
