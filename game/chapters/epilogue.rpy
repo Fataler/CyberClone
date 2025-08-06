@@ -3,7 +3,8 @@ label epilogue:
 
 #нвл
 #цг силуэты на фоне реки
-"..."
+play music music_melancholy fadein 0.5 fadeout 0.5 loop
+scene novel_end with Dissolve(1)
 
 story_teller "Друзья представляют Дзиндзо на конкурсе робототехники, и, тем самым, выигрывают престижный грант — теперь для них открыты все двери в будущее, ведь с таким талантом ребята могут стать кем угодно."
 
@@ -46,10 +47,13 @@ story_teller "..."
 
 nvl clear
 
+show novel_end_stars
+
 story_teller "Не переживайте, вы ещё увидите их. По телевизору, в газетах, на радио. Нужно только подождать пару лет."
 
 story_teller "Не грустите, попейте чаю, вздохните и подумайте — какой она бывает — эта жизнь."
 
 nvl clear
-
-story_teller "..."
+stop music fadeout 2.0
+show bg_black with Dissolve(1)
+pause 3.0
