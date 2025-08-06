@@ -62,7 +62,7 @@ label chapter1:
             #шум толпы, разговоры
             
     hide teacher
-    play music music_main_theme_2_v3 fadein 0.5 loop
+    play music music_main_theme_2_v3 loop
 
     #t neutral
     t_t ear_school sad "Я опустился за парту."
@@ -193,7 +193,7 @@ label chapter1:
 
     scene bg_near_school with Dissolve(1)
 #    $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
-    play music music_main_theme_3_v2 fadein 1.0 loop
+    play music music_main_theme_3_v2 fadein 0.5 loop
     play sfx sfx_birds_v2 fadein 1.0 loop
     $ renpy.music.set_volume(0.3, delay=0.5, channel="sfx")
     #музыка пункт 3
@@ -408,7 +408,7 @@ label chapter1:
     t_t "Дорога приключений привела нас, правда, не в грандиозный поход к подножию скалы Хоккаге и не в жерло Роковой Горы, а во всё тот же кружок робототехники. "
 
     scene bg_robo_class_room with Dissolve(0.5)
-    play music music_main_theme_2_v3 fadein 0.5
+    play music music_main_theme_2_v3 fadein 0.5 loop
     #$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 
     t_t neutral "Мы — его единственные участники."
@@ -805,13 +805,13 @@ label chapter1:
     t_t think "Вот сделают свою часть работы, и тогда я, так уж и быть, завершу начатое!"
 
     #черный экран
-    stop music fadeout 1.0
+    stop music fadeout 1.0 
     scene bg_black with Dissolve(1)
 
     $ renpy.pause(1)
 
     scene bg_school_entrance with Dissolve(1)
-    play music music_main_theme_3_v2 fadein 0.5
+    play music music_main_theme_3_v2 fadein 0.5 loop
 
     #t neutral
     t_t neutral "Так время, отведённое на кружок, вышло, и мы начали собираться по домам."
@@ -924,8 +924,9 @@ label chapter1:
 
     t_t "...донеслось до меня где-то вдали. Но я уже бежал прочь."
 
+    #$ renpy.music.set_volume(0, delay=0.5, channel="music")
+
     scene bg_black
-    hide u 
     with Dissolve(1)
 
     #t чтото с закрытыми глазами
@@ -939,6 +940,7 @@ label chapter1:
 
     #Near Home.JPG
     scene bg_near_home with Dissolve(1)
+    #$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 
     #t neutral
     t_t neutral "По пути я забежал в магазинчик возле дома, где продают зарубежные сладости и деликатесы. Денис его боготворит."
@@ -962,7 +964,7 @@ label chapter1:
     show energy_drink at y_offset_appear(-100, 0):
         pos (0.5, 0.5)
     #t dream
-    t_t smile "Ооо, энергетик IMBA Power. Настоящее топливо для кибератлетов. То, что надо, для тяжелой ночки. Берем!"
+    t_t thinking cunning "Ооо, энергетик IMBA Power. Настоящее топливо для кибератлетов. То, что надо, для тяжелой ночки. Берем!"
 
     #картинка с сухариками
  
@@ -972,20 +974,23 @@ label chapter1:
     show suhariki at y_offset_appear(-100, 0):
         pos (0.5, 0.5)
 
-    t_t happy "Напоследок, те самые сухари со вкусом хрена! Вкус подозрительно похож на васаби, а на упаковке — удивительно напоминающий Дена персонаж. Сюда!"
+    t_t genius "Напоследок, те самые сухари со вкусом хрена! Вкус подозрительно похож на васаби, а на упаковке — удивительно напоминающий Дена персонаж. Сюда!"
 
     show suhariki at y_offset_hide(0, 100)
     pause 0.5
     hide suhariki
 
     #t neutral
-    t_t neutral "Набрав легендарного лута, я двинул к дому."
+    t_t ear_school smile "Набрав легендарного лута, я двинул к дому."
 
     #Room Evening.JPG
+    #$ renpy.music.set_volume(0, delay=0.5, channel="music")
+    stop music fadeout 1.0
     scene bg_black with Dissolve(1)
     $ renpy.pause(1)
     scene bg_living_room with Dissolve(1)
-
+    play music music_main_theme_2_v3 fadein 0.5 loop
+    #$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
     t_t "Мам, Пап, привет, я дома!"
 
     #t neutral
@@ -1058,7 +1063,7 @@ label chapter1:
 
     #sfx
     #звук удара
-
+    play sfx sfx_hit
     t_t "Я ударил кулаком по столу и молча сидел в тишине в попытках приглушить импульсивную злость на всех вокруг." with vpunch
 
     #t surprised
@@ -1074,7 +1079,7 @@ label chapter1:
 
     #t cry
     t_t cry_angry "С этой безумной, но по-своему гениальной идеей, а также слезами и соплями, растёртыми по лицу, я сел делать уроки."
-
+    stop music fadeout 1.0
     #темный экран
     scene bg_black with Dissolve(1)
 
