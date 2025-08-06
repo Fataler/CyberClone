@@ -130,9 +130,9 @@ t_t hz cry_sad "Что я мог?.."
 
 #темный экран
 hide bush4 onlayer screens
-play music music_main_theme_3 fadein 0.5 fadeout 1.0 loop
 scene bg_black with Dissolve(1)
 pause 1.0
+play music music_main_theme_3 fadein 0.5 fadeout 1.0 loop
 scene bg_amusement_park with Dissolve(1)
 #Amusement Park.JPG
 #play sfx sfx_bushes
@@ -149,6 +149,11 @@ with Dissolve(1)
 
 t_t ear cry summer_strem "День подходил к концу. "
 
+
+show d_f pose2 neutral summer right at move_on_scene(xalign=0.6)
+show u closed touched summer right at move_on_scene(time=3.0, xalign=1.0)
+pause 2.0
+show u left
 play sfx sfx_bushes
 show expression "bush1" at Transform(xalign=0, yalign=1.0), size_change(0.6, 0.6) onlayer master zorder 2
 show expression "bush3" at Transform(xalign=0.1, yalign=0.7), size_change(0.35, 0.35) as bushh1 onlayer master zorder 2
@@ -156,12 +161,15 @@ show expression "bush3" at Transform(xalign=-0.2, yalign=1.0), size_change(0.5, 
 show k pose1 cunning left at Transform(xalign=-0.05, yalign=0.8), size_change(0.5, 0.5) onlayer master zorder 1
 show den awesome neutral right at Transform(xalign=0.05, yalign=0.7), size_change(0.5, 0.5) onlayer master zorder 1
 show h idle neutral right at Transform(xalign=0.2, yalign=0.6), size_change(0.5, 0.5) onlayer master zorder 1
-show d_f pose2 neutral summer right at Transform(xalign=0.6, yalign=1.0)
-show u closed touched summer left at Transform(xalign=1.0, yalign=1.0)
 with Dissolve(1)
 
 t_t "Мы таскались за этой сладкой парочкой около 6 часов. "
 
+
+show d_f pose1 neutral summer left at move_on_scene(xalign=0.4)
+show u open happy summer left at move_on_scene(time=3.0, xalign=0)
+pause 2.0
+show u right
 play sfx sfx_bushes
 show expression "bush1" at Transform(xalign=1.0, yalign=1.0), size_change(0.6, 0.6) onlayer master zorder 2
 show expression "bush3" at Transform(xalign=0.9, yalign=0.7), size_change(0.35, 0.35) as bushh1 onlayer master zorder 2
@@ -169,12 +177,15 @@ show expression "bush3" at Transform(xalign=1.2, yalign=1.0), size_change(0.5, 0
 show k pose1 cunning right at Transform(xalign=0.95, yalign=0.65), size_change(0.5, 0.5) onlayer master zorder 1
 show den awesome neutral left at Transform(xalign=0.8, yalign=0.6), size_change(0.5, 0.5) onlayer master zorder 1
 show h idle neutral left at Transform(xalign=1.05, yalign=0.95), size_change(0.6, 0.6) onlayer master zorder 1
-show d_f pose1 neutral summer left at Transform(xalign=0.4, yalign=1.0)
-show u open happy summer right at Transform(xalign=0, yalign=1.0)
 with Dissolve(1)
 
 t_t "Попутно отбиваясь от фанаток Хикару, которые то и дело преграждали нам путь, пытаясь увести его под ручку или накормить мороженым."
 
+
+show d_f pose2 neutral summer right at move_on_scene(xalign=0.6)
+show u closed touched summer right at move_on_scene(time=3.0, xalign=1.0)
+pause 2.0
+show u left
 play sfx sfx_bushes
 show expression "bush1" at Transform(xalign=0, yalign=1.0), size_change(0.6, 0.6) onlayer master zorder 2
 show expression "bush3" at Transform(xalign=0.1, yalign=0.7), size_change(0.35, 0.35) as bushh1 onlayer master zorder 2
@@ -182,8 +193,6 @@ show expression "bush3" at Transform(xalign=-0.2, yalign=1.0), size_change(0.5, 
 show k pose1 cunning left at Transform(xalign=-0.05, yalign=0.8), size_change(0.5, 0.5) onlayer master zorder 1
 show den awesome neutral right at Transform(xalign=0.05, yalign=0.7), size_change(0.5, 0.5) onlayer master zorder 1
 show h idle neutral right at Transform(xalign=0.2, yalign=0.6), size_change(0.5, 0.5) onlayer master zorder 1
-show d_f pose2 neutral summer right at Transform(xalign=0.6, yalign=1.0)
-show u closed touched summer left at Transform(xalign=1.0, yalign=1.0)
 with Dissolve(1)
 
 t_t hz cry_why "Что сказать, свидание удалось."
