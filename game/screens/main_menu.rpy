@@ -1,6 +1,10 @@
 ## Экран главного меню
 init:
     image bg_white = Solid("#ffffff")
+
+    image guys_shadow:
+        "gui/menu/guys_shadow.png"
+
     image gg:
         "gui/menu/gg.png"
     
@@ -71,6 +75,11 @@ init:
         "gui/menu/Chirkashi_Den_3.png"
         repeat
 
+transform hue_cycle:
+        matrixcolor HueMatrix(0)
+        linear 10.0 matrixcolor HueMatrix(360)
+        repeat
+
 transform parametric_appear(delay=0.5):
     alpha 0
     pause delay
@@ -79,16 +88,14 @@ transform parametric_appear(delay=0.5):
 screen main_menu():
     tag menu
 
-    #add Parallax("menu_background_image", 3)
     add "bg_menu_main"
-    #add Parallax("menu_clouds_image", 15)
 
     add Parallax("gui/menu/logo.png", 0.1):
         anchor (0.5, 0.5)
         xpos 450
         ypos 310
 
-    add Parallax("gui/menu/guys_shadow.png", 0.5):
+    add Parallax("guys_shadow", 0.5) at hue_cycle:
         anchor (0.5, 0.5)
         xpos 1140
         ypos 590
@@ -168,11 +175,8 @@ screen main_menu():
         timer 1 action SetVariable("show_main_menu_fade", False)
 
 style main_menu_button:
-    #size_group "navigation"
     anchor (0.5, 0.5)
     properties gui.button_properties("main_menu")
-    #xminimum 400
-    #xalign 0.5
 
 style main_menu_button_text is gui_button_text
 

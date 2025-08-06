@@ -1,6 +1,8 @@
 label epilogue:
 #Эпилог
 
+scene epilogue_bg
+show epilogue_stars
 #нвл
 #цг силуэты на фоне реки
 play music music_melancholy fadein 0.5 fadeout 0.5 loop
