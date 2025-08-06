@@ -164,6 +164,21 @@ transform move_on_scene(time=2.0, xalign=0.95):
             ease 0.2 yoffset 0
             repeat (int(time * 2.5))
 
+#как листочек типа падает
+transform fall_like_leaf(time=5.0, yalign=25.0):
+    parallel:
+        ease time yalign yalign
+    parallel:
+        block:
+            ease 0.9 xoffset 50
+            ease 0.9 xoffset 0
+            repeat (int(time * 0.5))
+
+transform move_vertically(time=1.0, x=0.5, yalign1=0, yalign2=1.0):
+        xalign x
+        yalign yalign1
+        ease time yalign yalign2
+
 transform move_on_scene_repeat(easey=0, offsety=0):
     parallel:
         block:

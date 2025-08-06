@@ -34,9 +34,9 @@ define seller = Character('Продавщица', color='#964a04', image='seller
 
 #define stranger = Character('Одноклассник', color='#6b3b0f')
 
-define b_1 = Character('Отец Юми', color='#21202c', image='umi_dad', callback=speaker('umi_dad'))
+define b_1 = Character('Отец Юми', color='#21202c', image='b_1', callback=speaker('b_1'))
 
-define b_2 = Character('Батя', color='#21202c', image='umi_dad', callback=speaker('umi_dad'))
+#define b_2 = Character('Батя', color='#21202c', image='umi_dad', callback=speaker('umi_dad'))
 
 #define together = Character('Все', color='#420303')
 
@@ -941,8 +941,8 @@ image seller_talk_idle:
 #endregion
 
 #region Umi_dad
-layeredimage umi_dad:
-    at auto_flip("umi_dad")
+layeredimage b_1:
+    at auto_flip("b_1")
     
     group direction:
         attribute right default:
@@ -960,7 +960,7 @@ layeredimage umi_dad:
 
     group mouth:
         attribute talk if_any "idle":
-            WhileSpeaking('umi_dad', 'umi_dad_talk_idle', Null())
+            WhileSpeaking('b_1', 'umi_dad_talk_idle', Null())
 
 image umi_dad_talk_idle:
     "images/DadUmi/Batya_rot_1.png"
