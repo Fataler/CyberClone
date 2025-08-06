@@ -16,6 +16,23 @@ image bg_robo_class_room = "images/Backgrounds/Robo-class Room.jpg"
 image bg_school_entrance = "images/Backgrounds/School Entrance.jpg"
 image bg_square = "images/Backgrounds/Square.jpg"
 
+
+# credits images
+image credits_img_1:
+    "images/Credits/1.png"
+image credits_img_2:
+    "images/Credits/2.png"
+image credits_img_3:
+    "images/Credits/3.png"
+image credits_img_4:
+    "images/Credits/4.png"
+image credits_img_5:
+    "images/Credits/5.png"
+image credits_img_6:
+    "images/Credits/6.png"
+image credits_img_7:
+    "images/Credits/7.png"
+
 ## Общие изображения
 image bg_black = Solid("#000")
 image bg_white = Solid("#fff")

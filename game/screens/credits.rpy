@@ -1,4 +1,4 @@
-define credits_duration = 40.0
+define credits_duration = 70.0
 
 init python:    
     class Credits(renpy.Displayable):
@@ -32,7 +32,7 @@ init python:
                 renpy.redraw(self, 0)
             return render
 
-label credits_test:
+label label_credits:
     call screen credits
     return
 
@@ -40,9 +40,7 @@ screen credits():
     modal True
     default credits_obj = Credits(
 """{color=#393185}
-
-{size=65}Мой кибер-двойник 
-опять всё испортил{/size}
+{image=gui/menu/logo.png}
 
 {size=65}{b}Команда:{/b}{/size}
 
@@ -98,21 +96,30 @@ CG
         add "bg_menu_main"
         
         # Картинки
-        timer (credits_duration * 0.08) action Show("credits_image", img_name="credits_img_1", is_left=True)
-        timer (credits_duration * 0.28) action Hide("credits_image")
+        timer (credits_duration * 0.33) action Show("credits_image", img_name="credits_img_1", is_left=True)
+        timer (credits_duration * 0.40) action Hide("credits_image")
 
-        timer (credits_duration * 0.32) action Show("credits_image", img_name="credits_img_2", is_left=False)
-        timer (credits_duration * 0.52) action Hide("credits_image")
+        timer (credits_duration * 0.42) action Show("credits_image", img_name="credits_img_2", is_left=False)
+        timer (credits_duration * 0.50) action Hide("credits_image")
 
-        timer (credits_duration * 0.56) action Show("credits_image", img_name="credits_img_3", is_left=True)
-        timer (credits_duration * 0.76) action Hide("credits_image")
+        timer (credits_duration * 0.52) action Show("credits_image", img_name="credits_img_3", is_left=True)
+        timer (credits_duration * 0.60) action Hide("credits_image")
 
-        timer (credits_duration * 0.80) action Show("credits_image", img_name="credits_img_4", is_left=False)
-        timer (credits_duration * 0.95) action Hide("credits_image")
+        timer (credits_duration * 0.62) action Show("credits_image", img_name="credits_img_4", is_left=False)
+        timer (credits_duration * 0.70) action Hide("credits_image")
+
+        timer (credits_duration * 0.72) action Show("credits_image", img_name="credits_img_5", is_left=True)
+        timer (credits_duration * 0.80) action Hide("credits_image")
+
+        timer (credits_duration * 0.82) action Show("credits_image", img_name="credits_img_6", is_left=False)
+        timer (credits_duration * 0.88) action Hide("credits_image")
+
+        timer (credits_duration * 0.89) action Show("credits_image", img_name="credits_img_7", is_left=True)
+        timer (credits_duration * 1.00) action Hide("credits_image")
         
         add credits_obj xalign 0.5
 
-        timer credits_duration+5 action Show("credits_end")
+        timer credits_duration + 5 action Show("credits_end")
         
         textbutton "Пропустить" action Return() xalign 0.95 yalign 0.05
 
@@ -126,6 +133,7 @@ screen credits_end():
     timer 8.0 action Return()
 
 transform credits_thanks:
+    subpixel True
     alpha 0.0
     ease 1.0 alpha 1.0
 
