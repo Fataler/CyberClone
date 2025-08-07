@@ -272,7 +272,11 @@ show d_f sad left at step_left
 
 t_t asharashen "Дзиндзо двинулся в мою сторону и толкнул меня в попытке спрятать в кустах." with hpunch
 
+stop music fadeout 1.0
+
 t_t thinking genius "Но после речи Юми я снова стал полон решимости. Я верну то, что принадлежит мне!"
+
+play music music_melancholy fadein 1.0 fadeout 1.0 loop
 
 t ear surprised "Юми, он — не я! Он не настоящий!.."
 
@@ -407,12 +411,16 @@ d_f neutral "Мне лишь нужна цель или задание, ты п�
 
 t_t asharashen "Я нервно сглотнул и кивнул."
 
+stop music fadeout 2.0
+
 d_f pose2 sad "Что теперь будет со мной, друзья? Я выполнил свою задачу и больше не нужен?"
 
 play sfx sfx_bushes_v2
 show k pose1 happy at giggle
 show den at fear
 show h at giggle
+
+play music music_main_theme_3_v2 fadein 1.0 fadeout 1.0 loop
 
 t_t "Ребята засмеялись. "
 
