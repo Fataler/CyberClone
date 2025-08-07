@@ -3,7 +3,7 @@ label chapter2:
 #Class Room.JPG
 $ renpy.pause(1.0)
 show bg_class_room with Dissolve(1)
-play music music_main_theme_2_v3 fadein 0.5 loop
+play music music_main_theme_2_v3 fadein 0.5 fadeout 1.0 loop
 
 t_t thinking tired "Ранним утром я уже сидел в классе. "
 
@@ -89,7 +89,7 @@ t_t ear_school neutral "Ребята больше не выглядели так
 
 t_t "Мы решили отложить этот разговор до школьного кружка."
 
-$ renpy.music.set_volume(0, delay=0.5, channel="music")
+$ renpy.music.set_volume(0.5, delay=0.5, channel="music")
 scene bg_black
 hide k
 hide den
@@ -142,17 +142,22 @@ i "Вы серьёзно?"
 t_t sad "Она явно решила, что мы шутим."
 
 show i angry
-#sfx ??? звук двигаемой мебели?
+play sfx sfx_hit
 t_t neutral "Я встал и с громким звуком оперся руками о стол."
 
 show k pose1 worried at Transform(xalign=1.0 ,yalign=1.0)
 show den idle sad
 show h neutral
 
+$ renpy.music.set_volume(0.5, delay=2.0, channel="music")
+
 t_t "Все притихли."
 
-t thinking cunning "Абсолютно."
+pause 1.5
 
+
+t thinking cunning "Абсолютно."
+$ renpy.music.set_volume(1.0, delay=0.2, channel="music")
 t hz glad "Представьте, сколько пользы он принесёт!"
 
 #Тайда Нингё снова активирует своё умение "Ва банк"! 
@@ -168,12 +173,14 @@ i "А давайте!"
 
 i happy "Ну, раз так — за работу! По местам! Какие идеи?"
 
+stop music fadeout 1.0
 hide i 
 hide k
 hide den
 hide h
+scene bg_black
 with Dissolve(1)
-
+pause 1.0
 
 #Assembling Demo 2.ogg
 #музыка
@@ -201,7 +208,7 @@ with Dissolve(1)
 call assembling_scene
 
 scene bg_robo_class_room
-play music music_main_theme_2_v3 fadein 0.5 loop
+play music music_main_theme_2_v3 fadein 0.5 fadeout 1.0 loop
 show k pose2 cunning right at penta_right_center
 show den awesome neutral right at penta_left
 show h idle smug left at penta_right
@@ -219,6 +226,7 @@ t_t "Даже я."
 t_t cunning "И, честно говоря, это было круто. Общее дело сближает."
 
 t_t ear_school neutral "И вот мы стоим перед ним. Нашим изобретением."
+
 stop music fadeout 1.0
 play sfx sfx_pressure fadein 0.5 loop
 $ renpy.music.set_volume(0.3, delay=0.5, channel="sfx")
@@ -247,17 +255,15 @@ show den asharashen
 show h explain asharashen
 show d_f pose3 neutral with Dissolve(1.0)
 
-
 i "Почему робот выглядит точь‑в‑точь как Тайда?!"
+
 stop sfx fadeout 0.5
 $ renpy.music.set_volume(1.0, delay=0.5, channel="sfx")
-play music music_comedy loop
+play music music_comedy fadein 0.5 fadeout 1.0 loop
 show k at giggle
 show i at fear
 show den at giggle
 show h at fear
-
-
 
 $ speak_as("Все", "Точно!")
 
@@ -292,7 +298,7 @@ show den awesome happy at Transform(xalign=-0.1, yalign=1.0)
 show h idle cunning at Transform(xalign=1.0, yalign=1.0)
 show i smug
 
-"Да."
+$ speak_as("Все", "Да.")
 
 t wtf "Ну длинный и длинный... Чего вы вообще к его носу привязались?"
 
@@ -314,10 +320,14 @@ i neutral_2 "Ладно, ребята. Всем пора по домам. Поп
 
 t_t think "Гордые и уставшие мы направились домой. "
 
+#stop music fadeout 1.0
+$ renpy.music.set_volume(0.5, delay=0.5, channel="music")
 scene bg_black
 with Dissolve(1)
-
+pause 0.5
 #фон дерево у школы
+#play music music_main_theme_2_v3 fadein 0.5 fadeout 1.0 loop
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 show bg_school_entrance 
 show k pose1 neutral right at trio_left
 show den awesome neutral left at trio_center
@@ -372,7 +382,11 @@ h surprised "А где Тайда?"
 hide k
 hide h
 hide den
+show bg_black
 with Dissolve(0.5)
+
+play sfx sfx_steps_on_floor loop
+stop music fadeout 1.0
 
 t_t ear_school tricky "А Тайда уже летел по лестнице на третий этаж к классу кружка. Тайда умный, Тайда хитрый!"
 
@@ -380,16 +394,24 @@ t_t dream "Ладно, хватит называть себя в третьем 
 
 t_t asharashen "Сердце бешено билось, ноги путались, каждая ступенька казалась вечностью."
 
+stop sfx
+
 t_t "Наконец, добравшись до двери, я судорожно вставил ключ (с третьей попытки), повернул его и..."
 
+play sfx sfx_door_lock
+pause 2.0
+play sfx sfx_open_door
+
 #Robo-Class Room.JPG
-show bg_robo_class_room with Dissolve(1)
+scene bg_robo_class_room with Dissolve(1)
+
 #show d summer
 
 "."
 ".."
 "..."
 
+play music music_main_theme_2_v3 fadein 0.5 fadeout 1.0 loop
 show d_f pose3 neutral at center with Dissolve(1)
 
 t_t neutral "Вот он, момент истины."
@@ -456,6 +478,7 @@ t_t ear_school calm "Благо изначально робот был одет 
 t_t "Ну и накину мою любимую рубашку поверх."
 
 show d_f pose2 school neutral with Dissolve(0.5)
+pause 0.5
 
 t_t ear neutral summer_norm "Мы словно поменялись ролями."
 
@@ -484,7 +507,9 @@ t neutral "Погнали!"
 t_t ear neutral summer_norm "Мы гуськом выбежали из школы. Я шел впереди и прижимался к стенам, как шпион, высматривая тех, кто мог нас обнаружить. Миссия была почти невыполнима. "
 
 scene bg_black with Dissolve(1)
-show bg_near_school 
+pause 0.5
+scene bg_near_school 
+play sfx sfx_bushes_v2
 show d_f pose2 neutral at Transform(xalign=-0.4, yalign=1.0), move_on_scene(time=3.0, xalign=0.5)
 show bush2 at size_change(1.0, 1.0) onlayer master zorder 2:
     pos (0, 0.2)
@@ -495,15 +520,20 @@ with Dissolve(1)
 
 t_t ear neutral summer_norm "Окольными путями, через кусты и под заборами мы пробирались к дому."
 
+stop sfx
+play sfx sfx_bushes_v2
 show d_f pose2 at Transform(xalign=0.5, yalign=1.0), move_on_scene(time=5.0, xalign=2.0)
 
 t_t confused "Пару раз мы чуть не попались на глаза прохожим, но чистая случайность каждый раз спасала нас."
 
 #Near Home.JPG
 hide bush4 onlayer screens
+$ renpy.music.set_volume(0.5, delay=0.5, channel="music")
+
 scene bg_black with Dissolve(1)
 show bg_near_home with Dissolve(1)
 show d_f pose2 neutral right at penta_left with Dissolve(0.5)
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 
 t_t ear careless summer_norm "Возле дома я расслабился и потерял бдительность. Только выйдя из кустов рядом с калиткой, я заметил отца."
 
@@ -513,18 +543,22 @@ t_t fear "Он стоял спиной к нам и о чём-то разгов�
 
 t thinking asharashen "МАНДАРИН 🍊, МАНДАРИН 🍊!!!"
 
+play sfx sfx_bushes_v2
 t_t "Кусты сотряслись от того, как я ломанулся в них обратно с громким хрустом веток." with hpunch
 
 show d_f at fear
 
 show bush4 at Transform(xalign=-0.3, yalign=1.5), size_change(0.8, 0.8) onlayer screens zorder 100 with Dissolve(0.5)
 
+stop sfx
+play sfx sfx_bushes_v2
 t_t ear surprised "С громким хрустом веток я снова прыгнул в кусты и схватился за пиджак Дзиндзо, пытаясь затащить его за собой. Тот упёрся на месте."
 
 d_f melancholy "Господин Тайда, разве не я должен говорить МАНДАРИН 🍊, МАНДАРИН 🍊?!"
 
 t_t "Краем глаза я замечаю, что отец услышал наше копошение и собирается повернуться на звук. "
 
+play sfx sfx_bushes_v2
 t_t "В ту же секунду я ныряю обратно в живую изгородь. "
 
 show dad right at move_on_scene(xalign=0.5)
@@ -564,7 +598,8 @@ dad "Марш на площадь!"
 d_f pose1 neutral "Да, гос..."
 
 #sfx
-
+play sfx sfx_bushes_v2
+play sfx2 sfx_scream
 t_t "Я издал из кустов звук раненой цапли, чтобы отвлечь внимание отца."
 
 d_f "...подин отец."
@@ -581,6 +616,7 @@ t_t "Отец помахал андроиду рукой и через кали�
 
 hide bush4 onlayer screens with Dissolve(0.5)
 
+play sfx sfx_bushes
 t_t ear surprised "Я немного подождал, пока всё утихнет, и вылез."
 
 t thinking thinking_hard "Ну вот, теперь домой идти нельзя. Придется идти туда. Но что бы придумать..."
@@ -593,10 +629,12 @@ t "И перестань говорить \"Господин\", это пале�
 
 d_f pose1 neutral "Вас понял, сэр!"
 
-t ear confused "Похоже вместо искусственного интеллекта мы создали искусственную глупость."
-
+t ear confused "Похоже вместо искусственного интеллекта мы создали натуральную глупость."
+stop music fadeout 1.0
 scene bg_black with Dissolve(1)
+pause 0.5
 show bg_square with Dissolve(1)
+play music music_comedy_loop fadein 0.5 fadeout 1.0 loop
 show d_f pose1 school relief right at enter_scene(from_left=True, xalign=0.2)
 
 t_t ear neutral summer_norm "Мы отправились к площади. Дзиндзо шёл вприпрыжку, явно наслаждаясь своей первой прогулкой."
@@ -606,6 +644,8 @@ t_t "Ему не нужно дышать, чтобы жить, но по все�
 t_t thinking think "Со слов отца я знал лишь, что его знакомая работает в самом отдаленном уголке центральной площади, в который почти никто не заходит. "
 
 show d_f at move_on_scene(xalign=0.8)
+
+show bush4 at Transform(xalign=-0.3, yalign=1.5), size_change(0.8, 0.8) onlayer screens zorder 100
 
 t_t neutral "На месте мы разделились. Я спрятался неподалёку, а Дзиндзо пошёл к ларьку. "
 
@@ -625,10 +665,13 @@ t thinking asharashen "Боже, что???!"
 
 t_t "Я высунулся из своего укрытия и ошалел. "
 
+stop music fadeout 0.5
+
 call dz_calmar_scene
 
 #show squid with Dissolve(1)
 scene bg_square
+play music music_comedy_loop fadein 0.5 fadeout 1.0 loop
 
 t_t ear neutral "Народ, довольный представлением, потихоньку рассосался."
 
@@ -660,19 +703,27 @@ d_f pose2 asharashen "А, ой, точно."
 
 t_t "Хозяйка, удивлённая его бескорыстием, щедро вознаградила \"меня\", добавив немного сверху."
 
-hide seller with Dissolve(1)
+
+hide bush4 onlayer screens 
+hide seller 
+with Dissolve(1)
 show d_f left pose1 neutral at move_step()
 
+$ renpy.music.set_volume(0.4, delay=0.5, channel="music")
 t_t thinking thinking_hard "Обратно домой мы добирались тихо и молча. Дзиндзо пытался радостно мигать своими светодиодами под пластырями, а я шел как мрачная туча."
 
 show bg_near_home with Dissolve(1)
 
 t_t "Мы пробрались на задний двор моего дома через дыру в заборе и на цыпочках проползли в мою комнату незамеченными."
 
+stop music fadeout 1.0
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
+
 scene bg_black with Dissolve(1)
-$renpy.pause(0.5)
+$ renpy.pause(0.5)
 #Room Evening.JPG
-show bg_living_room 
+scene bg_living_room 
+play music music_main_theme_3_v2 fadein 0.5 fadeout 1.0 loop
 show d_f pose1 neutral right at center
 with Dissolve(1)
 
@@ -719,19 +770,15 @@ t_t genius "Я счастливо улыбнулся. "
 
 t_t thinking sleepy "Сон одолел меня."
 
+$ renpy.music.set_volume(0.5, delay=0.5, channel="music")
 scene bg_black with Dissolve(1)
 #темный экран
-
 $ renpy.pause(1.0)
 
-"..."
-
-$ renpy.pause(1.0)
-
-show bg_living_room with Dissolve(1)
+scene bg_living_room with Dissolve(1)
 #темный экран
 #Room Evening.JPG
-
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 t_t thinking sleepy naked "Я проснулся от странного шороха в комнате."
 
 t_t thinking_hard "В глаза светило солнце из окна. "
@@ -800,15 +847,19 @@ menu:
 # "Ваши развлечения весьма специфичны, господин Тайда." "
 # #И потом после сотни кликов 
 # "Кажется я ещё недостаточно понял, как нужно развлекаться по-настоящему"."
+pause 0.5
 show d_f pose1 neutral at move_on_scene(time=3.5, xalign=1.5)
+pause 3.0
+play sfx sfx_open_door
 "Дзиндзо покинул комнату и ушел на занятия."
-
+stop music fadeout 1.0
 scene bg_black with Dissolve(1)
 $ renpy.pause(1.0)
 "..."
 $ renpy.pause(1.0)
 $ set_character_dzinzo()
-show bg_near_home with Dissolve(1)
+scene bg_near_home with Dissolve(1)
+play music music_main_theme_3 fadein 0.5 fadeout 1.0 loop
 
 d_t pose1 neutral school "Я шел в направлении школы со скоростью 7,8 километра в час. "
 
@@ -846,7 +897,7 @@ d_t "Я присел за парту, на которой перочинным �
 
 d_t "Класс постепенно наполнялся учениками."
 
-d_t cunning "В моем процессоре одновременно рассчитывались секунды до школьного звонка, количество вошедших в класс и..."
+d_t pose1 cunning "В моем процессоре одновременно рассчитывались секунды до школьного звонка, количество вошедших в класс и..."
 
 d_t "...майнился биткоин для карманных расходов господина Тайда."
 
@@ -863,13 +914,14 @@ d "Бантик на твоих волосах выглядит потрясаю
 d_t neutral "Если это человек мужского пола, допустимо приветственное слово, рукопожатие и в некоторых случаях объятие."
 
 #одноклассник
+play sfx sfx_giggles_v2
 $ speak_as("Одноклассник", "Тайда, с тобой всё нормально?")
 
 d_t neutral "Согласно собранным статистическим данным, уровень моей привлекательности постепенно поднимался. "
 
 d_t pose2 neutral "Человеческий смех — позитивная эмоция, раз мои действия вызывают смех — значит, я делаю всё верно."
 
-show k pose2 neutral right at Transform(xalign=0.6, yalign=1.0)
+show k pose2 neutral right at Transform(xalign=0.5, yalign=1.0)
 show den left at Transform(xalign=0.8, yalign=1.0)
 show h left at Transform(xalign=1.0, yalign=1.1)
 with Dissolve(0.5)
@@ -878,9 +930,9 @@ d_t melancholy "Краем глазного яблока я заметил, чт
 
 d pose1 happy "Здравствуйте, мои друзья!"
 
-show k asharashen
-show h explain asharashen
-show den idle asharashen
+show k pose1 confused
+show h explain surprised
+show den awesome surprised
 
 d_t "Их лица выражали сложные эмоции, которые я не мог проанализировать."
 
@@ -889,7 +941,10 @@ hide h
 hide den
 with Dissolve(0.5)
 
-d_t "Не успев произвести положенный в таких случаях small talk, мы услышали школьный звонок. "
+play sfx sfx_bell
+d_t neutral "Не успев произвести положенный в таких случаях small talk, мы услышали школьный звонок. "
+
+pause 1.0
 
 d_t neutral "Первым уроком была история."
 
@@ -921,6 +976,7 @@ teacher sad "Хорошо, тогда следующий вопрос:"
 
 teacher neutral "Чем тоталитаризм отличается от авторитаризма?"
 
+play sfx sfx_hit
 d_t very_happy "Я чуть не опрокинул парту в попытке быть замеченным учителем." with vpunch
 
 teacher surprised "Тайда, неужели ты подготовился к уроку?"
@@ -955,6 +1011,8 @@ d "Сенсей, спасибо, что верите в меня!"
 
 hide teacher with Dissolve(1)
 
+play sfx sfx_bell
+pause 0.5
 d_t pose1 cunning "Урок закончился, и я ощутил прилив удовлетворения от прекрасно выполненной задачи \"Успешно притворяться Тайдой\". "
 
 show k pose1 confused right at trio_left
@@ -1003,12 +1061,13 @@ show den neutral
 show h neutral
 
 d_t relief "Друзья обменялись взглядами и решили не продолжать допрос. Я выдохнул, хоть и не нуждался в дыхании."
-
+stop music fadeout 1.0
 scene bg_black with Dissolve(1)
 
-$renpy.pause(1.0)
+$ renpy.pause(1.0)
 
-show bg_robo_class_room 
+scene bg_robo_class_room 
+play music music_comedy_v2 fadein 0.5 fadeout 1.0 loop
 show i neutral right at Transform(xalign=-0.25, yalign=1.0)
 show den awesome neutral right at Transform(xalign=0.2, yalign=1.0)
 show k pose2 didnt_understand right at Transform(xalign=0.75, yalign=1.0)
@@ -1018,7 +1077,9 @@ with Dissolve(1)
 
 d_t pose1 neutral "После уроков мы пришли в кружок робототехники. Кацуми осмотрелась и замерла."
 
-show i smug
+pause 1.0 
+
+show i interested
 show den idle nervous
 show h explain asharashen
 
@@ -1027,6 +1088,8 @@ k asharashen "А где Дзиндзо? Он же тут сидел вчера."
 d_t pose2 asharashen "Все мои сенсоры взвились в боевую тревогу — я уже почти крикнул \"МАНДАРИН 🍊\", но вспомнил, что Тайда далеко."
 
 d_t "Не уверен, что в этом состоянии Кацуми возможно победить в рукопашном бою, не выдав при этом себя. Нужно действовать мирно и осторожно!"
+
+show i smug
 
 d pupupu "Ааа, это... Вчера ночью я заметил, что у него остались недочеты в сборке. Вы бы видели, как плохо было затянуто правое колено. Дорога приключений ему с таким не светит."
 
@@ -1044,7 +1107,7 @@ show den sad
 
 h explain neutral_talk "Действительно. Мы забросили её почти на неделю. Может быть, сейчас, со свежей головой мы сможем что-то придумать."
 
-show i smug
+show i dreamy
 
 d_t "Всё это время, преподаватель смотрела на меня и очень загадочно улыбалась."
 
@@ -1059,9 +1122,9 @@ i smug "Ребята, доставайте чертежи и платы. Сег�
 i tricky "А раз Юмички сегодня не видать, то сделаете его мне вы! Я на вас рассчитываю."
 
 hide i
-show den awesome sad
-show h idle neutral at Transform(xalign=1.0, yalign=1.0)
-show k pose2 didnt_understand
+hide k
+hide den
+hide h
 with Dissolve(1)
 
 d_t "Денис и Хикару без особого энтузиазма начали выкладывать вещи на стол, а Кацуми пошла включать компьютер. "
@@ -1069,6 +1132,8 @@ d_t "Денис и Хикару без особого энтузиазма на�
 d_t pose1 cunning "Господин Тайда не раз скептично относился к этой разработке. Это будет отличной возможностью поднять рейтинг господина."
  
 d_t neutral "На данный момент на мне нет никаких критических задач. Стоит попытаться помочь остальным."
+
+show den awesome sad left at center with Dissolve(1)
 
 d pose2 neutral "Денис, у тебя перегрев дорожек — снизь температуру жала на 15 градусов. И ты подключил электролит на 6,3 В в схеме с выбросами до 9?"
 
@@ -1080,7 +1145,9 @@ d_t "Денис пожал плечами:"
 
 den "Хм, а ты прав. Я думал, пронесёт..."
 
-show h explain sad
+hide den awesome sad left at center with Dissolve(1)
+pause 1.0
+show h idle neutral left at center with Dissolve(1)
 
 d_t pose1 neutral "После, я посмотрел в сторону Хикару. К тому моменту он уже полностью закопался в чертежах, заглядывая то в один, то в другой и явно не понимая, что идет не так. "
 
@@ -1111,10 +1178,12 @@ d_t pose1 relief "Я пожал плечами, стараясь казатьс�
 d "Я просто очень хотел помочь."
 
 show h idle neutral
+pause 0.5
+hide h with Dissolve(1)
 
 d_t neutral "Итак, похоже дела идут хорошо. Настало время пойти посмотреть, что там у Кацуми."
 
-show k pose1 cunning
+show k pose1 cunning left at center with Dissolve(1)
 
 d_t "Я направился к Кацуми. Она сидела с наушниками, уставившись в монитор, и лихорадочно стучала по клавишам. "
 
@@ -1128,7 +1197,7 @@ d_t pose2 sad "Я встал позади неё и начал читать."
 
 d "В функции {i}on_spread_complete(){/i} условие {i}if target or not target == None:{/i} приводит к тому, что паштет мажется даже на стол. Иногда — по диагонали."
 
-show k pose2 didnt_understand
+show k pose2 didnt_understand right
 
 d_t "Кацуми на мгновение оторвалась от клавиатуры и обернулась:"
 
@@ -1140,23 +1209,23 @@ d neutral "Ты совершенно права. Спасибо, что попр
 
 d "Но {i}target{/i} иногда — это просто координаты стола. А не хлеб. Мы не проверяем, что именно под манипулятором. {i}if target.type == 'bread'{/i} или хотя бы {i}if isinstance(target, Bread){/i}."
 
-show k pose1 confused
+show k pose1 confused left
 
 d_t "Кацуми нахмурилась, затем проверила — и молча кивнула. Потом, как бы между прочим, буркнула:"
 
 k cunning "Хм... Ну, неплохо, особенно для тебя."
 
-show k pose1 neutral
-show den neutral
+hide k left at Transform(xzoom=1.0) with Dissolve(1)
 
 d_t "Работа над устройством закипела полным ходом. "
-
+$ renpy.music.set_volume(0.3, delay=0.5, channel="music")
 scene bg_black with Dissolve(1)
-$renpy.pause(1.0)
+$ renpy.pause(1.0)
 
 d_t "И вот, спустя всего час, мы были готовы опробовать новый прототип."
-hide bg_black
-show bg_robo_class_room
+
+scene bg_robo_class_room
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 show i smug right at Transform(xalign=-0.25, yalign=1.0) 
 show den idle neutral right at Transform(xalign=0.2, yalign=1.0)
 show k pose2 neutral right at Transform(xalign=0.75, yalign=1.0)
@@ -1173,6 +1242,7 @@ d_t "Хикару, деловито щёлкнув секундомером, о�
 
 h neutral_talk "Три... Две... Одна..."
 
+play sfx sfx_tiktak loop
 show i neutral
 show k pose1 worried
 show den sad
@@ -1205,6 +1275,8 @@ d_t "Все разом вздохнули, будто кто‑то вернул
 
 show h explain neutral
 
+stop sfx 
+play sfx sfx_ui_click
 d_t "Хикару, сохраняя достоинство, щёлкнул секундомером ещё раз и улыбнулся:"
 
 h idle happy "Ровно девять секунд намазки."
@@ -1217,8 +1289,8 @@ scene bg_black with Dissolve(1)
 
 $ renpy.pause(1.0)
 
-show bg_school_entrance with Dissolve(1)
-
+scene bg_school_entrance with Dissolve(1)
+play music music_main_theme_3_v2 fadein 0.5 fadeout 1.0 loop
 d_t pose1 neutral "Снова сумерки... Каким бы хорошим ни был день, он всегда заканчивается."
 
 d_t "Пора было расходиться по домам. "
@@ -1245,7 +1317,7 @@ d_t "Пара неудачных движений, и девушка падае�
 
 d_t pose2 asharashen "Я быстро подошел помочь. Так быстро, что превысил человеческую скорость."
 
-show u greeting offended left at center with Dissolve(0.5)
+show u greeting offended left with Dissolve(0.5)
 
 d_t "Юми приняла протянутую мне руку и поднялась."
 
@@ -1310,12 +1382,13 @@ d pose1 happy "Легко!"
 show u open thinking right at move_on_scene(xalign=2.0)
 
 d_t "Закатав рукава рубашки и пиджака, я схватил Юми за руку и потащил в сторону её дома, локацию которого я заранее скачал из телефона господина."
-
+$ renpy.music.set_volume(0.5, delay=0.5, channel="music")
 scene bg_black with Dissolve(1)
+
 pause 1.0
 
-
-show bg_near_home 
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
+scene bg_near_home 
 with Dissolve(1)
 
 show u open thinking right at enter_scene(from_left=True, xalign=0.1)
@@ -1358,7 +1431,7 @@ d_t "Я кивнул и пошел вперед него во двор."
 
 d_t "В деловитом жесте, сложив руки на груди, я припарковался у гаража и осмотрел его:"
 
-d happy "Так, и что необходимо сделать?"
+d pose1 happy "Так, и что необходимо сделать?"
 
 u closed neutral "Ой, Тайда, ты вот так сразу? Ну тут надо, короче, отсортировать, прибраться, смазать инструменты..."
 
@@ -1368,9 +1441,9 @@ d_t neutral "Проигнорировав лишнюю информацию и �
 
 d_t "Необходимо было запереть гараж, чтобы люди ничего не заподозрили."
 scene bg_black with Dissolve(1)
-show bg_garage_dirty
 hide u
 hide b_1
+scene bg_garage_dirty
 with Dissolve(1)
 
 d_t "Заскочив в помещение, я защелкнул щеколду."
@@ -1383,6 +1456,7 @@ d_t "Вынести мусор? Выкинул 3 моментально собр
 
 show b_1 left at Transform(xalign=1.2, yalign=1.0) with Dissolve(0.5)
 $ renpy.pause(0.5)
+play sfx sfx_hit
 show b_1 at fear
 $ renpy.pause(0.5)
 show b_1 at move_on_scene(time=0.5, xalign=1.5)
@@ -1460,13 +1534,16 @@ d_t "Батя в удивлении начал хватать воздух рт�
 
 d relief "А лучше покажу."
 
+stop music fadeout 1.0
 call dzinzo_rock_scene
 
 #цг ргг играет на гитаре
 #музыка роцка
 #show guitar_solo with Dissolve(1)
-show u open surprised
-show b_1 left
+
+show u open surprised at c_left
+show b_1 left at Transform(xalign=0.65, yalign=1.0)
+$ b_1.name = "Батя"
 
 d_t cunning "Напоследок я перекинул гитару через плечо и ловко установил её на подставку. "
 
@@ -1475,6 +1552,7 @@ b_1 "Сынок, это... Божественно. Пойдём в дом, ра�
 b_1 "Я во времена своей молодости тоже так умел. Сейчас расскажу..."
 
 show u closed touched at step_right
+play music music_main_theme_3 fadein 0.5 fadeout 1.0 loop
 
 d_t neutral "Юми суетилась рядом, что-то тихо говорила заикаясь и тянула меня за руку в дом."
 
@@ -1527,6 +1605,8 @@ show b_1 at move_step(200, 0.5)
 
 d_t pose2 asharashen "Она улыбнулась, шепнула \"Спасибо!\" и поцеловала меня в щеку. "
 
+show u at step_left
+
 show b_1 at Transform(xalign=1.0, yalign=1.0)
 show b_1 at move_step(200, 0.5)
 
@@ -1542,22 +1622,28 @@ hide b_1
 
 d "Пойдём завтра в 12 гулять в парк?"
 
-show u touched
+show u touched:
+    ease 0.2 yoffset 30
+    ease 0.2 yoffset 0
 $ renpy.pause(1.0)
-show u open cute right at move_on_scene(time=3.0, xalign=2.0)
+show u open cute right at move_on_scene(time=1.5, xalign=0.6)
+$ renpy.pause(1.5)
+show u greeting smile left with Dissolve(0.5)
+$ renpy.pause(1.0)
+show u open cute right at move_on_scene(time=3.0, xalign=2.0) with Dissolve(0.5)
 
 d_t "Девушка покраснела, кивнула, помахала рукой на прощание и скрылась за калиткой."
 
 hide u
 
 d_t pose1 neutral "Пора было возвращаться домой."
-
+stop music fadeout 1.0
 scene bg_black with Dissolve(1)
 
 $ renpy.pause(1.0)
 
-show bg_living_room with Dissolve(1)
-
+scene bg_living_room with Dissolve(1)
+play music music_main_theme_2_v3 fadein 0.5 fadeout 1.0 loop
 d_t "В комнате было темно. Пахло сухариками, потом и страданиями."
 
 show t_f ear surprised summer_norm left at Transform(xalign=0.3, yalign=1.3) with Dissolve(0.5)
@@ -1614,7 +1700,6 @@ d happy "Проект намазывателя паштета наконец з�
 
 show t_f hz cry_why at fall_like_leaf
 
-
 d_t "Создатель упал на пол и начал медленно заползать под кровать."
 
 hide t_f
@@ -1641,13 +1726,15 @@ t_f "Тебя раскроют! Уже раскрыли! Все будут см�
 
 d pose2 neutral "Уверяю вас, всё в порядке. Никто ничего не заподозрил."
 
-"Вдруг послышался мамин голос со двора."
+d_t melancholy "Вдруг послышался мамин голос со двора."
 
 show t_f wtf
+
 mom "Тайда, дорогой! Подойди сюда, мне нужна твоя помощь в саду..."
 
 d_t pose1 neutral "Необходимо было спешить на помощь! Я уже развернулся, чтобы выйти из комнаты..."
 
+stop music fadeout 1.0
 scene bg_black with Dissolve(1)
 pause 1.0
 "..."
@@ -1655,8 +1742,10 @@ pause 1.0
 #темный экран
 #смена гг повествования
 $ set_character_taida()
-show bg_living_room 
-show d_f right pose1 neutral at c_right
+scene bg_living_room 
+play music music_main_theme_3_v2 fadein 0.5 fadeout 1.0 loop
+show d_f at center
+show d_f right pose1 neutral at move_on_scene(xalign=0.9)
 with Dissolve(1)
 
 #темный экран
@@ -1701,23 +1790,25 @@ t_t "Я напал на него со спины."
 
 scene bg_black with Dissolve(1)
 
-play music music_rock
+play music music_rock fadeout 1.0 loop
 
 call screen pokemon_battle with Dissolve(1.0)
 
 stop music fadeout 1.0
 
-scene bg_black
+scene bg_black with Dissolve(1)
 
 show bg_living_room 
 show d_f pose1 neutral school left
 with Dissolve(1)
-
+play music music_comedy_loop fadein 0.5 fadeout 1.0 loop
 t_t hz cry_sad summer_norm "Драка закончилась, не успев начаться. Конечно, же моим поражением и безоговорочной капитуляцией. Я получил мощного пинка под зад железной ногой. "
 
 d_f pose1 neutral "Всегда рад помочь вам в спаривании... Прошу прощения, не тот словарь. Всегда рад помочь в спарринге, мой господин."
 
 show d_f right at move_on_scene(xalign=1.5)
+pause 2.0
+play sfx sfx_open_door
 
 t_t dissatisfied "Андроид отряхнул одежду и вышел из комнаты, оставив меня в густой липкой тишине."
 
@@ -1735,12 +1826,16 @@ t hz cry_why "Друзья, проиошла беда. Дело в Дзндзо.
 
 t "Умоляю, зайдите тихо чрез калтку."
 
+play sfx sfx_hit
 t_t cry_sad "Телефон выпал из рук, а я напротив — впал в апатию."
 
+$ renpy.music.set_volume(0.5, delay=0.5, channel="music")
 scene bg_black with Dissolve(1)
 $ renpy.pause(1.0)
-show bg_living_room with Dissolve(1)
+scene bg_living_room with Dissolve(1)
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 
+play sfx sfx_knock
 t_t thinking tired summer_norm "Спустя какое-то время я услышал стук в окно. "
 
 t_t "На улице темнело. За стеклом были видны три силуэта."
@@ -1799,18 +1894,23 @@ with Dissolve(1)
 
 t_t "Всей толпой мы тихонько вылезли из окна."
 
+$ renpy.music.set_volume(0.5, delay=0.5, channel="music")
 scene bg_black with Dissolve(1)
 pause 1.0
-show bg_backyard with Dissolve(1)
+show bg_backyard 
 show expression "bush1" at Transform(xalign=1.0, yalign=1.0), size_change(0.6, 0.6) onlayer master zorder 2
 show expression "bush3" at Transform(xalign=0.9, yalign=0.7), size_change(0.35, 0.35) as bushh1 onlayer master zorder 2
 show expression "bush3" at Transform(xalign=1.2, yalign=1.0), size_change(0.5, 0.5) as bushh2 onlayer master zorder 2
+with Dissolve(1)
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
+play sfx sfx_birds_v2 fadein 0.5 fadeout 1.0 loop
+
 
 t_t ear neutral summer_norm "Моя мама очень любит что-то сажать, выращивать, ухаживать за цветами. "
 
 t_t confused "Её стараниями в нашем саду растёт много цветущих красивых растений. "
 
-
+play sfx2 sfx_bushes_v2
 show bush4 at Transform(xalign=-0.3, yalign=1.5), size_change(0.8, 0.8) onlayer screens zorder 100
 show k pose1 cunning right at Transform(xalign=0.95, yalign=0.65), size_change(0.5, 0.5) onlayer master zorder 1
 show den awesome neutral left at Transform(xalign=0.8, yalign=0.6), size_change(0.5, 0.5) onlayer master zorder 1
@@ -1853,20 +1953,24 @@ t_t "Мама хитро улыбнулась и сказала:"
 
 mom "Что ж, по такому случаю, пойдём выбирать лучшие цветы!.."
 
+play sfx sfx_bushes
 show k happy at fear
 show den happy at giggle
 show h happy at giggle
 
 t_t shy "На этом моменте друзья стали давиться от смеха. Ден в истерике  упал на землю и начал жевать траву, чтобы успокоиться."
 
+play sfx sfx_bushes_v2
 show h at giggle
 
 t_t "Хикару хихикал надо мной и над Деном, приложив кулак ко рту. "
 
+play sfx sfx_bushes
 show h explain surprised at fear
 
+play sfx sfx_bushes_v2
+play sfx sfx_slap
 t_t angry "Я дал ему подзатыльник и с недовольным лицом пополз обратно в сторону дома, показывая жестами следовать за мной."
-
 
 show k neutral
 show den neutral
@@ -1875,6 +1979,7 @@ hide mom
 hide d_f
 with Dissolve(1)
 
+play sfx2 sfx_bushes_v2
 t_t neutral "Как только мы снова оказались в густых кустах у окна моей комнаты, не боясь быть раскрытыми, мы стали обсуждать дальнейший план."
 
 k pose2 neutral "Так, все же понимают, что на данном этапе во всём признаваться - самоубийство."
@@ -1896,14 +2001,20 @@ t "Предлагаю встретиться завтра около 11 в па�
 t_t "Ребята кивнули. "
 
 #ползание ребят
-
-t_t neutral "Мы попрощались, все разошлись по домам. Точнее, расползлись аккуратно, чтобы никто не заметил их и моего присутствия у меня дома."
-hide bush4 onlayer screens
-scene bg_black 
+play sfx sfx_bushes_v2
+hide k
+hide den
+hide h
 with Dissolve(1)
 
-show bg_living_room with Dissolve(1)
+t_t neutral "Мы попрощались, все разошлись по домам. Точнее, расползлись аккуратно, чтобы никто не заметил их и моего присутствия у меня дома."
 
+hide bush4 onlayer screens
+$ renpy.music.set_volume(0.5, delay=0.5, channel="music")
+scene bg_black 
+with Dissolve(1)
+scene bg_living_room with Dissolve(1)
+$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 t_t ear neutral summer_norm "Я влез в свою комнату обратно через окно. "
 
 #найти букет?????
@@ -1920,6 +2031,7 @@ t_t "Посему я решил, что не очень-то и хотелось
 
 t_t neutral "С трудом я свернулся калачиком на коврике у двери и провалился в сон."
 
+stop music fadeout 1.0
 scene bg_black with Dissolve(1)
 $ renpy.pause(1.0)
 

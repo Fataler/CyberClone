@@ -107,7 +107,7 @@ play sfx2 sfx_bushes
 
 t_t "Чуть было не сдвинувшись с места в попытке помешать им, я был прижат к стене. " with vpunch
 stop sfx
-play sfx2 sfx_bushes
+play sfx2 sfx_bushes_v2
 show den idle nervous at fear
 show h explain surprised at giggle
 
@@ -115,6 +115,7 @@ t_t surprised "Внезапно друзья схватили меня и обе
 
 show k pose2 didnt_understand at fear
 
+play sfx sfx_bushes
 t_t "Кацуми шикнула, чтобы я замолчал."
 t_t angry "Ден и Хикару крепко прижимали моё барахтающееся в ярости тело, пока я не обессилил и не обвис в их объятиях."
 t_t thinking thinking_hard "Что ж..."
@@ -233,6 +234,7 @@ u "Я знаю тебя давно, но не думала, что ты тако
 
 show k pose1 angry at fear
 
+play sfx sfx_bushes
 t_t "Кацуми шикнула на меня:"
 
 k worried "Тайда, нельзя больше прятаться, это твой шанс!"
@@ -350,7 +352,7 @@ t ear surprised "Дзиндзо..."
 
 d_f pose2 neutral "Да, мой господин?"
 
-play sfx sfx_giggles_v2
+play sfx sfx_bushes_v2
 show k pose1 cunning at giggle
 show den awesome happy at fear
 show h idle happy at giggle
@@ -395,8 +397,8 @@ t_t asharashen "Я нервно сглотнул и кивнул."
 
 d_f pose2 sad "Что теперь будет со мной, друзья? Я выполнил свою задачу и больше не нужен?"
 
-play sfx sfx_giggles_v2
-show k happy at giggle
+play sfx sfx_bushes_v2
+show k pose1 happy at giggle
 show den at fear
 show h at giggle
 
@@ -414,7 +416,12 @@ t_t confused "Инстинктивно поморщившись, я достой
 
 t_t hz smile "Он — не я, я не — он. "
 
-k pose2 neutral_4stena "Что ж! Раз все вопросы мы решили, предлагаю всем вместе пойти и покушать тайяки!"
+k neutral_4stena "Что ж! Раз все вопросы мы решили, предлагаю всем вместе пойти и покушать тайяки!"
+
+play sfx sfx_bushes_v2
+show k happy at giggle
+show den at fear
+show h at giggle
 
 $ speak_as("Все", "Дааа!!!~")
 

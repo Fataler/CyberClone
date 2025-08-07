@@ -3,7 +3,7 @@
             "Начало игры":
                 jump chapter1
             "Битва покемонов (тест)":
-                jump test_pokemon_battle
+                jump start_pokemon_battle
             "Личное дело ученика2 (тест)":
                 jump test_student_profile
             "Личное дело другого ученика (тест)":

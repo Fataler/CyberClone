@@ -1,7 +1,7 @@
 # Музыка
 define music_assembling = "audio/bg/Assembling.ogg"
 define music_rock = "audio/bg/Rock.ogg"
-define music_comedy = "audio/bg/Comedy V2.ogg"
+define music_comedy_v2 = "audio/bg/Comedy V2.ogg"
 define music_comedy_loop = "audio/bg/Comedy(loop).ogg"
 define music_comedy = "audio/bg/Comedy.ogg"
 #басы
@@ -32,7 +32,11 @@ define sfx_pressure = "audio/sfx/Pressure.ogg"
 define sfx_open_door = "audio/sfx/Door-Close-SFX.ogg"
 define sfx_slap = "audio/sfx/Slap.mp3"
 define sfx_steps_on_road = "audio/sfx/Steps_on_road.mp3"
+define sfx_steps_on_floor = "audio/sfx/Steps_on_floor.mp3"
 define sfx_vshooh = "audio/sfx/vshooh.ogg"
+define sfx_door_lock = "audio/sfx/door-lock.mp3"
+define sfx_scream = "audio/sfx/scream.ogg"
+define sfx_tiktak = "audio/sfx/tiktak.ogg"
 
 # Интерфейс
 define sfx_ui_achieve = "audio/sfx/UI 01 Achive.ogg"

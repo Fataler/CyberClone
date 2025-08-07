@@ -6,7 +6,7 @@ init python:
         return Transform(path, zoom=0.7, xzoom=-1)
 
 #region images
-image bg_battle = "images/MiniGames/Battle/bg.png"
+image bg_battle = "images/MiniGames/Battle/Battle Scene.jpg"
 
 #endregion
 
