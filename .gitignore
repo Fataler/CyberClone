@@ -45,7 +45,5 @@ game/renpy_warp_*.rpe.py
 *.txt
 *.json
 
-!external_resources.txt
-!walkthrough.txt
 game/libs
 *rpe.py

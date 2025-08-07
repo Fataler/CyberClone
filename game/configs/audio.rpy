@@ -15,6 +15,7 @@ define music_melancholy = "audio/bg/Melancholy.ogg"
 define music_meatball_parade = "audio/bg/Meatball-Parade.mp3"
 define music_gratification = "audio/bg/Gratification.ogg"
 define fluffing_a_duck = "audio/bg/Fluffing-a-Duck.mp3"
+define music_yay = "audio/bg/Sakura-Girl-Yay-chosic.com_.mp3"
 
 # Игра
 define sfx_hit = "audio/sfx/01 Hit.wav"

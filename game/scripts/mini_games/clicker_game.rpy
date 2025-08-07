@@ -261,6 +261,4 @@ label test_clicker_game:
     $ result = renpy.call_screen("clicker_game")
     if result:
         $ unlock_achievement(ACHIEVEMENT_PIG_SLAYER)
-    else:
-        "Вы вышли из игры."
     return 

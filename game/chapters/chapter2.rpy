@@ -851,7 +851,10 @@ t_t "Дзиндзо набросил шарф, натянул перчатки, 
 menu:
     "Остаться ненадолго и понаблюдать, во что играет господин Тайда.":
 #        d pose2 melancholy "Он играет во что-то странное, но выглядит интересно."
+        play music music_yay fadein 0.5 fadeout 1.0 loop
         call test_clicker_game from _call_test_clicker_game
+        stop music fadeout 1.0
+        d_f "Господин, уверен, что вы отлично проведете время. До встречи вечером!"
     "Сразу уйти":
         d_f "Простите, я спешу."
         #d pose2 asharashen "Я уже опаздываю, лучше поспешить в школу."
@@ -875,8 +878,6 @@ play sfx sfx_open_door
 "Дзиндзо покинул комнату и ушел на занятия."
 stop music fadeout 1.0
 scene bg_black with Dissolve(1)
-$ renpy.pause(1.0)
-"..."
 $ renpy.pause(1.0)
 $ set_character_dzinzo()
 scene bg_near_home with Dissolve(1)
