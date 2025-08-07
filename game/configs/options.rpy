@@ -39,17 +39,17 @@ define config.mouse = { 'default' : [ ("gui/cursor.png", 0, 0)], 'robot' : [ ("g
 ## Для отделения абзацев оставляйте между ними пустую строку.
 
 define gui.about = _p("""
-Визуальная новелла разработана в рамках игрового джемма {a=https://vk.com/chapel_jam}Повидло джем 2{/a} 
+Визуальная новелла разработана в рамках игрового джема {a=https://vk.com/chapel_jam}Повидло джем 2{/a} 
 
-Дата релиза: 29.08.2025
+Дата релиза: 15.08.2025
 
 Использованные сторонние ресурсы лежат в файле {i}external_resources.txt{/i}.
 
 Авторы: \n
 {w=0}     - Remi Prochet ({a=https://vk.com/remiprochet}ВК{/a}) - музыка, звуки\n
-{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a})- сценарий,концепт, персонажи, CG\n
-{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a})- код, мини игры, редактура, анимации\n
-{w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a})- фоны, сборка новеллы, макеты UI, сбор референсов\n
+{w=0}     - Featharine ({a=https://vk.com/sweet_sour_figures}ВК{/a}) - сценарий, концепт, персонажи, CG\n
+{w=0}     - Fataler ({a=https://steamcommunity.com/id/fataler}Steam{/a}) - код, мини-игры, редактура, анимации\n
+{w=0}     - Kapushishin ({a=https://steamcommunity.com/id/Kapushishin}Steam{/a}) - фоны, сборка новеллы, макеты UI, сбор референсов, режиссура\n
 """)
 
 

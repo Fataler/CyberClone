@@ -1,5 +1,6 @@
 label chapter1:
     scene black
+    play music music_melancholy fadein 1.0
     #Melancholy.ogg
     #музыка
   
@@ -9,6 +10,7 @@ label chapter1:
 
     #01 Hit.wav
     #Анимация открытия глаз
+    stop music fadeout 0.5
     window hide
     play sfx sfx_hit
     pause 0.2
@@ -20,6 +22,8 @@ label chapter1:
 
     
     $ renpy.pause(0.3)
+    
+    play music music_main_theme_2_v3 loop
 
     t_t thinking school sleepy "..." with dissolve
     play sfx sfx_crowd
@@ -49,9 +53,10 @@ label chapter1:
     teacher angry "Быстро отвечай: с какого по какой год была эпоха Эдо?"
 
     menu:
-        "Сказать как знаешь":
+        "Сказать от балды":
             t asharashen "С 2007 по 2077, наверное..."
             teacher sad "Как и ожидалось от самого бестолкового ученика этого класса."
+            $ unlock_achievement(ACHIEVEMENT_FUTURE_HISTORIAN)
             #смешки
 
         "Подглядеть в учебнике":
@@ -62,7 +67,6 @@ label chapter1:
             #шум толпы, разговоры
             
     hide teacher
-    play music music_main_theme_2_v3 loop
 
     #t neutral
     t_t ear_school sad "Я опустился за парту."
@@ -514,7 +518,7 @@ label chapter1:
 
     #h serious
 
-    show h neutral
+    show h neutral left
 
     t_t "Хикару вздохнул, уже зная ответ, и повернулся к нему:"
 
@@ -618,8 +622,8 @@ label chapter1:
     $ renpy.pause(1.5)
     show i smug left at penta_left_center
     show den neutral at penta_center
-    show k neutral at penta_right_center
-    show h neutral at penta_right
+    show k neutral  at penta_right_center
+    show h neutral left at penta_right
     with Dissolve(0.5)
 
     u "Новый чай уже готов, миссис Изуми! Возьмите печеньку!"
@@ -640,6 +644,7 @@ label chapter1:
     t hz wtf "Мы собираем дурацкую ерун..."
 
     #i angry
+    play sound sfx_hit
     i angry "Но-но!"
 
     #i neutral
@@ -650,14 +655,14 @@ label chapter1:
 
     #u thinking
     show u closed cute
-    $ renpy.music.set_volume(0, delay=0.5, channel="music")
+    play music music_melancholy fadein 1
     #t neutral
     t_t ear_school neutral "На лице у Юми появилось сначала озадаченное выражение."
 
     #u cry
     show u closed cry at penta_left
     show k pose1 worried
-    show h idle surprised
+    show h idle surprised at step_right(1)
     show den nervous
     show i neutral_2
     #t zameshatelstvo
@@ -685,8 +690,8 @@ label chapter1:
     show h idle happy at giggle
     show den awesome happy at giggle
     show i happy left
-    $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
     #t neutral_happy
+    play music music_main_theme_2_v3 fadein 1
     t_t smile "Ребята рассмеялись. "
 
     #k smile
@@ -737,6 +742,7 @@ label chapter1:
     $ renpy.pause(1.0)
     show bg_robo_class_room
     $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
+    play music music_main_theme_3_v2 fadein 1
     show u at quad_left
     show k right at quad_left_center
     show h left at quad_right_center
@@ -844,7 +850,7 @@ label chapter1:
     t_t "Бывало, что соседние игроки отрывались от своих игр и подходили посмотреть на это шоу. "
 
     #t neutral_happy
-    t_t crazy "Словно фурия она уничтожала игровые автоматы (иногда буквально, и нам приходилось оплачивать нанесённый ущерб)."
+    t_t crazy "Словно фурия, она уничтожала игровые автоматы (иногда буквально, и нам приходилось оплачивать нанесённый ущерб)."
 
     #t depressed
     t_t depressed "В последний раз, когда мы проиграли там карманные деньги с обедов за 2 недели, её отец настрого запретил ей приближаться к залу."
@@ -859,7 +865,7 @@ label chapter1:
     #t smug
     t_t ear_school dream "Я стараюсь, чтобы она улыбалась. Иногда слегка наклоняю автомат или использую монетку на нитке."
 
-    t_t "Таким образом автомату становится чуть проще выплюнуть очередную вожделенную плюшевую лисичку или котика. "
+    t_t "Таким образом, автомату становится чуть проще выплюнуть очередную вожделенную плюшевую лисичку или котика. "
 
     #t asharashen
     t_t asharashen "Да, пару раз нас ловил на этом охранник, выгонял и ворчал, что вызовет родителей — но ради её улыбки я готов был рисковать снова."
@@ -945,6 +951,11 @@ label chapter1:
 
     $ renpy.pause(1)
 
+    scene bg_black
+    with Dissolve(1)
+
+    call screen time_passed("Тридцать минут спустя")
+
     #Near Home.JPG
     scene bg_near_home with Dissolve(1)
     $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
@@ -1019,7 +1030,7 @@ label chapter1:
     # подвинуть dad в центр
 
     #t nervous
-    t_t asharashen "Отец вошёл в комнату и встал посередине, сложив руки в недовольном жесте."
+    t_t asharashen "Отец вошёл в комнату и встал посередине, смотря на меня недовольным взглядом."
 
     dad "Чего не гуляешь? Хоть бы траву потрогал, а не сидел за компудахтором."
 
@@ -1092,6 +1103,8 @@ label chapter1:
     stop music fadeout 1.0
     #темный экран
     scene bg_black with Dissolve(1)
+
+    $ unlock_achievement(ACHIEVEMENT_FIRST_CHAPTER)
 
     jump chapter2
 

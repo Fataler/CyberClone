@@ -346,7 +346,7 @@ init python:
     def try_escape():
         global battle_message, show_battle_buttons, battle_state, escape_attempted
         
-        unlock_achievement(STRATEGIST)
+        unlock_achievement(ACHIEVEMENT_STRATEGIST)
         
         show_battle_buttons = False
         battle_message = MSG_ESCAPE_FAILED
@@ -402,7 +402,7 @@ init python:
         renpy.play(sfx_hit)
 
         if (escape_attempted and magic_message_index == len(MAGIC_MESSAGES) - 1 and bag_message_index == len(BAG_MESSAGES) - 1):
-            unlock_achievement(MAX_DAMAGE)
+            unlock_achievement(ACHIEVEMENT_MAX_DAMAGE)
         
         if player_hp <= 0:
             battle_message = MSG_TAIDA_DEFEATED

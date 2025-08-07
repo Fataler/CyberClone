@@ -19,6 +19,7 @@ transform squid_rapid_jump:
             repeat
 
 transform squid_quick_spin:
+    rotate 0
     ease 1.2 rotate 360
     rotate 0
 
@@ -118,7 +119,7 @@ label dz_calmar_scene:
     show dz_calmar at squid_quick_spin
     with Dissolve(0.1)
 
-    pause 1.2
+    $ renpy.pause(1, hard=True)
 
     show dz_calmar at squid_rapid_jump:
         xzoom -1

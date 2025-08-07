@@ -260,7 +260,7 @@ style exit_button_text:
 label test_clicker_game:
     $ result = renpy.call_screen("clicker_game")
     if result:
-        $ unlock_achievement("pig_slayer")
+        $ unlock_achievement(ACHIEVEMENT_PIG_SLAYER)
     else:
         "Вы вышли из игры."
     return 

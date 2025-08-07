@@ -11,6 +11,17 @@ init -1 python:
     elif persistent._achievement_unlocked is None:
         persistent._achievement_unlocked = {}
 
+# ID достижений
+define ACHIEVEMENT_FUTURE_HISTORIAN = "future_historian" #
+define ACHIEVEMENT_MAX_DAMAGE = "max_damage" #
+define ACHIEVEMENT_STRATEGIST = "strategist" #
+define ACHIEVEMENT_PIG_SLAYER = "pig_slayer" #
+define ACHIEVEMENT_GENIUS = "genius" #
+define ACHIEVEMENT_FIRST_CHAPTER = "first_chapter" #
+define ACHIEVEMENT_SECOND_CHAPTER = "second_chapter" #
+define ACHIEVEMENT_THIRD_CHAPTER = "third_chapter" #
+define ACHIEVEMENT_THANK_YOU = "thank_you" #
+
 init python:
     class Achievement(object):
         def __init__(self, id, name, description, hidden=False, icon="images/achievements/achievement.png"):
@@ -36,77 +47,66 @@ init python:
     ACHIEVEMENT_ICON_SIZE = 96
     ACHIEVEMENT_POPUP_ICON_SIZE = 64
 
-    # ID достижений
-    FUTURE_HISTORIAN = "future_historian"
-    MAX_DAMAGE = "max_damage"
-    STRATEGIST = "strategist"
-    PIG_SLAYER = "pig_slayer"
-    GENIUS = "genius"
-    FIRST_CHAPTER = "first_chapter"
-    SECOND_CHAPTER = "second_chapter"
-    THIRD_CHAPTER = "third_chapter"
-    THANK_YOU = "thank_you"
-
     # Список достижений
     achievements = {
-        FIRST_CHAPTER: Achievement(
-            FIRST_CHAPTER,
+        ACHIEVEMENT_FIRST_CHAPTER: Achievement(
+            ACHIEVEMENT_FIRST_CHAPTER,
             "Пройти 1 акт",
             "",
             False,
             "gui/menu/achievements/1.png"
         ),
-        SECOND_CHAPTER: Achievement(
-            SECOND_CHAPTER,
+        ACHIEVEMENT_SECOND_CHAPTER: Achievement(
+            ACHIEVEMENT_SECOND_CHAPTER,
             "Пройти 2 акт",
             "",
             False,
             "gui/menu/achievements/2.png"
         ),
-        THIRD_CHAPTER: Achievement(
-            THIRD_CHAPTER,
+        ACHIEVEMENT_THIRD_CHAPTER: Achievement(
+            ACHIEVEMENT_THIRD_CHAPTER,
             "Пройти 3 акт",
             "",
             False,
             "gui/menu/achievements/3.png"
         ),
-        THANK_YOU: Achievement(
-            THANK_YOU,
+        ACHIEVEMENT_THANK_YOU: Achievement(
+            ACHIEVEMENT_THANK_YOU,
             "Спасибо, что прошёл игру. От всего сердца :)",
             "Пройти игру",
             False,
             "gui/menu/achievements/heart.png"
         ),
-        FUTURE_HISTORIAN: Achievement(
-            FUTURE_HISTORIAN,
+        ACHIEVEMENT_FUTURE_HISTORIAN: Achievement(
+            ACHIEVEMENT_FUTURE_HISTORIAN,
             "Историк будущего",
             "Добро пожаловать в эпоху Эдо 2.0 — теперь с киберимплантами и корпоративным сёгунатом",
             True,
             "gui/menu/achievements/samurai.png"
         ),
-        MAX_DAMAGE: Achievement(
-            MAX_DAMAGE,
+        ACHIEVEMENT_MAX_DAMAGE: Achievement(
+            ACHIEVEMENT_MAX_DAMAGE,
             "Почти получилось, ты просто поддавался",
             "Нанести Дзиндзо максимальное количество урона",
             True,
             "gui/menu/achievements/pokeball.png"
         ),
-        STRATEGIST: Achievement(
-            STRATEGIST,
+        ACHIEVEMENT_STRATEGIST: Achievement(
+            ACHIEVEMENT_STRATEGIST,
             "Трус? Нет, стратег",
             "Попытаться сбежать из боя",
             True,
             "gui/menu/achievements/chess.png"
         ),
-        PIG_SLAYER: Achievement(
-            PIG_SLAYER,
+        ACHIEVEMENT_PIG_SLAYER: Achievement(
+            ACHIEVEMENT_PIG_SLAYER,
             "Кабанье проклятье",
             "Одержи победу над Ужасным Вепрем",
             True,
             "gui/menu/achievements/pig.png"
         ),
-        GENIUS: Achievement(
-            GENIUS,
+        ACHIEVEMENT_GENIUS: Achievement(
+            ACHIEVEMENT_GENIUS,
             "Гений поневоле",
             "Ты ответил правильно на всё. Системе не оставили выбора. Тебе — тоже",
             True,

@@ -3,15 +3,32 @@
 ## Ипользуется для перебивки между сценами.
 ##
 
-define run_time = 4
+define run_time = 5
+define blue_color = Color("#393185")
+
+image time_animation:
+    "images/Prochee/p1.png"
+    pause 0.2
+    "images/Prochee/p2.png"
+    pause 0.2
+    repeat
+
+image time_animation_colored = Transform("time_animation", matrixcolor=TintMatrix(blue_color))
+
+layeredimage time_passed_img:
+    always:
+        "bg_menu_main"
+
+    always:
+        "time_animation_colored"
 
 transform show_screen_transform:
     on show:
         parallel:
             alpha 0.0
-            linear 1.0 alpha 1.0
+            linear 0.5 alpha 1.0
     on hide:
-        linear 1.0 alpha 0.0
+        linear 0.5 alpha 0.0
 
 transform loading_move:
     xzoom -1.0
@@ -72,7 +89,7 @@ screen time_passed(text="Прошло времени..."):
         yfill True
         at show_screen_transform
         
-        add Solid("#121212")
+        add "time_passed_img"
         
         vbox:
             align (0.5, 0.5)
@@ -80,18 +97,12 @@ screen time_passed(text="Прошло времени..."):
             
             text text:
                 size 80
-                color gui.text_color
+                color blue_color
                 text_align 0.5
                 at transform:
                     alpha 0.0
                     pause 1.0
                     ease 2.0 alpha 1.0
-
-        add "b_fire":
-            at loading_move
-            at transform:
-                alpha 0.0
-                ease 2.0 alpha 1.0
 
     timer run_time action Return()
 
@@ -100,7 +111,7 @@ label time_passed(message = "Некоторое время спустя"):
     stop music
     stop sound
 
-    play sound sfx_timeskip
+    play sound sfx_steps_on_road
     call screen time_passed(message)
     scene bg_black
     pause 1

@@ -434,6 +434,8 @@ scene bg_black
 with Dissolve(2.0)
 pause 2.0
 
+$ unlock_achievement(ACHIEVEMENT_THIRD_CHAPTER)
+
 call epilogue_scene
 
 call label_credits

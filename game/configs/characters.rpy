@@ -484,6 +484,8 @@ image umi_talk_closed:
     "images/Umi/Umi_pose2_rot2.png"
     pause 0.1
     "images/Umi/Umi_pose2_rot3.png"
+    pause 0.1
+    "images/Umi/Umi_pose2_rot4.png"
     repeat
 
 image umi_talk_greeting:

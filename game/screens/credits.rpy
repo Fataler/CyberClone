@@ -70,7 +70,7 @@ CG
 фоны
 сборка эпизодов
 тестирование
-режессура
+режиссура
 референсы
 
 
@@ -124,6 +124,7 @@ CG
         textbutton "Пропустить" action Return() xalign 0.95 yalign 0.05
 
 screen credits_end():
+    $ unlock_achievement(ACHIEVEMENT_THANK_YOU)
     text "Спасибо за игру!":
         size 95 
         align (0.5, 0.5)
