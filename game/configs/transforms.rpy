@@ -381,3 +381,7 @@ transform take_out(start=0, end=100, time=0.5):
         easein_quad time/2 xoffset -end yoffset end
     parallel:
         easein_quad time alpha 0
+
+transform txt_up(start=-0.9, end=2.4, time=40.0):
+    yalign start
+    linear time yalign end

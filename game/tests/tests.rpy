@@ -71,6 +71,55 @@ label test_simple_conditions:
 
     return
 
+label test_kazumi_states:
+    "Тестирование всех состояний персонажа Kazumi"
+    
+    show bg_amusement_park
+
+    show k pose1 neutral
+    k "k pose1 neutral"
+
+    show k pose1 happy
+    k "k pose1 happy"
+
+    show k pose1 worried
+    k "k pose1 worried"
+
+    show k pose1 confused
+    k "k pose1 confused"
+
+    show k pose1 angry
+    k "k pose1 angry"
+
+    show k pose1 cunning
+    k "k pose1 cunning"
+
+    show k pose1 neutral_4stena
+    k "k pose1 neutral_4stena"
+
+    show k pose2 neutral
+    k "k pose2 neutral"
+
+    show k pose2 annoyed
+    k "k pose2 annoyed"
+
+    show k pose2 cunning
+    k "k pose2 cunning"
+
+    show k pose2 asharashen
+    k "k pose2 asharashen"
+
+    show k pose2 didnt_understand
+    k "k pose2 didnt_understand"
+
+    show k pose2 smug right
+    k "k pose2 smug"
+
+    show k pose2 neutral_4stena left
+    k "k pose2 neutral_4stena"
+    
+    return
+
 label test_izumi_states:
     
     show i neutral

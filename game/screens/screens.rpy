@@ -384,6 +384,7 @@ style nvl_dialogue:
     min_width gui.nvl_text_width
     textalign gui.nvl_text_xalign
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
+    size gui.text_size + 8
 
 style nvl_thought:
     xpos gui.nvl_thought_xpos

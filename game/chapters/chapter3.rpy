@@ -41,6 +41,9 @@ show h idle angry left summer at trio_right
 with Dissolve(1)
 
 k "Бестолочь, ты опять проспал! Ну и видок у тебя. Позорище."
+t "У тебя не лучше! Ты зачем в выходной день вырядилась в школьную форму?"
+t_t "Она самоуверенно задрала нос:"
+k "Школьная форма... Она идет мне больше всего! И вообще..."
 k pose2 annoyed "Мы ждали тебя полчаса!"
 den idle nervous "Даже я не позволяю себе так опаздывать! Поспать — это святое, но проспать свою жизнь!.."
 h "Да, с тобой в разведку не сходишь. Или на рыбалку..."
@@ -425,7 +428,12 @@ show h at giggle
 
 $ speak_as("Все", "Дааа!!!~")
 
-scene bg_black with Dissolve(1)
-pause 3.0
 
-jump epilogue
+stop music fadeout 2.0
+scene bg_black
+with Dissolve(2.0)
+pause 2.0
+
+call epilogue_scene
+
+call label_credits
