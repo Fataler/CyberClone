@@ -464,7 +464,7 @@ label chapter1:
     t_t "За дверью послышался вскрик и звук битой посуды." with hpunch
 
     #цг u
-    call umi_cg_scene
+    call umi_cg_scene from _call_umi_cg_scene
 
     show u closed cute school at quad_left, face_right with Dissolve(1)
     $ renpy.music.set_volume(1.0, delay=0.5, channel="music")

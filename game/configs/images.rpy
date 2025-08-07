@@ -4,7 +4,6 @@
 # Фоны из папки Backgrounds
 image bg_amusement_park = "images/Backgrounds/Amusement Park.jpg"
 image bg_backyard = "images/Backgrounds/Backyard.jpg"
-image bg_battle_scene = "images/Backgrounds/Battle Scene.jpg"
 image bg_class_room = "images/Backgrounds/Class Room.jpg"
 image bg_garage_dirty = "images/Backgrounds/Garage Durty.jpg"
 image bg_garage = "images/Backgrounds/Garage.jpg"

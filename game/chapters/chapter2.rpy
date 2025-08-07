@@ -209,7 +209,7 @@ pause 1.0
 # Мини игра пазл 
 
 # ЦГ робот готов
-call assembling_scene
+call assembling_scene from _call_assembling_scene
 
 scene bg_robo_class_room
 play music music_main_theme_2_v3 fadein 0.5 fadeout 1.0 loop
@@ -681,7 +681,7 @@ t_t "Я высунулся из своего укрытия и ошалел. "
 
 stop music fadeout 0.5
 
-call dz_calmar_scene
+call dz_calmar_scene from _call_dz_calmar_scene
 
 #show squid with Dissolve(1)
 scene bg_square
@@ -851,7 +851,7 @@ t_t "Дзиндзо набросил шарф, натянул перчатки, 
 menu:
     "Остаться ненадолго и понаблюдать, во что играет господин Тайда.":
 #        d pose2 melancholy "Он играет во что-то странное, но выглядит интересно."
-        call test_clicker_game
+        call test_clicker_game from _call_test_clicker_game
     "Сразу уйти":
         d_f "Простите, я спешу."
         #d pose2 asharashen "Я уже опаздываю, лучше поспешить в школу."
@@ -1569,7 +1569,7 @@ d_t "Батя в удивлении начал хватать воздух рт�
 d relief "А лучше покажу."
 
 stop music fadeout 1.0
-call dzinzo_rock_scene
+call dzinzo_rock_scene from _call_dzinzo_rock_scene
 
 #цг ргг играет на гитаре
 #музыка роцка

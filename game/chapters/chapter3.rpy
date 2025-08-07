@@ -48,7 +48,7 @@ show h idle angry left summer at trio_right
 with Dissolve(1)
 
 k "Бестолочь, ты опять проспал! Ну и видок у тебя. Позорище."
-t ear summer "У тебя не лучше! Ты зачем в выходной день вырядилась в школьную форму?"
+t ear summer_norm "У тебя не лучше! Ты зачем в выходной день вырядилась в школьную форму?"
 t_t "Она самоуверенно задрала нос:"
 k "Школьная форма... Она идет мне больше всего! И вообще..."
 k pose2 annoyed "Мы ждали тебя полчаса!"
@@ -135,7 +135,7 @@ t_t hz cry_sad "Остаток дня нам оставалось лишь на�
 hide bush4 onlayer screens
 scene bg_black with Dissolve(1)
 #слайдшоу цг 
-call park_scene
+call park_scene from _call_park_scene
 
 t_t ear cry summer_strem "Я потерял всякую мотивацию как-либо влиять на ситуацию."
 t_t hz cry_sad "Что я мог?.."
@@ -445,6 +445,6 @@ pause 2.0
 
 $ unlock_achievement(ACHIEVEMENT_THIRD_CHAPTER)
 
-call epilogue_scene
+call epilogue_scene from _call_epilogue_scene
 
-call label_credits
+call label_credits from _call_label_credits
