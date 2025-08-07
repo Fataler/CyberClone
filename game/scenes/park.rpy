@@ -78,7 +78,7 @@ label park_scene:
     with None
     pause 2.5
     
-    "Текст"
+    "\"Юми, ты так же красива, как эта роза!\""
     
     show p_2 at slide_from_right_bottom
     show p_1 at slide_to_left
@@ -87,7 +87,7 @@ label park_scene:
     
     hide p_1 with dissolve
 
-    "Текст"
+    "\"Ой! Кажется, ты немного запачкалась!\""
 
     show p_3 at slide_from_right_top
     show p_2 at slide_to_left
@@ -96,7 +96,7 @@ label park_scene:
     
     hide p_2 with dissolve
     
-    "Текст"
+    "\"Эту победу я посвящаю тебе! Как и пятнадцать предыдущих.\""
 
     show p_4 at slide_from_right_bottom
     show p_3 at slide_to_left
@@ -105,7 +105,9 @@ label park_scene:
     
     hide p_3
     
-    "Текст"
+    "\"Хочешь попробовать? Скажи \"А-а-а\".\""
+
+    window hide
 
     show p_4 at slide_to_left
     with None
