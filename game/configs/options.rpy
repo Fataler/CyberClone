@@ -15,7 +15,7 @@
 define config.name = _("Мой кибер-двойник опять всё испортил")
 define config.image_cache_size_mb = 512
 
-define config.developer = False
+define config.developer = True
 define config.menu_include_disabled = True
 
 ## Определяет, показывать ли заголовок, данный выше, на экране главного меню.
