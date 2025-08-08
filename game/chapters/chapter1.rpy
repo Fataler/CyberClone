@@ -1,6 +1,5 @@
 label chapter1:
     scene black
-    play music music_melancholy fadein 1.0
     #Melancholy.ogg
     #музыка
   
@@ -55,8 +54,9 @@ label chapter1:
     menu:
         "Сказать от балды":
             t asharashen "С 2007 по 2077, наверное..."
-            teacher sad "Как и ожидалось от самого бестолкового ученика этого класса."
             $ unlock_achievement(ACHIEVEMENT_FUTURE_HISTORIAN)
+            play sfx sfx_giggles_v2
+            teacher sad "Как и ожидалось от самого бестолкового ученика этого класса."
             #смешки
 
         "Подглядеть в учебнике":
@@ -181,10 +181,9 @@ label chapter1:
     #t surprised
     t_t surprised "Раздвижная дверь с грохотом ушла в сторону — и группа ребят, подслушивавших у двери, ввалилась в кабинет." with hpunch
 
-    play sfx sfx_giggles_v2
     #смешки
-
     t_t "За дверью толпился народ, жаждущий услышать, как меня отчитывают."
+    play sfx sfx_giggles_v2
 
     t_t "С гоготом они разбежались, как тараканы."
 
@@ -807,6 +806,7 @@ label chapter1:
 
     show k pose1 angry
     show h angry
+    show den awesome sad
 
     #t asharashen
     t_t asharashen "Но в их глазах читалось, что они не очень довольны тем фактом, что я сижу и в ус не дую."
@@ -817,13 +817,13 @@ label chapter1:
     t_t think "Вот сделают свою часть работы, и тогда я, так уж и быть, завершу начатое!"
 
     #черный экран
-    stop music fadeout 1.0 
+    $ renpy.music.set_volume(0.4, delay=0.5, channel="music")
     scene bg_black with Dissolve(1)
 
     $ renpy.pause(1)
 
     scene bg_school_entrance with Dissolve(1)
-    play music music_main_theme_3_v2 fadein 0.5 loop
+    $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 
     #t neutral
     t_t neutral "Так время, отведённое на кружок, вышло, и мы начали собираться по домам."
@@ -1074,18 +1074,18 @@ label chapter1:
     t_t "А они всё твердят \"Учёба, учёба...\""
 
     #t serious
-    t_t "Первая всё пытается заставить меня помогать её отцу."
+    t_t hz cry_why "Первая всё пытается заставить меня помогать её отцу."
 
     #t angry
     t_t "Второй заставляет меня учить дурацкую историю."
 
     #t very angry
-    t_t "А третьи принуждают меня работать за бесплатно над дурацким паштетомазом, чтобы исполнить свои ленивые мечты!"
+    t_t cry_sad "А третьи принуждают меня работать за бесплатно над дурацким паштетомазом, чтобы исполнить свои ленивые мечты!"
 
     #sfx
     #звук удара
     play sfx sfx_hit
-    t_t "Я ударил кулаком по столу и молча сидел в тишине в попытках приглушить импульсивную злость на всех вокруг." with vpunch
+    t_t ear_school angry "Я ударил кулаком по столу и молча сидел в тишине в попытках приглушить импульсивную злость на всех вокруг." with vpunch
 
     #t surprised
     t_t surprised "И тогда меня осенило."

@@ -18,11 +18,11 @@ t_t asharashen "Меня охватила паника. "
 t_t hz cry_sad "Я опоздал."
 t_t "Дзиндзо уже не было в комнате. "
 t_t cry_why "Он выключил будильник и просто переступил через меня, спавшего на пороге. "
-t_t dissatisfied "Это привело меня в ярость. И осознание, что с этим точно необходимо что-то делать!"
+t_t dissatisfied "Это привело меня в ярость. И в осознание, что с этим точно необходимо что-то делать!"
 pause 0.5
 play sfx sfx_knock
 t_t thinking asharashen "За окном послышался тихий, но настойчивый стук по стеклу."
-t_t summer_strem "Я наспех начал одеваться."
+t_t "Я наспех начал одеваться."
 t_t "Погода жаркая, выходной день..."
 t_t think "Где мои единственные шорты..."
 play sfx sfx_knock
@@ -48,7 +48,7 @@ show h idle angry left summer at trio_right
 with Dissolve(1)
 
 k "Бестолочь, ты опять проспал! Ну и видок у тебя. Позорище."
-t ear summer_norm "У тебя не лучше! Ты зачем в выходной день вырядилась в школьную форму?"
+t hz wtf summer_strem "У тебя не лучше! Ты зачем в выходной день вырядилась в школьную форму?"
 t_t "Она самоуверенно задрала нос:"
 k "Школьная форма... Она идет мне больше всего! И вообще..."
 k pose2 annoyed "Мы ждали тебя полчаса!"
@@ -259,6 +259,7 @@ t ear surprised "Я понял..."
 
 hide bush4 onlayer screens
 show bush4 at Transform(xalign=-0.3, yalign=1.5), size_change(0.8, 0.8) onlayer master zorder 2
+play sfx sfx_bushes_v2
 t_t asharashen "Я выскочил из куста прямо перед ними." with hpunch
 
 show u open thinking at fear

@@ -91,7 +91,7 @@ t_t ear_school neutral "Ребята больше не выглядели так
 
 t_t "Мы решили отложить этот разговор до школьного кружка."
 
-$ renpy.music.set_volume(0.5, delay=0.5, channel="music")
+stop music fadeout 1.0
 scene bg_black
 hide k
 hide den
@@ -103,7 +103,6 @@ $ renpy.pause(1.0)
 
 #Robo-Class Room.JPG
 show bg_robo_class_room with Dissolve(1)
-$ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 play music music_main_theme fadein 0.5
 
 show k pose1 cunning right at quad_right
@@ -153,7 +152,7 @@ show k pose1 worried at Transform(xalign=1.0 ,yalign=1.0)
 show den idle sad
 show h neutral
 
-$ renpy.music.set_volume(0.5, delay=2.0, channel="music")
+$ renpy.music.set_volume(0.3, delay=2.0, channel="music")
 
 t_t "Все притихли."
 
@@ -263,7 +262,7 @@ i "Почему робот выглядит точь‑в‑точь как Та
 
 stop sfx fadeout 0.5
 $ renpy.music.set_volume(1.0, delay=0.5, channel="sfx")
-play music music_comedy fadein 0.5 fadeout 1.0 loop
+play music music_comedy fadein 0.1 fadeout 1.0 loop
 show k at giggle
 show i at fear
 show den at giggle
@@ -333,7 +332,7 @@ pause 0.5
 #play music music_main_theme_2_v3 fadein 0.5 fadeout 1.0 loop
 $ renpy.music.set_volume(1.0, delay=0.5, channel="music")
 show bg_school_entrance 
-show k pose1 neutral right at trio_left
+show k pose2 neutral right at Transform(xalign=0, yalign=1.0)
 show den awesome neutral left at trio_center
 show h idle neutral left at trio_right
 with Dissolve(1)
@@ -407,7 +406,6 @@ t_t "Наконец, добравшись до двери, я судорожно
 
 play sfx sfx_door_lock
 pause 2.0
-play sfx sfx_open_door
 
 #Robo-Class Room.JPG
 scene bg_robo_class_room with Dissolve(1)
@@ -415,11 +413,13 @@ scene bg_robo_class_room with Dissolve(1)
 #show d summer
 
 play sound sfx_open_door
+play sfx sfx_pressure fadein 0.5 fadeout 1.0 loop
+
 "."
 ".."
 "..."
 
-play music music_main_theme_2_v3 fadein 0.5 fadeout 1.0 loop
+#play music music_main_theme_2_v3 fadein 0.5 fadeout 1.0 loop
 show d_f pose3 neutral at center with Dissolve(1)
 
 t_t neutral "Вот он, момент истины."
@@ -431,7 +431,7 @@ t_t asharashen "Наедине с ним даже стало жутковато.
 t_t "Привет, Дзиндзо. Мой кибер-двойник."
 
 t_t ear_school asharashen "Дрожащими руками я нажимаю кнопку на его корпусе..."
-
+stop sfx
 play music music_main_theme_3_v2 fadein 0.5
 
 d_f "Здравствуйте, господин. Как мне к вам обращаться?"
@@ -487,6 +487,7 @@ t "Ты наденешь мою школьную форму, а я — твою 
 t_t ear_school calm "Благо изначально робот был одет в мою одежду — чья ещё подойдёт ему лучше, чем одежда его прототипа?"
 t_t "Ну и накину мою любимую рубашку поверх."
 
+play sfx sfx_vshooh
 show d_f pose2 school neutral with Dissolve(0.5)
 pause 0.5
 
@@ -574,19 +575,19 @@ t_t "В ту же секунду я ныряю обратно в живую из
 
 show dad right at move_on_scene(xalign=0.5)
 
-play sound sfx_bushes_v2
-
 dad "Тайда, это ты шумишь?"
 
 show d_f pose2 asharashen
 
 t_t hz cry_sad "Дзиндзо впал в ступор и стоял как столб с дебильным выражением лица, а я ловил испанский стыд в метре от него."
 
-dad "Мне звонил директор вашей школы. Он сообщил мне, что с большой вероятностью ты останешься на второй год."
 
+
+dad "Мне звонил директор вашей школы. Он сообщил мне, что с большой вероятностью ты останешься на второй год."
+show d_f pose1 surprised
 dad "Я очень разочарован в тебе, сын."
 
-show d_f pupupu
+show d_f pose2 pupupu
 
 t_t thinking asharashen "Дзиндзо начал активно кивать башкой, соглашаясь с отцом. "
 
@@ -659,6 +660,7 @@ t_t thinking think "Со слов отца я знал лишь, что его �
 
 show d_f at move_on_scene(xalign=0.8)
 
+play sfx sfx_bushes
 show bush4 at Transform(xalign=-0.3, yalign=1.5), size_change(0.8, 0.8) onlayer screens zorder 100
 
 t_t neutral "На месте мы разделились. Я спрятался неподалёку, а Дзиндзо пошёл к ларьку. "
@@ -685,7 +687,7 @@ call dz_calmar_scene from _call_dz_calmar_scene
 
 #show squid with Dissolve(1)
 scene bg_square
-play music music_comedy_loop fadein 0.5 fadeout 1.0 loop
+play music music_main_theme_2_v3 fadein 0.5
 
 t_t ear neutral "Народ, довольный представлением, потихоньку рассосался."
 
@@ -695,7 +697,7 @@ show seller left at c_right
 show d_f pose1 neutral right at c_left
 with Dissolve(1)
 
-play music music_main_theme_2_v3 fadein 0.5
+
 
 seller "Тайда, ты настоящий молодец. Так самоотверженно взялся за дело! Я не ожидала от тебя такого."
 
@@ -723,7 +725,8 @@ t_t "Хозяйка, удивлённая его бескорыстием, ще�
 hide bush4 onlayer screens 
 hide seller 
 with Dissolve(1)
-show d_f left pose1 neutral at move_step()
+pause 0.5
+show d_f left pose1 neutral at move_on_scene(xalign=-0.5)
 
 $ renpy.music.set_volume(0.4, delay=0.5, channel="music")
 t_t thinking thinking_hard "Обратно домой мы добирались тихо и молча. Дзиндзо пытался радостно мигать своими светодиодами под пластырями, а я шел как мрачная туча."
@@ -844,6 +847,7 @@ t_t "Не веря своему счастью, я поплелся к комп�
 
 t_t thinking cunning "И включил свою любимую ММО РПГ \"Кабанье проклятье\"."
 
+play sfx sfx_vshooh
 show d_f pose1 neutral school with Dissolve(0.5)
 
 t_t "Дзиндзо набросил шарф, натянул перчатки, и приготовился выходить."
@@ -1120,14 +1124,14 @@ d pupupu "Ааа, это... Вчера ночью я заметил, что у �
 d "В итоге, пришлось укатить его на телеге домой. А после я уснул за домашкой. Завтра... А нет, в понедельник, притащу его обратно!"
 
 show h idle neutral
-show den neutral
+show den awesome sad
 
 k pose1 angry "Он действительно был не до конца затянут, но тебе стоило посоветоваться с нами..."
 
 d neutral "Да, простите. Но не стоит отчаиваться, у нас же ещё осталась недоделанная паштетомазка!"
 
 show h at Transform(xalign=1.15, yalign=1.0)
-show den sad
+show den idle sad
 
 h explain neutral_talk "Действительно. Мы забросили её почти на неделю. Может быть, сейчас, со свежей головой мы сможем что-то придумать."
 
@@ -1146,6 +1150,7 @@ i smug "Ребята, доставайте чертежи и платы. Сег�
 
 i tricky "А раз Юмички сегодня не видать, то сделаете его мне вы! Я на вас рассчитываю."
 
+stop music fadeout 1.0
 hide i
 hide k
 hide den
@@ -1278,7 +1283,7 @@ show den sad
 d_t pose1 relief "И вот он, момент истины! Робо-рука берет нож, плавно опускает его в банку с паштетом, поднимается и отправляется к заранее заготовленному кусочку хлеба."
 stop music fadeout 3.0
 
-play sound sfx_pressure
+play sfx sfx_pressure
 d_t neutral "Первый мазок. Идеально ровная дорожка. "
 
 d_t "Второй мазок. Такой гладкий, что в нем отражаются лампочки на потолке."
@@ -1531,7 +1536,7 @@ d_t "Капнуть масло, растереть. Отполировать. З
 show bg_garage with Dissolve(1)
 
 d_t happy "Готово!"
-
+play sfx sfx_open_door
 show b_1 right at enter_scene(time=3.0, from_left=True, xalign=0.2)
 $ b_1.name = "Батя"
 
