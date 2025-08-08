@@ -121,7 +121,7 @@ CG
 
         timer credits_duration + 5 action Show("credits_end")
         
-        textbutton "Пропустить" action Return() xalign 0.95 yalign 0.05
+        textbutton "Пропустить" action Return() xalign 0.95 yalign 0.05 at delay_appear(10.0)
 
 screen credits_end():
     $ unlock_achievement(ACHIEVEMENT_THANK_YOU)
