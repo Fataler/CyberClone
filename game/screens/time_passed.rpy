@@ -106,7 +106,7 @@ screen time_passed(text="Прошло времени..."):
 
     timer run_time action Return()
 
-label time_passed(message = "Некоторое время спустя"):
+label time_passed_label(message = "Некоторое время спустя"):
     window hide
     stop music
     stop sound

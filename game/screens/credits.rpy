@@ -115,13 +115,13 @@ CG
         timer (credits_duration * 0.88) action Hide("credits_image")
 
         timer (credits_duration * 0.89) action Show("credits_image", img_name="credits_img_7", is_left=True)
-        timer (credits_duration * 1.00) action Hide("credits_image")
+        timer (credits_duration * 1.05) action Hide("credits_image")
         
         add credits_obj xalign 0.5
 
         timer credits_duration + 5 action Show("credits_end")
         
-        textbutton "Пропустить" action Return() xalign 0.95 yalign 0.05 at delay_appear(10.0)
+        textbutton "Пропустить" action Return() xalign 0.95 yalign 0.05 at delay_appear(15.0)
 
 screen credits_end():
     $ unlock_achievement(ACHIEVEMENT_THANK_YOU)

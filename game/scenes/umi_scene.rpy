@@ -1,5 +1,5 @@
-image umi_cg = "images/cg/CG_Umi_gym_2.png"
-image bg_cg = "images/cg/CG_Umi_gym.png"
+image umi_cg = "images/CG/CG_Umi_gym_2.png"
+image bg_cg = "images/CG/CG_Umi_gym.png"
 
 style continue_style is gui_text
 

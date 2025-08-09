@@ -211,13 +211,13 @@ screen pokemon_battle():
         elif battle_state == ACTIONS.ENEMY_SKIP:
             add get_dzinzo_sprite("side d thinking") at hit_effect, dzinzo_pos
         elif battle_state == ACTIONS.SELECT_ACTION:
-            add get_dzinzo_sprite("side d norm") at dzinzo_pos
+            add get_dzinzo_sprite("side d neutral") at dzinzo_pos
         elif battle_state == ACTIONS.MAGIC:
             add get_dzinzo_sprite("side d surprised") at dzinzo_pos
         elif battle_state == ACTIONS.BAG:
             add get_dzinzo_sprite("side d cunning") at dzinzo_pos
         else:
-            add get_dzinzo_sprite("side d norm") at dzinzo_pos
+            add get_dzinzo_sprite("side d neutral") at dzinzo_pos
     
 
     frame:
