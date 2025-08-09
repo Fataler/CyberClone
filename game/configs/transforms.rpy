@@ -144,7 +144,7 @@ transform enter_c_right(time=2.0, from_left=False, xalign=0.95):
 
 transform enter_scene(time=2.0, from_left=False, xalign=0.95, y=1.0):
     xpos (-1000 if from_left else 2000)
-    yalign(y)
+    yalign y
     parallel:
         ease time xalign xalign
     parallel:

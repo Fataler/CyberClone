@@ -32,7 +32,7 @@ define config.speaking_attribute = "talk"
 
 define config.version = "1.0"
 
-define config.mouse = { 'default' : [ ("gui/cursor.png", 0, 0)], 'robot' : [ ("gui/cursorR.png", 0, 0)]}
+define config.mouse = { 'default' : [ ("gui/Cursor.png", 0, 0)], 'robot' : [ ("gui/CursorR.png", 0, 0)]}
 
 
 ## Текст, помещённый в экран "Об игре". Поместите текст между тройными скобками.

@@ -54,63 +54,63 @@ init python:
             "Пройти 1 акт",
             "",
             False,
-            "gui/menu/achievements/1.png"
+            "gui/menu/Achievements/1.png"
         ),
         ACHIEVEMENT_SECOND_CHAPTER: Achievement(
             ACHIEVEMENT_SECOND_CHAPTER,
             "Пройти 2 акт",
             "",
             False,
-            "gui/menu/achievements/2.png"
+            "gui/menu/Achievements/2.png"
         ),
         ACHIEVEMENT_THIRD_CHAPTER: Achievement(
             ACHIEVEMENT_THIRD_CHAPTER,
             "Пройти 3 акт",
             "",
             False,
-            "gui/menu/achievements/3.png"
+            "gui/menu/Achievements/3.png"
         ),
         ACHIEVEMENT_THANK_YOU: Achievement(
             ACHIEVEMENT_THANK_YOU,
             "Спасибо, что прошёл игру. От всего сердца :)",
             "Пройти игру",
             False,
-            "gui/menu/achievements/heart.png"
+            "gui/menu/Achievements/Heart.png"
         ),
         ACHIEVEMENT_FUTURE_HISTORIAN: Achievement(
             ACHIEVEMENT_FUTURE_HISTORIAN,
             "Историк будущего",
             "Добро пожаловать в эпоху Эдо 2.0 — теперь с киберимплантами и корпоративным сёгунатом",
             True,
-            "gui/menu/achievements/samurai.png"
+            "gui/menu/Achievements/Samurai.png"
         ),
         ACHIEVEMENT_MAX_DAMAGE: Achievement(
             ACHIEVEMENT_MAX_DAMAGE,
             "Почти получилось, ты просто поддавался",
             "Нанести Дзиндзо максимальное количество урона",
             True,
-            "gui/menu/achievements/pokeball.png"
+            "gui/menu/Achievements/Pokeball.png"
         ),
         ACHIEVEMENT_STRATEGIST: Achievement(
             ACHIEVEMENT_STRATEGIST,
             "Трус? Нет, стратег",
             "Попытаться сбежать из боя",
             True,
-            "gui/menu/achievements/chess.png"
+            "gui/menu/Achievements/Chess.png"
         ),
         ACHIEVEMENT_PIG_SLAYER: Achievement(
             ACHIEVEMENT_PIG_SLAYER,
             "Кабанье проклятье",
             "Одержи победу над Ужасным Вепрем",
             True,
-            "gui/menu/achievements/pig.png"
+            "gui/menu/Achievements/Pig.png"
         ),
         ACHIEVEMENT_GENIUS: Achievement(
             ACHIEVEMENT_GENIUS,
             "Гений поневоле",
             "Ты ответил правильно на всё. Системе не оставили выбора. Тебе — тоже",
             True,
-            "gui/menu/achievements/gears.png"
+            "gui/menu/Achievements/Gears.png"
         ),
     }
 
