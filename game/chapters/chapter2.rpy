@@ -855,10 +855,12 @@ t_t "Дзиндзо набросил шарф, натянул перчатки, 
 menu:
     "Остаться ненадолго и понаблюдать, во что играет господин Тайда.":
         play music music_yay fadein 0.5 fadeout 1.0 loop
+        show black with Dissolve(1)
         call test_clicker_game from _call_test_clicker_game
+        hide black with Dissolve(1)
         stop music fadeout 1.0
         pause 1.0
-        d_f "Господин, уверен, что вы отлично проведете время. До встречи вечером!"
+        d_f "Чтож... Господин, уверен, что вы отлично проведете время. До встречи вечером!"
     "Сразу уйти":
         d_f "Простите, я спешу."
 

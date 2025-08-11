@@ -86,7 +86,7 @@ init python:
 
         def show_message(self, text):
             self.current_message = text
-            self.message_timer = 2.0
+            self.message_timer = 5.0
             
         def update_message_timer(self, dt):
             if self.message_timer > 0:
@@ -222,6 +222,14 @@ screen clicker_game():
     if show_bounce_effect:
         $ current_timer_id = bounce_timer_id
         timer 0.13 action If(bounce_timer_id == current_timer_id, SetScreenVariable("show_bounce_effect", False))
+
+transform screen_fade:
+    alpha 1.0
+    on show:
+        alpha 0.0
+        linear 0.35 alpha 1.0
+    on hide:
+        linear 0.35 alpha 0.0
 
 transform bounce_effect:
     anchor (0.5, 0.5)
