@@ -1,6 +1,7 @@
 label chapter1:
     stop music fadeout 1.0
     scene black
+    pause 1.0
     #Melancholy.ogg
     #музыка
   
