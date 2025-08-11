@@ -10,42 +10,27 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#say
 
-# init python:
-#     import random
-    
-#     def generate_robot_bits(text):
-#         robot_bits = ""
-#         hex_chars = "01"
-#         for char in text:
-#             if char != " ":
-#                 robot_bits += random.choice(hex_chars)
-#             else:
-#                 robot_bits += char
-#         return robot_bits
-
-# style robot_mono_text:
-#     is say_dialogue
-#     font "gui/fonts/DejaVuSansMono.ttf"
-
 screen say(who, what):
-        
+
     window:
         id "window"
-        style "window"
-        background Image(textbox_style, xalign=0.5, yalign=1.0)
+        style "say_window"
+                
+        fixed:
+            xfill True
+            yfit True
 
-        if who is not None:
-            window:
-                id "namebox"
-                style "namebox"
-                text who id "who"
+            vbox:
+                spacing 6
+                frame:
+                    style "say_textframe"
+                    text what id "what"
 
-        text what id "what"
+            if who:
+                window:
+                    style "namebox"
+                    text who id "who"
 
-
-    ## Если есть боковое изображение ("голова"), показывает её поверх текста.
-    ## По стандарту не показывается на варианте для мобильных устройств — мало
-    ## места.
     if not renpy.variant("small"):
         add SideImage() xalign 0.0 yalign 1.0 zoom 0.9
 
@@ -62,16 +47,19 @@ style window is default
 style say_label is default
 style say_dialogue is default
 style say_thought is say_dialogue
-
 style namebox is default
 style namebox_label is say_label
 
-
-style window:
+style say_window:
     xalign 0.5
-    xfill True
-    yalign gui.textbox_yalign
-    ysize gui.textbox_height
+    xsize 1280
+    align (0.5, 0.98)
+    xpadding 30
+    ypadding 20
+    background Frame(textbox_style, Borders(39,99, 39, 90), tile=True)
+    yminimum gui.textbox_height
+    xfill False
+    yfill False
 
 style namebox:
     xpos gui.name_xpos
@@ -79,7 +67,6 @@ style namebox:
     xsize gui.namebox_width
     ypos gui.name_ypos
     ysize gui.namebox_height
-
     background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
@@ -90,21 +77,9 @@ style say_label:
 
 style say_dialogue:
     properties gui.text_properties("dialogue")
+    adjust_spacing True
 
-    #yalign 0.5
-    
-    xpos gui.dialogue_xpos
-    xsize gui.dialogue_width
-    ypos gui.dialogue_ypos
-    # size my_dialogue_size
-
-    adjust_spacing False
-
-init python:
-    def get_dialogue_size():
-        if persistent.current_font == "default":
-            return gui.text_size
-        else:
-            return gui.text_size - 3
-
-default my_dialogue_size = get_dialogue_size()
+style say_textframe:
+    background None
+    xfill True
+    padding (140, 50, 140, 20)
