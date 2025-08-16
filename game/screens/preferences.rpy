@@ -248,20 +248,11 @@ screen preferences():
     $ tooltip = GetTooltip()
 
     if tooltip:
-        timer 0.025 repeat True action Function(get_mouse)
-        $ mx = mouse_xy[0]
-        $ my = mouse_xy[1]
-        $ screen_width = config.screen_width if hasattr(config, 'screen_width') else 1920
-        frame:
-            if mx < screen_width // 2:
-                xpos mx + 50
-                xanchor 0.0
-            else:
-                xpos mx - 50
-                xanchor 1.0
-            ypos my
-            background Frame("gui/frame.png", gui.frame_borders)
-            padding (20, 10)
+        nearrect:
+            focus "tooltip"
+            prefer_top True
+            has frame padding 15,5,15,5
+            xalign 0.3
             text tooltip style "tooltip"
 
 transform move_appear(from_x=0, from_y=0, to_x=1588,to_y=588):
