@@ -20,7 +20,7 @@ show den left at Transform(xalign=0.8, yalign=1.0)
 show h left at Transform(xalign=1.0, yalign=1.1)
 with Dissolve(1.0)
 
-t_t "Наконец, когда они появились на горизонте."
+t_t "Наконец они появились на горизонте."
 
 show k pose1 at move_on_scene(xalign=0.1)
 show den awesome neutral at move_on_scene(time=1.7, xalign=0.5)
