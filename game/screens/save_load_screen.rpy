@@ -6,23 +6,28 @@
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#save 
 
+define save_type = _("Сохранить")
+define load_type = _("Загрузить")
+
 screen save():
 
     tag menu
 
-    use file_slots(_("Сохранить"))
+    use file_slots(save_type)
 
 
 screen load():
 
     tag menu
 
-    use file_slots(_("Загрузить"))
+    use file_slots(load_type)
+
 
 
 screen file_slots(title):
+    on "show" action FilePage(1)
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Основные сохранения"), auto=_("Автосохранения"), quick=_("Быстрые сохранения"), default=False)
+    default page_name_value = FilePageNameInputValue(pattern=_("Сохранения"), auto=_("Автосохранения"), quick=_("Быстрые сохранения"), default=False)
 
     use game_menu(title):
 
@@ -34,16 +39,17 @@ screen file_slots(title):
 
             ## Номер страницы, который может быть изменён посредством клика на
             ## кнопку.
-            button:
-                style "page_label"
+            label title style "screen_label"
+            # button:
+            #     style "page_label"
 
-                key_events True
-                xalign 0.5
-                #action page_name_value.Toggle()
+            #     key_events True
+            #     xalign 0.5
+            #     #action page_name_value.Toggle()
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+            #     input:
+            #         style "page_label_text"
+            #         value page_name_value
 
             ## Таблица слотов.
             grid gui.file_slot_cols gui.file_slot_rows:
@@ -88,15 +94,16 @@ screen file_slots(title):
                     # textbutton _("<=") action FilePagePrevious()
                     # key "save_page_prev" action FilePagePrevious()
 
-                    if config.has_autosave:
+                    if config.has_autosave and title == load_type:
                         textbutton _("{#auto_page}Авто") action FilePage("auto")
 
-                    if config.has_quicksave:
+                    if config.has_quicksave and title == load_type:
                         textbutton _("{#quick_page}Быстрые") action FilePage("quick")
 
                     ## range(1, 2) задаёт диапазон значений от 1 до 2.
-                    for page in range(1, max_save_pages + 1):
-                        textbutton "Основные" action FilePage(page)
+                    if title == load_type:
+                        for page in range(1, max_save_pages + 1):
+                            textbutton "Основные" action FilePage(page)
 
                     # textbutton _("=>") action FilePageNext(max = max_save_pages)
                     # key "save_page_next" action FilePageNext(max = max_save_pages)
@@ -124,6 +131,13 @@ screen file_slots(title):
         pos (1610, 555)
         at delay_appear(0.3)
 
+
+style screen_label is gui_label:
+    top_margin 20
+    xalign 0.5
+
+style screen_label_text is gui_label_text:
+    xalign 0.5
 
 style page_label is gui_label
 style page_label_text is gui_label_text
