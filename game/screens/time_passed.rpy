@@ -92,7 +92,7 @@ screen time_passed(text="Прошло времени..."):
         add "time_passed_img"
         
         vbox:
-            align (0.5, 0.5)
+            align (0.5, 0.44)
             spacing 50
             
             text text:

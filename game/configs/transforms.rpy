@@ -385,3 +385,21 @@ transform take_out(start=0, end=100, time=0.5):
 transform txt_up(start=-0.9, end=2.4, time=40.0):
     yalign start
     linear time yalign end
+
+transform wave_motion (x_offset=15, y_offset=10, zoom_val=1.0):
+    subpixel True
+    zoom zoom_val
+    xoffset 0
+    yoffset 0
+    align((0.5, 0.5))
+
+    parallel:
+        block:
+            ease 4.0 xoffset x_offset
+            ease 4.0 xoffset -x_offset
+            repeat
+    parallel:
+        block:
+            ease 3.0 yoffset y_offset
+            ease 3.0 yoffset -y_offset
+            repeat

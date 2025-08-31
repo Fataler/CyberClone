@@ -1,5 +1,6 @@
 image epilogue_bg:
     "images/CG/cg_novel_end_stars-.png"
+    wave_motion(zoom_val=1.05, x_offset=4, y_offset=4)
 
 image epilogue_stars:
     "images/CG/zvezda2.png"

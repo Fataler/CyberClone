@@ -327,7 +327,7 @@ init python:
             return 2.0
         
         time = 2.0 + len(message) * 0.03
-        return max(2.0, min(10.0, time))
+        return max(2.0, min(8.0, time))
 
     def start_attack():
         global battle_state, battle_message, show_battle_buttons, mishanya_hp, taida_battle_index
