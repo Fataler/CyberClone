@@ -163,7 +163,7 @@ label assembling_scene:
     with None
     pause 2.5
     
-    "Искуственный интеллект натренирован на 96\%."
+    "Искусственный интеллект натренирован на 96\%."
     
     show a_2 at slide_from_right_bottom
     show a_1 at slide_to_left
@@ -181,7 +181,7 @@ label assembling_scene:
     
     hide a_2
     
-    "Рассчеты завершены. Погрешность 0.005\%."
+    "Расчёты завершены. Погрешность 0.005\%."
 
     show a_4 at slide_from_right_bottom
     show a_3 at slide_to_left

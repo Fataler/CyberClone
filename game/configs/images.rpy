@@ -94,6 +94,7 @@ image bg_menu_main = "gui/menu/bg.png"
 
 init:
     image avatar_circle = AlphaMask("gui/menu/avatar_square.jpg", im.Scale("gui/menu/alpha_mask.png", 320, 320))
+    image avatar_circle_2 = AlphaMask("gui/menu/avatar_square_2.jpg", im.Scale("gui/menu/alpha_mask.png", 320, 320))
 
 
 ## Эффекты

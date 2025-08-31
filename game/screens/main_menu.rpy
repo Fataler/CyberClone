@@ -77,8 +77,9 @@ init:
 
 transform hue_cycle:
         matrixcolor HueMatrix(0)
-        linear 10.0 matrixcolor HueMatrix(360)
-        repeat
+        block:
+            linear 10.0 matrixcolor HueMatrix(360)
+            repeat
 
 transform parametric_appear(delay=0.5):
     alpha 0
@@ -131,6 +132,14 @@ screen main_menu():
         anchor (0.5, 0.5)
         xpos 0.09
         ypos 0.87
+        at hover_scale
+
+    imagebutton:
+        idle Transform("avatar_circle_2", size=(160, 160))
+        action OpenURL('https://vk.com/jamof100flowers')
+        anchor (0.5, 0.5)
+        xpos 0.09
+        ypos 0.71
         at hover_scale
 
     #vbox at menu_items_appear:
@@ -205,6 +214,7 @@ style main_menu_version is main_menu_text:
     properties gui.text_properties("version")
 
 transform hover_scale:
+    subpixel True
     anchor (0.5, 0.5)
     rotate 0
     on idle:    
